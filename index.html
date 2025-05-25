@@ -229,22 +229,52 @@
   }
 }
 
-/* Mobile Layout */
+/* 🔧 Responsive Mobile Tweaks */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+  header h1 {
+    font-size: 20px;
+    line-height: 1.2;
   }
 
-  .header-text h1 {
-    font-size: 22px;
+  .container {
+    padding: 15px 10px;
+    margin: 10px;
   }
 
-  .tag {
+  .notice-bar {
     font-size: 14px;
-    padding: 8px 14px;
+    padding: 10px;
+    overflow: auto;
+    white-space: nowrap;
   }
+
+  input, select, .btn, .search-btn {
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .search-bar {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+
+  .quick-access button,
+  .quick-access .btn {
+    margin: 8px 0;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  h2, h3 {
+    font-size: 20px;
+  }
+
+  .icon-label {
+    font-size: 16px;
+  }
+}
+
 
   .menu {
     grid-template-columns: 1fr;
