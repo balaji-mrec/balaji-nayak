@@ -4,624 +4,529 @@
   <meta charset="UTF-8">
   <title>Balanju Consultancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-color: #002147;
+      --secondary-color: #ffeb3b;
+      --accent-color: #0d47a1;
+      --highlight-color: #0cad31;
+      --text-color: #333;
+      --light-bg: #e3f2fd;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #e3f2fd, #ffffff);
-      color: #333;
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
-    /* 🔷 MAIN HEADER BAR */
+    /* Header Styles */
     .main-header {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 15px;
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 40px 20px;
-      background-color: #002147;
-      color: white;
-      flex-wrap: wrap;
+      width: 100%;
     }
 
-    /* 🎓 BALANJU LEFT SIDE */
-    .main-header .left h1 {
-      margin: 0;
-      color: #ffeb3b;
-      font-size: 20px;
+    .header-text h1 {
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+      margin-bottom: 5px;
     }
 
-    .main-header .left p {
-      margin: 5px 0 0;
-      font-size: 13px;
+    .header-text p {
       color: #dcdcdc;
+      font-size: 0.9rem;
     }
 
-    /* 📢 UPDATE BAR RIGHT SIDE */
-    .main-header .right {
-      flex: 1;
-      margin-left: 20px;
-      overflow: hidden;
+    .notification-bar {
+      width: 100%;
       background: #ffc107;
       border-radius: 6px;
-      padding: 20px 12px;
-      white-space: nowrap;
+      padding: 12px;
+      margin-top: 15px;
       position: relative;
-      min-height: 30px;
+      overflow: hidden;
     }
 
     .scroll-text {
       display: inline-block;
-      animation: scroll-left 18s linear infinite;
+      white-space: nowrap;
+      animation: scroll-left 20s linear infinite;
       font-weight: bold;
       color: #000;
-      font-size: 14px;
+    }
+
+    .scroll-text a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
     @keyframes scroll-left {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
-    /* 📱 MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
-      .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .main-header .right {
-        margin-left: 0;
-        width: 100%;
-        margin-top: 10px;
-      }
+    /* Main Content */
+    .container {
+      padding: 20px 15px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .logo {
-      width: 60px;
-      height: 60px;
-    }
-
-    .header-text h1 { font-size: 32px; }
-    .header-text p { font-size: 16px; color: #e3f2fd; }
-
-    .tag {
-      display: inline-block;
-      background-color: #1565c0;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 16px;
-      transition: background 0.3s;
-    }
-    .tag:hover { background-color: #0d47a1; }
-
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .menu a {
-      background-color: #0d47a1;
-      color: white;
-      padding: 20px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .section-title {
       text-align: center;
+      margin: 20px 0;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Search Section */
+    .search-section {
+      background-color: var(--light-bg);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 1rem;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .search-results {
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .result-card {
+      background-color: var(--white);
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
       transition: all 0.3s ease;
     }
 
-    .menu a:hover {
-      background-color: #0cad31;
-      transform: translateY(-5px);
+    .result-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
-    .video-section {
-      margin: 50px auto;
-      max-width: 800px;
-      padding: 0 20px;
+    .result-card h3 {
+      color: var(--accent-color);
+      margin-bottom: 5px;
+    }
+
+    /* Quick Links */
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .quick-link {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
       text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
+    .quick-link i {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .quick-link:hover {
+      background-color: var(--highlight-color);
+      transform: translateY(-3px);
+    }
+
+    /* EAMCET Section */
+    .eamcet-section {
+      background-color: #f0f8ff;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 25px 0;
+      border-top: 2px solid #ddd;
     }
 
-    .form-section {
-      margin: 50px auto;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 600px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    .eamcet-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .eamcet-btn {
+      background-color: #0066cc;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      text-decoration: none;
       text-align: center;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
 
-    .form-section input, .form-section textarea {
+    .eamcet-btn:hover {
+      background-color: #004b99;
+      transform: translateY(-2px);
+    }
+
+    /* Video Section */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Form Section */
+    .form-section {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .form-input {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 6px;
+      font-size: 1rem;
     }
 
-    .form-section button {
+    .form-submit {
       background-color: #1976d2;
       color: white;
       border: none;
       padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 8px;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
     }
 
-    .form-section button:hover { background-color: #0d47a1; }
+    .form-submit:hover {
+      background-color: #0d47a1;
+    }
 
+    .thank-you-message {
+      display: none;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* Feedback Section */
+    .feedback-section {
+      background-color: #fff8e1;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--light-bg);
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-links {
+      margin: 15px 0;
+    }
+
+    .social-links a {
+      color: #1565c0;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #25D366;
       color: white;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      font-size: 1.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       text-decoration: none;
       z-index: 1000;
     }
 
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      background-color: #e3f2fd;
-      font-size: 15px;
-    }
-
-    footer a {
-      color: #1565c0;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      .header-text h1 { font-size: 24px; }
-      .video-section iframe { height: 240px; }
-      .logo { width: 45px; height: 45px; }
-    }
-
     /* Tablet Layout */
-@media (max-width: 1024px) {
-  .menu {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    @media (min-width: 768px) {
+      .main-header {
+        flex-direction: row;
+        align-items: center;
+        padding: 25px;
+      }
+      
+      .notification-bar {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+      
+      .header-text h1 {
+        font-size: 2rem;
+      }
+      
+      .quick-links {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      
+      .form-section {
+        padding: 30px;
+      }
+    }
 
-  .header-text h1 {
-    font-size: 28px;
-  }
-
-  iframe {
-    height: 300px;
-  }
-}
-
-/* Mobile Layout */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .header-text h1 {
-    font-size: 22px;
-  }
-
-  .tag {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-
-  .menu {
-    grid-template-columns: 1fr;
-    padding: 20px 10px;
-  }
-
-  .form-section, .video-section {
-    padding: 20px 10px;
-  }
-
-  iframe {
-    height: 220px;
-  }
-
-  .form-section input,
-  .form-section textarea,
-  .form-section button {
-    font-size: 14px;
-  }
-
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-  }
-}
-/*buttion*/
-.trending-section {
-  background-color: #fff;
-  padding: 30px 20px;
-  text-align: center;
-  margin-top: 20px;
-  border-top: 2px solid #eee;
-}
-
-.trending-section h2 {
-  font-size: 22px;
-  color: #222;
-  margin-bottom: 20px;
-}
-
-.trending-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.trend-card {
-  background-color: #ffecec;
-  color: #c0392b;
-  border-left: 5px solid #e74c3c;
-  padding: 15px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
-  max-width: 280px;
-  text-align: left;
-}
-
-.trend-card:hover {
-  transform: translateY(-3px);
-  background-color: #ffdddd;
-}
-
-
-/*eamcet fileters*/
-
-
-
-.eamcet-section {
-  background-color: #f0f8ff;
-  padding: 30px 20px;
-  margin-top: 30px;
-  text-align: center;
-  border-top: 2px solid #ddd;
-}
-
-.eamcet-section h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #003366;
-}
-
-.eamcet-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.eamcet-btn {
-  background-color: #0066cc;
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.2s, transform 0.2s;
-}
-
-.eamcet-btn:hover {
-  background-color: #004b99;
-  transform: translateY(-2px);
-}
-
-.dropdown-filters {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.dropdown-filters select,
-.filter-submit {
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-  background: #fff;
-  cursor: pointer;
-}
-
-.filter-submit {
-  background-color: #0066cc;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  transition: background 0.2s ease-in-out;
-}
-
-.filter-submit:hover {
-  background-color: #004b99;
-}
-
-/* 📱 Responsive for All Devices */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 18px;
-  }
-  .container {
-    padding: 15px 10px;
-  }
-  .btn {
-    font-size: 14px;
-    width: 100%;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  header h1 {
-    font-size: 22px;
-  }
-  .container {
-    margin: 20px 10px;
-    padding: 20px 15px;
-  }
-  .btn {
-    width: 100%;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    padding: 30px;
-  }
-  table, th, td {
-    font-size: 15px;
-  }
-}
-
-
-
-
+    /* Desktop Layout */
+    @media (min-width: 1024px) {
+      .container {
+        padding: 30px;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+        margin: 30px 0;
+      }
+      
+      .quick-links {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-
-
-  
-
-   <!-- 🔷 HEADER SECTION -->
-
+  <!-- Header Section -->
   <header class="main-header">
-    <div class="left">
-      <h1><font size="6" face="roboto">🎓 BALANJU<br> CONSULTANCY</font></h1>
-      <p><font size="3" color="white">Explore all educational paths at one place</font></p>
+    <div class="header-top">
+      <div class="header-text">
+        <h1>🎓 BALANJU CONSULTANCY</h1>
+        <p>Explore all educational paths at one place</p>
+      </div>
     </div>
-    <div class="right">
-      <div class="scroll-text" scrollamount="4"><font size="5">
-        <a href="01-cut-off.html"> 📢 TS EAMCET 2024 Cutoffs Updated!</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="01-ts-eamcet-updated.html">🗓 Counseling starts from June 15</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="01-ts-eamcet-updated.html">🆕 View counselling Shedule</a>
-      </font></div>
+    <div class="notification-bar">
+      <div class="scroll-text">
+        <a href="01-cut-off.html">📢 TS EAMCET 2024 Cutoffs Updated!</a>
+        <a href="01-ts-eamcet-updated.html">🗓 Counseling starts from June 15</a>
+        <a href="01-ts-eamcet-updated.html">🆕 View counselling Schedule</a>
+      </div>
     </div>
   </header>
 
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Search Section -->
+    <section class="search-section">
+      <h2 class="section-title">🔍 Find What You're Looking For</h2>
+      <input type="text" id="searchBox" class="search-box" placeholder="Search for CSE, Pharmacy, Cutoff, ECE..." oninput="showResults()">
+      <div id="searchResults" class="search-results"></div>
+    </section>
 
-  <!-- ✅ SMART SEARCH AREA -->
-  <div class="search-area" style="background-color: #e3f2fd; padding: 30px; text-align: center;">
-    <h2>🔍 Find What You're Looking For</h2>
+    <!-- EAMCET Quick Access -->
+    <section class="eamcet-section">
+      <h2 class="section-title">🎓 EAPCET Quick Access</h2>
+      <div class="eamcet-buttons">
+        <a href="999-TS-COLLEGE-FILTER..html" class="eamcet-btn">🎯 College Filter</a>
+        <a href="999-TS-COLLEGE-PREDUCTOR.HTML" class="eamcet-btn">📊 College Predictor</a>
+        <a href="index-branches.html" class="eamcet-btn">📚 Branch-wise Info</a>
+        <a href="100-ts-20.html" class="eamcet-btn">🏆 Top Colleges</a>
+      </div>
+    </section>
 
+    <!-- Quick Links -->
+    <h2 class="section-title">📚 Explore Our Resources</h2>
+    <div class="quick-links">
+      <a href="index-engineering.html" class="quick-link">
+        <i class="fas fa-laptop-code"></i>
+        Engineering
+      </a>
+      <a href="900-demo-degree.html" class="quick-link">
+        <i class="fas fa-graduation-cap"></i>
+        Degree
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-flask"></i>
+        Pharma
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-school"></i>
+        Intermediate
+      </a>
+      <a href="991schools-con.html" class="quick-link">
+        <i class="fas fa-chalkboard-teacher"></i>
+        Schools
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-university"></i>
+        Top Colleges
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-file-pdf"></i>
+        Cutoff PDFs
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-rupee-sign"></i>
+        Paid Courses
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-phone-alt"></i>
+        Contact Us
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-comment-alt"></i>
+        Student Feedback
+      </a>
+    </div>
 
+    <!-- Video Section -->
+    <section>
+      <h2 class="section-title">📺 Watch Our Introduction</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
+      </div>
+    </section>
 
+    <!-- Form Section -->
+    <section class="form-section">
+      <h2 class="section-title">📅 Book Your Counseling Appointment</h2>
+      <form id="contact-form" action="https://formspree.io/f/mdkgrwal" method="POST">
+        <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+        <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+        <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required>
+        <textarea name="message" class="form-input" rows="4" placeholder="What do you need help with?" required></textarea>
+        <button type="submit" class="form-submit">Submit Request</button>
+      </form>
+      <div id="thank-you-message" class="thank-you-message">
+        <p>✅ <strong>Thank you for choosing BALANJU CONSULTANCY!</strong></p>
+        <p>Your counseling request has been received successfully. One of our experts will reach out to you shortly with personalized guidance.</p>
+        <p>⏳ In the meantime, feel free to explore our tools or contact us for urgent queries.</p>
+        <p>💬 <em>We're here to support your journey — every step of the way.</em></p>
+      </div>
+    </section>
 
-    
-    <input type="text" id="searchBox" placeholder="Search for CSE, Pharmacy, Cutoff, ECE, Civil..." oninput="showResults()" style="width: 60%; max-width: 400px; padding: 12px; font-size: 18px; border-radius: 8px;">
-    <div id="searchResults" style="margin-top: 20px;"></div>
-    <div class="tags" style="margin-top: 20px;">
-     
-    
-    <div class="eamcet-section">
-  <h2>🎓 EAPCET Quick Access</h2>
-  <div class="eamcet-buttons">
-    <a href="999-TS-COLLEGE-FILTER..html" class="eamcet-btn">🎯 EAPCET College Filter</a>
-    <a href="999-TS-COLLEGE-PREDUCTOR.HTML" class="eamcet-btn">📊EAPCET College predictor </a>
-    <a href="index-branches.html" class="eamcet-btn">📚 Branch-wise Info</a>
-    <a href="100-ts-20.html" class="eamcet-btn"> 🏆Top EAMCET Colleges</a>
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+      <h2 class="section-title">📝 Got Feedback or Need Help?</h2>
+      <p>Have something to say? Tell us how we can help or what you think about our service.</p>
+      <form action="https://formspree.io/f/mwpodlvj" method="POST" style="margin-top: 20px;">
+        <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+        <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+        <textarea name="message" class="form-input" rows="4" placeholder="Your Feedback or Help Request..." required></textarea>
+        <button type="submit" class="form-submit">
+          <i class="fas fa-paper-plane"></i> Submit Feedback
+        </button>
+      </form>
+    </section>
   </div>
 
+  <!-- WhatsApp Float -->
+  <a class="whatsapp-float" href="https://wa.me/7207800211" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  </div>
-
-  <center><h1>📚 HERE EXPLORE</h1></center>
-
-  <div class="menu">
-    <a href="index-engineering.html">💻 Engineering</a>
-    <a href="900-demo-degree.html">📘 Degree</a>
-    <a href="">🧪 Pharma</a>
-    <a href="#">🏫 Intermediate</a>
-    <a href="991schools-con.html">🏫 Schools</a>
-    <a href="#">🏛️ Top Colleges</a>
-    <a href="#">📊 Cutoff PDFs</a>
-    <a href="#">💰 Paid Courses</a>
-    <a href="#">📞 Contact Us</a>
-    <a href="#">🙋‍♂️ Student Feedback</a>
-  </div>
-
-  <div class="video-section">
-    <h2>📺 Watch Our Introduction</h2>
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
-  </div>
-
- <div class="form-section">
-  <h2>📅 Book Your Counseling Appointment</h2>
-
-  <form id="contact-form" action="https://formspree.io/f/mdkgrwal" method="POST">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <textarea name="message" rows="4" placeholder="What do you need help with?" required></textarea>
-    <button type="submit">Submit Request</button>
-  </form>
-
- <div id="thank-you-message" style="display: none; margin-top: 20px; background: #e8f5e9; color: #2e7d32; padding: 20px; border-radius: 8px; font-size: 16px;">
-  ✅ <strong>Thank you for choosing BALANJU CONSULTANCY!</strong><br><br>
-  Your counseling request has been received successfully.  
-  One of our experts will reach out to you shortly with personalized guidance.<br><br>
-  ⏳ In the meantime, feel free to explore our tools or contact us for urgent queries.<br><br>
-  💬 <em>We’re here to support your journey — every step of the way.</em>
-</div>
-
-</div>
-
-
-
-  <a class="whatsapp-float" href="https://wa.me/7207800211" target="_blank" title="Chat with us on WhatsApp">💬</a>
-
+  <!-- Footer -->
   <footer>
-
-
-    <section style="background-color: #fff8e1; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  <h2 style="color: #e65100; font-size: 24px; margin-bottom: 10px;">📝 Got Feedback or Need Help?</h2>
-  <p style="font-size: 18px; color: #333;">Have something to say? Tell us how we can help or what you think about our service.</p>
-  
-  <form action="https://formspree.io/f/mwpodlvj" method="POST" style="margin-top: 20px;">
-    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; width: 100%; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
-    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; width: 100%; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
-    <textarea name="message" placeholder="Your Feedback or Help Request..." required rows="4" style="padding: 10px; width: 100%; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;"></textarea>
-    <button type="submit" style="background-color: #ff9800; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      📤 Submit Feedback
-    </button>
-  </form>
-</section>
-
-
-    Made with ❤️ by Balanju team <br>
-    <a href="https://youtube.com/@balajimrec227?si=WzyjSDIymR_X-6ai" target="_blank">▶️ YouTube</a> |
-    <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0" target="_blank">📱 WhatsApp COMMUNITY</a>
+    <p>Made with ❤️ by Balanju team</p>
+    <div class="social-links">
+      <a href="https://youtube.com/@balajimrec227?si=WzyjSDIymR_X-6ai" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <p>&copy; 2024 Balanju Consultancy. All rights reserved.</p>
   </footer>
 
   <script>
     const searchData = [
-     
-  { name: "CSE - Computer Science", link: "13cse.html", icon: "💻", desc: "Core programming, software, and IT career path." },
-  { name: "Cyber Security", link: "13CYBER.html", icon: "🛡️", desc: "Learn network protection, ethical hacking, and defense." },
-  { name: "Data Science (DS)", link: "13data_science.html", icon: "📊", desc: "Big data, analytics, and AI-powered insights." },
-  { name: "IoT - Internet of Things", link: "13IOT.html", icon: "🌐", desc: "Smart devices, automation, and connected tech." },
-  { name: "Software Engineering", link: "13software engineering.html", icon: "🖥️", desc: "Application development and project architecture." },
-  { name: "ECE - Electronics & Communication", link: "14ece.html", icon: "📡", desc: "Design circuits, embedded systems, and telecom." },
-  { name: "EEE - Electrical Engineering", link: "14eee.html", icon: "⚡", desc: "Focus on power systems, machines, and control." },
-  { name: "IT - Information Technology", link: "13IT.html", icon: "💾", desc: "Computer networks, databases, and system admin." },
-  { name: "Mechanical Engineering", link: "14mech.html", icon: "🔧", desc: "Machines, robotics, thermal, and automotive design." },
-  { name: "Civil Engineering", link: "14civil.html", icon: "🏗️", desc: "Structures, roads, bridges, and infrastructure." },
-  { name: "Pharmacy", link: "pharmacy.html", icon: "💊", desc: "Study of medicines, B.Pharm & D.Pharm options." },
-  { name: "Biotechnology", link: "15biotech.html", icon: "🧬", desc: "Genetics, lab research, and pharma innovation." },
-  { name: "Chemical Engineering", link: "15Environmental-Engineering.html", icon: "⚗️", desc: "Chemicals, process design, and oil sector." },
-  { name: "Food Technology", link: "15food_tech.html", icon: "🍞", desc: "Food processing, safety, and nutrition science." },
-  { name: "Aerospace Engineering", link: "16areospace.html", icon: "✈️", desc: "Aircraft design, aerodynamics, and R&D." },
-  { name: "Engineering Physics", link: "16engineering_physics.html", icon: "🔭", desc: "Tech meets physics — nanotech and innovation." },
-  { name: "Mining Engineering", link: "16mining.html", icon: "⛏️", desc: "Extractive industry, geology, and underground tech." },
-  { name: "Robotics Engineering", link: "16robotics.html", icon: "🤖", desc: "AI-powered robotics, automation, and design." },
+      { name: "CSE - Computer Science", link: "13cse.html", icon: "💻", desc: "Core programming, software, and IT career path." },
+      { name: "Cyber Security", link: "13CYBER.html", icon: "🛡️", desc: "Learn network protection, ethical hacking, and defense." },
+      { name: "Data Science (DS)", link: "13data_science.html", icon: "📊", desc: "Big data, analytics, and AI-powered insights." },
+      { name: "IoT - Internet of Things", link: "13IOT.html", icon: "🌐", desc: "Smart devices, automation, and connected tech." },
+      { name: "Software Engineering", link: "13software engineering.html", icon: "🖥️", desc: "Application development and project architecture." },
+      { name: "ECE - Electronics & Communication", link: "14ece.html", icon: "📡", desc: "Design circuits, embedded systems, and telecom." },
+      { name: "EEE - Electrical Engineering", link: "14eee.html", icon: "⚡", desc: "Focus on power systems, machines, and control." },
+      { name: "IT - Information Technology", link: "13IT.html", icon: "💾", desc: "Computer networks, databases, and system admin." },
+      { name: "Mechanical Engineering", link: "14mech.html", icon: "🔧", desc: "Machines, robotics, thermal, and automotive design." },
+      { name: "Civil Engineering", link: "14civil.html", icon: "🏗️", desc: "Structures, roads, bridges, and infrastructure." },
+      { name: "Pharmacy", link: "pharmacy.html", icon: "💊", desc: "Study of medicines, B.Pharm & D.Pharm options." },
       { name: "Cutoffs", link: "cutoffs.html", icon: "📊", desc: "Last year cutoffs for EAMCET, JEE, etc." },
       { name: "Counseling", link: "counseling.html", icon: "📞", desc: "Book a session with our experts." },
       { name: "Top Colleges", link: "colleges.html", icon: "🏛️", desc: "View top colleges across branches." },
-      { name: "JEE Info", link: "jee.html", icon: "🧪", desc: "JEE Main & Advanced details." },
-      { name: "Engineering", link: "engineering.html", icon: "💻", desc: "Explore all engineering branches." },
-      { name: "Engineering Branches", link: "branches01.html", icon: "💻", desc: "Explore all engineering branches." },
-      { name: "cbit", link: "branches01.html", icon: "💻", desc: "Explore all engineering branches." },
-      { name: "BALANJU", city: "Hyderabad", stream: "Engineering", link: "101-ts-cbit.html", icon: "🏫" },
-       // HYDERABAD & RANGAREDDY
-       { name: "CBIT", city: "Hyderabad", stream: "Engineering", link: "101-ts-cbit.html", icon: "🏫" },
+      { name: "CBIT", city: "Hyderabad", stream: "Engineering", link: "101-ts-cbit.html", icon: "🏫" },
       { name: "MVSR", city: "Hyderabad", stream: "Engineering", link: "101-ts-mvsr.html", icon: "🏫" },
-      { name: "Vasavi College of Engineering", city: "Hyderabad", stream: "Engineering", link: "103-ts-vasavi.html", icon: "💻" },
-      { name: "JNTU-Hyderabad", city: "Hyderabad", stream: "Engineering", link: "104-ts-jntu-h.html", icon: "🎓" },
-      { name: "MJCET", city: "Hyderabad", stream: "Engineering", link: "108-tsmjcet.html", icon: "🏫" },
-      { name: "VNR VJIET", city: "Hyderabad", stream: "Engineering", link: "106-ts-vnr vjiet.html", icon: "🏢" },
-      { name: "Gokaraju Rangaraju Institute of Engineering", city: "Hyderabad", stream: "Engineering", link: "105-ts-gokaraju.html", icon: "🏫" },
-      { name: "Sreenidhi Institute of Science and Technology", city: "Hyderabad", stream: "Engineering", link: "107-ts-sreenidhi.html", icon: "💻" },
-      { name: "Malla Reddy College of Engineering", city: "Hyderabad", stream: "Engineering", link: "109-TS-MRCE.html", icon: "🏫" },
-      { name: "Narsimha Reddy College of Engineering", city: "Hyderabad", stream: "Engineering", link: "109-TS-nrcm.html", icon: "🏫" },
-      { name: "St. Mary's Engineering College", city: "Hyderabad", stream: "Engineering", link: "109-TS-ST-MARY'S.html", icon: "👩‍🎓" },
-      { name: "Malla Reddy College of Engineering Intitution", city: "Hyderabad", stream: "Engineering", link: "110-TS-MRCET.html", icon: "🏫" },
-      { name: "Malla Reddy Uiversity", city: "Hyderabad", stream: "Engineering", link: "110-TS-MRUH.html", icon: "🏫" },
-      { name: "CMR Institute of Technology", city: "Hyderabad", stream: "Engineering", link: "111-TS-CMRCET.HTML", icon: "💡" },
-      { name: "CVR College of Engineering", city: "Ibrahimpatnam", stream: "Engineering", link: "112-ts-cvr.html", icon: "💻" },
-      { name: "MLR Institute of Technology", city: "Dundigal", stream: "Engineering", link: "113-ts-mlr.html", icon: "🏫" },
-      { name: "Institute of Aeronautical Engineering", city: "Dundigal", stream: "Engineering", link: "114-ts-iare.html", icon: "✈️" },
-      { name: "Stanley College of Engineering for Women", city: "Hyderabad", stream: "Engineering", link: "115-ts-stanley.html", icon: "👩‍🎓" },
-      { name: "Bhoj Reddy Engineering College for Women", city: "Hyderabad", stream: "Engineering", link: "116-ts-bhojreddy.html", icon: "👩‍🎓" },
-      { name: "TKR College of Engineering", city: "Hyderabad", stream: "Engineering", link: "117-ts-tkr.html", icon: "🏫" },
-      { name: "Mahindra University", city: "Hyderabad", stream: "Engineering", link: "118-ts-mahindra-university.html", icon: "🎓" },
-      { name: "GITAM University", city: "Hyderabad", stream: "Engineering", link: "119-ts-gitam-university.html", icon: "🎓" },
-      { name: "IIIT-Hyderabad", city: "Hyderabad", stream: "Engineering", link: "120-ts-iiith.html", icon: "🚀" },
-      { name: "Anurag University", city: "Hyderabad", stream: "Engineering", link: "121-ts-anurag-university.html", icon: "🏫" },
-      { name: "BV RAJU COLLEGE", city: "Hyderabad", stream: "Engineering", link: "122-ts-bv-raju.html", icon: "🏫" },
-      { name: "OU Osmania University", city: "Hyderabad", stream: "Engineering", link: "122-ts-osmania.html", icon: "🎓" },
-      { name: "JNTU Sulthanpur", city: "Hyderabad", stream: "Engineering", link: "122-ts-jntu-sul.html", icon: "🎓" },
-      { name: "Vaardhaman College", city: "Hyderabad", stream: "Engineering", link: "122-ts-vaardhaman.html", icon: "🏫" },
-      { name: "AVN Engineering College", city: "Hyderabad", stream: "Engineering", link: "122-ts-AVN.html", icon: "🏫" },
-      { name: "Kakatiya Institute of Technology and Science", city: "Warangal", stream: "Engineering", link: "123-ts-kits.html", icon: "🎯" },
-      { name: "Vaagdevi Engineering College", city: "Warangal", stream: "Engineering", link: "124-ta-vaagdevi.html", icon: "🏫" },
-      { name: "SR University College", city: "Warangal", stream: "Engineering", link: "125-ts-sr.html", icon: "🎓" },
-      { name: "Kakatiya University", city: "Warangal", stream: "Engineering", link: "126-ts-kakatiya.html", icon: "🎓" },
-      { name: "Jayamukhi Institute of Technological Sciences", city: "Narsampet", stream: "Engineering", link: "127-ts-jayamukhi.html", icon: "🏫" },
-      { name: "Jyothishmathi Institute of Technology and Science", city: "Karimnagar", stream: "Engineering", link: "128-ts-jyothishmathi.html", icon: "🏫" },
-      { name: "VITS Karimnagar", city: "Karimnagar", stream: "Engineering", link: "129-ts-vits.html", icon: "🏫" },
-      { name: "Gurunanak Institute of Technology", city: "Nizamabad", stream: "Engineering", link: "130-TS-GURUNANAK-nIzambad.html", icon: "🏫" },
-      { name: "Nizam Institute of Engineering and Technology", city: "Nizamabad", stream: "Engineering", link: "nizamiet.html", icon: "🏫" },
-      { name: "Swarna Bharathi Institute of Science and Technology", city: "Khammam", stream: "Engineering", link: "131-ts-sbit.html", icon: "🏫" },
-      { name: "Anurag Engineering College", city: "Kodad", stream: "Engineering", link: "132-ts-anurag-kodad.html", icon: "🏫" },
-      { name: "Priyadarshini Engineering College", city: "Khammam", stream: "Engineering", link: "132-ts-PRIYADARSHINI.html", icon: "🏫" },
-      { name: "MGIT", city: "Sangareddy", stream: "Engineering", link: "133-ts-mgit.html", icon: "🏫" },
-      { name: "Medak Institute of Technology", city: "Medak", stream: "Engineering", link: "134-ts-medaktech.html", icon: "🏫" },
-      { name: "Palamuru University Engineering College", city: "Mahabubnagar", stream: "Engineering", link: "palamuru.html", icon: "🎓" },
-      { name: "Nalgonda Institute of Technology", city: "Nalgonda", stream: "Engineering", link: "nalgonda-tech.html", icon: "🏫" },
-      { name: "Ellenki College of Engineering and Technology", city: "Patelguda", stream: "Engineering", link: "ellenki.html", icon: "🏫" }
-    
-
-
-
-
-
-      
-  
+      { name: "Vasavi College", city: "Hyderabad", stream: "Engineering", link: "103-ts-vasavi.html", icon: "💻" },
+      { name: "JNTU-Hyderabad", city: "Hyderabad", stream: "Engineering", link: "104-ts-jntu-h.html", icon: "🎓" }
     ];
 
     function showResults() {
@@ -632,82 +537,57 @@
       if (input.length === 0) return;
 
       const filtered = searchData.filter(item =>
-        item.name.toLowerCase().includes(input)
+        item.name.toLowerCase().includes(input) || 
+        (item.desc && item.desc.toLowerCase().includes(input)) ||
+        (item.city && item.city.toLowerCase().includes(input))
       );
 
       if (filtered.length === 0) {
-        resultsContainer.innerHTML = "<p style='color: #888;'>❌ No results found.</p>";
+        resultsContainer.innerHTML = "<div class='result-card'>❌ No results found. Try different keywords.</div>";
         return;
       }
 
       filtered.forEach(item => {
         const resultCard = document.createElement("a");
         resultCard.href = item.link;
-        resultCard.style = `
-          display: block;
-          background-color: white;
-          padding: 16px;
-          margin: 10px auto;
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          text-align: left;
-          max-width: 500px;
-          color: black;
-          text-decoration: none;
-          transition: background 0.3s;
-        `;
+        resultCard.className = "result-card";
         resultCard.innerHTML = `
-          <strong style="font-size: 18px;">${item.icon} ${item.name}</strong><br>
-          <small style="color: #555;">${item.desc}</small>
+          <h3>${item.icon || '📌'} ${item.name}</h3>
+          <p>${item.desc || ''} ${item.city ? `<br><small>📍 ${item.city}</small>` : ''}</p>
         `;
-        resultCard.onmouseover = () => resultCard.style.backgroundColor = "#f0f8ff";
-        resultCard.onmouseout = () => resultCard.style.backgroundColor = "#ffffff";
-
         resultsContainer.appendChild(resultCard);
       });
     }
 
+    // Form submission handler
+    const form = document.getElementById("contact-form");
+    const thankYouMessage = document.getElementById("thank-you-message");
 
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-  const form = document.getElementById("contact-form");
-  const thankYouMessage = document.getElementById("thank-you-message");
+      const formData = new FormData(form);
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          thankYouMessage.style.display = "block";
+        } else {
+          alert("❌ Something went wrong. Please try again.");
         }
-      });
-
-      if (response.ok) {
-        form.reset();
-        form.style.display = "none";
-        thankYouMessage.style.display = "block";
-      } else {
-        alert("❌ Something went wrong. Please try again.");
+      } catch (error) {
+        alert("❌ Submission failed. Please check your internet and try again.");
       }
-    } catch (error) {
-      alert("❌ Submission failed. Please check your internet and try again.");
-    }
-  });
-
-
+    });
   </script>
-
-
-
-
-  
-
-
 </body>
 </html>
-
-
