@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telangana Colleges Directory 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  <style>
+    .badge { @apply px-2 py-1 text-xs rounded-full font-semibold; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-800 text-white py-6 text-center shadow">
+    <h1 class="text-3xl font-bold">Telangana Colleges Directory 2025</h1>
+    <p class="text-sm mt-1">Your complete guide to top colleges, admissions, and placements</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-6">
+    <!-- Search Bar -->
+    <div class="relative mb-6">
+      <input type="text" id="searchBar" placeholder="Search colleges by name..." class="w-full px-4 py-2 border rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap gap-3 mb-6">
+      <button onclick="filterColleges('all')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded">All</button>
+      <button onclick="filterColleges('eapcet')" class="bg-white border border-blue-600 text-blue-600 px-4 py-1 rounded">EAPCET</button>
+      <button onclick="filterColleges('govt')" class="bg-white border border-blue-600 text-blue-600 px-4 py-1 rounded">Govt</button>
+      <button onclick="filterColleges('top')" class="bg-white border border-blue-600 text-blue-600 px-4 py-1 rounded">Top Ranked</button>
+    </div>
+
+    <!-- Colleges List -->
+    <div id="collegeList" class="space-y-4">
+      <!-- Template Card -->
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg transition" data-type="eapcet top" onclick="showDetails('JNTU Hyderabad')">
+        <div class="flex justify-between">
+          <h3 class="text-lg font-semibold">JNTU Hyderabad</h3>
+          <div>
+            <span class="badge bg-green-200 text-green-800">Top</span>
+            <span class="badge bg-blue-200 text-blue-800">EAPCET</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg transition" data-type="govt" onclick="showDetails('Osmania University')">
+        <div class="flex justify-between">
+          <h3 class="text-lg font-semibold">Osmania University</h3>
+          <div>
+            <span class="badge bg-gray-300 text-gray-800">Govt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow hover:shadow-lg transition" data-type="eapcet" onclick="showDetails('CBIT Hyderabad')">
+        <div class="flex justify-between">
+          <h3 class="text-lg font-semibold">CBIT Hyderabad</h3>
+          <div>
+            <span class="badge bg-blue-200 text-blue-800">EAPCET</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
+      <button class="absolute top-2 right-2 text-gray-500" onclick="closeModal()">&times;</button>
+      <h2 id="modalTitle" class="text-xl font-bold mb-2">College Name</h2>
+      <p>More details about the college will go here. You can include placements, courses, cutoffs, etc.</p>
+    </div>
+  </div>
+
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    const collegeCards = document.querySelectorAll('#collegeList > div');
+
+    searchBar.addEventListener('input', () => {
+      const query = searchBar.value.toLowerCase();
+      collegeCards.forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(query) ? 'block' : 'none';
+      });
+    });
+
+    function filterColleges(type) {
+      collegeCards.forEach(card => {
+        if (type === 'all' || card.dataset.type.includes(type)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function showDetails(name) {
+      document.getElementById('modalTitle').textContent = name;
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modal').classList.remove('flex');
+    }
+  </script>
+</body>
+</html>

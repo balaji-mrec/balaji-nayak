@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CVRCE Admissions | Balaju Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+   :root {
+  --primary: #1B5E20;
+  --secondary: #66BB6A;
+  --bg: #f0fdf4;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
+header { display: flex; justify-content: space-between; align-items: center; background: rgb(109, 217, 224); padding: 20px 30px; border-bottom: 1px solid #4cb4af; flex-wrap: wrap; }
+.header-left h1 { font-size: 20px; line-height: 1.3; color: var(--primary); text-transform: uppercase; }
+.header-center { flex: 1; text-align: center; }
+.header-center h2 { font-size: 24px; color: var(--primary); font-weight: 800; }
+.header-center p { font-size: 16px; color: #2c8e48; font-weight: 600; }
+nav { background: var(--white); box-shadow: var(--shadow); padding: 12px 20px; position: sticky; top: 0; z-index: 1000; }
+nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 20px; }
+nav a { color: var(--primary); font-weight: 600; text-decoration: none; padding: 6px 12px; transition: 0.3s ease; }
+nav a:hover { background: var(--secondary); color: white; border-radius: 8px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px; margin-bottom: 40px; }
+section h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; }
+.highlight { background: #e8f5e9; padding: 20px; border-radius: 12px; margin-top: 15px; }
+.gallery { display: flex; gap: 20px; overflow-x: auto; margin-top: 15px; }
+.gallery img { height: 180px; border-radius: 12px; box-shadow: var(--shadow); }
+iframe { width: 100%; height: 360px; margin-top: 25px; border-radius: var(--radius); border: none; }
+details summary { background: #f1f8e9; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+.cta { text-align: center; margin-top: 40px; }
+.cta a { background: var(--secondary); color: white; padding: 14px 30px; font-size: 18px; font-weight: 600; border-radius: 40px; text-decoration: none; box-shadow: var(--shadow); transition: 0.3s ease; }
+.cta a:hover { background: #43a047; }
+.whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 100; }
+.whatsapp-float a { background: #25D366; color: white; padding: 14px 22px; border-radius: 40px; text-decoration: none; font-weight: bold; box-shadow: var(--shadow); }
+footer { background: #dcedc8; text-align: center; padding: 20px; font-size: 14px; color: #555; }
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; text-align: left; }
+  .header-center { text-align: left; margin-top: 10px; }
+  nav ul { flex-direction: column; align-items: center; gap: 16px; }
+  .gallery { flex-direction: column; align-items: center; }
+}
+
+
+
+/* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body><header>
+  <div class="header-left">
+    <h1><font size="6" color="black" face="roboto">🎓 BALANJU<br>CONSULTANCY</font></h1>
+    <p><font size="4" color="green" face="roboto">Your trusted partner in college admissions.</font></p>
+  </div>
+  <div class="header-center">
+    <h2><font size="6" color="RED" face="roboto">CVRCE</font></h2>
+    <p><font size="6" color="blue" face="roboto">CVR College of Engineering</font></p>
+    <a href="https://cvr.ac.in/images/logo.png"></a>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses Offered</a></li>
+    <li><a href="#admissions">Admission Process</a></li>
+    <li><a href="#cutoff">Cut-Offs</a></li>
+    <li><a href="#fees">Fees & Scholarships</a></li>
+    <li><a href="#placements">Placements</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#campus-life">Campus Life</a></li>
+    <li><a href="#campus-tour">Campus Tour</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+</nav>
+<div class="container">
+ <section id="about">
+  <h2>About CVR College of Engineering, Hyderabad</h2>
+  <p>
+    CVR College of Engineering, established in <strong>2000</strong>, is a premier autonomous engineering institution located in <strong>Vastunagar, Mangalpalli, Hyderabad</strong>. Promoted by the Cherabuddi Education Society, CVR is known for its academic excellence, state-of-the-art infrastructure, and outstanding placement record.
+  </p>
+  <div class="highlight">
+    <ul>
+      <li><strong>Established:</strong> 2000</li>
+      <li><strong>Location:</strong> Vastunagar, Mangalpalli (V), Ibrahimpatnam (M), Ranga Reddy (D), Telangana - 501510</li>
+      <li><strong>Campus Area:</strong> 40 acres</li>
+      <li><strong>Affiliation:</strong> Jawaharlal Nehru Technological University, Hyderabad (JNTUH) (Autonomous)</li>
+      <li><strong>Accreditation:</strong> AICTE Approved, NBA Accredited (7 UG programs, Tier 1), NAAC 'A' Grade, NIRF Ranked</li>
+    </ul>
+  </div>
+  <p>
+    The college offers modern laboratories, a digital library, research centers, sports facilities, and hostels. With an annual intake of nearly <strong>1200+ students</strong>, CVR is a top choice for engineering aspirants in Telangana.
+  </p>
+  <p>
+    CVR offers undergraduate, postgraduate, and doctoral programs in various engineering disciplines. The institution is recognized for its research, innovation, and industry collaborations.
+  </p>
+  <div class="gallery">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCzagWKhJI2w3aeZvgyw_tbk7oTQ3h3-eHLw&s" alt="CVR Main Building">
+    <img src="https://image-static.collegedunia.com/public/college_data/images/appImage/1649934570DJI0767.jpg?h=260&w=360&mode=crop" alt="CVR Library">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG8CjbToqa1xGu1G9iffS3QNdn7mklCmRwbA&s" alt="CVR Labs">
+    <img src="https://cvr.ac.in/p/p3227140711737295/H&S%20Department.jpg" alt="CVR Labs">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgXks9EokW6iz_3GfigWlCqV1awGFCKJKtYg&s" alt="CVR Labs">
+  </div>
+</section>
+
+<section id="courses">
+  <h2>Courses Offered at CVR College of Engineering</h2>
+  <p>
+    CVR offers a wide range of Undergraduate, Postgraduate, and Doctoral programs in engineering. All programs are designed to meet industry standards and foster research and innovation.
+  </p>
+  <div class="highlight">
+    <h3>Undergraduate Programs (B.Tech – 4 Years)</h3>
+    <ul>
+      <li>B.Tech in Civil Engineering</li>
+      <li>B.Tech in Computer Science and Engineering (CSE)</li>
+      <li>B.Tech in CSE (Artificial Intelligence & Machine Learning)</li>
+      <li>B.Tech in CSE (Data Science)</li>
+      <li>B.Tech in CSE (Cyber Security)</li>
+      <li>B.Tech in Computer Science and Business Systems (CSBS)</li>
+      <li>B.Tech in Electronics and Communication Engineering (ECE)</li>
+      <li>B.Tech in Electrical and Electronics Engineering (EEE)</li>
+      <li>B.Tech in Electronics and Instrumentation Engineering (EIE)</li>
+      <li>B.Tech in Information Technology (IT)</li>
+      <li>B.Tech in Mechanical Engineering</li>
+      <li>B.Tech in Electronics Engineering (VLSI Design and Technology)</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Postgraduate Programs (M.Tech – 2 Years)</h3>
+    <ul>
+      <li>M.Tech in Artificial Intelligence</li>
+      <li>M.Tech in Data Sciences</li>
+      <li>M.Tech in Electrical Power Engineering</li>
+      <li>M.Tech in Embedded Systems</li>
+      <li>M.Tech in Structural Engineering</li>
+      <li>M.Tech in VLSI Design</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Doctoral Programs (Ph.D.)</h3>
+    <ul>
+      <li>Ph.D. in Computer Science and Engineering (CSE)</li>
+      <li>Ph.D. in Electronics and Communication Engineering (ECE)</li>
+    </ul>
+  </div>
+  <p>
+    The curriculum is regularly updated and includes project work, internships, and industry interaction. CVR is also active in research, innovation, and entrepreneurship initiatives.
+  </p>
+</section>
+
+<section id="admissions">
+  <h2>Admission Process</h2>
+  <p>
+    Admissions to CVR are based on merit through state and national-level entrance exams. The process is transparent and follows government and university norms.
+  </p>
+  <div class="highlight">
+    <h3>🎓 Undergraduate Programs (B.Tech)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> 10+2 with Mathematics, Physics, and Chemistry.</li>
+      <li><strong>Entrance Exam:</strong> <a href="https://eamcet.tsche.ac.in" target="_blank">TS EAMCET</a> (for Telangana state quota).</li>
+      <li><strong>Counseling:</strong> Through TS EAMCET web counseling. Select "CVR" as your preferred option (EAMCET Code: CVRH).</li>
+      <li><strong>Management Quota:</strong> Direct admission for eligible candidates as per guidelines.</li>
+      <li><strong>Fee Payment:</strong> Pay the prescribed fees to confirm admission.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Postgraduate Programs (M.Tech)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> B.E./B.Tech in relevant branch.</li>
+      <li><strong>Entrance Exams:</strong> <a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a> (priority), <a href="https://pgecet.tsche.ac.in/" target="_blank">TS PGECET</a> (state quota).</li>
+      <li><strong>Counseling:</strong> Through GATE/PGECET counseling. Choose CVR.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Doctoral Programs (Ph.D.)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> M.E./M.Tech or equivalent in relevant discipline.</li>
+      <li><strong>Entrance:</strong> As per JNTUH Ph.D. admission norms.</li>
+    </ul>
+  </div>
+  <div class="cta">
+    <a href="https://cvr.ac.in/home4/index.php/admissions" target="_blank">📄 Visit Official Admission Portal</a>
+  </div>
+</section>
+
+<section id="cutoff">
+  <h2>📊 TS EAMCET Cutoff Ranks – CVR College of Engineering (2023)</h2>
+  <p>The table below shows the <strong>Opening and Closing Ranks</strong> for various branches at CVR for the 2023 TS EAMCET counseling (OC category):</p>
+  <div class="highlight" style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead style="background: #c8e6c9;">
+        <tr>
+          <th style="padding: 10px;">Branch</th>
+          <th style="padding: 10px;">Opening Rank</th>
+          <th style="padding: 10px;">Closing Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Computer Science and Engineering</td><td>1,057</td><td>1,517</td></tr>
+        <tr><td>CSE (AI & ML)</td><td>1,517</td><td>1,836</td></tr>
+        <tr><td>CSE (Cyber Security)</td><td>4,938</td><td>6,690</td></tr>
+        <tr><td>CSE (Data Science)</td><td>1,569</td><td>3,276</td></tr>
+        <tr><td>Information Technology</td><td>1,654</td><td>1,856</td></tr>
+        <tr><td>Electronics and Communication Engineering</td><td>2,541</td><td>7,472</td></tr>
+        <tr><td>Electrical and Electronics Engineering</td><td>16,141</td><td>17,450</td></tr>
+        <tr><td>Civil Engineering</td><td>30,547</td><td>42,377</td></tr>
+        <tr><td>Electronics and Instrumentation Engineering</td><td>39,094</td><td>47,194</td></tr>
+        <tr><td>Mechanical Engineering</td><td>53,430</td><td>95,797</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="https://cvr.ac.in/home4/index.php/admissions/cutoff" target="_blank" download>
+      📥 Download Full Cutoff PDF
+    </a>
+  </div>
+  <div class="highlight" style="margin-top: 20px;">
+    <p><strong>Note:</strong> Ranks are based on TS EAMCET 2023 data. For category-wise and updated cutoffs, refer to the official site.</p>
+  </div>
+</section>
+
+<section id="fees">
+  <h2>CVR Fee Structure (2024 – 2025)</h2>
+  <p>CVR offers affordable fee structures for all programs. Below is the indicative fee structure for 2024–25 (subject to change as per university/government norms):</p>
+  <div class="highlight">
+    <h3>B.Tech Annual Tuition Fee</h3>
+    <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background-color: #e0f2f1; color: #004d40;">
+          <th style="padding: 10px; border: 1px solid #ccc;">Branch</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Annual Tuition Fee (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>All Branches (Convener Quota)</td><td>₹1,10,000</td></tr>
+        <tr><td>All Branches (Management Quota)</td><td>₹1,40,000</td></tr>
+      </tbody>
+    </table>
+    <h4 style="margin-top: 25px;">Additional Charges</h4>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Library & Lab Fees:</strong> ₹5,000 (approx, per year)</li>
+      <li><strong>Exam Fees:</strong> ₹1,500/semester</li>
+      <li><strong>Hostel:</strong> ₹40,000/year (approx, optional, for girls only)</li>
+      <li><strong>Transport:</strong> As per actuals (optional)</li>
+    </ul>
+    <p style="margin-top: 10px;"><strong>Note:</strong> Fees are subject to revision by the college/university/government. For the latest fee details, refer to the official website.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Contact Us for Scholarships, Seat Booking & Payment Plans</a>
+  </div>
+</section>
+
+<section id="placements">
+  <h2>CVR Placements (2024)</h2>
+  <p>CVR has a stellar placement record, with top MNCs and core companies recruiting across all branches. The Centre for Student Services and Placement organizes campus drives, internships, and skill-building workshops.</p>
+  <div class="highlight">
+    <h3>Placement Highlights (2023 – 2024)</h3>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Total Offers:</strong> 900+</li>
+      <li><strong>Highest Package:</strong> ₹33 LPA</li>
+      <li><strong>Average Package:</strong> ₹5.5 LPA</li>
+      <li><strong>Top Recruiters:</strong> Amazon, Oracle, Infosys, TCS, Cognizant, Accenture, Capgemini, Wipro, Deloitte, Bosch, IBM, Tech Mahindra</li>
+      <li><strong>Placement Rate:</strong> 90% (Eligible Students Placed)</li>
+    </ul>
+    <h4 style="margin-top: 20px;">Top Companies Hiring from CVR</h4>
+    <div class="gallery"><MARQUEE>
+      <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png" alt="Amazon Logo">
+      <img src="https://www.pngall.com/wp-content/uploads/13/Deloitte-Logo-PNG-Cutout.png" alt="Deloitte Logo">
+      <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Symbol.png" alt="Oracle Logo">
+      <img src="https://th.bing.com/th/id/OIP.Pu-NtqnG2cUgr75PdFeYdQHaHa?rs=1&pid=ImgDetMain" alt="Infosys Logo">
+      <img src="https://th.bing.com/th/id/OIP.LCNgAL5L174Punk-ntgy4gHaD3?rs=1&pid=ImgDetMain" alt="Wipro Logo">
+      </MARQUEE>
+    </div>
+    <p style="margin-top: 20px;"><strong>Note:</strong> Placement statistics are based on 2023–24 data. For the latest, refer to the official placement cell.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Talk to Placement Cell or View Full Report</a>
+  </div>
+</section>
+
+<section id="facilities">
+  <h2>Campus Facilities at CVR</h2>
+  <p>CVR offers a vibrant campus with all modern amenities to support academics, research, and student well-being:</p>
+  <div class="highlight">
+    <h3>🏫 Academic Infrastructure</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Smart Classrooms:</strong> Digitally enabled with projectors and Wi-Fi.</li>
+      <li><strong>Central Library:</strong> 87,500+ books, 17,000+ reference titles, 191 journals, IEEE/ASME/ASCE digital access.</li>
+      <li><strong>Labs & Research Centers:</strong> Advanced labs for all departments, Centers of Excellence in AI, IoT, VLSI, etc.</li>
+      <li><strong>Innovation Centers:</strong> Technical clubs, student societies, and project-based learning spaces.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💻 Digital & Technical Resources</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>High-Speed Wi-Fi:</strong> Campus-wide internet access.</li>
+      <li><strong>Computer Centers:</strong> Central Computing Centre with 500+ systems.</li>
+      <li><strong>Online Learning Platforms:</strong> Access to NPTEL, Coursera, and e-learning resources.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🏠 Residential & Transport</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hostel Facilities:</strong> Hostel for girls with mess, Wi-Fi, and security.</li>
+      <li><strong>Cafeteria:</strong> Multi-cuisine food courts.</li>
+      <li><strong>Transport:</strong> College buses and city bus connectivity.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">⚽ Sports & Recreation</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Sports Complex:</strong> Cricket, football, basketball, volleyball, indoor games, gymnasium.</li>
+      <li><strong>Cultural Spaces:</strong> Auditoriums, seminar halls, and student club rooms.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💡 Student Support Services</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Medical Care:</strong> On-campus health center.</li>
+      <li><strong>Counseling:</strong> Academic and psychological counseling.</li>
+      <li><strong>Banking:</strong> In-campus bank and ATM.</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>Note:</strong> All facilities are maintained as per AICTE and NBA standards.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📍 Visit Campus or Take a Virtual Tour</a>
+  </div>
+</section>
+
+<section id="campus-life">
+  <h2>Life at CVR: A Campus Beyond Classrooms</h2>
+  <p>CVR offers a vibrant student life with a blend of academics, innovation, and cultural activities. The campus is always buzzing with events, clubs, and opportunities for holistic growth.</p>
+  <div class="highlight">
+    <h3>🎉 Cultural Activities & Events</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Annual Fests:</strong> Technical and cultural fests, hackathons, workshops, and seminars.</li>
+      <li><strong>Freshers & Farewell:</strong> Welcoming and bidding adieu to students with cultural programs.</li>
+      <li><strong>National Days:</strong> Independence Day, Republic Day, Engineer's Day, Teachers' Day.</li>
+      <li><strong>Sports Fest:</strong> Annual sports festival.</li>
+      <li><strong>Graduation Day:</strong> Annual convocation ceremony.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🤝 Student Clubs & Societies</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Technical Clubs:</strong> IEEE, ISTE, CSI, Google GDG, Robotics Club, Coding Club, ACM, etc.</li>
+      <li><strong>Cultural & Literary:</strong> Music Club, Dance Club, Drama Society, Literary Club.</li>
+      <li><strong>Entrepreneurship:</strong> EDC/IIC and Innovation Hub.</li>
+      <li><strong>Social Service:</strong> NSS, Rotaract Club, and more.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🌿 Campus Environment</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Green Campus:</strong> 40 acres of lush greenery and eco-friendly initiatives.</li>
+      <li><strong>Café & Hangout Zones:</strong> Food courts and open seating areas.</li>
+      <li><strong>24/7 Security:</strong> CCTV surveillance and campus patrol.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💼 Career-Oriented Campus</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hackathons & Internships:</strong> Regular technical events and industry tie-ups.</li>
+      <li><strong>Guest Lectures:</strong> By alumni, industry experts, and professors from top institutes.</li>
+      <li><strong>Incubation Space:</strong> For student startups and innovation.</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>CVR Life = Learning + Fun + Growth</strong>. There's a place for every talent and interest here.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#gallery">📸 Explore Campus Photos & Student Stories</a>
+  </div>
+</section>
+
+<section id="campus-tour">
+  <h2>🎬 CVR Campus Tour</h2>
+  <p>Take a virtual walk through the CVR campus! Explore the modern buildings, labs, library, hostels, and student spaces. Video tours will be available soon.</p>
+  <div style="overflow-x: auto; display: flex; gap: 20px; margin-top: 25px; scroll-snap-type: x mandatory; padding-bottom: 10px;">
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour (English)</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_ENGLISH_VIDEO_ID" title="CVR Campus Tour in English" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour (Telugu)</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_TELUGU_VIDEO_ID" title="CVR Campus Tour in Telugu" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">***CAMPUS TOURS UPLOAD SOON***</a>
+  </div>
+</section>
+
+<section id="contact" style="margin-top: 60px;">
+  <h2>📬 Get in Touch with CVR College of Engineering</h2>
+  <p>For queries about admissions, fees, placements, or campus visits, reach out to us:</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+      <li><strong>🏫 Address:</strong> CVR College of Engineering, Vastunagar, Mangalpalli (V), Ibrahimpatnam (M), Ranga Reddy (D), Telangana - 501510, India</li>
+      <li><strong>📞 Phone (General Helpline):</strong> 08414-661601</li>
+      <li><strong>📧 Email:</strong> <a href="mailto:principal@cvr.ac.in">principal@cvr.ac.in</a></li>
+      <li><strong>🌐 Website:</strong> <a href="https://cvr.ac.in" target="_blank">www.cvr.ac.in</a></li>
+    </ul>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="mailto:principal@cvr.ac.in">📨 Email Us Now</a>
+  </div>
+</section>
+
+<section id="faqs" style="margin-top: 60px;">
+  <h2>❓ Frequently Asked Questions (FAQs)</h2>
+  <p>Got questions about CVR? Here are some common ones answered for your convenience.</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <details>
+      <summary>1. What is the full form of CVR?</summary>
+      <p>CVR College of Engineering.</p>
+    </details>
+    <details>
+      <summary>2. Is CVR affiliated with any university?</summary>
+      <p>Yes, it is affiliated to JNTU Hyderabad and approved by AICTE.</p>
+    </details>
+    <details>
+      <summary>3. What are the top courses offered at CVR?</summary>
+      <p>B.Tech and M.Tech in CSE, ECE, EEE, IT, Mechanical, Civil, EIE, and more.</p>
+    </details>
+    <details>
+      <summary>4. How can I get admission into CVR?</summary>
+      <p>Through TS EAMCET (B.Tech), GATE/PGECET (M.Tech), or Management Quota.</p>
+    </details>
+    <details>
+      <summary>5. What is the CVR fee for B.Tech programs?</summary>
+      <p>Convener Quota: ₹1,10,000/year. Management Quota: ₹1,40,000/year (approx.).</p>
+    </details>
+    <details>
+      <summary>6. Does CVR provide hostel facilities?</summary>
+      <p>Yes, hostel facility is available for girls.</p>
+    </details>
+    <details>
+      <summary>7. How are placements at CVR?</summary>
+      <p>CVR has a strong placement record with top companies recruiting every year.</p>
+    </details>
+    <details>
+      <summary>8. Is there a bus facility for day scholars?</summary>
+      <p>Yes, college buses and city bus connectivity are available.</p>
+    </details>
+    <details>
+      <summary>9. What extracurricular activities are available?</summary>
+      <p>Technical fests, cultural events, sports, student clubs, and more.</p>
+    </details>
+    <details>
+      <summary>10. Who can I contact for more admission-related information?</summary>
+      <p>Contact the admission office at 08414-661601 or email <a href="mailto:principal@cvr.ac.in">principal@cvr.ac.in</a>.</p>
+    </details>
+  </div>
+</section>
+
+<section id="connect" style="background: #f1f8e9; padding: 40px 20px; border-radius: 12px; margin-top: 60px; text-align: center;">
+  <h2 style="color: #33691e;">Stay Connected with CVR</h2>
+  <p style="font-size: 18px; margin: 20px auto; max-width: 800px;">
+    Follow us on social platforms for campus updates, placements, events, and student life stories. Be the first to know about admission dates, cut-offs, and important news.
+  </p>
+  <p style="font-size: 16px; color: #558b2f;">🎯 Join our vibrant student community online.</p>
+  <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+    <a href="https://instagram.com/cvr_college" target="_blank" style="background: #e91e63; color: white; padding: 14px 24px; border-radius: 40px; text-decoration: none; font-weight: bold;">
+      📸 Follow on Instagram
+    </a>
+    <a href="https://youtube.com/@cvrcollege" target="_blank" style="background: #d32f2f; color: white; padding: 14px 24px; border-radius: 40px; text-decoration: none; font-weight: bold;">
+      ▶️ Subscribe on YouTube
+    </a>
+    <a href="https://chat.whatsapp.com/your-cvr-whatsapp-group" target="_blank" style="background: #25D366; color: white; padding: 14px 24px; border-radius: 40px; text-decoration: none; font-weight: bold;">
+      💬 Join WhatsApp Community
+    </a>
+  </div>
+  <p style="margin-top: 25px; font-size: 14px; color: #757575;">
+    📢 No spam. Just quality updates. We respect your attention.
+  </p>
+</section>
+
+<section id="salutation" style="background-color: #e0f7fa; padding: 40px 20px; border-radius: 12px; margin-top: 60px; text-align: center;">
+  <h2 style="color: #00695c;">🌟 Why Choose CVR?</h2>
+  <p style="font-size: 18px; margin: 20px auto; max-width: 800px;">
+    At CVR, we nurture future engineers, innovators, and leaders. With a legacy of excellence, modern facilities, top placements, and a vibrant campus, CVR is more than a college—it's a launchpad for your dreams.
+  </p>
+  <p style="font-size: 18px; color: #004d40;"><strong>Be a part of Telangana's most prestigious engineering institution.</strong></p>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">🚀 Apply Now – Your Future Begins Here</a>
+  </div>
+</section>
+
+</html> 

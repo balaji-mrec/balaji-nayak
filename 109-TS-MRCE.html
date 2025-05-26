@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MRCE Admissions | Balaju Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+   :root {
+  --primary: #1B5E20;
+  --secondary: #66BB6A;
+  --bg: #f0fdf4;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
+header { display: flex; justify-content: space-between; align-items: center; background: rgb(109, 217, 224); padding: 20px 30px; border-bottom: 1px solid #4cb4af; flex-wrap: wrap; }
+.header-left h1 { font-size: 20px; line-height: 1.3; color: var(--primary); text-transform: uppercase; }
+.header-center { flex: 1; text-align: center; }
+.header-center h2 { font-size: 24px; color: var(--primary); font-weight: 800; }
+.header-center p { font-size: 16px; color: #2c8e48; font-weight: 600; }
+nav { background: var(--white); box-shadow: var(--shadow); padding: 12px 20px; position: sticky; top: 0; z-index: 1000; }
+nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 20px; }
+nav a { color: var(--primary); font-weight: 600; text-decoration: none; padding: 6px 12px; transition: 0.3s ease; }
+nav a:hover { background: var(--secondary); color: white; border-radius: 8px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px; margin-bottom: 40px; }
+section h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; }
+.highlight { background: #e8f5e9; padding: 20px; border-radius: 12px; margin-top: 15px; }
+.gallery { display: flex; gap: 20px; overflow-x: auto; margin-top: 15px; }
+.gallery img { height: 180px; border-radius: 12px; box-shadow: var(--shadow); }
+iframe { width: 100%; height: 360px; margin-top: 25px; border-radius: var(--radius); border: none; }
+details summary { background: #f1f8e9; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+.cta { text-align: center; margin-top: 40px; }
+.cta a { background: var(--secondary); color: white; padding: 14px 30px; font-size: 18px; font-weight: 600; border-radius: 40px; text-decoration: none; box-shadow: var(--shadow); transition: 0.3s ease; }
+.cta a:hover { background: #43a047; }
+.whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 100; }
+.whatsapp-float a { background: #25D366; color: white; padding: 14px 22px; border-radius: 40px; text-decoration: none; font-weight: bold; box-shadow: var(--shadow); }
+footer { background: #dcedc8; text-align: center; padding: 20px; font-size: 14px; color: #555; }
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; text-align: left; }
+  .header-center { text-align: left; margin-top: 10px; }
+  nav ul { flex-direction: column; align-items: center; gap: 16px; }
+  .gallery { flex-direction: column; align-items: center; }
+}
+
+
+/* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body><header>
+  <div class="header-left">
+    <h1><font size="6" color="black" face="roboto">🎓 BALANJU<br>CONSULTANCY</font></h1>
+    <p><font size="4" color="green" face="roboto">Your trusted partner in college admissions.</font></p>
+  </div>
+  <div class="header-center">
+    <h2><font size="6" color="RED" face="roboto">MRCE</font></h2>
+    <p><font size="6" color="blue" face="roboto">Malla Reddy College of Engineering</font></p>
+    <a href="https://mrce.in/images/logo.png"></a>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses Offered</a></li>
+    <li><a href="#admissions">Admission Process</a></li>
+    <li><a href="#cutoff">Cut-Offs</a></li>
+    <li><a href="#fees">Fees & Scholarships</a></li>
+    <li><a href="#placements">Placements</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#campus-life">Campus Life</a></li>
+    <li><a href="#campus-tour">Campus Tour</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+</nav>
+<div class="container">
+<!-- ABOUT SECTION -->
+<section id="about">
+  <h2>About MRCE</h2>
+  <p>
+    <strong>Malla Reddy College of Engineering (MRCE)</strong>, established in 2004, is a leading engineering institution in Hyderabad, Telangana. Affiliated to Jawaharlal Nehru Technological University Hyderabad (JNTUH) and approved by AICTE, MRCE is known for its academic excellence, modern infrastructure, and strong placement record.
+  </p>
+  <div class="highlight">
+    <ul>
+      <li><strong>Established:</strong> 2004</li>
+      <li><strong>Location:</strong> Maisammaguda, Dhulapally, Kompally, Hyderabad, Telangana, India</li>
+      <li><strong>Campus Area:</strong> 30+ acres</li>
+      <li><strong>Affiliation:</strong> JNTU Hyderabad</li>
+      <li><strong>Accreditation:</strong> AICTE, NAAC, NBA Accredited Programs</li>
+    </ul>
+  </div>
+  <p>
+    The campus features state-of-the-art classrooms, advanced laboratories, digital libraries, innovation centers, and a vibrant student community of over <strong>3,000+ students</strong>.
+  </p>
+  <p>
+    MRCE offers undergraduate and postgraduate programs in engineering and management, with a focus on industry-oriented learning and holistic development.
+  </p>
+  <div class="gallery">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxMQrxspv0BHYkvfiY5cKewCpZ-jUOjqD4Zg&s" alt="MRCE Campus View">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi4f4BeZXGfvpt45PoFBgqZSm7Irt_9UjedbcOTA7UONaKopuhsgUesING9wEe59piusE&usqp=CAU" alt="MRCE Main Building">
+    <img src="https://mrce.in/assets/images/Home/4_1.jpg" alt="MRCE Library">
+    <img src="https://mrce.in/img/library/3.jpg" alt="MRCE Lab">
+  </div>
+</section>
+<!-- COURSES SECTION -->
+<section id="courses">
+  <h2>Courses Offered at MRCE</h2>
+  <p>
+    MRCE offers a variety of undergraduate and postgraduate programs in engineering and management, designed to meet industry needs and foster innovation.
+  </p>
+  <div class="highlight">
+    <h3>Undergraduate Programs (B.Tech – 4 Years)</h3>
+    <ul>
+      <li>B.Tech in Computer Science and Engineering (CSE)</li>
+      <li>B.Tech in Artificial Intelligence & Data Science (AI & DS)</li>
+      <li>B.Tech in Information Technology (IT)</li>
+      <li>B.Tech in Electronics and Communication Engineering (ECE)</li>
+      <li>B.Tech in Electrical and Electronics Engineering (EEE)</li>
+      <li>B.Tech in Mechanical Engineering</li>
+      <li>B.Tech in Civil Engineering</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Postgraduate Programs (M.Tech – 2 Years)</h3>
+    <ul>
+      <li>M.Tech in Computer Science and Engineering</li>
+      <li>M.Tech in VLSI Design</li>
+      <li>M.Tech in Power Electronics</li>
+      <li>M.Tech in Structural Engineering</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Management Program</h3>
+    <ul>
+      <li>Master of Business Administration (MBA)</li>
+    </ul>
+  </div>
+</section>
+<!-- ADMISSIONS SECTION -->
+<section id="admissions">
+  <h2>Admission Process</h2>
+  <p>
+    Admission to MRCE is based on merit through state-level entrance exams. Here is a quick guide to the process:
+  </p>
+  <div class="highlight">
+    <h3>🎓 Undergraduate Programs (B.Tech)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> 10+2 with Mathematics, Physics, Chemistry (min 45% marks; 40% for reserved categories).</li>
+      <li><strong>Entrance Exam:</strong> <a href="https://eamcet.tsche.ac.in" target="_blank">TS EAMCET</a> (Telangana State Engineering, Agriculture & Medical Common Entrance Test).</li>
+      <li><strong>Application:</strong> Apply online for TS EAMCET (March–April). Exam in May.</li>
+      <li><strong>Counseling:</strong> Attend web-based counseling by TS EAMCET Convener.</li>
+      <li><strong>Seat Allotment:</strong> Based on rank and preferences.</li>
+      <li><strong>Management/NRI Quota:</strong> 30% seats via Management/NRI Quota. Contact college directly.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Postgraduate Programs (M.Tech)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> B.E./B.Tech in relevant discipline (min 50% marks; 45% for reserved categories).</li>
+      <li><strong>Entrance Exams:</strong> GATE or TS PGECET.</li>
+      <li><strong>Counseling:</strong> By TS PGECET Convener.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>📘 MBA</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> Bachelor's degree (min 50% marks; 45% for reserved categories).</li>
+      <li><strong>Entrance Exam:</strong> <a href="https://icet.tsche.ac.in/" target="_blank">TS ICET</a>.</li>
+    </ul>
+  </div>
+  <div class="cta">
+    <a href="https://mrce.in/admissions" target="_blank">📄 Visit Official Admission Portal</a>
+  </div>
+</section>
+<!-- CUTOFF SECTION -->
+<section id="cutoff">
+  <h2>📊 TS EAMCET Cutoff Ranks – MRCE (2024)</h2>
+  <p>Below are the <strong>Opening and Closing Ranks</strong> for popular branches at MRCE (2024, OC category):</p>
+  <div class="highlight" style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead style="background: #c8e6c9;">
+        <tr>
+          <th style="padding: 10px;">Branch</th>
+          <th style="padding: 10px;">Opening Rank</th>
+          <th style="padding: 10px;">Closing Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CSE</td><td>7,000</td><td>18,000</td></tr>
+        <tr><td>AI & DS</td><td>10,500</td><td>22,000</td></tr>
+        <tr><td>IT</td><td>12,000</td><td>25,000</td></tr>
+        <tr><td>ECE</td><td>13,000</td><td>28,000</td></tr>
+        <tr><td>EEE</td><td>18,000</td><td>35,000</td></tr>
+        <tr><td>Mechanical</td><td>22,000</td><td>45,000</td></tr>
+        <tr><td>Civil</td><td>25,000</td><td>50,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#" target="_blank" download>📥 Download Full Cutoff PDF</a>
+  </div>
+  <div class="highlight" style="margin-top: 20px;">
+    <p><strong>Note:</strong> Ranks are based on TS EAMCET 2024 data. Management quota cutoffs are different.</p>
+  </div>
+</section>
+<!-- FEES SECTION -->
+<section id="fees">
+  <h2>MRCE Fee Structure (2024 – 2025)</h2>
+  <p>MRCE follows a transparent fee structure for all programs. Below is the fee breakdown for 2024–25:</p>
+  <div class="highlight">
+    <h3>B.Tech Annual Tuition Fee</h3>
+    <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background-color: #e0f2f1; color: #004d40;">
+          <th style="padding: 10px; border: 1px solid #ccc;">Branch</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Convener Quota (INR)</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Management Quota (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">CSE/IT/AI & DS</td><td style="padding: 10px; border: 1px solid #ccc;">₹90,000</td><td style="padding: 10px; border: 1px solid #ccc;">₹1,40,000</td></tr>
+        <tr style="background-color: #f9f9f9;"><td style="padding: 10px; border: 1px solid #ccc;">ECE/EEE</td><td style="padding: 10px; border: 1px solid #ccc;">₹80,000</td><td style="padding: 10px; border: 1px solid #ccc;">₹1,20,000</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">Mechanical/Civil</td><td style="padding: 10px; border: 1px solid #ccc;">₹70,000</td><td style="padding: 10px; border: 1px solid #ccc;">₹1,00,000</td></tr>
+      </tbody>
+    </table>
+    <h4 style="margin-top: 25px;">Additional Charges</h4>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Examination Fee:</strong> ₹1,500/semester</li>
+      <li><strong>Library & Lab Fees:</strong> ₹5,000 - ₹10,000/year</li>
+      <li><strong>Hostel:</strong> ₹40,000 - ₹60,000/year (optional)</li>
+      <li><strong>Transport:</strong> ₹10,000 - ₹25,000/year (optional)</li>
+    </ul>
+    <p style="margin-top: 10px;"><strong>Note:</strong> Fee reimbursement available for eligible SC/ST/BC/EBC students as per Telangana Govt. rules. Management quota fees may vary.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Contact Us for Scholarships, Seat Booking & Payment Plans</a>
+  </div>
+</section>
+<!-- PLACEMENTS SECTION -->
+<section id="placements">
+  <h2>MRCE Placements (2024)</h2>
+  <p>MRCE has a strong placement record, with top MNCs and core companies recruiting across all branches. The Training & Placement Cell ensures students are industry-ready through internships, workshops, and campus drives.</p>
+  <div class="highlight">
+    <h3>Placement Highlights (2023 – 2024)</h3>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Total Offers:</strong> 600+</li>
+      <li><strong>Highest Package:</strong> ₹18 LPA (Amazon, CSE Branch)</li>
+      <li><strong>Average Package:</strong> ₹4.2 LPA</li>
+      <li><strong>Top Recruiters:</strong> Amazon, Infosys, TCS, Wipro, Capgemini, Cognizant, HCL, Tech Mahindra</li>
+      <li><strong>Placement Rate:</strong> 75%+</li>
+    </ul>
+    <h4 style="margin-top: 20px;">Branch-wise Average Package</h4>
+    <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+      <thead>
+        <tr style="background-color: #e0f2f1; color: #004d40;">
+          <th style="padding: 10px; border: 1px solid #ccc;">Branch</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Average Package</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Highest Package</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">CSE</td><td style="padding: 10px; border: 1px solid #ccc;">₹4.8 LPA</td><td style="padding: 10px; border: 1px solid #ccc;">₹18 LPA</td></tr>
+        <tr style="background-color: #f9f9f9;"><td style="padding: 10px; border: 1px solid #ccc;">IT</td><td style="padding: 10px; border: 1px solid #ccc;">₹4.5 LPA</td><td style="padding: 10px; border: 1px solid #ccc;">₹14 LPA</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">ECE</td><td style="padding: 10px; border: 1px solid #ccc;">₹4.0 LPA</td><td style="padding: 10px; border: 1px solid #ccc;">₹10 LPA</td></tr>
+        <tr style="background-color: #f9f9f9;"><td style="padding: 10px; border: 1px solid #ccc;">AI & DS</td><td style="padding: 10px; border: 1px solid #ccc;">₹4.2 LPA</td><td style="padding: 10px; border: 1px solid #ccc;">₹12 LPA</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">EEE</td><td style="padding: 10px; border: 1px solid #ccc;">₹3.8 LPA</td><td style="padding: 10px; border: 1px solid #ccc;">₹8 LPA</td></tr>
+      </tbody>
+    </table>
+    <h4 style="margin-top: 25px;">Top Companies Hiring from MRCE</h4>
+    <div class="gallery">
+      <MARQUEE scroolamount="200">
+      <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png" alt="Amazon Logo">
+      <img src="https://www.pngall.com/wp-content/uploads/13/Deloitte-Logo-PNG-Cutout.png" alt="Deloitte Logo">
+      <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Symbol.png" alt="Oracle Logo">
+      <img src="https://th.bing.com/th/id/OIP.Pu-NtqnG2cUgr75PdFeYdQHaHa?rs=1&pid=ImgDetMain" alt="Infosys Logo">
+      <img src="https://th.bing.com/th/id/OIP.LCNgAL5L174Punk-ntgy4gHaD3?rs=1&pid=ImgDetMain" alt="Wipro Logo">
+      </MARQUEE>
+    </div>
+    <p style="margin-top: 20px;"><strong>Note:</strong> Placement stats are based on 2023–24 data. More companies participate every year.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Talk to Placement Cell or View Full Report</a>
+  </div>
+</section>
+<!-- FACILITIES SECTION -->
+<section id="facilities">
+  <h2>Campus Facilities at MRCE</h2>
+  <p>MRCE offers a modern, well-equipped campus to support academics, innovation, and student well-being. Here are the core facilities:</p>
+  <div class="highlight">
+    <h3>🏫 Academic Infrastructure</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Smart Classrooms:</strong> Digitally enabled with projectors, Wi-Fi, and ergonomic seating.</li>
+      <li><strong>Central Library:</strong> 50,000+ books, e-journals, digital access to IEEE, Springer, and more.</li>
+      <li><strong>Labs & Research Centers:</strong> Advanced labs for AI, IoT, Robotics, VLSI, Data Science, etc.</li>
+      <li><strong>Innovation Centers:</strong> MRCE Innovation Cell, Entrepreneurship Cell, and Technology Incubation Center.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💻 Digital & Technical Resources</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>High-Speed Wi-Fi:</strong> Campus-wide internet access.</li>
+      <li><strong>Computer Centers:</strong> 600+ systems with latest software tools.</li>
+      <li><strong>Online Learning Platforms:</strong> Access to NPTEL, Coursera, edX, and university LMS.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🏠 Residential & Transport</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hostel Facilities:</strong> Separate hostels for boys and girls with modern amenities.</li>
+      <li><strong>Cafeteria:</strong> Multi-cuisine food courts and canteens.</li>
+      <li><strong>Transport:</strong> 15+ buses covering Hyderabad and suburbs.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">⚽ Sports & Recreation</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Sports Complex:</strong> Cricket, football, basketball, volleyball, indoor games.</li>
+      <li><strong>Gymnasium:</strong> Modern fitness center for students and staff.</li>
+      <li><strong>Cultural Spaces:</strong> Auditorium, open-air theater, and club rooms.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💡 Student Support Services</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Medical Care:</strong> 24/7 health center with doctors and ambulance.</li>
+      <li><strong>Counseling:</strong> Professional counselors for student well-being.</li>
+      <li><strong>Banking:</strong> On-campus bank branches and ATMs.</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>Note:</strong> Facilities are regularly upgraded to meet NAAC and NBA standards.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📍 Visit Campus or Take a Virtual Tour</a>
+  </div>
+</section>
+<!-- CAMPUS LIFE SECTION -->
+<section id="campus-life">
+  <h2>Life at MRCE: Beyond Academics</h2>
+  <p>MRCE fosters holistic growth through vibrant student clubs, fests, and a lively campus environment.</p>
+  <div class="highlight">
+    <h3>🎉 Cultural Activities & Events</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Festivals:</strong> Annual cultural festival with music, dance, drama, and fashion shows.</li>
+      <li><strong>Technical Fests:</strong> National-level technical symposium with workshops, hackathons, and competitions.</li>
+      <li><strong>Freshers & Farewell:</strong> Grand celebrations for new and graduating students.</li>
+      <li><strong>National Days:</strong> Independence Day, Republic Day, Engineer's Day, and more.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🤝 Student Clubs & Societies</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Technical Clubs:</strong> IEEE, ACM, GDSC, Robotics Club, Coding Club.</li>
+      <li><strong>Cultural & Literary:</strong> Music, Dance, Drama, Literary, Photography, and Art Clubs.</li>
+      <li><strong>Entrepreneurship:</strong> E-Cell, Startup Incubation Center.</li>
+      <li><strong>Social Service:</strong> NSS, NCC, Red Cross, Green Campus Initiative.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🌿 Campus Environment</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Green Campus:</strong> 30+ acres of greenery, eco-friendly initiatives.</li>
+      <li><strong>Café & Hangout Zones:</strong> Student lounges, discussion areas, and recreation zones.</li>
+      <li><strong>24/7 Security:</strong> CCTV surveillance and professional security staff.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💼 Career-Oriented Campus</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hackathons & Internships:</strong> Regular industry-sponsored events and internships.</li>
+      <li><strong>Guest Lectures:</strong> By industry experts and alumni.</li>
+      <li><strong>Incubation Space:</strong> Startup support and funding opportunities.</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>MRCE Life = Learning + Innovation + Leadership</strong>. There's a place for everyone here!</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#gallery">📸 Explore Campus Photos & Student Stories</a>
+  </div>
+</section>
+<!-- CAMPUS TOUR SECTION -->
+<section id="campus-tour">
+  <h2>🎬 MRCE Campus Tour</h2>
+  <p>Take a virtual walk through MRCE! Explore our green campus, modern labs, classrooms, and vibrant student spaces. Video tours in Telugu, English, and Hindi will be available soon.</p>
+  <div style="overflow-x: auto; display: flex; gap: 20px; margin-top: 25px; scroll-snap-type: x mandatory; padding-bottom: 10px;">
+    <!-- Telugu Tour -->
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour in Telugu</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_TELUGU_VIDEO_ID" title="MRCE Campus Tour in Telugu" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+    <!-- English Tour -->
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour in English</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_ENGLISH_VIDEO_ID" title="MRCE Campus Tour in English" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+    <!-- Hindi Tour -->
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour in Hindi</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_HINDI_VIDEO_ID" title="MRCE Campus Tour in Hindi" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">***CAMPUS TOURS UPLOAD SOON***</a>
+  </div>
+</section>
+<!-- CONTACT SECTION -->
+<section id="contact" style="margin-top: 60px;">
+  <h2>📬 Get in Touch with MRCE</h2>
+  <p>For queries about admissions, fees, placements, or campus visits — reach out to us below:</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+      <li><strong>🏫 Address:</strong> Malla Reddy College of Engineering, Maisammaguda, Dhulapally, Kompally, Secunderabad – 500100, Telangana, India</li>
+      <li><strong>📞 Phone (General Helpline):</strong> +91-40-64634234 / 64634235</li>
+      <li><strong>📱 Admission Helpline:</strong> +91-9000000000 / 8000000000</li>
+      <li><strong>📧 Email:</strong> <a href="mailto:info@mrce.in">info@mrce.in</a></li>
+      <li><strong>🌐 Website:</strong> <a href="https://mrce.in" target="_blank">mrce.in</a></li>
+    </ul>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="mailto:info@mrce.in">📨 Email Us Now</a>
+  </div>
+</section>
+<!-- FAQ SECTION -->
+<section id="faqs" style="margin-top: 60px;">
+  <h2>❓ Frequently Asked Questions (FAQs)</h2>
+  <p>Got questions about MRCE? Here are some common ones answered for your convenience.</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <details>
+      <summary>1. What is the full form of MRCE?</summary>
+      <p>MRCE stands for Malla Reddy College of Engineering, Hyderabad.</p>
+    </details>
+    <details>
+      <summary>2. Is MRCE autonomous?</summary>
+      <p>No, MRCE is affiliated to JNTU Hyderabad and is not autonomous.</p>
+    </details>
+    <details>
+      <summary>3. What are the top courses offered at MRCE?</summary>
+      <p>B.Tech in CSE, IT, ECE, EEE, Mechanical, Civil, AI & DS, and MBA.</p>
+    </details>
+    <details>
+      <summary>4. How can I get admission into MRCE?</summary>
+      <p>Through TS EAMCET for B.Tech, PGECET/GATE for M.Tech, ICET for MBA, or Management Quota.</p>
+    </details>
+    <details>
+      <summary>5. What is the MRCE fee for B.Tech programs?</summary>
+      <p>Convener Quota: ₹90,000/year (CSE/IT/AI & DS). Management Quota: ₹1,40,000/year (CSE/IT/AI & DS).</p>
+    </details>
+    <details>
+      <summary>6. Does MRCE provide hostel facilities?</summary>
+      <p>Yes, MRCE provides separate hostels for boys and girls with modern amenities.</p>
+    </details>
+    <details>
+      <summary>7. How are placements at MRCE?</summary>
+      <p>MRCE has a good placement record with top companies and decent packages.</p>
+    </details>
+    <details>
+      <summary>8. Is there a bus facility for day scholars?</summary>
+      <p>Yes, MRCE provides extensive bus services covering Hyderabad and nearby areas.</p>
+    </details>
+    <details>
+      <summary>9. What extracurricular activities are available?</summary>
+      <p>MRCE offers numerous student clubs, annual fests, sports tournaments, hackathons, and cultural events.</p>
+    </details>
+    <details>
+      <summary>10. Who can I contact for more admission-related information?</summary>
+      <p>You can contact the admission office at +91-9000000000 or email <a href="mailto:admissions@mrce.in">admissions@mrce.in</a>.</p>
+    </details>
+  </div>
+</section>
+</div>
+<!-- SOCIAL/CONNECT SECTION -->
+<section id="connect" style="background-color: #f1f8e9; padding: 50px 20px; border-radius: 12px; margin-top: 60px; text-align: center; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with MRCE</h2>
+  <p style="font-size: 18px; max-width: 800px; margin: 0 auto 20px; color: #424242;">
+    Your MRCE journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
+  </p>
+  <p style="font-size: 16px; color: #558b2f; margin-bottom: 30px;">
+    🎯 Don't just explore — become a part of our vibrant online community.
+  </p>
+  <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 30px;">
+    <a href="https://www.instagram.com/mrceofficial/" target="_blank" style="background-color: #e91e63; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      📸 Instagram
+    </a>
+    <a href="https://www.youtube.com/@MRCEOfficial" target="_blank" style="background-color: #d32f2f; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      ▶ YouTube
+    </a>
+    <a href="https://chat.whatsapp.com/PLACEHOLDER" target="_blank" style="background-color: #25D366; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      💬 WhatsApp Community
+    </a>
+    <a href="https://www.linkedin.com/school/malla-reddy-college-of-engineering/" target="_blank" style="background-color: #0077b5; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      💼 LinkedIn
+    </a>
+  </div>
+  <p style="font-size: 14px; color: #757575;">
+    📢 We respect your attention. No spam — only meaningful updates and insights.
+  </p>
+</section>
+<!-- SALUTATION SECTION -->
+<section id="salutation" style="background-color: #e0f7fa; padding: 40px 20px; border-radius: 12px; margin-top: 60px; text-align: center;">
+  <h2 style="color: #00695c;">🌟 Why Choose MRCE?</h2>
+  <p style="font-size: 18px; margin: 20px auto; max-width: 800px;">
+    At MRCE, we nurture not just engineers, but future leaders, innovators, and changemakers. With a legacy of excellence, modern facilities, top placements, and a vibrant campus life, MRCE is more than a college — it's a launchpad for your dreams.
+  </p>
+  <p style="font-size: 18px; color: #004d40;"><strong>Be a part of Telangana's top engineering institution.</strong></p>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">🚀 Apply Now – Your Future Begins Here</a>
+  </div>
+</section>
+</body>
+</html>

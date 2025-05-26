@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Osmania University Hyderabad Admissions | Balaju Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+   :root {
+  --primary: #003366;
+  --secondary: #ffd700;
+  --bg: #f7faff;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: #222; line-height: 1.6; }
+header { display: flex; justify-content: space-between; align-items: center; background: var(--primary); padding: 20px 30px; border-bottom: 1px solid var(--secondary); flex-wrap: wrap; }
+.header-left h1 { font-size: 20px; line-height: 1.3; color: var(--white); text-transform: uppercase; }
+.header-center { flex: 1; text-align: center; }
+.header-center h2 { font-size: 24px; color: var(--white); font-weight: 800; }
+.header-center p { font-size: 16px; color: var(--secondary); font-weight: 600; }
+nav { background: var(--white); box-shadow: var(--shadow); padding: 12px 20px; position: sticky; top: 0; z-index: 1000; }
+nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 20px; }
+nav a { color: var(--primary); font-weight: 600; text-decoration: none; padding: 6px 12px; transition: 0.3s ease; }
+nav a:hover { background: var(--secondary); color: white; border-radius: 8px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px; margin-bottom: 40px; }
+section h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; }
+.highlight { background: #e3f2fd; padding: 20px; border-radius: 12px; margin-top: 15px; }
+.gallery { display: flex; gap: 20px; overflow-x: auto; margin-top: 15px; }
+.gallery img { height: 180px; border-radius: 12px; box-shadow: var(--shadow); }
+iframe { width: 100%; height: 360px; margin-top: 25px; border-radius: var(--radius); border: none; }
+details summary { background: #fffde7; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+.cta { text-align: center; margin-top: 40px; }
+.cta a { background: var(--secondary); color: var(--primary); padding: 14px 30px; font-size: 18px; font-weight: 600; border-radius: 40px; text-decoration: none; box-shadow: var(--shadow); transition: 0.3s ease; }
+.cta a:hover { background: var(--primary); color: var(--secondary); }
+.whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 100; }
+.whatsapp-float a { background: #25D366; color: white; padding: 14px 22px; border-radius: 40px; text-decoration: none; font-weight: bold; box-shadow: var(--shadow); }
+footer { background: #fffde7; text-align: center; padding: 20px; font-size: 14px; color: #555; }
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; text-align: left; }
+  .header-center { text-align: left; margin-top: 10px; }
+  nav ul { flex-direction: column; align-items: center; gap: 16px; }
+  .gallery { flex-direction: column; align-items: center; }
+}
+
+/* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <h1><font size="6" color="white" face="roboto">🎓 BALANJU<br>CONSULTANCY</font></h1>
+    <p><font size="4" color="#ffd700" face="roboto">Your trusted partner in college admissions.</font></p>
+  </div>
+  <div class="header-center">
+    <h2><font size="6" color="#fff" face="roboto">OU</font></h2>
+    <p><font size="6" color="#ffd700" face="roboto">Osmania University, Hyderabad</font></p>
+    <a href="https://www.osmania.ac.in/images/ou-logo.png"></a>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses Offered</a></li>
+    <li><a href="#admissions">Admission Process</a></li>
+    <li><a href="#cutoff">Cut-Offs</a></li>
+    <li><a href="#fees">Fees & Scholarships</a></li>
+    <li><a href="#placements">Placements</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#campus-life">Campus Life</a></li>
+    <li><a href="#campus-tour">Campus Tour</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+</nav>
+<div class="container">
+<section id="about">
+  <h2>About Osmania University (OU), Hyderabad</h2>
+  <p>
+    <strong>Osmania University</strong>, established in 1918, is one of India's oldest and most prestigious universities. Located in Hyderabad, Telangana, OU is accredited with an 'A++' grade by NAAC and recognized by UGC. The university spans over 1,600 acres and offers a wide range of undergraduate, postgraduate, and doctoral programs across various disciplines.
+  </p>
+  <div class="highlight">
+    <ul>
+      <li><strong>Established:</strong> 1918 (7th oldest in India)</li>
+      <li><strong>Location:</strong> Amberpet, Hyderabad, Telangana</li>
+      <li><strong>Campus Area:</strong> 1,600+ acres</li>
+      <li><strong>Affiliation:</strong> UGC, NAAC A++</li>
+      <li><strong>Accreditation:</strong> NAAC A++, UGC 12(B), 2(F)</li>
+    </ul>
+  </div>
+  <p>
+    The iconic campus features historic buildings, modern academic blocks, extensive libraries, hostels, sports facilities, and a vibrant multicultural student community.
+  </p>
+  <div class="gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Osmania_University_Logo.png" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvfvgOAIV8O3QwylwxEHjPm7PdJ92cj4wftg&s" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOo6dPhbFUAj446RatncC9jBQkHr3cPU_JiA&s" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sS-d1UDm-vp2duN9-LSsfB_1p7wfXAJqEw&s" alt="OU Main Building">
+    <img src="https://ucl.osmania.ac.in/images/gallery/4.jpg" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-PF32TsJbd1P2A6qJc7EtZWQdSydRe_cz4Q&s" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmYgE5Z8RuSA1OjUtIJ1LicYPmeelrcz0NfA&s" alt="OU Main Building">
+    <img src="https://static.zollege.in/public/image/osmania_lib_b8e478d944896f676f5dcdabf98cd367.png" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiNpDCtg-1rE7KI3tlnzU7SNhuPzjSC13XA&s" alt="OU Main Building">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSruxyoSgY9pzY4N_pFi1OP0B_PbRQEXSRDgA&s" alt="OU Main Building">
+    
+  </div>
+</section>
+
+<section id="courses">
+  <h2>Courses Offered at Osmania University</h2>
+  <p>
+    OU offers diverse programs through its various constituent colleges and affiliated institutions.
+  </p>
+  <div class="highlight">
+    <h3>Undergraduate Programs</h3>
+    <ul>
+      <li>B.A. (Various Specializations)</li>
+      <li>B.Sc. (Mathematics, Physics, Chemistry, Life Sciences)</li>
+      <li>B.Com (General, Computers, Honors)</li>
+      <li>BBA</li>
+      <li>B.Ed</li>
+      <li>LLB</li>
+      <li>B.Tech (Various branches through affiliated colleges)</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Postgraduate Programs</h3>
+    <ul>
+      <li>M.A. (English, History, Economics, Political Science, etc.)</li>
+      <li>M.Sc. (Mathematics, Physics, Chemistry, Biotechnology, etc.)</li>
+      <li>M.Com</li>
+      <li>MBA</li>
+      <li>MCA</li>
+      <li>M.Tech</li>
+      <li>LLM</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Research Programs</h3>
+    <ul>
+      <li>Ph.D. in all major disciplines</li>
+      <li>M.Phil in selected disciplines</li>
+    </ul>
+  </div>
+</section>
+
+<section id="admissions">
+  <h2>Admission Process</h2>
+  <p>
+    Admission to OU programs is based on merit through entrance exams and qualifying examinations.
+  </p>
+  <div class="highlight">
+    <h3>🎓 Undergraduate Programs</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> 10+2 with relevant subjects (min 50% marks)</li>
+      <li><strong>Entrance Exams:</strong> TS EAMCET (for professional courses), OU CET (for other UG courses)</li>
+      <li><strong>Counseling:</strong> Centralized counseling by university</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Postgraduate Programs</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> Relevant bachelor's degree with minimum 50% marks</li>
+      <li><strong>Entrance Exams:</strong> OU PGCET, TS ICET (for MBA/MCA), GATE (for M.Tech)</li>
+      <li><strong>Counseling:</strong> University-conducted counseling</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Research Programs</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> Master's degree with minimum 55% marks</li>
+      <li><strong>Entrance:</strong> OU Ph.D. Entrance Test (OUPET) or UGC-NET/JRF qualified</li>
+      <li><strong>Interview:</strong> Mandatory after qualifying written test</li>
+    </ul>
+  </div>
+  <div class="cta">
+    <a href="https://www.osmania.ac.in/admissions/" target="_blank">📄 Visit Official Admission Portal</a>
+  </div>
+</section>
+
+<section id="cutoff">
+  <h2>📊 OU CET Cut-Offs (2024)</h2>
+  <p>Below are the <strong>Indicative Closing Ranks</strong> for popular courses at OU (2024):</p>
+  <div class="highlight" style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead style="background: #fffde7;">
+        <tr>
+          <th style="padding: 10px;">Course</th>
+          <th style="padding: 10px;">Closing Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>B.Sc (Computer Science)</td><td>1,200</td></tr>
+        <tr><td>B.Sc (Mathematics)</td><td>2,500</td></tr>
+        <tr><td>B.Com (Computers)</td><td>1,800</td></tr>
+        <tr><td>BA (English Literature)</td><td>3,200</td></tr>
+        <tr><td>BBA</td><td>2,000</td></tr>
+        <tr><td>B.Sc (Biotechnology)</td><td>1,500</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#" target="_blank" download>📥 Download Full Cutoff PDF</a>
+  </div>
+</section>
+
+<section id="fees">
+  <h2>OU Fee Structure (2024 – 2025)</h2>
+  <p>OU follows an affordable fee structure for all programs. Below is the fee breakdown:</p>
+  <div class="highlight">
+    <h3>Undergraduate Annual Tuition Fee</h3>
+    <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background-color: #e3f2fd; color: #003366;">
+          <th style="padding: 10px; border: 1px solid #ccc;">Course</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">General (INR)</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">SC/ST (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">B.A./B.Sc./B.Com</td><td style="padding: 10px; border: 1px solid #ccc;">₹5,000 - ₹8,000</td><td style="padding: 10px; border: 1px solid #ccc;">₹2,000 - ₹4,000</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">BBA/BCA</td><td style="padding: 10px; border: 1px solid #ccc;">₹12,000</td><td style="padding: 10px; border: 1px solid #ccc;">₹6,000</td></tr>
+        <tr><td style="padding: 10px; border: 1px solid #ccc;">Professional Courses</td><td style="padding: 10px; border: 1px solid #ccc;">₹15,000 - ₹25,000</td><td style="padding: 10px; border: 1px solid #ccc;">₹7,500 - ₹12,500</td></tr>
+      </tbody>
+    </table>
+    <h4 style="margin-top: 25px;">Additional Charges</h4>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Examination Fee:</strong> ₹1,000/semester</li>
+      <li><strong>Library Fee:</strong> ₹500/year</li>
+      <li><strong>Hostel:</strong> ₹10,000/year (optional)</li>
+      <li><strong>Transport:</strong> Not available (city campus)</li>
+    </ul>
+    <p style="margin-top: 10px;"><strong>Note:</strong> Fee reimbursement available for eligible SC/ST/BC/EBC students as per Telangana Govt. rules.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Contact Us for Scholarships & Payment Plans</a>
+  </div>
+</section>
+
+<section id="placements">
+  <h2>OU Placements (2024)</h2>
+  <p>OU has a dedicated Placement Cell that organizes campus drives, internships, and skill-building workshops.</p>
+  <div class="highlight">
+    <h3>Placement Highlights (2023 – 2024)</h3>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Placement Rate:</strong> 70% (Eligible Students Placed)</li>
+      <li><strong>Highest Package:</strong> ₹18 LPA</li>
+      <li><strong>Average Package:</strong> ₹4.5 LPA</li>
+      <li><strong>Top Recruiters:</strong> TCS, Infosys, Wipro, Deloitte, Accenture, Amazon, Microsoft, HSBC</li>
+    </ul>
+    <h4 style="margin-top: 20px;">Top Companies Hiring from OU</h4>
+    <div class="gallery"><MARQUEE>
+      <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png" alt="Amazon Logo">
+      <img src="https://www.pngall.com/wp-content/uploads/13/Deloitte-Logo-PNG-Cutout.png" alt="Deloitte Logo">
+      <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Symbol.png" alt="Oracle Logo">
+      <img src="https://th.bing.com/th/id/OIP.Pu-NtqnG2cUgr75PdFeYdQHaHa?rs=1&pid=ImgDetMain" alt="Infosys Logo">
+      <img src="https://th.bing.com/th/id/OIP.LCNgAL5L174Punk-ntgy4gHaD3?rs=1&pid=ImgDetMain" alt="Wipro Logo">
+      </MARQUEE>
+    </div>
+  </div>
+</section>
+
+<section id="facilities">
+  <h2>Campus Facilities at OU</h2>
+  <p>OU offers extensive facilities to support academics, research, and student well-being:</p>
+  <div class="highlight">
+    <h3>🏫 Academic Infrastructure</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Central Library:</strong> One of Asia's largest with over 500,000 volumes</li>
+      <li><strong>Department Libraries:</strong> Specialized collections for each discipline</li>
+      <li><strong>Labs & Research Centers:</strong> Well-equipped labs for all sciences</li>
+      <li><strong>Computer Centers:</strong> 24/7 access with high-speed internet</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🏠 Residential & Amenities</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hostel Facilities:</strong> 15+ hostels with 5,000+ capacity</li>
+      <li><strong>Health Center:</strong> 24/7 medical facilities</li>
+      <li><strong>Post Office & Bank:</strong> Campus SBI branch and post office</li>
+      <li><strong>Food Courts:</strong> Multiple canteens and cafeterias</li>
+    </ul>
+    <h3 style="margin-top: 25px;">⚽ Sports & Recreation</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Sports Complex:</strong> Gymkhana with all major sports facilities</li>
+      <li><strong>Auditoriums:</strong> Multiple venues for cultural events</li>
+      <li><strong>Student Centers:</strong> Dedicated spaces for extracurricular activities</li>
+    </ul>
+  </div>
+</section>
+
+<section id="campus-life">
+  <h2>Life at OU: A Historic Campus with Vibrant Culture</h2>
+  <p>OU offers a rich student life blending academics, culture, and social activities.</p>
+  <div class="highlight">
+    <h3>🎉 Cultural Activities & Events</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Annual Fest:</strong> 'Youth Festival' with 100+ events</li>
+      <li><strong>Department Fests:</strong> Subject-specific academic festivals</li>
+      <li><strong>National Days:</strong> Celebrations of Independence Day, Republic Day</li>
+      <li><strong>Sports Week:</strong> Annual inter-department competitions</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🤝 Student Clubs & Societies</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Academic Clubs:</strong> Debate, Quiz, Literary societies</li>
+      <li><strong>Cultural Clubs:</strong> Music, Dance, Drama, Fine Arts</li>
+      <li><strong>Social Service:</strong> NSS, Rotaract, NCC</li>
+      <li><strong>Technical Clubs:</strong> Computer, Science clubs</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🌿 Campus Environment</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Historic Landmark:</strong> 100+ year old heritage buildings</li>
+      <li><strong>Green Campus:</strong> 1,600 acres of greenery</li>
+      <li><strong>Cultural Diversity:</strong> Students from all over India and abroad</li>
+    </ul>
+  </div>
+</section>
+
+<section id="campus-tour">
+  <h2>🎬 OU Campus Tour</h2>
+  <p>Explore the historic Osmania University campus through these virtual tours:</p>
+  <div style="overflow-x: auto; display: flex; gap: 20px; margin-top: 25px; scroll-snap-type: x mandatory; padding-bottom: 10px;">
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour (English)</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/OU_ENGLISH_TOUR" title="OU Campus Tour in English" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour (Telugu)</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/OU_TELUGU_TOUR" title="OU Campus Tour in Telugu" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="https://www.osmania.ac.in/virtual-tour/" target="_blank">🌐 Take Virtual Tour on Official Website</a>
+  </div>
+</section>
+
+<section id="contact" style="margin-top: 60px;">
+  <h2>📬 Get in Touch with Osmania University</h2>
+  <p>For admission queries, campus visits, or general information:</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+      <li><strong>🏫 Address:</strong> Osmania University Main Campus, Amberpet, Hyderabad - 500007, Telangana</li>
+      <li><strong>📞 Phone:</strong> 040-27098021, 27098022</li>
+      <li><strong>📧 Email:</strong> <a href="mailto:registrar@osmania.ac.in">registrar@osmania.ac.in</a></li>
+      <li><strong>🌐 Website:</strong> <a href="https://www.osmania.ac.in" target="_blank">www.osmania.ac.in</a></li>
+      <li><strong>🕘 Working Hours:</strong> 10:00 AM - 5:00 PM (Mon-Fri)</li>
+    </ul>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="mailto:registrar@osmania.ac.in">📨 Email Us Now</a>
+  </div>
+</section>
+
+<section id="faqs" style="margin-top: 60px;">
+  <h2>❓ Frequently Asked Questions (FAQs)</h2>
+  <p>Common questions about Osmania University:</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <details>
+      <summary>1. What is Osmania University known for?</summary>
+      <p>OU is renowned for its historic legacy, academic excellence, and diverse course offerings across arts, sciences, commerce, law, and engineering.</p>
+    </details>
+    <details>
+      <summary>2. Is OU a government university?</summary>
+      <p>Yes, OU is a state public university established by the Nizam's government in 1918.</p>
+    </details>
+    <details>
+      <summary>3. What are the top courses at OU?</summary>
+      <p>Popular courses include Sciences, Arts, Commerce, Law, MBA, MCA, and Engineering through affiliated colleges.</p>
+    </details>
+    <details>
+      <summary>4. How can I get admission to OU?</summary>
+      <p>Through OU CET for UG courses, PGCET for PG courses, and national-level exams for professional courses.</p>
+    </details>
+    <details>
+      <summary>5. What is the fee structure at OU?</summary>
+      <p>Fees range from ₹5,000-25,000 per year depending on the course, with concessions for reserved categories.</p>
+    </details>
+    <details>
+      <summary>6. Does OU provide hostel facilities?</summary>
+      <p>Yes, OU has separate hostels for men and women with reasonable fees.</p>
+    </details>
+    <details>
+      <summary>7. How are placements at OU?</summary>
+      <p>OU has good placement records, especially for professional courses with average packages of ₹4-5 LPA.</p>
+    </details>
+    <details>
+      <summary>8. Is OU campus safe for women?</summary>
+      <p>Yes, OU has strict security measures including CCTV surveillance and women's grievance cell.</p>
+    </details>
+    <details>
+      <summary>9. What extracurricular activities are available?</summary>
+      <p>Numerous clubs for sports, arts, literature, debates, and social service activities.</p>
+    </details>
+    <details>
+      <summary>10. Who can I contact for admission queries?</summary>
+      <p>Contact the admission office at 040-27098021 or email <a href="mailto:registrar@osmania.ac.in">registrar@osmania.ac.in</a>.</p>
+    </details>
+  </div>
+</section>
+
+<section id="connect" style="background-color: #f1f8e9; padding: 50px 20px; border-radius: 12px; margin-top: 60px; text-align: center; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with OU</h2>
+  <p style="font-size: 18px; max-width: 800px; margin: 0 auto 20px; color: #424242;">
+    Your CBIT journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
+  </p>
+  <p style="font-size: 16px; color: #558b2f; margin-bottom: 30px;">
+    🎯 Don’t just explore — become a part of our vibrant online community.
+  </p>
+
+  <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 30px;">
+    <a href="https://www.instagram.com/balaji_mrec_?igsh=MXB6NmNuaGJ2azA3bg==" target="_blank" style="background-color: #e91e63; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      📸 Instagram
+    </a>
+    <a href="https://youtube.com/@balajimrec227?si=7uKNTWzmGJqzbI1S" target="_blank" style="background-color: #d32f2f; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      ▶ YouTube
+    </a>
+    <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0" target="_blank" style="background-color: #25D366; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      💬 WhatsApp Community
+    </a>
+    <a href="https://www.linkedin.com/in/lucky-nayak-027050360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="background-color: #0077b5; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      💼 LinkedIn
+    </a>
+  </div>
+
+  <p style="font-size: 14px; color: #757575;">
+    📢 We respect your attention. No spam — only meaningful updates and insights.
+  </p>
+</section>
+
+<section id="salutation" style="background-color: #fffde7; padding: 40px 20px; border-radius: 12px; margin-top: 60px; text-align: center;">
+  <h2 style="color: #003366;">🌟 Why Choose Osmania University?</h2>
+  <p style="font-size: 18px; margin: 20px auto; max-width: 800px;">
+    With over a century of academic excellence, Osmania University offers world-class education at affordable costs. Our historic campus, renowned faculty, and vibrant student community make OU the perfect place to launch your academic journey.
+  </p>
+  <p style="font-size: 18px; color: #ffd700;"><strong>Join the legacy of one of India's most prestigious universities.</strong></p>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">🚀 Apply Now – Your Future Begins Here</a>
+  </div>
+</section>
+
+</div>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919999999999?text=I'm%20interested%20in%20Osmania%20University%20admissions" target="_blank">
+    📱 WhatsApp Help
+  </a>
+</div>
+
+<footer>
+  <p>© 2024 Balanju Consultancy. All rights reserved.</p>
+  <p>Disclaimer: This is an informational website. For official information, please visit <a href="https://www.osmania.ac.in" target="_blank">osmania.ac.in</a></p>
+</footer>
+
+</body>
+</html>

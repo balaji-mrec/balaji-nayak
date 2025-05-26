@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Engineering Admission FAQs | Balanju Consultancy</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f8e9;
+      margin: 0;
+      padding: 0;
+      color: #1b5e20;
+    }
+
+    header {
+      background-color: #33691e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    .faq {
+      margin: 20px 0;
+    }
+
+    .question {
+      background-color: #e8f5e9;
+      cursor: pointer;
+      padding: 16px;
+      border: none;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .question:hover {
+      background-color: #c5e1a5;
+    }
+
+    .answer {
+      padding: 0 16px 16px 16px;
+      display: none;
+      font-size: 16px;
+      color: #4e684e;
+    }
+
+    .active + .answer {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+      background-color: #e0f2f1;
+    }
+
+
+    /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>🔍 Engineering Admission FAQs</header>
+
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <button class="question">1. What is the NIRF ranking and why is it important?</button>
+      <div class="answer">NIRF (National Institutional Ranking Framework) is issued by the Government of India to rank institutions based on parameters like teaching, placements, research, and outreach. It's crucial for evaluating college performance.</div>
+
+      <button class="question">2. How do I choose the right engineering college?</button>
+      <div class="answer">Consider factors like NIRF rank, location, branch preference, faculty, placement records, and your budget. Also, check if the college has NAAC or NBA accreditation.</div>
+
+      <button class="question">3. Which entrance exams are accepted by top engineering colleges?</button>
+      <div class="answer">JEE Main and JEE Advanced are accepted by NITs and IITs respectively. Many private colleges have their own exams (like VITEEE, SRMJEEE), and some accept state-level scores (like MHT-CET, EAMCET).</div>
+
+      <button class="question">4. Is management quota a good option?</button>
+      <div class="answer">Management quota can help you get a seat if you miss merit cutoff, but fees are usually higher. Ensure the college is recognized and check placement history before proceeding.</div>
+
+      <button class="question">5. What are the most popular branches in engineering?</button>
+      <div class="answer">Computer Science, Electronics & Communication, Mechanical, Civil, Electrical, and AI/Data Science are among the most popular and high-demand branches.</div>
+
+      <button class="question">6. Can I get a good job if I study in a Tier 2 or Tier 3 college?</button>
+      <div class="answer">Yes, many students from Tier 2/3 colleges get good jobs by building strong projects, internships, and participating in coding or hackathons. Your skill matters more than the college brand after a point.</div>
+
+      <button class="question">7. What is the role of Balanju Consultancy?</button>
+      <div class="answer">We help you choose the right engineering college, guide through admission procedures, documentation, and provide career counselling support to ensure your success.</div>
+    </div>
+  </div>
+
+  <footer>
+    💡 Need more help? <br>
+    <a href="https://wa.me/917207800211" target="_blank">Chat with Balanju Team on WhatsApp</a>
+  </footer>
+
+  <script>
+    // Toggle answer display on click
+    const questions = document.querySelectorAll('.question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

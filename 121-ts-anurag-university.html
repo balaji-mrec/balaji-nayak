@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>anurag Admissions | Balaju Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+   :root {
+  --primary: #1B5E20;         /* Deep green for text/headings */
+  --secondary: #66BB6A;       /* Soft, appealing green for buttons/highlights */
+  --bg: #f0fdf4;              /* Light greenish background */
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(109, 217, 224);
+  padding: 20px 30px;
+  border-bottom: 1px solid #4cb4af;
+  flex-wrap: wrap;
+}
+
+.header-left h1 {
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-center h2 {
+  font-size: 24px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.header-center p {
+  font-size: 16px;
+  color: #2c8e48;
+  font-weight: 600;
+}
+
+/* Navigation */
+nav {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 12px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--secondary);
+  color: white;
+  border-radius: 8px;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Sections */
+section {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+section h2 {
+  font-size: 24px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* Highlights */
+.highlight {
+  background: #e8f5e9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* Image Gallery */
+.gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.gallery img {
+  height: 180px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Embedded Video */
+iframe {
+  width: 100%;
+  height: 360px;
+  margin-top: 25px;
+  border-radius: var(--radius);
+  border: none;
+}
+
+/* FAQ Toggle */
+details summary {
+  background: #f1f8e9;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Call to Action */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta a {
+  background: var(--secondary);
+  color: white;
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+
+.cta a:hover {
+  background: #43a047;
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.whatsapp-float a {
+  background: #25D366;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+  background: #dcedc8;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .header-center {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+
+  </style>
+
+
+</head>
+<body><header>
+  <div class="header-left">
+    <h1><font size="6"  color="black" face="roboto">🎓 BALANJU<br>CONSULTANCY</font></h1>
+     <p><font size="4"  color="green" face="roboto">Your trusted partner in college admissions.</font></p>
+  </div>
+  <div class="header-center">
+    <h2><font size="6" color="blue" face="roboto">CVSR</font></h2>
+    <p><font size="6"  color="bluu" face="roboto">Anurag University (Hyderabad)</font></p>
+    <a href="https://d2n36fr2627nzy.cloudfront.net/test/images/logo.png"></a>
+    
+  </div>
+</header>
+
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses Offered</a></li>
+    <li><a href="#admissions">Admission Process</a></li>
+    <li><a href="#cutoff">Cut-Offs</a></li>
+    <li><a href="#fees">Fees & Scholarships</a></li>
+    <li><a href="#placements">Placements</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#campus-life">Campus Life</a></li>
+    <li><a href="#campus-tour">Campus Tour</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+ <section id="about">
+  <h2>About Anurag University, Hyderabad</h2>
+  <p>
+    Anurag University, established in <strong>2020</strong> (with a legacy since 2002 as Anurag Group of Institutions), is a leading multidisciplinary private university located in <strong>Venkatapur, Ghatkesar, Hyderabad, Telangana</strong>. The university is recognized for its academic excellence, world-class infrastructure, and outstanding placement record.
+  </p>
+  <div class="highlight">
+    <ul>
+      <li><strong>Established:</strong> 2020 (Legacy since 2002)</li>
+      <li><strong>Location:</strong> Venkatapur, Ghatkesar, Medchal–Malkajgiri district, Hyderabad, Telangana - 500088, India</li>
+      <li><strong>Campus Area:</strong> 100+ acres</li>
+      <li><strong>Accreditation:</strong> NAAC 'A' Grade, NBA Accredited, UGC Autonomous, AICTE Approved, NIRF Top 150</li>
+      <li><strong>Affiliation:</strong> Private University (recognized by UGC)</li>
+    </ul>
+  </div>
+  <p>
+    The university offers modern laboratories, a digital library, research centers, sports facilities, hostels, and a vibrant campus life. With an annual intake of over <strong>5000+ students</strong>, Anurag University is a top choice for higher education in Telangana and South India.
+  </p>
+  <p>
+    Anurag University offers undergraduate, postgraduate, and doctoral programs across Engineering, Pharmacy, Management, Agriculture, Medical Sciences, and more. The institution is known for its research, innovation, and industry collaborations.
+  </p>
+  <div class="gallery">
+    <img src="https://i.ytimg.com/vi/hj_PxrS9aQo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDOIuKoVf7wAyDvOfcpn1PzsjPM1Q" alt="Anurag Main Building">
+    <img src="https://admissionsadmin.kabconsultants.com/CollegeImages/CoverImages/1e22d88d-1ca6-4a6b-b18d-3ff25143f0bb1.jpg" alt="Anurag Library">
+    <img src="https://static.zollege.in/public/reviewPhotos/212460/1000010656.png?tr=h-250,w-400,c-force" alt="Anurag Labs">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Anurag_University_%22E_BLOCK_%26_F_BLOCK%22_image.jpg" alt="Anurag Labs">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPtqiIhE3nsSMQu6DwNT9z9KpLTDQdUhtRl6yxX4qFQ01XqHIbOcGZb2EfIvIf8SI0tY&usqp=CAU" alt="Anurag Labs">
+  </div>
+</section>
+
+<section id="courses">
+  <h2>Courses Offered at Anurag University</h2>
+  <p>
+    Anurag University offers a wide range of Undergraduate, Postgraduate, and Doctoral programs in Engineering, Pharmacy, Management, Agriculture, Medical Sciences, and more. All programs are designed to meet industry standards and foster research and innovation.
+  </p>
+  <div class="highlight">
+    <h3>Undergraduate Programs</h3>
+    <ul>
+      <li>B.Tech (various specializations including CSE, ECE, IT, AI & ML, Data Science, Civil, Mechanical, Chemical, etc.)</li>
+      <li>B.Pharm</li>
+      <li>B.Sc. (Hons) Agriculture</li>
+      <li>BBA</li>
+      <li>B.Sc. Nursing</li>
+      <li>MBBS (Neelima Institute of Medical Sciences)</li>
+      <li>BPT (Physiotherapy)</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Postgraduate Programs</h3>
+    <ul>
+      <li>M.Tech (various specializations)</li>
+      <li>M.Pharm</li>
+      <li>MBA</li>
+      <li>M.Sc. (various specializations)</li>
+      <li>MD/MS (Medical Sciences)</li>
+      <li>MPT (Physiotherapy)</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>Doctoral Programs (Ph.D.)</h3>
+    <ul>
+      <li>Ph.D. in Engineering, Pharmacy, Management, Sciences, and more</li>
+    </ul>
+  </div>
+  <p>
+    The curriculum is regularly updated and includes project work, internships, and industry interaction. Anurag University is also active in research, innovation, and entrepreneurship initiatives.
+  </p>
+</section>
+
+<section id="admissions">
+  <h2>Admission Process</h2>
+  <p>
+    Admissions to Anurag University are based on merit through state/national-level entrance exams and the university's own entrance test (AnuragCET) for select programs. The process is transparent and follows government and university norms.
+  </p>
+  <div class="highlight">
+    <h3>🎓 Undergraduate Programs (B.Tech, B.Pharm, B.Sc. Agri, BBA, etc.)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> 10+2 with relevant subjects (PCM/PCB/Commerce/Agri as applicable).</li>
+      <li><strong>Entrance Exams:</strong> <a href="https://eamcet.tsche.ac.in" target="_blank">TS EAMCET</a> (B.Tech/B.Pharm), <a href="https://anurag.edu.in/anuragcet/" target="_blank">AnuragCET</a> (for select programs), NEET (MBBS), university/other state/national exams as applicable.</li>
+      <li><strong>Counseling:</strong> Through TS EAMCET/NEET/AnuragCET counseling. Select "Anurag University" as your preferred option (EAMCET Code: ANUG).</li>
+      <li><strong>Management Quota:</strong> Direct admission for eligible candidates as per guidelines.</li>
+      <li><strong>Fee Payment:</strong> Pay the prescribed fees to confirm admission.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Postgraduate Programs (M.Tech, MBA, M.Pharm, etc.)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> Relevant bachelor's degree.</li>
+      <li><strong>Entrance Exams:</strong> <a href="https://gate.iitkgp.ac.in/" target="_blank">GATE</a>, <a href="https://pgecet.tsche.ac.in/" target="_blank">TS PGECET</a>, <a href="https://icet.tsche.ac.in/" target="_blank">TS ICET</a>, <a href="https://anurag.edu.in/anuragcet/" target="_blank">AnuragCET</a> (for select programs).</li>
+      <li><strong>Counseling:</strong> Through respective exam counseling or university process.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <h3>🎓 Doctoral Programs (Ph.D.)</h3>
+    <ul>
+      <li><strong>Eligibility:</strong> Postgraduate degree in relevant discipline.</li>
+      <li><strong>Entrance:</strong> As per Anurag University Ph.D. admission norms.</li>
+    </ul>
+  </div>
+  <div class="cta">
+    <a href="https://anurag.edu.in/admissions/" target="_blank">📄 Visit Official Admission Portal</a>
+  </div>
+</section>
+
+<section id="cutoff">
+  <h2>📊 TS EAMCET Cutoff Ranks – Anurag University (2023)</h2>
+  <p>The table below shows the <strong>Closing Ranks</strong> for various B.Tech branches at Anurag University for the 2023 TS EAMCET counseling (OC category):</p>
+  <div class="highlight" style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead style="background: #c8e6c9;">
+        <tr>
+          <th style="padding: 10px;">Branch</th>
+          <th style="padding: 10px;">Closing Rank (2023)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Computer Science and Engineering</td><td>7,500</td></tr>
+        <tr><td>CSE (AI & ML)</td><td>8,200</td></tr>
+        <tr><td>CSE (Data Science)</td><td>8,900</td></tr>
+        <tr><td>Information Technology</td><td>10,200</td></tr>
+        <tr><td>Electronics and Communication Engineering</td><td>13,500</td></tr>
+        <tr><td>Electrical and Electronics Engineering</td><td>22,000</td></tr>
+        <tr><td>Civil Engineering</td><td>45,000</td></tr>
+        <tr><td>Mechanical Engineering</td><td>48,000</td></tr>
+        <tr><td>Chemical Engineering</td><td>41,000</td></tr>
+        <tr><td>Pharmaceutical Engineering</td><td>52,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="https://anurag.edu.in/admissions/cutoff/" target="_blank" download>
+      📥 Download Full Cutoff PDF
+    </a>
+  </div>
+  <div class="highlight" style="margin-top: 20px;">
+    <p><strong>Note:</strong> Ranks are based on TS EAMCET 2023 data. For category-wise and updated cutoffs, refer to the official site.</p>
+  </div>
+</section>
+
+<section id="fees">
+  <h2>Anurag University Fee Structure (2024 – 2025)</h2>
+  <p>Anurag University offers affordable fee structures for all programs. Below is the indicative fee structure for 2024–25 (subject to change as per university/government norms):</p>
+  <div class="highlight">
+    <h3>B.Tech Annual Tuition Fee</h3>
+    <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background-color: #e0f2f1; color: #004d40;">
+          <th style="padding: 10px; border: 1px solid #ccc;">Branch</th>
+          <th style="padding: 10px; border: 1px solid #ccc;">Annual Tuition Fee (INR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>All Branches (Convener Quota)</td><td>₹1,30,000</td></tr>
+        <tr><td>All Branches (Management Quota)</td><td>₹1,80,000</td></tr>
+      </tbody>
+    </table>
+    <h4 style="margin-top: 25px;">Other Program Fees (Indicative)</h4>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>B.Pharm:</strong> ₹1,10,000/year</li>
+      <li><strong>B.Sc. (Agri):</strong> ₹1,00,000/year</li>
+      <li><strong>M.Tech:</strong> ₹90,000/year</li>
+      <li><strong>MBA:</strong> ₹1,00,000/year</li>
+      <li><strong>Hostel:</strong> ₹90,000/year (approx, optional)</li>
+      <li><strong>Transport:</strong> As per actuals (optional)</li>
+    </ul>
+    <p style="margin-top: 10px;"><strong>Note:</strong> Fees are subject to revision by the university/government. For the latest fee details, refer to the official website.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Contact Us for Scholarships, Seat Booking & Payment Plans</a>
+  </div>
+</section>
+
+<section id="placements">
+  <h2>Anurag University Placements (2024)</h2>
+  <p>Anurag University has a stellar placement record, with top MNCs and core companies recruiting across all branches. The Placement Cell organizes campus drives, internships, and skill-building workshops.</p>
+  <div class="highlight">
+    <h3>Placement Highlights (2023 – 2024)</h3>
+    <ul style="padding-left: 20px; margin-top: 10px;">
+      <li><strong>Total Offers:</strong> 2,000+ (Ongoing)</li>
+      <li><strong>Highest Package:</strong> ₹38.5 LPA</li>
+      <li><strong>Median Package:</strong> ₹4.73 LPA</li>
+      <li><strong>Top Recruiters:</strong> Microsoft, Amazon, TCS, Infosys, Capgemini, Cognizant, Accenture, Deloitte, Wipro, HCL, Tech Mahindra, and more</li>
+      <li><strong>Placement Rate:</strong> 90%+ (Eligible Students Placed)</li>
+    </ul>
+    <h4 style="margin-top: 20px;">Top Companies Hiring from Anurag University</h4>
+    <div class="gallery">
+      <MARQUEE scroolamount="200">
+      <img src="https://th.bing.com/th/id/R.c00e3a9e1f40226eaed409ee1e45b8eb?rik=f1GLlasFjUCu%2fQ&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2016%2f10%2fAmazon-Logo.png&ehk=gLJu7Bd3zSqjAJ7OwoyQkQPaz6ofAdahYh91trMVyN0%3d&risl=&pid=ImgRaw&r=0" alt="Amazon Logo">
+      <img src="https://th.bing.com/th/id/OIP.goYHa_TwAu6QMmE1M5MhGQHaIL?rs=1&pid=ImgDetMain" alt="Microsoft Logo">
+      <img src="https://www.pngall.com/wp-content/uploads/13/Deloitte-Logo-PNG-Cutout.png" alt="Deloitte Logo">
+      <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Symbol.png" alt="Oracle Logo">
+      <img src="https://th.bing.com/th/id/OIP.Pu-NtqnG2cUgr75PdFeYdQHaHa?rs=1&pid=ImgDetMain" alt="Infosys Logo">
+      <img src="https://th.bing.com/th/id/OIP.LCNgAL5L174Punk-ntgy4gHaD3?rs=1&pid=ImgDetMain" alt="Wipro Logo"></MARQUEE>
+    </div>
+
+
+    <p style="margin-top: 20px;"><strong>Note:</strong> Placement statistics are based on 2023–24 data. For the latest, refer to the official placement cell.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📞 Talk to Placement Cell or View Full Report</a>
+  </div>
+</section>
+
+<section id="facilities">
+  <h2>Campus Facilities at Anurag University</h2>
+  <p>Anurag University offers a vibrant campus with all modern amenities to support academics, research, and student well-being:</p>
+  <div class="highlight">
+    <h3>🏫 Academic Infrastructure</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Smart Classrooms:</strong> Digitally enabled with projectors and Wi-Fi.</li>
+      <li><strong>Central Library:</strong> 1,00,000+ volumes, 10,000+ e-journals, 300+ print journals/magazines, digital resources.</li>
+      <li><strong>Labs & Research Centers:</strong> Advanced labs for all departments, Centers of Excellence in AI, IoT, Robotics, VLSI, etc.</li>
+      <li><strong>Innovation Centers:</strong> Technical clubs, student societies, and project-based learning spaces.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💻 Digital & Technical Resources</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>High-Speed Wi-Fi:</strong> Campus-wide internet access.</li>
+      <li><strong>Computer Centers:</strong> Central Computing Centre with 1,000+ systems.</li>
+      <li><strong>Online Learning Platforms:</strong> Access to NPTEL, Coursera, and e-learning resources.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🏠 Residential & Transport</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hostel Facilities:</strong> Separate hostels for boys and girls with mess, Wi-Fi, and security.</li>
+      <li><strong>Cafeteria:</strong> Multi-cuisine food courts and fast-food outlets.</li>
+      <li><strong>Transport:</strong> 100+ college buses and city bus connectivity.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">⚽ Sports & Recreation</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Sports Complex:</strong> Cricket, football, basketball, volleyball, indoor games, gymnasium.</li>
+      <li><strong>Cultural Spaces:</strong> Auditoriums, seminar halls, and student club rooms.</li>
+      <li><strong>Medical Center:</strong> On-campus health and wellness center.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💡 Student Support Services</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Medical Care:</strong> On-campus health center and wellness center.</li>
+      <li><strong>Counseling:</strong> Academic and psychological counseling.</li>
+      <li><strong>Banking:</strong> In-campus bank and ATM.</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>Note:</strong> All facilities are maintained as per UGC and NBA standards.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">📍 Visit Campus or Take a Virtual Tour</a>
+  </div>
+</section>
+
+<section id="campus-life">
+  <h2>Life at Anurag: A Campus Beyond Classrooms</h2>
+  <p>Anurag University offers a vibrant student life with a blend of academics, innovation, and cultural activities. The campus is always buzzing with events, clubs, and opportunities for holistic growth.</p>
+  <div class="highlight">
+    <h3>🎉 Cultural Activities & Events</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Annual Fests:</strong> Technical and cultural fests, hackathons, workshops, and seminars.</li>
+      <li><strong>Freshers & Farewell:</strong> Welcoming and bidding adieu to students with cultural programs.</li>
+      <li><strong>National Days:</strong> Independence Day, Republic Day, Engineer's Day, Teachers' Day.</li>
+      <li><strong>Sports Fest:</strong> Annual sports festival.</li>
+      <li><strong>Graduation Day:</strong> Annual convocation ceremony.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🤝 Student Clubs & Societies</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Technical Clubs:</strong> IEEE, ISTE, SAE, Robotics Club, Coding Club, ACM, CSI, etc.</li>
+      <li><strong>Cultural & Literary:</strong> Music Club, Dance Club, Drama Society, Literary Club.</li>
+      <li><strong>Entrepreneurship:</strong> EDC and Innovation Hub.</li>
+      <li><strong>Social Service:</strong> NSS, Rotaract Club, and more.</li>
+      <li><strong>Women Empowerment:</strong> Active Women Development Cell.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">🌿 Campus Environment</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Green Campus:</strong> 100+ acres of lush greenery and eco-friendly initiatives.</li>
+      <li><strong>Café & Hangout Zones:</strong> Food courts and open seating areas.</li>
+      <li><strong>24/7 Security:</strong> CCTV surveillance and campus patrol.</li>
+    </ul>
+    <h3 style="margin-top: 25px;">💼 Career-Oriented Campus</h3>
+    <ul style="padding-left: 20px;">
+      <li><strong>Hackathons & Internships:</strong> Regular technical events and industry tie-ups.</li>
+      <li><strong>Guest Lectures:</strong> By alumni, industry experts, and professors from top institutes.</li>
+      <li><strong>Incubation Space:</strong> For student startups and innovation.</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>Anurag Life = Learning + Fun + Growth</strong>. There's a place for every talent and interest here.</p>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#gallery">📸 Explore Campus Photos & Student Stories</a>
+  </div>
+</section>
+
+<section id="campus-tour">
+  <h2>🎬 Anurag University Campus Tour</h2>
+  <p>Take a virtual walk through the Anurag campus! Explore the modern buildings, labs, library, hostels, and student spaces. Video tours will be available soon.</p>
+  <div style="overflow-x: auto; display: flex; gap: 20px; margin-top: 25px; scroll-snap-type: x mandatory; padding-bottom: 10px;">
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour (English)</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_ENGLISH_VIDEO_ID" title="Anurag Campus Tour in English" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+    <div style="min-width: 350px; flex: 0 0 auto; scroll-snap-align: start;">
+      <h4>📽️ Campus Tour (Telugu)</h4>
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/YOUR_TELUGU_VIDEO_ID" title="Anurag Campus Tour in Telugu" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">***CAMPUS TOURS UPLOAD SOON***</a>
+  </div>
+</section>
+
+<section id="contact" style="margin-top: 60px;">
+  <h2>📬 Get in Touch with Anurag University</h2>
+  <p>For queries about admissions, fees, placements, or campus visits, reach out to us:</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+      <li><strong>🏫 Address:</strong> Anurag University, Venkatapur, Ghatkesar, Medchal–Malkajgiri district, Hyderabad, Telangana - 500088, India</li>
+      <li><strong>📞 Phone (General Helpline):</strong> +91-8181057057</li>
+      <li><strong>📧 Email:</strong> <a href="mailto:admissions@anurag.edu.in">admissions@anurag.edu.in</a>, <a href="mailto:info@anurag.edu.in">info@anurag.edu.in</a></li>
+      <li><strong>🌐 Website:</strong> <a href="https://anurag.edu.in" target="_blank">www.anurag.edu.in</a></li>
+    </ul>
+  </div>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="mailto:admissions@anurag.edu.in">📨 Email Us Now</a>
+  </div>
+</section>
+
+<section id="faqs" style="margin-top: 60px;">
+  <h2>❓ Frequently Asked Questions (FAQs)</h2>
+  <p>Got questions about Anurag University? Here are some common ones answered for your convenience.</p>
+  <div class="highlight" style="margin-top: 20px;">
+    <details>
+      <summary>1. What is Anurag University?</summary>
+      <p>Anurag University is a multidisciplinary private university in Hyderabad, Telangana, offering UG, PG, and Ph.D. programs in engineering, pharmacy, management, agriculture, medical sciences, and more.</p>
+    </details>
+    <details>
+      <summary>2. Is Anurag University recognized and accredited?</summary>
+      <p>Yes, it is recognized by UGC, accredited by NAAC (A Grade), NBA, and approved by AICTE.</p>
+    </details>
+    <details>
+      <summary>3. What are the top courses offered at Anurag University?</summary>
+      <p>B.Tech, M.Tech, MBA, B.Pharm, M.Pharm, B.Sc. (Agri), MBBS, and Ph.D. in various disciplines.</p>
+    </details>
+    <details>
+      <summary>4. How can I get admission into Anurag University?</summary>
+      <p>Through TS EAMCET (B.Tech/B.Pharm), NEET (MBBS), GATE/PGECET (M.Tech), ICET (MBA), AnuragCET, or Management Quota.</p>
+    </details>
+    <details>
+      <summary>5. What is the Anurag University fee for B.Tech programs?</summary>
+      <p>Convener Quota: ₹1,30,000/year. Management Quota: ₹1,80,000/year (approx.).</p>
+    </details>
+    <details>
+      <summary>6. Does Anurag University provide hostel facilities?</summary>
+      <p>Yes, separate hostels for boys and girls are available.</p>
+    </details>
+    <details>
+      <summary>7. How are placements at Anurag University?</summary>
+      <p>Anurag University has a strong placement record with top companies recruiting every year.</p>
+    </details>
+    <details>
+      <summary>8. Is there a bus facility for day scholars?</summary>
+      <p>Yes, college buses and city bus connectivity are available.</p>
+    </details>
+    <details>
+      <summary>9. What extracurricular activities are available?</summary>
+      <p>Technical fests, cultural events, sports, student clubs, and more.</p>
+    </details>
+    <details>
+      <summary>10. Who can I contact for more admission-related information?</summary>
+      <p>Contact the admission office at +91-8181057057 or email <a href="mailto:admissions@anurag.edu.in">admissions@anurag.edu.in</a>.</p>
+    </details>
+  </div>
+</section>
+
+<section id="connect" style="background-color: #f1f8e9; padding: 50px 20px; border-radius: 12px; margin-top: 60px; text-align: center; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with CBIT</h2>
+  <p style="font-size: 18px; max-width: 800px; margin: 0 auto 20px; color: #424242;">
+    Your CBIT journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
+  </p>
+  <p style="font-size: 16px; color: #558b2f; margin-bottom: 30px;">
+    🎯 Don’t just explore — become a part of our vibrant online community.
+  </p>
+
+  <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 30px;">
+    <a href="https://www.instagram.com/balaji_mrec_?igsh=MXB6NmNuaGJ2azA3bg==" target="_blank" style="background-color: #e91e63; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      📸 Instagram
+    </a>
+    <a href="https://youtube.com/@balajimrec227?si=7uKNTWzmGJqzbI1S" target="_blank" style="background-color: #d32f2f; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      ▶ YouTube
+    </a>
+    <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0" target="_blank" style="background-color: #25D366; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      💬 WhatsApp Community
+    </a>
+    <a href="https://www.linkedin.com/in/lucky-nayak-027050360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="background-color: #0077b5; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">
+      💼 LinkedIn
+    </a>
+  </div>
+
+  <p style="font-size: 14px; color: #757575;">
+    📢 We respect your attention. No spam — only meaningful updates and insights.
+  </p>
+</section>
+
+<section id="salutation" style="background-color: #e0f7fa; padding: 40px 20px; border-radius: 12px; margin-top: 60px; text-align: center;">
+  <h2 style="color: #00695c;">🌟 Why Choose Anurag University?</h2>
+  <p style="font-size: 18px; margin: 20px auto; max-width: 800px;">
+    At Anurag University, we nurture future engineers, doctors, innovators, and leaders. With a legacy of excellence, modern facilities, top placements, and a vibrant campus, Anurag is more than a university—it's a launchpad for your dreams.
+  </p>
+  <p style="font-size: 18px; color: #004d40;"><strong>Be a part of Telangana's most dynamic and multidisciplinary university.</strong></p>
+  <div class="cta" style="margin-top: 30px;">
+    <a href="#contact">🚀 Apply Now – Your Future Begins Here</a>
+  </div>
+</section>
+
+</html> 

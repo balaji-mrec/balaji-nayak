@@ -1,0 +1,2583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TS EAMCET Engineering Colleges - Telangana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f2f2f2 60%, #e3f0ff 100%);
+      margin: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+      padding: 40px 32px 32px 32px;
+    }
+    h2 {
+      color: #1a237e;
+      margin-bottom: 28px;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 28px;
+      background: #f5faff;
+      border-radius: 12px;
+      padding: 18px 0;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.04);
+    }
+    .filters label {
+      font-weight: 600;
+      color: #333;
+      font-size: 1rem;
+      margin-right: 8px;
+    }
+    .filters select, .filters button, .filters input[type="text"] {
+      padding: 8px 16px;
+      border: 1px solid #bdbdbd;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #f7fafc;
+      transition: border 0.2s;
+      outline: none;
+    }
+    .filters select:focus, .filters button:focus, .filters input[type="text"]:focus {
+      border: 1.5px solid #1976d2;
+    }
+    .filters button {
+      background: linear-gradient(90deg, #1976d2 60%, #43a047 100%);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .filters button:hover {
+      background: linear-gradient(90deg, #1565c0 60%, #388e3c 100%);
+      box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+    }
+    #results {
+      margin-top: 32px;
+    }
+    .college-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(44, 62, 80, 0.07);
+      padding: 24px 32px 20px 32px;
+      margin-bottom: 22px;
+      transition: 0.25s;
+      border-left: 6px solid #1976d2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .college-card:hover {
+      transform: translateY(-2px) scale(1.012);
+      box-shadow: 0 6px 24px rgba(25, 118, 210, 0.13);
+      border-left: 6px solid #43a047;
+    }
+    .college-card h3 {
+      margin: 0 0 6px 0;
+      color: #222;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .college-card p {
+      margin: 2px 0;
+      color: #444;
+      font-size: 1rem;
+    }
+    .college-badge {
+      position: absolute;
+      top: 18px;
+      right: 32px;
+      background: #1976d2;
+      color: #fff;
+      font-size: 0.92rem;
+      padding: 4px 16px;
+      border-radius: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
+    }
+    .top-badge {
+      background: #43a047;
+      color: #fff;
+      font-size: 0.92rem;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    .expand-btn {
+      margin-top: 8px;
+      background: #fff;
+      color: #1976d2;
+      border: 1px solid #1976d2;
+      border-radius: 6px;
+      padding: 6px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .expand-btn:hover {
+      background: #1976d2;
+      color: #fff;
+    }
+    .details {
+      display: none;
+      margin-top: 12px;
+      background: #e3f0ff;
+      border-radius: 8px;
+      padding: 14px 18px 10px 18px;
+      font-size: 0.98rem;
+      color: #234;
+      box-shadow: 0 1px 4px rgba(25, 118, 210, 0.06);
+    }
+    .details p {
+      margin: 4px 0;
+    }
+    .details a {
+      color: #1976d2;
+      text-decoration: underline;
+    }
+    .no-results {
+      text-align: center;
+      color: #b71c1c;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 40px;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 18px 2vw; }
+      .filters { flex-direction: column; align-items: stretch; gap: 12px; }
+      .college-card { padding: 16px 12px; }
+      .college-badge { right: 12px; top: 12px; }
+    }
+
+
+    /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>🔍 TS EAMCET Engineering Colleges in Telangana</h2>
+  <div class="filters">
+    <label>
+      Location:
+      <select id="locationFilter">
+        <option value="">All</option>
+        <option value="Adilabad">Adilabad</option>
+        <option value="Bhadradri Kothagudem">Bhadradri Kothagudem</option>
+        <option value="Hanamkonda">Hanamkonda</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Jagtial">Jagtial</option>
+        <option value="Jangaon">Jangaon</option>
+        <option value="Jayashankar Bhupalpally">Jayashankar Bhupalpally</option>
+        <option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+        <option value="Kamareddy">Kamareddy</option>
+        <option value="Karimnagar">Karimnagar</option>
+        <option value="Khammam">Khammam</option>
+        <option value="Komaram Bheem Asifabad">Komaram Bheem Asifabad</option>
+        <option value="Mahabubabad">Mahabubabad</option>
+        <option value="Mahabubnagar">Mahabubnagar</option>
+        <option value="Mancherial">Mancherial</option>
+        <option value="Medak">Medak</option>
+        <option value="Medchal-Malkajgiri">Medchal-Malkajgiri</option>
+        <option value="Mulugu">Mulugu</option>
+        <option value="Nagarkurnool">Nagarkurnool</option>
+        <option value="Nalgonda">Nalgonda</option>
+        <option value="Narayanpet">Narayanpet</option>
+        <option value="Nirmal">Nirmal</option>
+        <option value="Nizamabad">Nizamabad</option>
+        <option value="Peddapalli">Peddapalli</option>
+        <option value="Rajanna Sircilla">Rajanna Sircilla</option>
+        <option value="Ranga Reddy">Ranga Reddy</option>
+        <option value="Sangareddy">Sangareddy</option>
+        <option value="Siddipet">Siddipet</option>
+        <option value="Suryapet">Suryapet</option>
+        <option value="Vikarabad">Vikarabad</option>
+        <option value="Wanaparthy">Wanaparthy</option>
+        <option value="Warangal">Warangal</option>
+        <option value="Yadadri Bhuvanagiri">Yadadri Bhuvanagiri</option>
+      </select>
+    </label>
+    <label>
+      Fee:
+      <select id="feeFilter">
+        <option value="">All</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </label>
+    <label>
+      College Type:
+      <select id="typeFilter">
+        <option value="">All</option>
+        <option value="Autonomous">Autonomous</option>
+        <option value="Govt">Govt</option>
+        <option value="University">University</option>
+        <option value="Private">Private</option>
+      </select>
+    </label>
+    <label>
+      Branch:
+      <select id="branchFilter">
+        <option value="">All</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="IT">IT</option>
+        <option value="AI">AI</option>
+        <option value="DS">DS</option>
+        <option value="AIML">AIML</option>
+        <option value="IOT">IOT</option>
+        <!-- Add more as needed -->
+      </select>
+    </label>
+    <label>
+      College Name:
+      <input type="text" id="nameSearch" placeholder="Enter college name...">
+    </label>
+    <label>
+      Sort By:
+      <select id="sortBy" onchange="filterColleges()">
+        <option value="">Default</option>
+        <option value="name">Name</option>
+        <option value="fee">Fee</option>
+        <option value="placement">Placement</option>
+      </select>
+    </label>
+    <button onclick="filterColleges()">Search</button>
+  </div>
+  <div id="results"></div>
+</div>
+<script>
+const colleges = [
+
+  {
+    code: "JNTUH",
+    name: "Jawaharlal Nehru Technological University Hyderabad",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "High",
+    type: "University",
+    website: "https://jntuh.ac.in",
+    contact: "040-23158600",
+    address: "Kukatpally, Hyderabad, Telangana 500085",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL", "IT", "BIO", "AI"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 800,
+    last_year_cutoff: { CSE: 400, ECE: 900 }
+  },
+  {
+    code: "VNRVJIET",
+    name: "Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering & Technology",
+    location: "Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://vnrvjiet.ac.in",
+    contact: "040-23731555",
+    address: "Bachupally, Hyderabad, Telangana 500090",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "MECH", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 3200, ECE: 6100 }
+  },
+  {
+    code: "BVRIT",
+    name: "BV Raju Institute of Technology",
+    location: "Narsapur",
+    fee_category: "Moderate",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://bvrit.ac.in",
+    contact: "08455-256567",
+    address: "Narsapur, Medak, Telangana 502313",
+    courses: ["CSE", "ECE", "EEE", "IT", "MECH", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A+",
+    intake: 1020,
+    last_year_cutoff: { CSE: 6000, ECE: 9000 }
+  },
+  {
+    code: "MGIT",
+    name: "Mahatma Gandhi Institute of Technology",
+    location: "Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://mgit.ac.in",
+    contact: "040-24193057",
+    address: "Gandipet, Hyderabad, Telangana 500075",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL", "IT", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 900,
+    last_year_cutoff: { CSE: 3500, ECE: 6000 }
+  },
+  {
+    code: "MVSR",
+    name: "MVSR Engineering College",
+    location: "Nadergul, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://mvsrec.edu.in",
+    contact: "040-29881832",
+    address: "Nadergul, Hyderabad, Telangana 501510",
+    courses: ["CSE", "ECE", "EEE", "IT", "CIVIL", "MECH"],
+    hostel: false,
+    accreditation: "NAAC A",
+    intake: 840,
+    last_year_cutoff: { CSE: 7400, ECE: 11200 }
+  },
+  {
+    code: "ANURAG",
+    name: "Anurag University",
+    location: "Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Moderate",
+    type: "University",
+    website: "https://anurag.edu.in",
+    contact: "040-23419999",
+    address: "Venkatapur, Ghatkesar, Hyderabad, Telangana 500088",
+    courses: ["CSE", "IT", "ECE", "AI", "DS", "MECH", "CIVIL"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 1400,
+    last_year_cutoff: { CSE: 9500, ECE: 12500 }
+  },
+  {
+    code: "CBIT",
+    name: "Chaitanya Bharathi Institute of Technology",
+    location: "Hyderabad",
+    fee_category: "High",
+    placement_level: "Very High",
+    type: "Autonomous",
+    website: "https://www.cbit.ac.in",
+    contact: "040-24193276",
+    address: "Gandipet, Hyderabad, Telangana 500075",
+    courses: ["CSE", "ECE", "EEE", "IT", "MECH", "CIVIL", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1200,
+    last_year_cutoff: { CSE: 800, ECE: 2100 }
+  },
+  {
+    code: "IARE",
+    name: "Institute of Aeronautical Engineering",
+    location: "Dundigal",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Autonomous",
+    website: "https://iare.ac.in",
+    contact: "08418-200719",
+    address: "Dundigal, Hyderabad, Telangana 500043",
+    courses: ["CSE", "AERO", "ECE", "MECH", "AI", "DS", "IT"],
+    hostel: true,
+    accreditation: "NAAC A+",
+    intake: 1020,
+    last_year_cutoff: { CSE: 8900, ECE: 13500 }
+  },
+  {
+    code: "CMRGI",
+    name: "CMR Group of Institutions",
+    location: "Medchal, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://cmrgi.ac.in",
+    contact: "08418-200719",
+    address: "Kandlakoya, Medchal, Hyderabad, Telangana",
+    courses: ["CSE", "ECE", "IT", "AI", "DS", "EEE"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 1200,
+    last_year_cutoff: { CSE: 10300, ECE: 14500 }
+  },
+  {
+    code: "BEC",
+    name: "Bhoj Reddy Engineering College for Women",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Women’s College",
+    website: "http://brecw.ac.in",
+    contact: "040-24530172",
+    address: "Santoshnagar, Hyderabad, Telangana",
+    courses: ["CSE", "ECE", "EEE", "IT"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 600,
+    last_year_cutoff: { CSE: 10800, ECE: 13000 }
+  },
+  {
+    code: "KITW",
+    name: "Kakatiya Institute of Technology for Women",
+    location: "Warangal",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Women’s College",
+    website: "https://kitw.ac.in",
+    contact: "0870-2555440",
+    address: "Warangal, Telangana 506001",
+    courses: ["CSE", "ECE", "IT"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 480,
+    last_year_cutoff: { CSE: 11500, ECE: 14800 }
+  },
+  {
+    code: "MSREC",
+    name: "Matrusri Engineering College",
+    location: "Saidabad, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://matrusri.edu.in",
+    contact: "040-24072764",
+    address: "Saidabad, Hyderabad, Telangana 500059",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI"],
+    hostel: false,
+    accreditation: "NAAC A",
+    intake: 720,
+    last_year_cutoff: { CSE: 8400, ECE: 13000 }
+  },
+  {
+    code: "VJIT",
+    name: "Vidya Jyothi Institute of Technology",
+    location: "Aziznagar, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://vjit.ac.in",
+    contact: "08413-235300",
+    address: "Chilkur Road, Hyderabad, Telangana 500075",
+    courses: ["CSE", "ECE", "IT", "AI", "DS", "EEE", "MECH"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 960,
+    last_year_cutoff: { CSE: 5400, ECE: 8800 }
+  },
+  {
+    code: "JNTUH",
+    name: "Jawaharlal Nehru Technological University Hyderabad",
+    location: "Kukatpally, Hyderabad",
+    fee_category: "Low",
+    placement_level: "High",
+    type: "University",
+    website: "https://jntuh.ac.in",
+    contact: "040-23158600",
+    address: "Kukatpally, Hyderabad, Telangana 500085",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL", "IT", "BIO", "AI"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 800,
+    last_year_cutoff: { CSE: 400, ECE: 900 }
+  },
+  {
+    code: "MLRIT",
+    name: "MLR Institute of Technology",
+    location: "Dundigal, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://mlrit.ac.in",
+    contact: "08418-204066",
+    address: "Dundigal, Hyderabad, Telangana 500043",
+    courses: ["CSE", "ECE", "IT", "AIML", "DS", "MECH"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1020,
+    last_year_cutoff: { CSE: 3500, ECE: 6300 }
+  },
+  {
+    code: "SRUNI",
+    name: "SR University",
+    location: "Warangal",
+    fee_category: "High",
+    placement_level: "Very High",
+    type: "Private University",
+    website: "https://sru.edu.in",
+    contact: "0870-2818333",
+    address: "Ananthasagar, Warangal, Telangana 506371",
+    courses: ["CSE", "ECE", "AIML", "DS", "IT"],
+    hostel: true,
+    accreditation: "NAAC A+",
+    intake: 900,
+    last_year_cutoff: { CSE: 3900, ECE: 7000 }
+  },
+  {
+    code: "VCE",
+    name: "Vardhaman College of Engineering",
+    location: "Shamshabad, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://vardhaman.org",
+    contact: "08413-253335",
+    address: "Kacharam, Shamshabad, Hyderabad, Telangana 501218",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "DS", "MECH"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 960,
+    last_year_cutoff: { CSE: 4100, ECE: 7800 }
+  },
+  {
+    code: "SNIST",
+    name: "Sreenidhi Institute of Science and Technology",
+    location: "Ghatkesar, Hyderabad",
+    fee_category: "High",
+    placement_level: "Very High",
+    type: "Autonomous",
+    website: "https://sreenidhi.edu.in",
+    contact: "040-66365555",
+    address: "Yamnampet, Ghatkesar, Hyderabad, Telangana 501301",
+    courses: ["CSE", "ECE", "IT", "AI", "DS", "EEE", "CIVIL"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 2200, ECE: 4200 }
+  },
+  {
+    code: "JBIT",
+    name: "JB Institute of Engineering and Technology",
+    location: "Moinabad, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Autonomous",
+    website: "https://jbiet.edu.in",
+    contact: "08413-235684",
+    address: "Moinabad, Hyderabad, Telangana 500075",
+    courses: ["CSE", "ECE", "EEE", "IT", "MECH", "CIVIL"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 960,
+    last_year_cutoff: { CSE: 8500, ECE: 13500 }
+  },
+  {
+    code: "VASAVI",
+    name: "Vasavi College of Engineering",
+    location: "Ibrahim Bagh, Hyderabad",
+    fee_category: "High",
+    placement_level: "Very High",
+    type: "Autonomous",
+    website: "https://vce.ac.in",
+    contact: "040-23146003",
+    address: "Ibrahim Bagh, Hyderabad, Telangana 500031",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "NAAC A++",
+    intake: 960,
+    last_year_cutoff: { CSE: 1500, ECE: 2800 }
+  },
+  {
+    code: "MREC",
+    name: "Malla Reddy Engineering College",
+    location: "Maisammaguda, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://mrec.ac.in",
+    contact: "040-64634234",
+    address: "Maisammaguda, Dhulapally, Secunderabad, Telangana 500100",
+    courses: ["CSE", "IT", "ECE", "AIML", "EEE", "MECH", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 4300, ECE: 8500 }
+  },
+  {
+    code: "MJ",
+    name: "Muffakham Jah College of Engineering and Technology",
+    location: "Banjara Hills, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "High",
+    type: "Minority (Autonomous)",
+    website: "https://mjcollege.ac.in",
+    contact: "040-23280308",
+    address: "Mount Pleasant, 8-2-249, Road No.3, Banjara Hills, Hyderabad, Telangana 500034",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "DS", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "NAAC A",
+    intake: 900,
+    last_year_cutoff: { CSE: 2900, ECE: 6100 }
+  },
+  {
+    code: "SREYAS",
+    name: "Sreyas Institute of Engineering and Technology",
+    location: "Nagole, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://sreyas.ac.in",
+    contact: "040-29707072",
+    address: "Nagole, Hyderabad, Telangana 500068",
+    courses: ["CSE", "ECE", "EEE", "AI", "DS", "IT"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 960,
+    last_year_cutoff: { CSE: 9200, ECE: 13500 }
+  },
+  {
+    code: "TKR",
+    name: "TKR College of Engineering and Technology",
+    location: "Meerpet, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://tkrcet.ac.in",
+    contact: "040-24092216",
+    address: "Medbowli, Meerpet, Hyderabad, Telangana 500097",
+    courses: ["CSE", "ECE", "IT", "AIML", "DS", "EEE"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 10200, ECE: 14000 }
+  },
+  {
+    code: "SCETW",
+    name: "Stanley College of Engineering and Technology for Women",
+    location: "Abids, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Women's College",
+    website: "https://stanley.edu.in",
+    contact: "040-23234800",
+    address: "Chapel Road, Abids, Hyderabad, Telangana 500001",
+    courses: ["CSE", "ECE", "IT", "EEE"],
+    hostel: false,
+    accreditation: "NAAC A",
+    intake: 600,
+    last_year_cutoff: { CSE: 11200, ECE: 13800 }
+  },
+  {
+    code: "VITS",
+    name: "Vignan Institute of Technology and Science",
+    location: "Deshmukhi, Nalgonda",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://vignanits.ac.in",
+    contact: "08418-224518",
+    address: "Deshmukhi, Nalgonda District, Telangana 508284",
+    courses: ["CSE", "ECE", "EEE", "AI", "DS", "MECH"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 840,
+    last_year_cutoff: { CSE: 12000, ECE: 14500 }
+  },
+  {
+    code: "SVIT",
+    name: "Swami Vivekananda Institute of Technology",
+    location: "Patny, Secunderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://svit.ac.in",
+    contact: "040-27843339",
+    address: "Patny Centre, Secunderabad, Telangana 500003",
+    courses: ["CSE", "ECE", "IT", "EEE"],
+    hostel: false,
+    accreditation: "NAAC B+",
+    intake: 720,
+    last_year_cutoff: { CSE: 13000, ECE: 16000 }
+  },
+  {
+    code: "NMREC",
+    name: "Nalla Malla Reddy Engineering College",
+    location: "Ghatkesar, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://nmrec.edu.in",
+    contact: "040-29881830",
+    address: "Divyanagar, Ghatkesar, Hyderabad, Telangana 500088",
+    courses: ["CSE", "ECE", "EEE", "IT"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 720,
+    last_year_cutoff: { CSE: 11000, ECE: 15000 }
+  },
+  {
+    code: "NMRESC",
+    name: "Nalla Malla Reddy Engineering College for Women",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Women's College",
+    website: "https://nmrecw.ac.in",
+    contact: "040-29881833",
+    address: "Ghatkesar, Hyderabad, Telangana",
+    courses: ["CSE", "ECE", "IT"],
+    hostel: false,
+    accreditation: "NAAC B+",
+    intake: 480,
+    last_year_cutoff: { CSE: 12000, ECE: 15800 }
+  },
+  {
+    code: "TKRCET",
+    name: "TKR College of Engineering and Technology",
+    location: "Meerpet, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://tkrcet.ac.in",
+    contact: "040-24092216",
+    address: "Medbowli, Meerpet, Hyderabad, Telangana 500097",
+    courses: ["CSE", "ECE", "IT", "AI", "DS", "EEE"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 10200, ECE: 14000 }
+  },
+  {
+    code: "SCETW",
+    name: "Stanley College of Engineering and Technology for Women",
+    location: "Abids, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Women's College",
+    website: "https://stanley.edu.in",
+    contact: "040-23234800",
+    address: "Chapel Road, Abids, Hyderabad, Telangana 500001",
+    courses: ["CSE", "ECE", "IT", "EEE"],
+    hostel: false,
+    accreditation: "NAAC A",
+    intake: 600,
+    last_year_cutoff: { CSE: 11200, ECE: 13800 }
+  },
+  {
+    code: "CMRCET",
+    name: "CMR College of Engineering & Technology",
+    location: "Kandlakoya, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://cmrcet.ac.in",
+    contact: "08418-200123",
+    address: "Kandlakoya, Medchal Road, Hyderabad, Telangana 501401",
+    courses: ["CSE", "IT", "ECE", "AIML", "DS", "EEE"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 1020,
+    last_year_cutoff: { CSE: 7800, ECE: 13200 }
+  },
+  {
+    code: "VITS",
+    name: "Vignan Institute of Technology and Science",
+    location: "Deshmukhi, Nalgonda",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://vignanits.ac.in",
+    contact: "08418-224518",
+    address: "Deshmukhi, Nalgonda, Telangana 508284",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 840,
+    last_year_cutoff: { CSE: 12000, ECE: 14500 }
+  },
+  {
+    code: "SVIT",
+    name: "Swami Vivekananda Institute of Technology",
+    location: "Patny, Secunderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://svit.ac.in",
+    contact: "040-27843339",
+    address: "Patny Centre, Secunderabad, Telangana 500003",
+    courses: ["CSE", "ECE", "IT", "EEE"],
+    hostel: false,
+    accreditation: "NAAC B+",
+    intake: 720,
+    last_year_cutoff: { CSE: 13000, ECE: 16000 }
+  },
+  {
+    code: "NNRG",
+    name: "Nalla Narasimha Reddy Education Society Group of Institutions",
+    location: "Ghatkesar, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://nnrg.edu.in",
+    contact: "040-29705724",
+    address: "Chowdaryguda, Ghatkesar, Hyderabad, Telangana 500088",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 1080,
+    last_year_cutoff: { CSE: 11000, ECE: 14800 }
+  },
+  {
+    code: "MECT",
+    name: "Malla Reddy Engineering College for Women",
+    location: "Maisammaguda, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Women's College",
+    website: "https://mrecw.ac.in",
+    contact: "040-64634234",
+    address: "Maisammaguda, Hyderabad, Telangana 500043",
+    courses: ["CSE", "ECE", "IT", "EEE"],
+    hostel: true,
+    accreditation: "NAAC A+",
+    intake: 720,
+    last_year_cutoff: { CSE: 9000, ECE: 14000 }
+  },
+  {
+    code: "GNITS",
+    name: "G. Narayanamma Institute of Technology and Science",
+    location: "Shaikpet, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Women's College (Autonomous)",
+    website: "https://gnits.ac.in",
+    contact: "040-23565648",
+    address: "Shaikpet, Hyderabad, Telangana 500104",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 960,
+    last_year_cutoff: { CSE: 2100, ECE: 5000 }
+  },
+  {
+    code: "TKREC",
+    name: "TKR Educational Society’s Group of Institutions",
+    location: "Meerpet, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://tkrcet.ac.in",
+    contact: "040-24092216",
+    address: "Meerpet, Hyderabad, Telangana 500097",
+    courses: ["CSE", "ECE", "IT", "AI", "DS", "EEE"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 1020,
+    last_year_cutoff: { CSE: 9500, ECE: 13900 }
+  },
+  {
+    code: "VCET",
+    name: "Vardhaman College of Engineering",
+    location: "Shamshabad, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://vardhaman.org",
+    contact: "08413-253335",
+    address: "Kacharam, Shamshabad, Hyderabad, Telangana 501218",
+    courses: ["CSE", "ECE", "EEE", "MECH", "AI", "DS", "IT"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 3700, ECE: 7000 }
+  },
+  {
+    code: "VBIT",
+    name: "Vignana Bharathi Institute of Technology",
+    location: "Aushapur, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://vbit.edu.in",
+    contact: "08415-200595",
+    address: "Aushapur, Ghatkesar Mandal, Hyderabad, Telangana 501301",
+    courses: ["CSE", "ECE", "IT", "AI", "DS", "EEE"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 1020,
+    last_year_cutoff: { CSE: 8500, ECE: 13000 }
+  },
+  {
+    code: "KGRCET",
+    name: "KG Reddy College of Engineering and Technology",
+    location: "Moinabad, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://kgr.ac.in",
+    contact: "08413-235056",
+    address: "Chilkur Balaji Road, Moinabad, Hyderabad, Telangana 501504",
+    courses: ["CSE", "ECE", "IT", "AI", "DS"],
+    hostel: false,
+    accreditation: "NAAC B+",
+    intake: 720,
+    last_year_cutoff: { CSE: 13200, ECE: 15500 }
+  },
+  {
+    code: "SPEC",
+    name: "Sree Dattha Institute of Engineering and Science",
+    location: "Sheriguda, Ibrahimpatnam",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "https://sreedattha.ac.in",
+    contact: "08414-200488",
+    address: "Sheriguda, Ibrahimpatnam, Telangana 501510",
+    courses: ["CSE", "ECE", "EEE", "AI"],
+    hostel: true,
+    accreditation: "NAAC B",
+    intake: 720,
+    last_year_cutoff: { CSE: 13800, ECE: 16000 }
+  },
+  {
+    code: "GRIET",
+    name: "Gokaraju Rangaraju Institute of Engineering and Technology",
+    location: "Bachupally, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Autonomous",
+    website: "https://griet.ac.in",
+    contact: "040-23042555",
+    address: "Nizampet Road, Bachupally, Hyderabad, Telangana 500090",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 2200, ECE: 5200 }
+  },
+  {
+    code: "AVNIET",
+    name: "AVN Institute of Engineering and Technology",
+    location: "Ibrahimpatnam, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://avniet.ac.in",
+    contact: "08414-200006",
+    address: "Ibrahimpatnam, Hyderabad, Telangana 501506",
+    courses: ["CSE", "ECE", "AI", "DS", "IT"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 960,
+    last_year_cutoff: { CSE: 8700, ECE: 13000 }
+  },
+  {
+    code: "BIET",
+    name: "Bharat Institute of Engineering and Technology",
+    location: "Ibrahimpatnam, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://biet.ac.in",
+    contact: "08414-252313",
+    address: "Ibrahimpatnam, Ranga Reddy, Telangana 501510",
+    courses: ["CSE", "ECE", "EEE", "MECH", "IT", "AI"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 1080,
+    last_year_cutoff: { CSE: 9500, ECE: 14500 }
+  },
+  {
+    code: "SDES",
+    name: "Siddhartha Degree & Engineering College",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "https://siddhartha.ac.in",
+    contact: "040-27150125",
+    address: "Vinay Nagar, Hyderabad, Telangana 500070",
+    courses: ["CSE", "ECE", "EEE", "IT"],
+    hostel: false,
+    accreditation: "NAAC B+",
+    intake: 600,
+    last_year_cutoff: { CSE: 13500, ECE: 15500 }
+  },
+  {
+    code: "GCET",
+    name: "Geethanjali College of Engineering and Technology",
+    location: "Keesara, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "High",
+    type: "Private",
+    website: "https://gcet.edu.in",
+    contact: "08415-200488",
+    address: "Cheeryala, Keesara, Hyderabad, Telangana 501301",
+    courses: ["CSE", "ECE", "EEE", "IT", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 960,
+    last_year_cutoff: { CSE: 5600, ECE: 9500 }
+  },
+  {
+    code: "SPHN",
+    name: "Sphoorthy Engineering College",
+    location: "Nadargul, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://sphoorthyengg.ac.in",
+    contact: "040-24125597",
+    address: "Nadargul, Sagar Road, Hyderabad, Telangana 500068",
+    courses: ["CSE", "ECE", "EEE", "IT"],
+    hostel: true,
+    accreditation: "NAAC B+",
+    intake: 840,
+    last_year_cutoff: { CSE: 10800, ECE: 13400 }
+  },
+  {
+    code: "HITS",
+    name: "Holy Mary Institute of Technology and Science",
+    location: "Bogaram, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://hmgi.ac.in",
+    contact: "08415-200666",
+    address: "Bogaram, Keesara, Hyderabad, Telangana 501301",
+    courses: ["CSE", "ECE", "IT", "EEE"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 960,
+    last_year_cutoff: { CSE: 11500, ECE: 14000 }
+  },
+  {
+    code: "SMEC",
+    name: "St. Martin's Engineering College",
+    location: "Kompally, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "High",
+    type: "Private",
+    website: "https://smec.ac.in",
+    contact: "040-23412350",
+    address: "Dhulapally, Kompally, Hyderabad, Telangana 500100",
+    courses: ["CSE", "IT", "ECE", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A+",
+    intake: 1020,
+    last_year_cutoff: { CSE: 7200, ECE: 12800 }
+  },
+  {
+    code: "SIET",
+    name: "Siddhartha Institute of Engineering & Technology",
+    location: "Ibrahimpatnam, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://siddhartha.ac.in",
+    contact: "08414-202020",
+    address: "Ibrahimpatnam, Hyderabad, Telangana 501506",
+    courses: ["CSE", "ECE", "EEE", "IT"],
+    hostel: false,
+    accreditation: "NAAC B+",
+    intake: 720,
+    last_year_cutoff: { CSE: 12800, ECE: 15000 }
+  },
+  {
+    code: "KMIT",
+    name: "Keshav Memorial Institute of Technology",
+    location: "Narayanaguda, Hyderabad",
+    fee_category: "High",
+    placement_level: "High",
+    type: "Private",
+    website: "https://kmit.in",
+    contact: "040-23222057",
+    address: "Narayanaguda, Hyderabad, Telangana 500029",
+    courses: ["CSE", "IT", "AI", "DS"],
+    hostel: false,
+    accreditation: "NAAC A+",
+    intake: 840,
+    last_year_cutoff: { CSE: 1800, IT: 2200 }
+  },
+  {
+    code: "LIET",
+    name: "Lords Institute of Engineering & Technology",
+    location: "Himayath Sagar, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://lords.ac.in",
+    contact: "040-24403571",
+    address: "Himayath Sagar, Hyderabad, Telangana 500091",
+    courses: ["CSE", "ECE", "IT", "EEE", "AI", "DS"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 960,
+    last_year_cutoff: { CSE: 8700, ECE: 12000 }
+  },
+  {
+    code: "GNIT",
+    name: "Guru Nanak Institute of Technology",
+    location: "Ibrahimpatnam, Hyderabad",
+    fee_category: "Moderate",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://gnithyd.ac.in",
+    contact: "08414-202020",
+    address: "Ibrahimpatnam, Hyderabad, Telangana 501506",
+    courses: ["CSE", "ECE", "EEE", "AI"],
+    hostel: true,
+    accreditation: "NAAC B++",
+    intake: 840,
+    last_year_cutoff: { CSE: 9400, ECE: 13500 }
+  },
+  {
+    code: "KPRIT",
+    name: "Kommuri Pratap Reddy Institute of Technology",
+    location: "Ghatkesar, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Medium",
+    type: "Private",
+    website: "https://kprit.ac.in",
+    contact: "08415-200488",
+    address: "Ghatkesar, Hyderabad, Telangana 501301",
+    courses: ["CSE", "ECE", "EEE", "AI"],
+    hostel: false,
+    accreditation: "NAAC B",
+    intake: 720,
+    last_year_cutoff: { CSE: 12300, ECE: 14500 }
+  },
+  {
+    code: "AIET",
+    name: "Annamacharya Institute of Technology & Sciences",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "https://aits-hyd.org",
+    contact: "040-64525655",
+    address: "Batasingaram, Hayathnagar, Hyderabad, Telangana 501512",
+    courses: ["CSE", "ECE", "EEE"],
+    hostel: false,
+    accreditation: "NAAC B",
+    intake: 600,
+    last_year_cutoff: { CSE: 14500, ECE: 16500 }
+  }
+,
+  {
+    "code": "AIET",
+    "name": "Aurora's Institute of Engineering and Technology",
+    "location": "Hyderabad",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://aurora.ac.in",
+    "contact": "040-2766 7866",
+    "address": "Abids, Hyderabad, Telangana 500001",
+    "courses": ["CSE", "ECE", "EEE", "IT", "MECH", "CIVIL"],
+    "hostel": false,
+    "accreditation": "NAAC B+",
+    "intake": 600,
+    "last_year_cutoff": { "CSE": 31000, "ECE": 41000 }
+  },
+  {
+    "code": "VAAGESWARI",
+    "name": "Vaageswari College of Engineering (KSRMNGR)",
+    "location": "Karimnagar",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://vaageswari.in",
+    "contact": "0878-2237616",
+    "address": "Thimmapur, Karimnagar, Telangana 505527",
+    "courses": ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 540,
+    "last_year_cutoff": { "CSE": 29000, "ECE": 35000 }
+  },
+  {
+    "code": "CVR",
+    "name": "CVR College of Engineering",
+    "location": "Ibrahimpatnam",
+    "fee_category": "High",
+    "placement_level": "High",
+    "type": "Autonomous",
+    "website": "https://cvr.ac.in",
+    "contact": "08414-661600",
+    "address": "Ibrahimpatnam, Ranga Reddy District, Telangana 501510",
+    "courses": ["CSE", "ECE", "EEE", "MECH", "IT", "AI", "DS"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 1020,
+    "last_year_cutoff": { "CSE": 4700, "ECE": 7800 }
+  },
+  {
+    "code": "CMRIT",
+    "name": "CMR Institute of Technology",
+    "location": "Hyderabad",
+    "fee_category": "High",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://cmritonline.ac.in",
+    "contact": "040-2970 2303",
+    "address": "Kandlakoya, Medchal, Hyderabad, Telangana 501401",
+    "courses": ["CSE", "ECE", "EEE", "IT", "AIML", "DS", "MECH"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 960,
+    "last_year_cutoff": { "CSE": 13500, "ECE": 18500 }
+  },
+  {
+    "code": "MREC",
+    "name": "Malla Reddy Engineering College",
+    "location": "Hyderabad",
+    "fee_category": "Moderate",
+    "placement_level": "High",
+    "type": "Autonomous",
+    "website": "https://mrec.ac.in",
+    "contact": "040-6463 6363",
+    "address": "Maisammaguda, Dhulapally, Hyderabad, Telangana 500100",
+    "courses": ["CSE", "ECE", "EEE", "IT", "MECH", "AIML", "DS"],
+    "hostel": true,
+    "accreditation": "NAAC A++",
+    "intake": 1080,
+    "last_year_cutoff": { "CSE": 8700, "ECE": 11500 }
+  },
+  {
+    "code": "MLRITM",
+    "name": "MLR Institute of Technology & Management",
+    "location": "Hyderabad",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://mlritm.ac.in",
+    "contact": "040-2305 3332",
+    "address": "Dundigal, Hyderabad, Telangana 500043",
+    "courses": ["CSE", "ECE", "EEE", "AIML", "IT", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 840,
+    "last_year_cutoff": { "CSE": 18000, "ECE": 22000 }
+  },
+  {
+    "code": "ACEEC",
+    "name": "ACE Engineering College",
+    "location": "Ghatkesar",
+    "fee_category": "Low",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://aceec.ac.in",
+    "contact": "08415-200597",
+    "address": "Ankushapur, Ghatkesar, Hyderabad, Telangana 501301",
+    "courses": ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 600,
+    "last_year_cutoff": { "CSE": 28000, "ECE": 32000 }
+  },
+  {
+    "code": "SMEC",
+    "name": "St. Martin’s Engineering College",
+    "location": "Dhulapally, Hyderabad",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://smec.ac.in",
+    "contact": "040-2341 2315",
+    "address": "Dhulapally, Hyderabad, Telangana 500100",
+    "courses": ["CSE", "ECE", "EEE", "AIML", "IT", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC A+",
+    "intake": 1020,
+    "last_year_cutoff": { "CSE": 17500, "ECE": 26500 }
+  },
+  {
+    "code": "GITAM",
+    "name": "GITAM School of Technology",
+    "location": "Hyderabad",
+    "fee_category": "High",
+    "placement_level": "High",
+    "type": "Deemed",
+    "website": "https://gitam.edu",
+    "contact": "0891-2840501",
+    "address": "Rudraram, Patancheru Mandal, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "MECH", "CIVIL", "AIML", "IT"],
+    "hostel": true,
+    "accreditation": "NAAC A++",
+    "intake": 960,
+    "last_year_cutoff": { "CSE": 14500, "ECE": 18500 }
+  },
+  {
+    "code": "SITS",
+    "name": "Sri Indu Institute of Technology",
+    "location": "Ibrahimpatnam",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://sriindugroup.org",
+    "contact": "08414-252666",
+    "address": "Ibrahimpatnam, Hyderabad, Telangana 501506",
+    "courses": ["CSE", "ECE", "EEE", "IT", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 720,
+    "last_year_cutoff": { "CSE": 26000, "ECE": 30000 }
+  },
+  {
+    "code": "SVS",
+    "name": "SVS Group of Institutions",
+    "location": "Warangal",
+    "fee_category": "Low",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "https://svsengg.ac.in",
+    "contact": "0870-3206789",
+    "address": "Bheemaram, Warangal, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "CIVIL", "MECH"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 480,
+    "last_year_cutoff": { "CSE": 32000, "ECE": 39000 }
+  },
+  {
+    "code": "MRIT",
+    "name": "Malla Reddy Institute of Technology",
+    "location": "Hyderabad",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://mritm.ac.in",
+    "contact": "040-23792133",
+    "address": "Maisammaguda, Kompally, Hyderabad, Telangana 500100",
+    "courses": ["CSE", "ECE", "EEE", "AIML"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 600,
+    "last_year_cutoff": { "CSE": 20000, "ECE": 25000 }
+  },
+  {
+    "code": "MRIET",
+    "name": "Malla Reddy Institute of Engineering and Technology",
+    "location": "Hyderabad",
+    "fee_category": "Moderate",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://mriet.ac.in",
+    "contact": "040-23792122",
+    "address": "Maisammaguda, Kompally, Hyderabad, Telangana 500100",
+    "courses": ["CSE", "ECE", "EEE", "AIML", "DS"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 660,
+    "last_year_cutoff": { "CSE": 21000, "ECE": 26000 }
+  },
+  {
+    code: "MU",
+    name: "Mahindra University",
+    location: "Hyderabad",
+    fee_category: "Very High",
+    placement_level: "High",
+    type: "Private",
+    website: "https://www.mahindrauniversity.edu.in",
+    contact: "040-67135100",
+    address: "Bahadurpally, Hyderabad, Telangana 500043",
+    courses: ["CSE", "ECE", "AI", "DS", "ME", "EEE"],
+    hostel: true,
+    accreditation: "UGC Approved",
+    intake: 600,
+    last_year_cutoff: { CSE: 3000, ECE: 6500 }
+  },
+  {
+    code: "DKRIST",
+    name: "Dhruva College of Engineering and Technology (Krist)",
+    location: "Toopran, Medak",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "https://dhruvatech.in",
+    contact: "08454-202049",
+    address: "Toopran, Medak, Telangana 502334",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL", "AI"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 480,
+    last_year_cutoff: { CSE: 58000, ECE: 75000 }
+  },
+  {
+    code: "SICET",
+    name: "Siddhartha Institute of Engineering & Technology",
+    location: "Ibrahimpatnam, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "https://sicet.ac.in",
+    contact: "08414-252313",
+    address: "Narapally, Ibrahimpatnam, Ranga Reddy District, Telangana",
+    courses: ["CSE", "ECE", "IT", "EEE", "AI", "MECH"],
+    hostel: true,
+    accreditation: "NBA, NAAC B++",
+    intake: 720,
+    last_year_cutoff: { CSE: 28000, ECE: 46000 }
+  },
+  {
+    code: "UCE",
+    name: "University College of Engineering (OU)",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "High",
+    type: "Government",
+    website: "https://uceou.edu",
+    contact: "040-27098254",
+    address: "Osmania University, Hyderabad - 500007",
+    courses: ["CSE", "ECE", "ME", "CIVIL", "EEE"],
+    hostel: true,
+    accreditation: "NAAC A+, NBA",
+    intake: 420,
+    last_year_cutoff: { CSE: 290, ECE: 500 }
+  },
+  {
+    code: "INDUR",
+    name: "Indur Institute of Engineering and Technology",
+    location: "Siddipet",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "http://www.indur.ac.in",
+    contact: "08457-221434",
+    address: "Siddipet, Telangana 502103",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 420,
+    last_year_cutoff: { CSE: 89000, ECE: 98000 }
+  },
+  {
+    code: "MRCE",
+    name: "Malla Reddy College of Engineering",
+    location: "Maisammaguda, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "https://mrce.in",
+    contact: "040-29565345",
+    address: "Maisammaguda, Dhulapally, Hyderabad - 500100",
+    courses: ["CSE", "IT", "ECE", "EEE", "AIML", "DS"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 840,
+    last_year_cutoff: { CSE: 22500, ECE: 35000 }
+  },
+  {
+    code: "ECET",
+    name: "Ellenki College of Engineering & Technology",
+    location: "Patancheru, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "http://ellenkicet.ac.in",
+    contact: "08455-201142",
+    address: "Patancheru, Hyderabad, Telangana 502319",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 600,
+    last_year_cutoff: { CSE: 63000, ECE: 80000 }
+  },
+  {
+    code: "JITS",
+    name: "Jaya Institute of Technology and Science",
+    location: "Warangal",
+    fee_category: "Low",
+    placement_level: "Basic",
+    type: "Private",
+    website: "http://jits.ac.in",
+    contact: "0870-2564321",
+    address: "Hanamkonda, Warangal, Telangana 506001",
+    courses: ["CSE", "ECE", "EEE", "MECH"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 360,
+    last_year_cutoff: { CSE: 72000, ECE: 89000 }
+  },
+  {
+    code: "MRECW",
+    name: "Malla Reddy Engineering College for Women",
+    location: "Maisammaguda, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private (Women)",
+    website: "https://mrecw.ac.in",
+    contact: "040-23792158",
+    address: "Maisammaguda, Dhulapally, Hyderabad - 500100",
+    courses: ["CSE", "IT", "ECE", "AIML", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++, NBA",
+    intake: 540,
+    last_year_cutoff: { CSE: 19500, ECE: 30500 }
+  },
+  {
+    code: "NECM",
+    name: "Nizamabad Engineering College for Men",
+    location: "Nizamabad",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "http://necm.ac.in",
+    contact: "08462-224933",
+    address: "Nizamabad, Telangana 503001",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 360,
+    last_year_cutoff: { CSE: 88000, ECE: 93000 }
+  },
+  {
+    code: "SWEC",
+    name: "Stanley Women Engineering College",
+    location: "Abids, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Moderate",
+    type: "Private (Women)",
+    website: "https://swec.ac.in",
+    contact: "040-23234800",
+    address: "Abids Road, Hyderabad, Telangana 500001",
+    courses: ["CSE", "IT", "ECE", "AI", "DS"],
+    hostel: true,
+    accreditation: "NBA, NAAC A",
+    intake: 480,
+    last_year_cutoff: { CSE: 21500, ECE: 41000 }
+  },
+  {
+    code: "MNRCET",
+    name: "MN Reddy College of Engineering & Technology",
+    location: "Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Basic",
+    type: "Private",
+    website: "http://mnrcet.in",
+    contact: "040-29882225",
+    address: "Fasalwadi, Hyderabad, Telangana 500043",
+    courses: ["CSE", "ECE", "EEE", "AI"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 420,
+    last_year_cutoff: { CSE: 72000, ECE: 85000 }
+  },
+  {
+    code: "MU",
+    name: "Mahindra University",
+    location: "Hyderabad",
+    fee_category: "Very High",
+    placement_level: "High",
+    type: "Private",
+    website: "https://www.mahindrauniversity.edu.in",
+    contact: "040-67135100",
+    address: "Bahadurpally, Hyderabad, Telangana 500043",
+    courses: ["CSE", "ECE", "AI", "DS", "ME", "EEE"],
+    hostel: true,
+    accreditation: "UGC Approved",
+    intake: 600,
+    last_year_cutoff: { CSE: 3000, ECE: 6500 }
+  },
+  {
+    code: "DKRIST",
+    name: "Dhruva College of Engineering and Technology (Krist)",
+    location: "Toopran, Medak",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "https://dhruvatech.in",
+    contact: "08454-202049",
+    address: "Toopran, Medak, Telangana 502334",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL", "AI"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 480,
+    last_year_cutoff: { CSE: 58000, ECE: 75000 }
+  },
+  {
+    code: "SICET",
+    name: "Siddhartha Institute of Engineering & Technology",
+    location: "Ibrahimpatnam, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "https://sicet.ac.in",
+    contact: "08414-252313",
+    address: "Narapally, Ibrahimpatnam, Ranga Reddy District, Telangana",
+    courses: ["CSE", "ECE", "IT", "EEE", "AI", "MECH"],
+    hostel: true,
+    accreditation: "NBA, NAAC B++",
+    intake: 720,
+    last_year_cutoff: { CSE: 28000, ECE: 46000 }
+  },
+  {
+    code: "UCE",
+    name: "University College of Engineering (OU)",
+    location: "Hyderabad",
+    fee_category: "Low",
+    placement_level: "High",
+    type: "Government",
+    website: "https://uceou.edu",
+    contact: "040-27098254",
+    address: "Osmania University, Hyderabad - 500007",
+    courses: ["CSE", "ECE", "ME", "CIVIL", "EEE"],
+    hostel: true,
+    accreditation: "NAAC A+, NBA",
+    intake: 420,
+    last_year_cutoff: { CSE: 290, ECE: 500 }
+  },
+  {
+    code: "INDUR",
+    name: "Indur Institute of Engineering and Technology",
+    location: "Siddipet",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "http://www.indur.ac.in",
+    contact: "08457-221434",
+    address: "Siddipet, Telangana 502103",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 420,
+    last_year_cutoff: { CSE: 89000, ECE: 98000 }
+  },
+  {
+    code: "MRCE",
+    name: "Malla Reddy College of Engineering",
+    location: "Maisammaguda, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "https://mrce.in",
+    contact: "040-29565345",
+    address: "Maisammaguda, Dhulapally, Hyderabad - 500100",
+    courses: ["CSE", "IT", "ECE", "EEE", "AIML", "DS"],
+    hostel: true,
+    accreditation: "NAAC A",
+    intake: 840,
+    last_year_cutoff: { CSE: 22500, ECE: 35000 }
+  },
+  {
+    code: "ECET",
+    name: "Ellenki College of Engineering & Technology",
+    location: "Patancheru, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private",
+    website: "http://ellenkicet.ac.in",
+    contact: "08455-201142",
+    address: "Patancheru, Hyderabad, Telangana 502319",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 600,
+    last_year_cutoff: { CSE: 63000, ECE: 80000 }
+  },
+  {
+    code: "JITS",
+    name: "Jaya Institute of Technology and Science",
+    location: "Warangal",
+    fee_category: "Low",
+    placement_level: "Basic",
+    type: "Private",
+    website: "http://jits.ac.in",
+    contact: "0870-2564321",
+    address: "Hanamkonda, Warangal, Telangana 506001",
+    courses: ["CSE", "ECE", "EEE", "MECH"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 360,
+    last_year_cutoff: { CSE: 72000, ECE: 89000 }
+  },
+  {
+    code: "MRECW",
+    name: "Malla Reddy Engineering College for Women",
+    location: "Maisammaguda, Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Moderate",
+    type: "Private (Women)",
+    website: "https://mrecw.ac.in",
+    contact: "040-23792158",
+    address: "Maisammaguda, Dhulapally, Hyderabad - 500100",
+    courses: ["CSE", "IT", "ECE", "AIML", "DS"],
+    hostel: true,
+    accreditation: "NAAC A++, NBA",
+    intake: 540,
+    last_year_cutoff: { CSE: 19500, ECE: 30500 }
+  },
+  {
+    code: "NECM",
+    name: "Nizamabad Engineering College for Men",
+    location: "Nizamabad",
+    fee_category: "Low",
+    placement_level: "Low",
+    type: "Private",
+    website: "http://necm.ac.in",
+    contact: "08462-224933",
+    address: "Nizamabad, Telangana 503001",
+    courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 360,
+    last_year_cutoff: { CSE: 88000, ECE: 93000 }
+  },
+  {
+    code: "SWEC",
+    name: "Stanley Women Engineering College",
+    location: "Abids, Hyderabad",
+    fee_category: "Low",
+    placement_level: "Moderate",
+    type: "Private (Women)",
+    website: "https://swec.ac.in",
+    contact: "040-23234800",
+    address: "Abids Road, Hyderabad, Telangana 500001",
+    courses: ["CSE", "IT", "ECE", "AI", "DS"],
+    hostel: true,
+    accreditation: "NBA, NAAC A",
+    intake: 480,
+    last_year_cutoff: { CSE: 21500, ECE: 41000 }
+  },
+  {
+    code: "MNRCET",
+    name: "MN Reddy College of Engineering & Technology",
+    location: "Hyderabad",
+    fee_category: "Medium",
+    placement_level: "Basic",
+    type: "Private",
+    website: "http://mnrcet.in",
+    contact: "040-29882225",
+    address: "Fasalwadi, Hyderabad, Telangana 500043",
+    courses: ["CSE", "ECE", "EEE", "AI"],
+    hostel: false,
+    accreditation: "AICTE Approved",
+    intake: 420,
+    last_year_cutoff: { CSE: 72000, ECE: 85000 }
+  },
+  {
+    "code": "SCCE",
+    "name": "Sai Spurthi College of Engineering",
+    "location": "Sathupally",
+    "fee_category": "Medium",
+    "placement_level": "Basic",
+    "type": "Private",
+    "website": "http://saispurthi.ac.in",
+    "contact": "08761-280889",
+    "address": "Sathupally, Khammam, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "MECH"],
+    "hostel": true,
+    "accreditation": "AICTE Approved",
+    "intake": 360,
+    "last_year_cutoff": {"CSE": 54000, "ECE": 62000}
+  },
+  {
+    "code": "SCEIT",
+    "name": "Srinivasa College of Engineering and Information Technology",
+    "location": "Khammam",
+    "fee_category": "Low",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://sceitkhammam.ac.in",
+    "contact": "08742-245401",
+    "address": "Khammam, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "CIVIL"],
+    "hostel": false,
+    "accreditation": "AICTE Approved",
+    "intake": 300,
+    "last_year_cutoff": {"CSE": 67000, "ECE": 75000}
+  },
+  {
+    "code": "AKIT",
+    "name": "Anubose Institute of Technology",
+    "location": "Paloncha",
+    "fee_category": "Low",
+    "placement_level": "Basic",
+    "type": "Private",
+    "website": "http://akit.ac.in",
+    "contact": "08744-256678",
+    "address": "Paloncha, Bhadradri Kothagudem, Telangana",
+    "courses": ["CSE", "EEE", "MECH"],
+    "hostel": true,
+    "accreditation": "AICTE Approved",
+    "intake": 240,
+    "last_year_cutoff": {"CSE": 63000, "EEE": 70000}
+  },
+  {
+    "code": "MIST",
+    "name": "Malla Reddy Institute of Science and Technology",
+    "location": "Hyderabad",
+    "fee_category": "Medium",
+    "placement_level": "Moderate",
+    "type": "Private",
+    "website": "http://mist.ac.in",
+    "contact": "040-64634233",
+    "address": "Maisammaguda, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "AI", "DS"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 600,
+    "last_year_cutoff": {"CSE": 23000, "AI": 33000}
+  },
+  {
+    "code": "SIIET",
+    "name": "Siddhartha Institute of Engineering and Technology",
+    "location": "Ibrahimpatnam",
+    "fee_category": "Medium",
+    "placement_level": "Moderate",
+    "type": "Private",
+    "website": "http://siddhartha.ac.in",
+    "contact": "08414-220006",
+    "address": "Ibrahimpatnam, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "MECH"],
+    "hostel": true,
+    "accreditation": "NAAC B++",
+    "intake": 480,
+    "last_year_cutoff": {"CSE": 34000, "ECE": 47000}
+  },
+  {
+  code: "ISLEC",
+  name: "Islamia College of Engineering and Technology",
+  location: "Hyderabad",
+  fee_category: "Medium",
+  placement_level: "Low",
+  type: "Private",
+  website: "http://www.islec.ac.in",
+  contact: "040-27223344",
+  address: "Bandlaguda, Hyderabad, Telangana",
+  courses: ["CSE", "ECE", "EEE", "CIVIL", "MECH"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 300,
+  last_year_cutoff: { CSE: 56000, ECE: 72000 }
+},
+{
+  code: "MREM",
+  name: "Malla Reddy Engineering College and Management Sciences",
+  location: "Maisammaguda, Hyderabad",
+  fee_category: "Medium",
+  placement_level: "Moderate",
+  type: "Private",
+  website: "https://mrem.ac.in",
+  contact: "040-64634234",
+  address: "Maisammaguda, Dhulapally, Hyderabad",
+  courses: ["CSE", "ECE", "IT", "AI", "DS"],
+  hostel: true,
+  accreditation: "NBA Accredited",
+  intake: 600,
+  last_year_cutoff: { CSE: 25000, ECE: 37000 }
+},
+{
+  code: "MIETW",
+  name: "Moghal Institute of Engineering & Technology for Women",
+  location: "Bandlaguda, Hyderabad",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Women",
+  website: "http://mietw.ac.in",
+  contact: "040-24440040",
+  address: "Bandlaguda, Hyderabad",
+  courses: ["CSE", "ECE", "IT"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 240,
+  last_year_cutoff: { CSE: 62000, ECE: 78000 }
+},
+{
+  code: "SCIT",
+  name: "Swarna Bharathi Institute of Science and Technology",
+  location: "Khammam",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Private",
+  website: "http://www.scit.ac.in",
+  contact: "08742-246622",
+  address: "Khammam, Telangana",
+  courses: ["CSE", "EEE", "CIVIL", "MECH"],
+  hostel: true,
+  accreditation: "NAAC B",
+  intake: 360,
+  last_year_cutoff: { CSE: 58000, EEE: 70000 }
+},
+{
+  code: "JBREC",
+  name: "JB Institute of Engineering and Technology",
+  location: "Moinabad, Hyderabad",
+  fee_category: "Medium",
+  placement_level: "Moderate",
+  type: "Autonomous",
+  website: "https://jbiet.edu.in",
+  contact: "08413-235684",
+  address: "Yenkapally, Moinabad, Hyderabad",
+  courses: ["CSE", "ECE", "EEE", "CIVIL", "MECH", "IT", "AI", "DS"],
+  hostel: true,
+  accreditation: "NAAC A",
+  intake: 900,
+  last_year_cutoff: { CSE: 22000, ECE: 34000 }
+},
+{
+  code: "SCET",
+  name: "Shadan College of Engineering and Technology",
+  location: "Hyderabad",
+  fee_category: "Medium",
+  placement_level: "Low",
+  type: "Private",
+  website: "http://www.shadan.org",
+  contact: "040-23510076",
+  address: "Peerancheru, Hyderabad, Telangana",
+  courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 480,
+  last_year_cutoff: { CSE: 57000, ECE: 74000 }
+},
+{
+  code: "BGSESG",
+  name: "Bharat Group of Institutions (BGSESG)",
+  location: "Hyderabad",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Private",
+  website: "https://bgis.in",
+  contact: "040-64500011",
+  address: "Mangalpally, Ibrahimpatnam, Hyderabad",
+  courses: ["CSE", "EEE", "MECH"],
+  hostel: true,
+  accreditation: "AICTE Approved",
+  intake: 300,
+  last_year_cutoff: { CSE: 63000, EEE: 72000 }
+},
+{
+  code: "ACE",
+  name: "ACE Engineering College",
+  location: "Ghatkesar, Hyderabad",
+  fee_category: "Medium",
+  placement_level: "Moderate",
+  type: "Private",
+  website: "https://www.aceec.ac.in",
+  contact: "08415-200396",
+  address: "Ankushapur, Ghatkesar, Hyderabad",
+  courses: ["CSE", "ECE", "EEE", "AI", "DS"],
+  hostel: true,
+  accreditation: "NAAC A",
+  intake: 720,
+  last_year_cutoff: { CSE: 18000, ECE: 25000 }
+},
+{
+  code: "NASAKCET",
+  name: "Nawab Shah Alam Khan College of Engineering and Technology",
+  location: "Hyderabad",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Minority",
+  website: "https://nsakcet.ac.in",
+  contact: "040-24503267",
+  address: "New Malakpet, Hyderabad",
+  courses: ["CSE", "ECE", "EEE", "CIVIL"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 360,
+  last_year_cutoff: { CSE: 52000, ECE: 65000 }
+},
+{
+  code: "VITS",
+  name: "Varadha Reddy Institute of Technology & Science",
+  location: "Warangal",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Private",
+  website: "https://vrits.in",
+  contact: "0870-3201001",
+  address: "Warangal, Telangana",
+  courses: ["CSE", "EEE", "ECE", "MECH"],
+  hostel: true,
+  accreditation: "AICTE Approved",
+  intake: 360,
+  last_year_cutoff: { CSE: 60000, ECE: 70000 }
+},
+{
+  code: "JNTUHCEM",
+  name: "JNTU College of Engineering Manthani",
+  location: "Manthani, Peddapalli",
+  fee_category: "Govt",
+  placement_level: "Moderate",
+  type: "Government",
+  website: "https://jntuhcem.ac.in",
+  contact: "08728-258013",
+  address: "Manthani, Peddapalli, Telangana",
+  courses: ["CSE", "EEE", "ECE", "MECH", "CIVIL"],
+  hostel: true,
+  accreditation: "AICTE Approved",
+  intake: 300,
+  last_year_cutoff: { CSE: 12000, ECE: 18000 }
+},
+{
+  code: "TPCE",
+  name: "Trinity College of Engineering and Technology",
+  location: "Peddapalli",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Private",
+  website: "https://trinitycet.in",
+  contact: "08728-223355",
+  address: "Peddapalli, Telangana 505172",
+  courses: ["CSE", "ECE", "EEE", "MECH"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 300,
+  last_year_cutoff: { CSE: 67000, ECE: 78000 }
+},
+{
+  code: "MITS",
+  name: "Malla Reddy Institute of Technology & Science (MITS)",
+  location: "Hyderabad",
+  fee_category: "Medium",
+  placement_level: "Moderate",
+  type: "Private",
+  website: "https://mrts.ac.in",
+  contact: "040-64634234",
+  address: "Maisammaguda, Dhulapally, Hyderabad",
+  courses: ["CSE", "ECE", "EEE", "IT", "AIML"],
+  hostel: true,
+  accreditation: "NAAC A",
+  intake: 600,
+  last_year_cutoff: { CSE: 21000, ECE: 33000 }
+},
+{
+  code: "PEC",
+  name: "Princeton Engineering College",
+  location: "Hyderabad",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Private",
+  website: "https://pec.ac.in",
+  contact: "040-27221111",
+  address: "Ramanthapur, Hyderabad, Telangana",
+  courses: ["CSE", "ECE", "EEE", "MECH"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 360,
+  last_year_cutoff: { CSE: 54000, ECE: 67000 }
+},
+{
+  code: "SEC",
+  name: "Siddhartha Engineering College",
+  location: "Ibrahimpatnam, Hyderabad",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Private",
+  website: "https://secedu.ac.in",
+  contact: "08414-252111",
+  address: "Ibrahimpatnam, Hyderabad, Telangana",
+  courses: ["CSE", "ECE", "EEE", "MECH"],
+  hostel: false,
+  accreditation: "AICTE Approved",
+  intake: 360,
+  last_year_cutoff: { CSE: 58000, ECE: 69000 }
+},
+{
+  code: "PETW",
+  name: "Princeton Engineering and Technology for Women",
+  location: "Hyderabad",
+  fee_category: "Low",
+  placement_level: "Low",
+  type: "Women",
+  website: "https://petw.ac.in",
+  contact: "040-23456789",
+  address: "Ramanthapur, Hyderabad",
+  courses: ["CSE", "ECE", "EEE"],
+  hostel: true,
+  accreditation: "AICTE Approved",
+  intake: 240,
+  last_year_cutoff: { CSE: 60000, ECE: 72000 }
+},
+{
+  code: "WITS",
+  name: "Warangal Institute of Technology & Science",
+  location: "Warangal",
+  fee_category: "Medium",
+  placement_level: "Moderate",
+  type: "Private",
+  website: "https://wits.ac.in",
+  contact: "0870-2567890",
+  address: "Warangal, Telangana",
+  courses: ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+  hostel: true,
+  accreditation: "NAAC B++",
+  intake: 480,
+  last_year_cutoff: { CSE: 30000, ECE: 45000 }
+},
+  {
+    "code": "VOCE",
+    "name": "Vignana Ooty College of Engineering",
+    "location": "Khammam",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://voce.ac.in",
+    "contact": "08742-123456",
+    "address": "Khammam, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 300,
+    "last_year_cutoff": { "CSE": 95000, "ECE": 120000 }
+  },
+  {
+    "code": "GIET",
+    "name": "Gokaraju Institute of Engineering & Technology",
+    "location": "Hyderabad",
+    "fee_category": "High",
+    "placement_level": "High",
+    "type": "Autonomous",
+    "website": "https://giet.ac.in",
+    "contact": "040-12345678",
+    "address": "Bachupally, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "AIML", "IT", "MECH"],
+    "hostel": true,
+    "accreditation": "NAAC A+",
+    "intake": 900,
+    "last_year_cutoff": { "CSE": 3800, "ECE": 7800 }
+  },
+  {
+    "code": "GANAPATY",
+    "name": "Ganapathy Engineering College",
+    "location": "Warangal",
+    "fee_category": "Medium",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "http://ganapathy.ac.in",
+    "contact": "0870-789654",
+    "address": "Warangal, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "MECH", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 480,
+    "last_year_cutoff": { "CSE": 56000, "ECE": 78000 }
+  },
+  {
+    "code": "BRILLIANT",
+    "name": "Brilliant Engineering College",
+    "location": "Hayathnagar",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://brilliant.ac.in",
+    "contact": "040-23546789",
+    "address": "Hayathnagar, Hyderabad, Telangana",
+    "courses": ["CSE", "EEE", "ECE"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 300,
+    "last_year_cutoff": { "CSE": 105000, "ECE": 120000 }
+  },
+  {
+    "code": "BEC",
+    "name": "Bharat Engineering College",
+    "location": "Mangalpally",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://bec.ac.in",
+    "contact": "040-27894651",
+    "address": "Mangalpally, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "CIVIL"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 95000, "ECE": 110000 }
+  },
+  {
+    "code": "ASIT",
+    "name": "Anurag School of Information Technology",
+    "location": "Ghatkesar",
+    "fee_category": "Medium",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "http://asit.ac.in",
+    "contact": "040-65123000",
+    "address": "Ghatkesar, Hyderabad, Telangana",
+    "courses": ["CSE", "IT", "ECE", "AIML"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 420,
+    "last_year_cutoff": { "CSE": 23000, "AIML": 38000 }
+  },
+  {
+    "code": "SITS",
+    "name": "Sri Indu Institute of Technology and Sciences",
+    "location": "Hyderabad",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "https://sits.ac.in",
+    "contact": "040-24523154",
+    "address": "Sheriguda, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "MECH", "EEE", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 600,
+    "last_year_cutoff": { "CSE": 60000, "ECE": 80000 }
+  },
+  {
+    "code": "KCEA",
+    "name": "Kavitha College of Engineering & Arts",
+    "location": "Khammam",
+    "fee_category": "Low",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://kcea.ac.in",
+    "contact": "08742-777654",
+    "address": "Khammam, Telangana",
+    "courses": ["CSE", "EEE", "MECH"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 240,
+    "last_year_cutoff": { "CSE": 98000 }
+  },
+  {
+    "code": "KNRR",
+    "name": "KNRR College of Engineering",
+    "location": "Hyderabad",
+    "fee_category": "Low",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://knrr.ac.in",
+    "contact": "040-2123456",
+    "address": "Patancheru, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 300,
+    "last_year_cutoff": { "CSE": 90000 }
+  },
+  {
+    "code": "VIJAYA",
+    "name": "Vijaya Engineering College",
+    "location": "Khammam",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://vijayacollege.ac.in",
+    "contact": "08742-765432",
+    "address": "Khammam, Telangana",
+    "courses": ["CSE", "EEE", "ECE"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 85000 }
+  },
+  {
+    "code": "SVES",
+    "name": "Sree Vidyanikethan Engineering Sciences",
+    "location": "Khammam",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://sves.ac.in",
+    "contact": "08742-268888",
+    "address": "Khammam, Telangana",
+    "courses": ["CSE", "ECE", "EEE"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 95000, "ECE": 115000 }
+  },
+  {
+    "code": "KLRCET",
+    "name": "KLR College of Engineering and Technology",
+    "location": "Paloncha, Khammam",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://klr.ac.in",
+    "contact": "08744-254799",
+    "address": "Paloncha, Telangana",
+    "courses": ["CSE", "EEE", "MECH"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 300,
+    "last_year_cutoff": { "CSE": 98000 }
+  },
+  {
+    "code": "GATE",
+    "name": "Gurunanak Institute of Technology & Engineering",
+    "location": "Ibrahimpatnam",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://gate.ac.in",
+    "contact": "040-28945612",
+    "address": "Ibrahimpatnam, Telangana",
+    "courses": ["CSE", "ECE", "IT"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 87000 }
+  },
+  {
+    "code": "TCET",
+    "name": "Teegala Krishna Reddy Engineering College",
+    "location": "Hyderabad",
+    "fee_category": "Medium",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "https://tkrec.ac.in",
+    "contact": "040-24195599",
+    "address": "Meerpet, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "CIVIL", "MECH", "AI", "DS"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 600,
+    "last_year_cutoff": { "CSE": 42000, "AI": 54000 }
+  },
+  {
+    "code": "AZCET",
+    "name": "Azad College of Engineering and Technology",
+    "location": "Hyderabad",
+    "fee_category": "Low",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://azcet.ac.in",
+    "contact": "040-23012345",
+    "address": "Moinabad, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "MECH"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 300,
+    "last_year_cutoff": { "CSE": 100000 }
+  },
+  {
+    "code": "SVITS",
+    "name": "Sri Venkateswara Institute of Technology & Science",
+    "location": "Kadapa (Telangana Region)",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://svits.ac.in",
+    "contact": "08762-210212",
+    "address": "Kadapa, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC B",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 85000 }
+  },
+  {
+    "code": "KUCET",
+    "name": "Kakatiya University College of Engineering and Technology",
+    "location": "Warangal",
+    "fee_category": "Low",
+    "placement_level": "Medium",
+    "type": "Government",
+    "website": "https://kakatiya.ac.in",
+    "contact": "0870-2438855",
+    "address": "KU Campus, Warangal, Telangana",
+    "courses": ["CSE", "ECE", "EEE", "CIVIL"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 240,
+    "last_year_cutoff": { "CSE": 7000, "ECE": 11000 }
+  },
+  {
+    "code": "KITSNL",
+    "name": "Kakatiya Institute of Technology and Science - Nalgonda",
+    "location": "Nalgonda",
+    "fee_category": "Medium",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "http://kitsnlg.ac.in",
+    "contact": "08682-220811",
+    "address": "Nalgonda, Telangana",
+    "courses": ["CSE", "ECE", "MECH"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 30000, "ECE": 50000 }
+  },
+  {
+    "code": "DARE",
+    "name": "Dhanekula Institute of Engineering & Technology",
+    "location": "Vijayawada (Telangana border)",
+    "fee_category": "Medium",
+    "placement_level": "Medium",
+    "type": "Private",
+    "website": "http://dare.ac.in",
+    "contact": "0866-258999",
+    "address": "Vijayawada Highway, Telangana Border",
+    "courses": ["CSE", "EEE", "ECE", "IT"],
+    "hostel": true,
+    "accreditation": "NAAC A",
+    "intake": 420,
+    "last_year_cutoff": { "CSE": 40000 }
+  },
+  {
+    "code": "ASTRA",
+    "name": "Aar Mahaveer Engineering College (ASTRA)",
+    "location": "Bandlaguda, Hyderabad",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://astra.ac.in",
+    "contact": "040-65432109",
+    "address": "Bandlaguda, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "EEE"],
+    "hostel": false,
+    "accreditation": "NAAC B",
+    "intake": 300,
+    "last_year_cutoff": { "CSE": 87000 }
+  },
+  {
+    "code": "SMIC",
+    "name": "St. Mary's Integrated Campus",
+    "location": "Hyderabad",
+    "fee_category": "Medium",
+    "placement_level": "Low",
+    "type": "Private",
+    "website": "http://smic.ac.in",
+    "contact": "040-25897854",
+    "address": "Deshmukhi, Hyderabad, Telangana",
+    "courses": ["CSE", "ECE", "AIML"],
+    "hostel": true,
+    "accreditation": "NAAC B+",
+    "intake": 360,
+    "last_year_cutoff": { "CSE": 45000 }
+  }
+
+
+
+
+
+]
+
+
+
+
+function filterColleges() {
+  const loc = document.getElementById("locationFilter").value;
+  const fee = document.getElementById("feeFilter").value;
+  const type = document.getElementById("typeFilter").value;
+  const branch = document.getElementById("branchFilter").value;
+  const nameSearch = document.getElementById("nameSearch").value.trim().toLowerCase();
+  const sortBy = document.getElementById("sortBy").value;
+
+  let filtered = colleges.filter(college =>
+    (loc === "" || college.location === loc) &&
+    (fee === "" || college.fee_category === fee) &&
+    (type === "" || college.type === type) &&
+    (branch === "" || (college.courses && college.courses.includes(branch))) &&
+    (nameSearch === "" || college.name.toLowerCase().includes(nameSearch))
+  );
+
+  if (sortBy === "name") filtered.sort((a, b) => a.name.localeCompare(b.name));
+  if (sortBy === "fee") filtered.sort((a, b) => a.fee_category.localeCompare(b.fee_category));
+  if (sortBy === "placement") filtered.sort((a, b) => b.placement_level.localeCompare(a.placement_level));
+
+  const resultDiv = document.getElementById("results");
+  resultDiv.innerHTML = "";
+
+  if (filtered.length === 0) {
+    resultDiv.innerHTML = "<div class='no-results'>No colleges found for the selected filters.</div>";
+    return;
+  }
+
+  filtered.forEach((college, idx) => {
+    resultDiv.innerHTML += `
+      <div class="college-card">
+        <span class="college-badge">${college.type}</span>
+        <h3>${college.name} ${college.intake > 800 ? '<span class="top-badge">★ Top College</span>' : ''}</h3>
+        <p><strong>Location:</strong> ${college.location}</p>
+        <p><strong>Fees:</strong> ${college.fee_category}</p>
+        <p><strong>Placements:</strong> ${college.placement_level}</p>
+        <p><strong>Code:</strong> ${college.code}</p>
+        <button class="expand-btn" onclick="toggleDetails(${idx})">More Info</button>
+        <div class="details" id="details-${idx}">
+          <p><strong>Website:</strong> <a href="${college.website}" target="_blank">${college.website}</a></p>
+          <p><strong>Contact:</strong> ${college.contact}</p>
+          <p><strong>Address:</strong> ${college.address}</p>
+          <p><strong>Courses:</strong> ${college.courses ? college.courses.join(', ') : 'N/A'}</p>
+          <p><strong>Hostel:</strong> ${college.hostel ? 'Yes' : 'No'}</p>
+          <p><strong>Accreditation:</strong> ${college.accreditation || 'N/A'}</p>
+          <p><strong>Intake:</strong> ${college.intake || 'N/A'}</p>
+          <p><strong>Last Year Cutoff:</strong> ${college.last_year_cutoff ? Object.entries(college.last_year_cutoff).map(([k,v]) => k+': '+v).join(', ') : 'N/A'}</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function toggleDetails(idx) {
+  const el = document.getElementById('details-' + idx);
+  el.style.display = el.style.display === 'none' || el.style.display === '' ? 'block' : 'none';
+}
+
+// Initial load
+filterColleges();
+</script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balanju Consultancy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 20px;
+      background-color: #002147;
+      color: white;
+      flex-wrap: wrap;
+    }
+    .main-header .left h1 {
+      margin: 0;
+      color: #ffeb3b;
+      font-size: 28px;
+    }
+    .main-header .left p {
+      margin: 5px 0 0;
+      font-size: 15px;
+      color: #dcdcdc;
+    }
+    .main-header .right {
+      flex: 1;
+      margin-left: 20px;
+      overflow: hidden;
+      background: #ffc107;
+      border-radius: 6px;
+      padding: 6px 12px;
+      white-space: nowrap;
+      position: relative;
+      min-height: 30px;
+    }
+    .scroll-text {
+      display: inline-block;
+      animation: scroll-left 18s linear infinite;
+      font-weight: bold;
+      color: #000;
+      font-size: 14px;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+    }
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .hero .btn {
+      padding: 12px 24px;
+      background: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h3 {
+      color: #185a9d;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .section p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      padding: 10px 22px;
+      background: #185a9d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin: 5px;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #0f3e6b;
+    }
+
+    .footer {
+      text-align: center;
+      background: #002147;
+      color: #ccc;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+/* 📱 Responsive for All Devices */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 18px;
+  }
+  .container {
+    padding: 15px 10px;
+  }
+  .btn {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  header h1 {
+    font-size: 22px;
+  }
+  .container {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
+  table, th, td {
+    font-size: 15px;
+  }
+}
+
+  
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+
+  <header class="main-header">
+    <div class="left">
+      <h1>🎓 BALANJU CONSULTANCY</h1>
+      <p>Explore all educational paths at one place</p>
+    </div>
+    <div class="right">
+      <div class="scroll-text">
+        📢 TS EAMCET 2024 Cutoffs Updated! | 🗓 Counseling from June 15 | 🆕 New Tools Added!
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Your Journey to College Starts Here!</h2>
+    <p>Get expert guidance, real-time data, and career clarity — all in one place.</p>
+    <a href="predictor.html" class="btn">🎯 Use College Predictor</a>
+    <a href="counseling.html" class="btn">💬 Book Paid Counseling</a>
+  </section>
+
+ 
+
+  <!-- Truth About Cutoffs -->
+  <section class="section">
+    <h3>🎯 Why Cutoffs Aren’t Everything</h3>
+    <p>Many students rely only on last year’s TS EAMCET cutoff ranks — but here’s the truth:
+    cutoffs change every year based on <strong>competition, reservations, seat matrix, and location trends</strong>.
+    That means even if your rank is above or below a previous cutoff, you might still get into a better college.</p>
+
+    <p>At <strong>Balanju Consultancy</strong>, we don’t just show you last year’s data — we <em>analyze your rank, gender, caste, and preferences</em> to find the best-fit colleges you can actually get into. 
+    Our tools are powered by real 2024 data, filters, and logic — not just copy-paste PDFs.</p>
+
+    <p style="margin-top: 20px;">
+      <a href="TS_EAMCET_Colleges_161_180.xlsx" class="btn"> Download TS EAPCET 2024 CUTOFF'S</a>
+      
+    </p>
+  </section>
+
+  <!-- Our Services -->
+  <section class="section">
+    <h3>Our Services</h3>
+    <p>🔍 <strong>College Predictor</strong> – See where your rank can take you<br>
+       🧠 <strong>College Filter</strong> – Explore colleges by fees, branch, location<br>
+       📄 <strong>Cutoff PDFs</strong> – Access 2024 data for free<br>
+       💬 <strong>Paid Counseling</strong> – 1-on-1 personalized support</p>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section">
+    <h3>Why Balanju?</h3>
+    <p>We combine expert knowledge with real 2024 data to provide reliable insights. Our tools are mobile-friendly, fast, and easy to use. Whether you're confused about branch selection or want the safest college options — we're here to help.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>📧 Email: balanjuedu@gmail.com | 📞 WhatsApp: +91-XXXXXXXXXX</p>
+    <p>Made with ❤️ in Telangana | &copy; 2025 Balanju Consultancy</p>
+  </footer>
+
+</body>
+</html>
