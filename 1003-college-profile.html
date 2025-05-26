@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>College Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      background: #eef5fc;
+    }
+
+    .college-profile {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0c4ca3;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: underline;
+      color: #0c4ca3;
+    }
+
+    /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="college-profile" id="profile"></div>
+
+  <script>
+    const colleges = {
+      vasavi: {
+        name: "Vasavi College of Engineering",
+        branch: "CSE",
+        cutoff: 1800,
+        category: "OC",
+        location: "Hyderabad",
+        description: "Top ranked college with high placement records.",
+        placements: "Avg Package: ₹6 LPA, Highest: ₹25 LPA",
+        courses: ["CSE", "ECE", "IT", "AI & DS"]
+      },
+      cvr: {
+        name: "CVR College of Engineering",
+        branch: "ECE",
+        cutoff: 3900,
+        category: "BC-B",
+        location: "Ibrahimpatnam",
+        description: "Consistently growing placements and R&D facilities.",
+        placements: "Avg Package: ₹4.5 LPA",
+        courses: ["ECE", "CSE", "Civil", "Mechanical"]
+      },
+      mrec: {
+        name: "Malla Reddy Engineering College",
+        branch: "IT",
+        cutoff: 7500,
+        category: "SC",
+        location: "Maisammaguda",
+        description: "Emerging college with strong focus on innovation.",
+        placements: "Avg Package: ₹3.8 LPA",
+        courses: ["CSE", "IT", "AI & ML", "Cyber Security"]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const data = colleges[id];
+
+    const container = document.getElementById("profile");
+
+    if (!data) {
+      container.innerHTML = `<h2>College Not Found</h2><a href="index.html">← Go back</a>`;
+    } else {
+      container.innerHTML = `
+        <h2>${data.name}</h2>
+        <p><strong>Location:</strong> ${data.location}</p>
+        <p><strong>Main Branch:</strong> ${data.branch}</p>
+        <p><strong>Cutoff Rank:</strong> ${data.cutoff}</p>
+        <p><strong>Category:</strong> ${data.category}</p>
+        <p><strong>Placements:</strong> ${data.placements}</p>
+        <p><strong>Courses:</strong> ${data.courses.join(", ")}</p>
+        <p>${data.description}</p>
+        <a href="index.html">← Go Back to Filter</a>
+      `;
+    }
+  </script>
+</body>
+</html>

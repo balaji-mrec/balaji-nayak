@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS EAMCET College Predictor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .form-section {
+            padding: 30px;
+            background: #f8f9ff;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .predict-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 100%;
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .predict-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            padding: 30px;
+            display: none;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .results-count {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .college-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .college-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .college-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .college-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .college-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .cutoff-info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4facfe;
+        }
+
+        .cutoff-rank {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #4facfe;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+
+        .no-results h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .file-upload {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        .file-upload input[type="file"] {
+            margin-top: 10px;
+        }
+
+
+        /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TS EAMCET College Predictor</h1>
+            <p>Find colleges based on your rank and category</p>
+        </div>
+
+        <div class="form-section">
+            <div class="file-upload">
+                <h3>Upload CSV File</h3>
+                <p>Upload your colleges.csv file to get started</p>
+                <input type="file" id="csvFile" accept=".csv" />
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="rank">Your EAMCET Rank</label>
+                    <input type="number" id="rank" placeholder="Enter your rank" min="1" />
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="BOYS">Male</option>
+                        <option value="GIRLS">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Caste Category</label>
+                    <select id="category">
+                        <option value="">Select Category</option>
+                        <option value="OC">OC (Open Category)</option>
+                        <option value="BC_A">BC-A</option>
+                        <option value="BC_B">BC-B</option>
+                        <option value="BC_C">BC-C</option>
+                        <option value="BC_D">BC-D</option>
+                        <option value="BC_E">BC-E</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="EWS">EWS</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Preferred Location (Optional)</label>
+                    <input type="text" id="location" placeholder="Enter city/district" />
+                </div>
+            </div>
+
+            <button class="predict-btn" onclick="predictColleges()" disabled>
+                Predict Colleges
+            </button>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="results-header">
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <div class="college-grid" id="collegeGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        let collegesData = [];
+
+        // Handle CSV file upload
+        document.getElementById('csvFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    parseCSV(e.target.result);
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        function parseCSV(csvText) {
+            try {
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    dynamicTyping: true,
+                    complete: function(results) {
+                        collegesData = results.data;
+                        console.log('CSV parsed successfully:', collegesData.length, 'records');
+                        console.log('Sample record:', collegesData[0]);
+                        
+                        // Enable the predict button
+                        document.querySelector('.predict-btn').disabled = false;
+                        
+                        // Show success message
+                        alert(`CSV loaded successfully! ${collegesData.length} college records found.`);
+                    },
+                    error: function(error) {
+                        console.error('Error parsing CSV:', error);
+                        alert('Error parsing CSV file. Please check the file format.');
+                    }
+                });
+            } catch (error) {
+                console.error('Error reading CSV:', error);
+                alert('Error reading CSV file.');
+            }
+        }
+
+        function predictColleges() {
+            const rank = parseInt(document.getElementById('rank').value);
+            const gender = document.getElementById('gender').value;
+            const category = document.getElementById('category').value;
+            const location = document.getElementById('location').value.toLowerCase().trim();
+
+            // Validation
+            if (!rank || !gender || !category) {
+                alert('Please fill in all required fields (Rank, Gender, Category)');
+                return;
+            }
+
+            if (collegesData.length === 0) {
+                alert('Please upload a CSV file first');
+                return;
+            }
+
+            // Show loading
+            const resultsSection = document.getElementById('resultsSection');
+            resultsSection.style.display = 'block';
+            resultsSection.innerHTML = '<div class="loading">Filtering colleges...</div>';
+
+            // Filter colleges
+            setTimeout(() => {
+                const filteredColleges = filterColleges(rank, gender, category, location);
+                displayResults(filteredColleges, rank, gender, category);
+            }, 500);
+        }
+
+        function filterColleges(userRank, gender, category, location) {
+            const filtered = [];
+
+            collegesData.forEach(college => {
+                try {
+                    // Construct the column name based on category and gender
+                    let columnName;
+                    if (category === 'OC') {
+                        columnName = `OC ${gender}`;
+                    } else if (category === 'EWS') {
+                        columnName = 'EWS GEN';
+                    } else {
+                        columnName = category;
+                    }
+
+                    // Get cutoff rank for this category
+                    let cutoffRank = null;
+                    
+                    // Try different possible column name variations
+                    const possibleColumns = [
+                        columnName,
+                        columnName.replace('_', '-'),
+                        columnName.replace('_', ' '),
+                        columnName.toUpperCase(),
+                        columnName.toLowerCase()
+                    ];
+
+                    for (const col of possibleColumns) {
+                        if (college[col] !== undefined && college[col] !== null && college[col] !== '') {
+                            cutoffRank = parseInt(college[col]);
+                            break;
+                        }
+                    }
+
+                    // Skip if no cutoff data found
+                    if (!cutoffRank || isNaN(cutoffRank)) {
+                        return;
+                    }
+
+                    // Check if user's rank is better than (less than) cutoff
+                    if (userRank <= cutoffRank) {
+                        // Location filter (optional)
+                        if (location) {
+                            const collegeName = (college['INSTITUTE NAME'] || '').toLowerCase();
+                            const collegePlace = (college['PLACE'] || '').toLowerCase();
+                            const collegeDist = (college['DIST'] || '').toLowerCase();
+                            
+                            if (!collegeName.includes(location) && 
+                                !collegePlace.includes(location) && 
+                                !collegeDist.includes(location)) {
+                                return;
+                            }
+                        }
+
+                        filtered.push({
+                            name: college['INSTITUTE NAME'] || 'N/A',
+                            branch: college['BRANCH'] || 'N/A',
+                            place: college['PLACE'] || 'N/A',
+                            district: college['DIST'] || 'N/A',
+                            cutoffRank: cutoffRank,
+                            category: columnName
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error processing college:', college, error);
+                }
+            });
+
+            // Sort by cutoff rank (ascending - easier colleges first)
+            filtered.sort((a, b) => a.cutoffRank - b.cutoffRank);
+
+            return filtered;
+        }
+
+        function displayResults(colleges, userRank, gender, category) {
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsCount = document.getElementById('resultsCount');
+            const collegeGrid = document.getElementById('collegeGrid');
+
+            resultsSection.innerHTML = `
+                <div class="results-header">
+                    <div class="results-count" id="resultsCount"></div>
+                </div>
+                <div class="college-grid" id="collegeGrid"></div>
+            `;
+
+            const newResultsCount = document.getElementById('resultsCount');
+            const newCollegeGrid = document.getElementById('collegeGrid');
+
+            if (colleges.length === 0) {
+                newResultsCount.textContent = 'No colleges found matching your criteria';
+                newCollegeGrid.innerHTML = `
+                    <div class="no-results">
+                        <h3>No Colleges Found</h3>
+                        <p>Try adjusting your search criteria or check if your rank is competitive enough.</p>
+                        <p>Make sure the CSV file has the correct column names for your category.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            newResultsCount.textContent = `Found ${colleges.length} college(s) matching your criteria`;
+
+            const collegeCards = colleges.map(college => `
+                <div class="college-card">
+                    <div class="college-name">${college.name}</div>
+                    <div class="college-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Branch:</span>
+                            <span class="detail-value">${college.branch}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value">${college.place}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">District:</span>
+                            <span class="detail-value">${college.district}</span>
+                        </div>
+                    </div>
+                    <div class="cutoff-info">
+                        <div class="cutoff-rank">Cutoff Rank: ${college.cutoffRank}</div>
+                        <small>Category: ${college.category} | Your Rank: ${userRank}</small>
+                    </div>
+                </div>
+            `).join('');
+
+            newCollegeGrid.innerHTML = collegeCards;
+        }
+
+        // Sample data for testing (remove this when using real CSV)
+        function loadSampleData() {
+            collegesData = [
+                {
+                    'INSTITUTE NAME': 'Vasavi College of Engineering',
+                    'PLACE': 'Hyderabad',
+                    'DIST': 'Hyderabad',
+                    'BRANCH': 'Computer Science Engineering',
+                    'OC BOYS': 1800,
+                    'OC GIRLS': 1600,
+                    'BC_A': 2200,
+                    'BC_B': 2500,
+                    'SC': 3000,
+                    'ST': 3500,
+                    'EWS GEN': 1900
+                },
+                {
+                    'INSTITUTE NAME': 'CVR College of Engineering',
+                    'PLACE': 'Hyderabad',
+                    'DIST': 'Medchal',
+                    'BRANCH': 'Electronics & Communication',
+                    'OC BOYS': 3900,
+                    'OC GIRLS': 3500,
+                    'BC_A': 4500,
+                    'BC_B': 5000,
+                    'SC': 6000,
+                    'ST': 7000,
+                    'EWS GEN': 4000
+                }
+            ];
+            document.querySelector('.predict-btn').disabled = false;
+            console.log('Sample data loaded');
+        }
+
+        // Load sample data on page load for testing
+        // loadSampleData();
+    </script>
+</body>
+</html>

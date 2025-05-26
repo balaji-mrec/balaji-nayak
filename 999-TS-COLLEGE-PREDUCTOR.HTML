@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS EAMCET College Predictor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .form-section {
+            padding: 30px;
+            background: #f8f9ff;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .predict-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 100%;
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .predict-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            padding: 30px;
+            display: none;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .results-count {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .college-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .college-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .college-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .college-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .college-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .cutoff-info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4facfe;
+        }
+
+        .cutoff-rank {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #4facfe;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+
+        .no-results h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .file-upload {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        .file-upload input[type="file"] {
+            margin-top: 10px;
+        }
+
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-msg {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+        }
+        .counseling {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .counseling button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+           
+        }
+
+        /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TS EAPCET College Predictor</h1>
+            <p>Find colleges based on your rank and category</p>
+        </div>
+
+        <div class="form-section">
+            <div class="file-upload" id="loadingStatus">
+                <h3>Loading College Data...</h3>
+                <p>Please wait while we load the college database</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="rank">Your EAMCET Rank</label>
+                    <input type="number" id="rank" placeholder="Enter your rank" min="1" />
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="BOYS">Male</option>
+                        <option value="GIRLS">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Caste Category</label>
+                    <select id="category">
+                        <option value="">Select Category</option>
+                        <option value="BC-A">BC-A</option>
+                        <option value="BC-B">BC-B</option>
+                        <option value="BC-C">BC-C</option>
+                        <option value="BC-D">BC-D</option>
+                        
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="branch">Preferred Branch (Optional)</label>
+                    <select id="branch">
+                        <option value="">All Branches</option>
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Preferred Location (Optional)</label>
+                    <input type="text" id="location" placeholder="Enter city/district" />
+                </div>
+            </div>
+
+            <button class="predict-btn" onclick="predictColleges()" disabled>
+                Predict Colleges
+            </button>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="results-header">
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <div class="college-grid" id="collegeGrid"></div>
+        </div>
+    </div>
+
+     <script>
+        let collegesData = [];
+        let availableColumns = [];
+
+        // Load CSV file automatically on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCollegesData();
+        });
+
+        async function loadCollegesData() {
+            try {
+                // Try to load from your colleges.csv file
+                const response = await fetch('colleges.csv');
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to load CSV: ${response.status}`);
+                }
+                
+                const csvText = await response.text();
+                parseCSV(csvText);
+                
+            } catch (error) {
+                console.error('Error loading CSV:', error);
+                
+                // Show error message and provide fallback options
+                document.getElementById('loadingStatus').innerHTML = `
+                    <div class="error-msg">
+                        <h3>Could not load colleges.csv</h3>
+                        <p>Please make sure the colleges.csv file is in the same folder as this HTML file.</p>
+                        <p><strong>Alternative options:</strong></p>
+                        <div style="margin-top: 15px;">
+                            <input type="file" id="csvFile" accept=".csv" style="margin-bottom: 10px;" />
+                            <br>
+                            <button onclick="loadSampleData()" style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Load Sample Data for Testing
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Add file upload functionality as fallback
+                document.getElementById('csvFile').addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            parseCSV(e.target.result);
+                        };
+                        reader.readAsText(file);
+                    }
+                });
+            }
+        }
+
+        function parseCSV(csvText) {
+            try {
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    dynamicTyping: false, // Keep as strings to avoid parsing issues
+                    complete: function(results) {
+                        collegesData = results.data;
+                        
+                        // Get available columns and populate branch dropdown
+                        if (collegesData.length > 0) {
+                            availableColumns = Object.keys(collegesData[0]);
+                            console.log('Available columns:', availableColumns);
+                            
+                            // Populate branch dropdown
+                            populateBranchDropdown();
+                        }
+                        
+                        console.log('CSV parsed successfully:', collegesData.length, 'records');
+                        console.log('Sample record:', collegesData[0]);
+                        
+                        // Hide loading message and show form
+                        document.getElementById('loadingStatus').style.display = 'none';
+                        
+                        // Enable the predict button
+                        document.querySelector('.predict-btn').disabled = false;
+                        
+                        // Show success message with debug info
+                        const successMsg = document.createElement('div');
+                        successMsg.className = 'success-msg';
+                        successMsg.innerHTML = `
+                            we completlly guide in your EAMCET JOUNEY
+                    
+                        `;
+                        document.querySelector('.form-grid').parentNode.insertBefore(successMsg, document.querySelector('.form-grid'));
+                    },
+                    error: function(error) {
+                        console.error('Error parsing CSV:', error);
+                        document.getElementById('loadingStatus').innerHTML = `
+                            <div class="error-msg">
+                                <h3>Error parsing CSV file</h3>
+                                <p>Please check the file format. Error: ${error.message}</p>
+                            </div>
+                        `;
+                    }
+                });
+            } catch (error) {
+                console.error('Error reading CSV:', error);
+                document.getElementById('loadingStatus').innerHTML = `
+                    <div class="error-msg">
+                        <h3>Error reading CSV file</h3>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function populateBranchDropdown() {
+            const branchSelect = document.getElementById('branch');
+            const branches = new Set();
+            
+            // Extract unique branches from the data
+            collegesData.forEach(college => {
+                const branch = college['BRANCH'];
+                if (branch && branch.trim() !== '' && branch !== 'N/A') {
+                    branches.add(branch.trim());
+                }
+            });
+            
+            // Sort branches alphabetically
+            const sortedBranches = Array.from(branches).sort();
+            
+            // Clear existing options (except "All Branches")
+            branchSelect.innerHTML = '<option value="">All Branches</option>';
+            
+            // Add branch options
+            sortedBranches.forEach(branch => {
+                const option = document.createElement('option');
+                option.value = branch;
+                option.textContent = branch;
+                branchSelect.appendChild(option);
+            });
+            
+            console.log('Populated branches:', sortedBranches.length);
+        }
+
+        function predictColleges() {
+            const rank = parseInt(document.getElementById('rank').value);
+            const gender = document.getElementById('gender').value;
+            const category = document.getElementById('category').value;
+            const branch = document.getElementById('branch').value;
+            const location = document.getElementById('location').value.toLowerCase().trim();
+
+            // Validation
+            if (!rank || !gender || !category) {
+                alert('Please fill in all required fields (Rank, Gender, Category)');
+                return;
+            }
+
+            if (collegesData.length === 0) {
+                alert('Please upload a CSV file first');
+                return;
+            }
+
+            // Show loading
+            const resultsSection = document.getElementById('resultsSection');
+            resultsSection.style.display = 'block';
+            resultsSection.innerHTML = '<div class="loading">Filtering colleges...</div>';
+
+            // Filter colleges
+            setTimeout(() => {
+                const filteredColleges = filterColleges(rank, gender, category, branch, location);
+                displayResults(filteredColleges, rank, gender, category, branch);
+            }, 500);
+        }
+
+        function findColumnName(college, category, gender) {
+            // Standardize the category format (BC_A -> BC-A)
+            const standardizedCategory = category.replace('_', '-');
+            
+            // Possible column name patterns to check
+            const patterns = [
+                `${category} ${gender}`,       // "BC_A BOYS"
+                `${category}_${gender}`,       // "BC_A_BOYS"
+                `${category}-${gender}`,       // "BC-A-BOYS"
+                `${standardizedCategory} ${gender}`, // "BC-A BOYS"
+                `${standardizedCategory}_${gender}`, // "BC-A_BOYS"
+                category,                      // Just the category
+                standardizedCategory           // Standardized category
+            ];
+
+            // Check each pattern against the college's columns
+            for (const pattern of patterns) {
+                // Exact match
+                if (college[pattern] !== undefined) {
+                    return pattern;
+                }
+                
+                // Case-insensitive match
+                const foundKey = Object.keys(college).find(
+                    key => key.toLowerCase() === pattern.toLowerCase()
+                );
+                if (foundKey) {
+                    return foundKey;
+                }
+            }
+
+            // If nothing found, try some common variations
+            const fallbackPatterns = [
+                `${category}${gender}`,       // "BC_ABOYS"
+                `${category}_GEN`,            // "BC_A_GEN"
+                `${category}_GENERAL`,        // "BC_A_GENERAL"
+                `${category}_${gender.slice(0,1)}` // "BC_A_B"
+            ];
+
+            for (const pattern of fallbackPatterns) {
+                if (college[pattern] !== undefined) {
+                    return pattern;
+                }
+            }
+
+            return null;
+        }
+
+        function filterColleges(userRank, gender, category, branch, location) {
+            const filtered = [];
+            let debugInfo = {
+                totalRecords: collegesData.length,
+                processedRecords: 0,
+                foundCutoffs: 0,
+                qualifiedColleges: 0,
+                columnIssues: [],
+                testedColumns: []
+            };
+
+            collegesData.forEach((college, index) => {
+                try {
+                    debugInfo.processedRecords++;
+
+                    // Branch filter (if specified)
+                    if (branch && college['BRANCH'] && college['BRANCH'].toLowerCase() !== branch.toLowerCase()) {
+                        return;
+                    }
+
+                    // Special handling for OC category which has separate BOYS/GIRLS columns
+                    if (category === 'OC') {
+                        const columnName = `OC ${gender}`;
+                        const cutoffValue = college[columnName];
+                        
+                        if (!cutoffValue || cutoffValue === '' || cutoffValue === 'N/A' || cutoffValue === '-') {
+                            return;
+                        }
+
+                        const cutoffRank = parseInt(cutoffValue.toString().replace(/[^\d]/g, ''));
+                        
+                        if (isNaN(cutoffRank) || cutoffRank <= 0) {
+                            return;
+                        }
+
+                        debugInfo.foundCutoffs++;
+
+                        if (userRank <= cutoffRank) {
+                            if (location) {
+                                const instituteName = (college['INSTITUTE NAME'] || '').toLowerCase();
+                                const place = (college['PLACE'] || '').toLowerCase();
+                                const district = (college['DIST'] || '').toLowerCase();
+                                
+                                if (!instituteName.includes(location) && 
+                                    !place.includes(location) && 
+                                    !district.includes(location)) {
+                                    return;
+                                }
+                            }
+
+                            debugInfo.qualifiedColleges++;
+
+                            filtered.push({
+                                name: college['INSTITUTE NAME'] || 'N/A',
+                                branch: college['BRANCH'] || 'N/A',
+                                place: college['PLACE'] || 'N/A',
+                                district: college['DIST'] || 'N/A',
+                                cutoffRank: cutoffRank,
+                                category: columnName,
+                                originalData: college
+                            });
+                        }
+                        return;
+                    }
+
+                    // For other categories (BC_A, BC_B, SC, ST, etc.)
+                    const columnName = findColumnName(college, category, gender);
+                    
+                    if (!columnName) {
+                        debugInfo.columnIssues.push(`Row ${index + 1}: No column found for ${category} ${gender}`);
+                        return;
+                    }
+
+                    debugInfo.testedColumns.push(columnName);
+
+                    // Get cutoff rank for this category
+                    let cutoffValue = college[columnName];
+                    
+                    // Handle various cutoff value formats
+                    if (typeof cutoffValue === 'string') {
+                        // Remove any text in parentheses
+                        cutoffValue = cutoffValue.replace(/\(.*?\)/g, '');
+                        // Remove commas and other non-digit characters
+                        cutoffValue = cutoffValue.replace(/[^\d]/g, '');
+                    }
+
+                    const cutoffRank = parseInt(cutoffValue);
+                    
+                    if (isNaN(cutoffRank) || cutoffRank <= 0) {
+                        return;
+                    }
+
+                    debugInfo.foundCutoffs++;
+
+                    // Check if user's rank is better than (less than or equal to) cutoff
+                    if (userRank <= cutoffRank) {
+                        // Location filter (optional)
+                        if (location) {
+                            const instituteName = (college['INSTITUTE NAME'] || '').toLowerCase();
+                            const place = (college['PLACE'] || '').toLowerCase();
+                            const district = (college['DIST'] || '').toLowerCase();
+                            
+                            if (!instituteName.includes(location) && 
+                                !place.includes(location) && 
+                                !district.includes(location)) {
+                                return;
+                            }
+                        }
+
+                        debugInfo.qualifiedColleges++;
+
+                        filtered.push({
+                            name: college['INSTITUTE NAME'] || 'N/A',
+                            branch: college['BRANCH'] || 'N/A',
+                            place: college['PLACE'] || 'N/A',
+                            district: college['DIST'] || 'N/A',
+                            cutoffRank: cutoffRank,
+                            category: columnName,
+                            originalData: college
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error processing college at index', index, ':', error, college);
+                }
+            });
+
+            // Log debug information
+            console.log('Filtering Debug Info:', debugInfo);
+            console.log('Unique columns tested:', [...new Set(debugInfo.testedColumns)]);
+            
+            // Sort by cutoff rank (ascending - easier colleges first)
+            filtered.sort((a, b) => a.cutoffRank - b.cutoffRank);
+
+            return filtered;
+        }
+
+        function displayResults(colleges, userRank, gender, category, branch) {
+            const resultsSection = document.getElementById('resultsSection');
+            
+            resultsSection.innerHTML = `
+                <div class="results-header">
+                    <div class="results-count" id="resultsCount"></div>
+                </div>
+                <div class="college-grid" id="collegeGrid"></div>
+            `;
+
+            const resultsCount = document.getElementById('resultsCount');
+            const collegeGrid = document.getElementById('collegeGrid');
+
+            if (colleges.length === 0) {
+                // Get sample of first college to show available columns
+                const sampleCollege = collegesData.length > 0 ? collegesData[0] : null;
+                const sampleColumns = sampleCollege ? Object.keys(sampleCollege) : [];
+                
+                resultsCount.textContent = 'No colleges found matching your criteria';
+                collegeGrid.innerHTML = `
+                    <div class="no-results">
+                        <h3>No Colleges Found</h3>
+                        <p><strong>Debug Information:</strong></p>
+                        <div class="debug-info">
+                            <p><strong>Search Criteria:</strong></p>
+                            <p>Rank: ${userRank}, Gender: ${gender}, Category: ${category}, Branch: ${branch || 'All'}</p>
+                            
+                            <p><strong>Available Columns in Data:</strong></p>
+                            <p>${sampleColumns.join(', ')}</p>
+                            
+                            <p><strong>Common Category Column Patterns:</strong></p>
+                            <p>${[
+                                `${category} ${gender}`,
+                                `${category}_${gender}`,
+                                `${category}-${gender}`,
+                                category
+                            ].join(', ')}</p>
+                            
+                            <p><strong>Possible Issues:</strong></p>
+                            <ul>
+                                <li>Your rank might be higher than cutoff ranks</li>
+                                <li>The CSV might not have data for ${category} ${gender} category</li>
+                                <li>Column names in CSV might not match expected format</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            resultsCount.textContent = `Found ${colleges.length} college(s) matching your criteria`;
+
+            const collegeCards = colleges.map(college => `
+                <div class="college-card">
+                    <div class="college-name">${college.name}</div>
+                    <div class="college-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Branch:</span>
+                            <span class="detail-value">${college.branch}</span>
+                        </div>
+                       <div class="detail-item">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value">${college.place}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">District:</span>
+                            <span class="detail-value">${college.district}</span>
+                        </div>
+                    </div>
+                    <div class="cutoff-info">
+                        <div class="cutoff-rank">Cutoff Rank: ${college.cutoffRank}</div>
+                        <small>Category: ${college.category} | Your Rank: ${userRank}</small>
+                    </div>
+                </div>
+            `).join('');
+
+            collegeGrid.innerHTML = collegeCards;
+        }
+
+        // Sample data for testing (can be used as fallback)
+        function loadSampleData() {
+            collegesData = [
+                {
+                    'INSTITUTE NAME': 'AAR MAH/BANDLAGUDAM HYD',
+                    'PLACE': 'Hyderabad',
+                    'DIST': 'Hyderabad',
+                    'BRANCH': 'CSE',
+                    'OC BOYS': '26303',
+                    'OC GIRLS': '26303',
+                    'BC_A': '86999',
+                    'BC_B': '57408',
+                    'BC_C': '26303',
+                    'BC_D': '65938',
+                    'BC_E': '85977',
+                    'SC': '95181',
+                    'ST': '92961'
+                },
+                {
+                    'INSTITUTE NAME': 'AAR MAH/BANDLAGUDAM HYD',
+                    'PLACE': 'Hyderabad',
+                    'DIST': 'Hyderabad',
+                    'BRANCH': 'CSM',
+                    'OC BOYS': '40918',
+                    'OC GIRLS': '55055',
+                    'BC_A': '108367',
+                    'BC_B': '88878',
+                    'BC_C': '40918',
+                    'BC_D': '101397',
+                    'BC_E': '113868',
+                    'SC': '125450',
+                    'ST': '123488'
+                },
+                {
+                    'INSTITUTE NAME': 'AAR MAH/BANDLAGUDAM HYD',
+                    'PLACE': 'Hyderabad',
+                    'DIST': 'Hyderabad',
+                    'BRANCH': 'ECE',
+                    'OC BOYS': '52680',
+                    'OC GIRLS': '97089',
+                    'BC_A': '98439',
+                    'BC_B': '112273',
+                    'BC_C': '52680',
+                    'BC_D': '112231',
+                    'BC_E': '92750',
+                    'SC': '125323',
+                    'ST': '121767'
+                }
+            ];
+            
+            availableColumns = Object.keys(collegesData[0]);
+            
+            // Hide loading status and show success
+            document.getElementById('loadingStatus').innerHTML = `
+                <div class="success-msg">
+                    ⚠️ Using sample data for testing purposes (${collegesData.length} records loaded)
+                    <div class="debug-info">
+                        <strong>Available columns:</strong><br>
+                        ${availableColumns.join(', ')}
+                    </div>
+                </div>
+            `;
+            
+            document.querySelector('.predict-btn').disabled = false;
+            populateBranchDropdown();
+            console.log('Sample data loaded:', collegesData.length, 'records');
+            console.log('Available columns:', availableColumns);
+        }
+    </script>
+</body>
+ <div class="counseling">
+        <h3>📌 Need Help with EAMCET Counseling?</h3>
+        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
+        <a href="1000paid-cousilling.html" target="_blank">
+            <button>💬 Get Counseling Help</button>
+        </a>
+    </div>
+</html>

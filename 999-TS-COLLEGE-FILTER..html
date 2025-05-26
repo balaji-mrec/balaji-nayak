@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS EAPCET College Filter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-bar {
+            background: #f8f9ff;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #e1e5e9;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #4facfe;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filters-section {
+            padding: 40px 30px;
+            background: #f8f9ff;
+        }
+
+        .filters-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .filter-group {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .filter-group:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        .filter-group input,
+        .filter-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .filter-group input:focus,
+        .filter-group select:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+            background: white;
+        }
+
+        .fee-range-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .fee-range-container input {
+            flex: 1;
+        }
+
+        .range-separator {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 150px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #495057;
+            border: 2px solid #dee2e6;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            padding: 40px 30px;
+            display: none;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .results-count {
+            font-size: 1.4em;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .results-summary {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .college-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .college-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .college-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .college-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .college-header {
+            margin-bottom: 20px;
+        }
+
+        .college-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .college-type {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .college-details {
+            display: grid;
+            gap: 12px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .location-icon {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+
+        .branch-icon {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .fee-icon {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .detail-content {
+            flex: 1;
+        }
+
+        .detail-label {
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4facfe;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+        }
+
+        .no-results-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .no-results h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .status-message {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-msg {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .warning-msg {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .file-upload-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px dashed #dee2e6;
+            transition: border-color 0.3s ease;
+        }
+
+        .file-upload-section:hover {
+            border-color: #4facfe;
+        }
+
+        .counseling-section {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .counseling-section h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .counseling-section p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .counseling-btn {
+            background: white;
+            color: #f57c00;
+            padding: 15px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .counseling-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .college-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+
+
+        /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TS EAPCET College Filter</h1>
+            <p>Find your perfect engineering college with advanced filtering</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-value" id="totalColleges">0</span>
+                <span class="stat-label">Total Colleges</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="totalBranches">0</span>
+                <span class="stat-label">Branches</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="totalLocations">0</span>
+                <span class="stat-label">Locations</span>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="file-upload-section" id="loadingStatus">
+                <div class="loading-spinner"></div>
+                <h3>Loading College Database...</h3>
+                <p>Please wait while we load the ts.csv file</p>
+            </div>
+
+            <h2 class="filters-title">🔍 Filter Colleges</h2>
+            
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="location">📍 Location</label>
+                    <select id="location">
+                        <option value="">All Locations</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="branch">🎓 Branch</label>
+                    <select id="branch">
+                        <option value="">All Branches</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="collegeType">🏫 College Type</label>
+                    <select id="collegeType">
+                        <option value="">All Types</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>💰 Fee Range (Annual)</label>
+                    <div class="fee-range-container">
+                        <input type="number" id="minFee" placeholder="Min Fee" min="0">
+                        <span class="range-separator">to</span>
+                        <input type="number" id="maxFee" placeholder="Max Fee" min="0">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="collegeName">🔍 College Name</label>
+                    <input type="text" id="collegeName" placeholder="Search by college name">
+                </div>
+
+                <div class="filter-group">
+                    <label for="sortBy">📊 Sort By</label>
+                    <select id="sortBy">
+                        <option value="name">College Name</option>
+                        <option value="fee">Fee (Low to High)</option>
+                        <option value="fee-desc">Fee (High to Low)</option>
+                        <option value="location">Location</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="filterColleges()" disabled>
+                    🔍 Search Colleges
+                </button>
+                <button class="btn btn-secondary" onclick="clearFilters()">
+                    🔄 Clear Filters
+                </button>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="results-header">
+                <div class="results-count" id="resultsCount"></div>
+                <div class="results-summary" id="resultsSummary"></div>
+            </div>
+            <div class="college-grid" id="collegeGrid"></div>
+        </div>
+
+        <div class="counseling-section">
+            <h3>📌 Need Expert Guidance?</h3>
+            <p>Get personalized counseling for TS EAPCET college selection and career planning</p>
+            <a href="#" class="counseling-btn">💬 Book Counseling Session</a>
+        </div>
+    </div>
+
+    <script>
+        let collegesData = [];
+        let filteredData = [];
+        let availableColumns = [];
+
+        // Load CSV file automatically on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCollegesData();
+        });
+
+        async function loadCollegesData() {
+            try {
+                const response = await fetch('ts.csv');
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to load CSV: ${response.status}`);
+                }
+                
+                const csvText = await response.text();
+                parseCSV(csvText);
+                
+            } catch (error) {
+                console.error('Error loading CSV:', error);
+                
+                document.getElementById('loadingStatus').innerHTML = `
+                    <div class="status-message error-msg">
+                        <h3>⚠️ Could not load ts.csv</h3>
+                        <p>Please make sure the ts.csv file is in the same folder as this HTML file.</p>
+                        <div style="margin-top: 15px;">
+                            <input type="file" id="csvFile" accept=".csv" />
+                            <br><br>
+                            <button onclick="loadSampleData()" class="btn btn-secondary">
+                                📊 Load Sample Data for Testing
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                document.getElementById('csvFile').addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            parseCSV(e.target.result);
+                        };
+                        reader.readAsText(file);
+                    }
+                });
+            }
+        }
+
+        function parseCSV(csvText) {
+            try {
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    dynamicTyping: false,
+                    complete: function(results) {
+                        collegesData = results.data.filter(row => 
+                            row && Object.values(row).some(val => val && val.toString().trim() !== '')
+                        );
+                        
+                        if (collegesData.length > 0) {
+                            availableColumns = Object.keys(collegesData[0]);
+                            console.log('Available columns:', availableColumns);
+                            
+                            initializeFilters();
+                            updateStatistics();
+                        }
+                        
+                        console.log('CSV parsed successfully:', collegesData.length, 'records');
+                        
+                        document.getElementById('loadingStatus').innerHTML = `
+                            <div class="status-message success-msg">
+                                We completely guide in you EAMCET journey
+                            </div>
+                        `;
+                        
+                        document.querySelector('.btn-primary').disabled = false;
+                        
+                        // Auto-show all colleges initially
+                        setTimeout(() => {
+                            filterColleges();
+                        }, 1000);
+                    },
+                    error: function(error) {
+                        console.error('Error parsing CSV:', error);
+                        document.getElementById('loadingStatus').innerHTML = `
+                            <div class="status-message error-msg">
+                                <h3>❌ Error parsing CSV file</h3>
+                                <p>Please check the file format. Error: ${error.message}</p>
+                            </div>
+                        `;
+                    }
+                });
+            } catch (error) {
+                console.error('Error reading CSV:', error);
+                document.getElementById('loadingStatus').innerHTML = `
+                    <div class="status-message error-msg">
+                        <h3>❌ Error reading CSV file</h3>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function initializeFilters() {
+            // Extract unique values for filters
+            const locations = new Set();
+            const branches = new Set();
+            const collegeTypes = new Set();
+            
+            collegesData.forEach(college => {
+                // Location (try multiple possible column names)
+                const locationFields = ['PLACE', 'LOCATION', 'CITY', 'DISTRICT', 'DIST'];
+                for (const field of locationFields) {
+                    if (college[field] && college[field].trim() !== '' && college[field] !== 'N/A') {
+                        locations.add(college[field].trim());
+                        break;
+                    }
+                }
+                
+                // Branch
+                const branchFields = ['BRANCH', 'COURSE', 'PROGRAM'];
+                for (const field of branchFields) {
+                    if (college[field] && college[field].trim() !== '' && college[field] !== 'N/A') {
+                        branches.add(college[field].trim());
+                        break;
+                    }
+                }
+                
+                // College Type
+                const typeFields = ['TYPE', 'COLLEGE_TYPE', 'INSTITUTE_TYPE', 'CATEGORY'];
+                for (const field of typeFields) {
+                    if (college[field] && college[field].trim() !== '' && college[field] !== 'N/A') {
+                        collegeTypes.add(college[field].trim());
+                        break;
+                    }
+                }
+            });
+            
+            // Populate dropdowns
+            populateDropdown('location', Array.from(locations).sort());
+            populateDropdown('branch', Array.from(branches).sort());
+            populateDropdown('collegeType', Array.from(collegeTypes).sort());
+            
+            console.log('Filters initialized:', {
+                locations: locations.size,
+                branches: branches.size,
+                types: collegeTypes.size
+            });
+        }
+
+        function populateDropdown(selectId, options) {
+            const select = document.getElementById(selectId);
+            const currentValue = select.value;
+            
+            // Keep the first option (All ...)
+            const firstOption = select.options[0];
+            select.innerHTML = '';
+            select.appendChild(firstOption);
+            
+            options.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                select.appendChild(optionElement);
+            });
+            
+            select.value = currentValue;
+        }
+
+        function updateStatistics() {
+            const locations = new Set();
+            const branches = new Set();
+            
+            collegesData.forEach(college => {
+                const locationFields = ['PLACE', 'LOCATION', 'CITY', 'DISTRICT', 'DIST'];
+                for (const field of locationFields) {
+                    if (college[field] && college[field].trim() !== '') {
+                        locations.add(college[field].trim());
+                        break;
+                    }
+                }
+                
+                const branchFields = ['BRANCH', 'COURSE', 'PROGRAM'];
+                for (const field of branchFields) {
+                    if (college[field] && college[field].trim() !== '') {
+                        branches.add(college[field].trim());
+                        break;
+                    }
+                }
+            });
+            
+            document.getElementById('totalColleges').textContent = collegesData.length;
+            document.getElementById('totalBranches').textContent = branches.size;
+            document.getElementById('totalLocations').textContent = locations.size;
+        }
+
+        function getFieldValue(college, possibleFields) {
+            for (const field of possibleFields) {
+                if (college[field] && college[field].toString().trim() !== '' && college[field] !== 'N/A') {
+                    return college[field].toString().trim();
+                }
+            }
+            return 'N/A';
+        }
+
+        function filterColleges() {
+            const location = document.getElementById('location').value;
+            const branch = document.getElementById('branch').value;
+            const collegeType = document.getElementById('collegeType').value;
+            const minFee = parseFloat(document.getElementById('minFee').value) || 0;
+            const maxFee = parseFloat(document.getElementById('maxFee').value) || Infinity;
+            const collegeName = document.getElementById('collegeName').value.toLowerCase().trim();
+            const sortBy = document.getElementById('sortBy').value;
+
+            // Show loading
+            const resultsSection = document.getElementById('resultsSection');
+            resultsSection.style.display = 'block';
+            resultsSection.innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <h3>Filtering colleges...</h3>
+                </div>
+            `;
+
+            setTimeout(() => {
+                filteredData = collegesData.filter(college => {
+                    // Location filter
+                    if (location) {
+                        const collegeLocation = getFieldValue(college, ['PLACE', 'LOCATION', 'CITY', 'DISTRICT', 'DIST']);
+                        if (!collegeLocation.toLowerCase().includes(location.toLowerCase())) {
+                            return false;
+                        }
+                    }
+
+                    // Branch filter
+                    if (branch) {
+                        const collegeBranch = getFieldValue(college, ['BRANCH', 'COURSE', 'PROGRAM']);
+                        if (!collegeBranch.toLowerCase().includes(branch.toLowerCase())) {
+                            return false;
+                        }
+                    }
+
+                    // College type filter
+                    if (collegeType) {
+                        const type = getFieldValue(college, ['TYPE', 'COLLEGE_TYPE', 'INSTITUTE_TYPE', 'CATEGORY']);
+                        if (!type.toLowerCase().includes(collegeType.toLowerCase())) {
+                            return false;
+                        }
+                    }
+
+                    // Fee filter
+                    const feeFields = ['FEE', 'FEES', 'ANNUAL_FEE', 'TUITION_FEE'];
+                    let collegeFee = 0;
+                    for (const field of feeFields) {
+                        if (college[field]) {
+                            const feeStr = college[field].toString().replace(/[^\d]/g, '');
+                            collegeFee = parseFloat(feeStr) || 0;
+                            break;
+                        }
+                    }
+                    
+                    if (collegeFee < minFee || collegeFee > maxFee) {
+                        return false;
+                    }
+
+                    // College name filter
+                    if (collegeName) {
+                        const name = getFieldValue(college, ['INSTITUTE_NAME', 'COLLEGE_NAME', 'NAME', 'INSTITUTE NAME']);
+                        if (!name.toLowerCase().includes(collegeName)) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                });
+
+                // Sort results
+                sortResults(filteredData, sortBy);
+                displayResults(filteredData);
+            }, 800);
+        }
+
+        function sortResults(data, sortBy) {
+            switch (sortBy) {
+                case 'fee':
+                    data.sort((a, b) => {
+                        const feeA = getFeeValue(a);
+                        const feeB = getFeeValue(b);
+                        return feeA - feeB;
+                    });
+                    break;
+                case 'fee-desc':
+                    data.sort((a, b) => {
+                        const feeA = getFeeValue(a);
+                        const feeB = getFeeValue(b);
+                        return feeB - feeA;
+                    });
+                    break;
+                case 'location':
+                    data.sort((a, b) => {
+                        const locA = getFieldValue(a, ['PLACE', 'LOCATION', 'CITY']);
+                        const locB = getFieldValue(b, ['PLACE', 'LOCATION', 'CITY']);
+                        return locA.localeCompare(locB);
+                    });
+                    break;
+                default: // name
+                    data.sort((a, b) => {
+                        const nameA = getFieldValue(a, ['INSTITUTE_NAME', 'COLLEGE_NAME', 'NAME', 'INSTITUTE NAME']);
+                        const nameB = getFieldValue(b, ['INSTITUTE_NAME', 'COLLEGE_NAME', 'NAME', 'INSTITUTE NAME']);
+                        return nameA.localeCompare(nameB);
+                    });
+            }
+        }
+
+        function getFeeValue(college) {
+            const feeFields = ['FEE', 'FEES', 'ANNUAL_FEE', 'TUITION_FEE'];
+            for (const field of feeFields) {
+                if (college[field]) {
+                    const feeStr = college[field].toString().replace(/[^\d]/g, '');
+                    return parseFloat(feeStr) || 0;
+                }
+            }
+            return 0;
+        }
+
+        function displayResults(colleges) {
+            const resultsSection = document.getElementById('resultsSection');
+            
+            resultsSection.innerHTML = `
+                <div class="results-header">
+                    <div class="results-count" id="resultsCount"></div>
+                    <div class="results-summary" id="resultsSummary"></div>
+                </div>
+                <div class="college-grid" id="collegeGrid"></div>
+            `;
+
+            const resultsCount = document.getElementById('resultsCount');
+            const resultsSummary = document.getElementById('resultsSummary');
+            const collegeGrid = document.getElementById('collegeGrid');
+
+            if (colleges.length === 0) {
+                resultsCount.textContent = 'No colleges found';
+                resultsSummary.textContent = 'Try adjusting your filters to see more results';
+                collegeGrid.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>No Colleges Found</h3>
+                        <p>No colleges match your current filter criteria.</p>
+                        <p><strong>Suggestions:</strong></p>
+                        <ul style="text-align: left; display: inline-block; margin-top: 15px;">
+                            <li>Try selecting "All" for location, branch, or college type</li>
+                            <li>Increase the fee range if you've set specific limits</li>
+                            <li>Check your college name spelling</li>
+                            <li>Clear all filters and start over</li>
+                        </ul>
+                    </div>
+                `;
+                return;
+            }
+
+            resultsCount.textContent = `Found ${colleges.length} colleges`;
+            resultsSummary.textContent = `Showing results based on your filter criteria`;
+
+            const collegeCards = colleges.map(college => {
+                const name = getFieldValue(college, ['INSTITUTE_NAME', 'COLLEGE_NAME', 'NAME', 'INSTITUTE NAME']);
+                const location = getFieldValue(college, ['PLACE', 'LOCATION', 'CITY', 'DISTRICT', 'DIST']);
+                const branch = getFieldValue(college, ['BRANCH', 'COURSE', 'PROGRAM']);
+                const type = getFieldValue(college, ['TYPE', 'COLLEGE_TYPE', 'INSTITUTE_TYPE', 'CATEGORY']);
+                const fee = getFeeValue(college);
+                
+                return `
+                    <div class="college-card">
+                        <div class="college-header">
+                            <div class="college-name">${name}</div>
+                            <div class="college-type">${type}</div>
+                        </div>
+                        <div class="college-details">
+                            <div class="detail-row">
+                                <div class="detail-icon location-icon">📍</div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Location</div>
+                                    <div class="detail-value">${location}</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon branch-icon">🎓</div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Branch</div>
+                                    <div class="detail-value">${branch}</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon fee-icon">💰</div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Annual Fee</div>
+                                    <div class="detail-value">${fee > 0 ? '₹' + fee.toLocaleString() : 'Not Available'}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            collegeGrid.innerHTML = collegeCards;
+        }
+
+        function clearFilters() {
+            document.getElementById('location').value = '';
+            document.getElementById('branch').value = '';
+            document.getElementById('collegeType').value = '';
+            document.getElementById('minFee').value = '';
+            document.getElementById('maxFee').value = '';
+            document.getElementById('collegeName').value = '';
+            document.getElementById('sortBy').value = 'name';
+            
+            // Hide results
+            document.getElementById('resultsSection').style.display = 'none';
+        }
+
+        // Sample data for testing
+        function loadSampleData() {
+            collegesData = [
+                {
+                    'INSTITUTE_NAME': 'Chaitanya Bharathi Institute of Technology',
+                    'PLACE': 'Hyderabad',
+                    'BRANCH': 'Computer Science Engineering',
+                    'TYPE': 'Private',
+                    'FEE': '150000'
+                },
+                {
+                    'INSTITUTE_NAME': 'JNTU College of Engineering',
+                    'PLACE': 'Hyderabad',
+                    'BRANCH': 'Electronics and Communication',
+                    'TYPE': 'Government',
+                    'FEE': '50000'
+                },
+                {
+                    'INSTITUTE_NAME': 'Osmania University College',
+                    'PLACE': 'Hyderabad',
+                    'BRANCH': 'Mechanical Engineering',
+                    'TYPE': 'Government',
+                    'FEE': '45000'
+                },
+                {
+                    'INSTITUTE_NAME': 'Vaagdevi College of Engineering',
+                    'PLACE': 'Warangal',
+                    'BRANCH': 'Civil Engineering',
+                    'TYPE': 'Private',
+                    'FEE': '120000'
+                },
+                {
+                    'INSTITUTE_NAME': 'Kakatiya Institute of Technology',
+                    'PLACE': 'Warangal',
+                    'BRANCH': 'Computer Science Engineering',
+                    'TYPE': 'Private',
+                    'FEE': '140000'
+                },
+                {
+                    'INSTITUTE_NAME': 'SR Engineering College',
+                    'PLACE': 'Warangal',
+                    'BRANCH': 'Information Technology',
+                    'TYPE': 'Private',
+                    'FEE': '135000'
+                },
+                {
+                    'INSTITUTE_NAME': 'Gokaraju Rangaraju Institute',
+                    'PLACE': 'Hyderabad',
+                    'BRANCH': 'Electronics and Communication',
+                    'TYPE': 'Private',
+                    'FEE': '160000'
+                },
+                {
+                    'INSTITUTE_NAME': 'CMRTC Engineering College',
+                    'PLACE': 'Medak',
+                    'BRANCH': 'Mechanical Engineering',
+                    'TYPE': 'Private',
+                    'FEE': '110000'
+                }
+            ];
+            
+            availableColumns = Object.keys(collegesData[0]);
+            
+            document.getElementById('loadingStatus').innerHTML = `
+                <div class="status-message warning-msg">
+                    ⚠️ Using sample data for testing purposes (${collegesData.length} records loaded)
+                </div>
+            `;
+            
+            initializeFilters();
+            updateStatistics();
+            document.querySelector('.btn-primary').disabled = false;
+            
+            console.log('Sample data loaded:', collegesData.length, 'records');
+            
+            // Auto-show all colleges
+            setTimeout(() => {
+                filterColleges();
+            }, 1000);
+        }
+
+        // Add real-time search functionality
+        document.getElementById('collegeName').addEventListener('input', function() {
+            if (this.value.length > 2 || this.value.length === 0) {
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(() => {
+                    if (document.getElementById('resultsSection').style.display === 'block') {
+                        filterColleges();
+                    }
+                }, 500);
+            }
+        });
+
+        // Add Enter key support for filters
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !document.querySelector('.btn-primary').disabled) {
+                filterColleges();
+            }
+        });
+    </script>
+</body>
+</html>

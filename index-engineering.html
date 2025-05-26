@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balanju Consultancy | Explore Engineering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #003366;
+      --card-bg: #1565c0;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --card-bg: #1e88e5;
+      background: #121212;
+      color: var(--text);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 25px 40px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header .logo {
+      font-size: 40px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .subheader {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      padding: 0 20px;
+      color: #004080;
+    }
+
+    section {
+      padding: 40px 20px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #0d47a1;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      background-color: var(--card-bg);
+      color: white;
+      padding: 18px;
+      font-size: 17px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .menu a:hover {
+      background-color: #00b894;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+      padding: 30px 20px;
+      background-color: #f5f5f5;
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      color: #0d47a1;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--card-bg);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+    /* 📱 Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .main-header .left h1 {
+    font-size: 22px;
+  }
+
+  .main-header .right {
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .scroll-text {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🚀</div>
+    <h1>Explore Engineering with Balanju</h1>
+  </header>
+
+  <div class="subheader"><b>
+    Your trusted guide for B.Tech branches, colleges, exams, and expert counseling.</b>
+  </div>
+
+  <section>
+    <h2>Overview</h2>
+    <p>Engineering drives innovation and transformation. Balanju'S Team helps you choose the right branch, college, and exam path to succeed in this dynamic field. Find expert-curated content, placement stats, and personalized counseling right here.</p>
+  </section>
+
+
+  <section>
+    <h2>About B.Tech</h2>
+    <div class="menu">
+      <a href="index-branches.html">📚 Explore Branches</a>
+      <a href="index-engineering-college.html">🏫Engineering Colleges</a>
+      <a href="index-trending-branc.html">📊 Trending Branches</a>
+      <a href="campus_tours.html">🎥 Campus Tours</a>
+      <a href="placement.html">💼 Placement Statistics</a>
+      <a href="150-Faqs.html">❓ Engineering FAQs</a>
+      <a href="TOP_ENGI.html">🏫Top Colleges</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>🏛️Top National Exams</h2>
+    <div class="menu">
+      <a href="10JEE-ADVANCE-EXAM.html">📘 JEE Advanced</a>
+      <a href="10jee_mains.html">📘 JEE Main</a>
+      <a href="10BITSAT.html">📊 BITSAT</a>
+      <a href="10VITEEE-EXAM.html">🔬 VITEEE</a>
+      <a href="10SMJEEE.html">🧭 SRMJEEE</a>
+      <a href="10MET-MANIPAL-EXAM.HTML">🛡️ MET (Manipal)</a>
+      <a href="10amity-EXAM.html">🏛️ Amity JEE / UPES</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>🗺️ State-Level Exams</h2>
+    <div class="menu">
+      <a href="11TS-EAPCET-EXAM.html">🌇 TS EAMCET [Telangana]</a>
+      <a href="11ap_eamcet-EXAM.html">🏙️ AP EAPCET [Andhra Pradesh]</a>
+      <a href="11MHTCET-MAHARASTHA-EXAM.HTML">🏞️ MHT CET [Maharashtra]</a>
+      <a href="11KCET-KARNATAKA-EXAM.html">🏔️ KCET [Karnataka]</a>
+      <a href="11KEAM-KERALA-EXAM.html">🌆 KEAM [Kerala]</a>
+      <a href="11WBJEE-BENGAL-EXAM.HTML">🏯 WBJEE [West Bengal]</a>
+      <a href="11GUJCET-GUJARATH-EXAM.html">🌁 GUJCET [Gujarat]</a>
+      <a href="11REAP-RAJASTHAN-EXAM.html">🛤️ REAP [Rajasthan]</a>
+      <a href="11UPCET-UTTHAR.html">🏞️ UPCET [Uttar Pradesh]</a>
+      <a href="11BCECE-BIHAR-EXAM.html">🕌 BCECE [Bihar]</a>
+      <a href="11cgpet-Chhattisgarh-EXAM.html">🕍 CG PET [Chhattisgarh]</a>
+      <a href="11OJEE-EXAM.html">🛕 OJEE [Odisha]</a>
+      <a href="11jcece-JARKHAND.EXAM.html">🛶 JCECE [Jharkhand]</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>🏛️Other Popular Institute Exams</h2>
+    <div class="menu">
+      <a href="12UGC-IITH-EXAM.html">📖 IIITH UGEE / SAT</a>
+      <a href="12SNSAT-EXAM.html">🏫 SNUSAT [Shiv Nadar University]</a>
+      <a href="12ashoka-EXAM.html">🧠 Ashoka Aptitude Test</a>
+      <a href="12ISBF-EXAM.html">📊 ISBF Entrance Test</a>
+    </div>
+  </section>
+
+
+  <!-- Counseling Promo -->
+    <div style="background-color: #fff3cd; padding: 20px; border-radius: 10px; text-align: center; margin: 30px auto;">
+        <h2>📝 Need Help with EAMCET Counseling?</h2>
+        <p style="font-size: 18px;">We provide expert guidance to help you choose the right branch, college, and career path. Book a 1-on-1 paid counseling session now!</p>
+        <a href="http://127.0.0.1:5500/Engineering/linking/counsilling-page.html" target="_blank">
+            <button style="padding: 10px 20px; background-color: #ff9800; color: white; font-size: 16px; border: none; border-radius: 8px;">💬 Get Counseling Help</button>
+        </a>
+    </div>
+
+
+  <footer>
+
+    
+    Made with ❤️ by Team Balanju |<br>
+    📧 <a href="mailto:balanjuconsultancy@gmail.com" target="_blank">Email</a>
+    |📺 <a href="https://youtube.com/@balajimrec227" target="_blank">YouTube</a> |
+    💬 <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Team%20Balanju%2C%20I%20need%20help%20with%20engineering%20admission." target="_blank">WhatsApp COMMUNITY</a>
+  </footer>
+
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+
+ <a href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20admission." 
+   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:998; font-family:'Segoe UI', sans-serif;" 
+   target="_blank" aria-label="Chat with Balanju on WhatsApp">
+   💬 Chat with Us
+</a>
+
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
+
+</body>
+</html>
