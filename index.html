@@ -458,6 +458,48 @@
   font-size: 16px;
 }
 
+/*buttion*/
+.trending-section {
+  background-color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.trending-section h2 {
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.trending-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.trend-card {
+  background-color: #ffecec;
+  color: #c0392b;
+  border-left: 5px solid #e74c3c;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  max-width: 280px;
+  text-align: left;
+}
+
+.trend-card:hover {
+  transform: translateY(-3px);
+  background-color: #ffdddd;
+}
+
+
   </style>
 </head>
 <body>
@@ -921,9 +963,9 @@
 </section>
 
 <section id="connect" style="background-color: #f1f8e9; padding: 50px 20px; border-radius: 12px; margin-top: 60px; text-align: center; font-family: 'Segoe UI', sans-serif;">
-  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with MVSR</h2>
+  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with CBIT</h2>
   <p style="font-size: 18px; max-width: 800px; margin: 0 auto 20px; color: #424242;">
-    Your MVSR journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
+    Your CBIT journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
   </p>
   <p style="font-size: 16px; color: #558b2f; margin-bottom: 30px;">
     🎯 Don’t just explore — become a part of our vibrant online community.
@@ -958,6 +1000,20 @@
   <div class="cta" style="margin-top: 30px;">
     <a href="#contact">🚀 Apply Now – Your Future Begins Here</a>
   </div>
+</section>
+
+ <section style="background-color: #fff8e1; padding: 40px 20px; border-radius: 12px; margin: 40px auto; max-width: 1100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <h2 style="color: #e65100; font-size: 24px; margin-bottom: 10px;">📝 Got Feedback or Need Help?</h2>
+  <p style="font-size: 18px; color: #333;">Have something to say? Tell us how we can help or what you think about our service.</p>
+  
+  <form action="https://formspree.io/f/mwpodlvj" method="POST" style="margin-top: 20px;">
+    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; width: 100%; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
+    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; width: 100%; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
+    <textarea name="message" placeholder="Your Feedback or Help Request..." required rows="4" style="padding: 10px; width: 100%; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;"></textarea>
+    <button type="submit" style="background-color: #ff9800; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      📤 Submit Feedback
+    </button>
+  </form>
 </section>
 
 </html> 
