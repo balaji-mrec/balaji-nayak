@@ -791,24 +791,144 @@
 
   <script>
     const searchData = [
-      { name: "CSE - Computer Science", link: "13cse.html", icon: "💻", desc: "Core programming, software, and IT career path." },
-      { name: "Cyber Security", link: "13CYBER.html", icon: "🛡️", desc: "Learn network protection, ethical hacking, and defense." },
-      { name: "Data Science (DS)", link: "13data_science.html", icon: "📊", desc: "Big data, analytics, and AI-powered insights." },
-      { name: "IoT - Internet of Things", link: "13IOT.html", icon: "🌐", desc: "Smart devices, automation, and connected tech." },
-      { name: "Software Engineering", link: "13software engineering.html", icon: "🖥️", desc: "Application development and project architecture." },
-      { name: "ECE - Electronics & Communication", link: "14ece.html", icon: "📡", desc: "Design circuits, embedded systems, and telecom." },
-      { name: "EEE - Electrical Engineering", link: "14eee.html", icon: "⚡", desc: "Focus on power systems, machines, and control." },
-      { name: "IT - Information Technology", link: "13IT.html", icon: "💾", desc: "Computer networks, databases, and system admin." },
-      { name: "Mechanical Engineering", link: "14mech.html", icon: "🔧", desc: "Machines, robotics, thermal, and automotive design." },
-      { name: "Civil Engineering", link: "14civil.html", icon: "🏗️", desc: "Structures, roads, bridges, and infrastructure." },
-      { name: "Pharmacy", link: "pharmacy.html", icon: "💊", desc: "Study of medicines, B.Pharm & D.Pharm options." },
-      { name: "Cutoffs", link: "cutoffs.html", icon: "📊", desc: "Last year cutoffs for EAMCET, JEE, etc." },
-      { name: "Counseling", link: "counseling.html", icon: "📞", desc: "Book a session with our experts." },
-      { name: "Top Colleges", link: "colleges.html", icon: "🏛️", desc: "View top colleges across branches." },
-      { name: "CBIT", city: "Hyderabad", stream: "Engineering", link: "101-ts-cbit.html", icon: "🏫" },
-      { name: "MVSR", city: "Hyderabad", stream: "Engineering", link: "101-ts-mvsr.html", icon: "🏫" },
-      { name: "Vasavi College", city: "Hyderabad", stream: "Engineering", link: "103-ts-vasavi.html", icon: "💻" },
-      { name: "JNTU-Hyderabad", city: "Hyderabad", stream: "Engineering", link: "104-ts-jntu-h.html", icon: "🎓" }
+
+    
+  { name: "Cut-off Analysis", link: "01-cut-off.html", icon: "📉", desc: "Explore previous year cut-off scores and trends." },
+  { name: "TS EAMCET Updated", link: "01-ts-eamcet-updated.html", icon: "🧾", desc: "Latest updates and info on TS EAMCET." },
+  { name: "Amity University Exam", link: "10amity-EXAM.html", icon: "🏛️", desc: "Entrance details for Amity University." },
+  { name: "BITSAT Exam", link: "10BITSAT.html", icon: "🧠", desc: "Exam info for BITS Pilani's BITSAT entrance test." },
+  { name: "JEE Mains", link: "10jee_mains.html", icon: "🧪", desc: "All details for JEE Mains entrance exam." },
+  { name: "JEE Advanced", link: "10JEE-ADVANCE-EXAM.html", icon: "🚀", desc: "JEE Advanced details for IIT aspirants." },
+  { name: "MET (Manipal) Exam", link: "10MET-MANIPAL-EXAM.HTML", icon: "🏥", desc: "Manipal Entrance Test (MET) details." },
+  { name: "SMJEEE Exam", link: "10SMJEEE.html", icon: "📘", desc: "Sikkim Manipal University engineering entrance exam." },
+  { name: "VITEEE Exam", link: "10VITEEE-EXAM.html", icon: "🏫", desc: "VIT Engineering Entrance Examination details." },
+  { name: "AP EAMCET", link: "11ap_eamcet-EXAM.html", icon: "📍", desc: "Andhra Pradesh EAMCET exam info and updates." },
+  { name: "BCECE Bihar Exam", link: "11BCECE-BIHAR-EXAM.html", icon: "📄", desc: "Bihar Combined Entrance Competitive Examination info." },
+  { name: "CGPET Chhattisgarh Exam", link: "11cgpet-Chhattisgarh-EXAM.html", icon: "🗺️", desc: "Engineering admission exam for Chhattisgarh state." },
+  { name: "GUJCET Gujarat Exam", link: "11GUJCET-GUJARATH-EXAM.html", icon: "🌉", desc: "Gujarat Common Entrance Test information." },
+  { name: "JCECE Jharkhand Exam", link: "11jcece-JARKHAND-EXAM.html", icon: "🌿", desc: "Jharkhand Combined Entrance Competitive Examination info." },
+  { name: "KCET Karnataka Exam", link: "11KCET-KARNATAKA-EXAM.html", icon: "🎓", desc: "Karnataka Common Entrance Test details." },
+  { name: "KEAM Kerala Exam", link: "11KEAM-KERALA-EXAM.html", icon: "🌴", desc: "Kerala Engineering Architecture Medical exam info." },
+  { name: "MHTCET Maharashtra Exam", link: "11MHTCET-MAHARASTHA-EXAM.HTML", icon: "🚗", desc: "Maharashtra CET exam details for engineering." },
+  { name: "OJEE Odisha Exam", link: "11OJEE-EXAM.html", icon: "🏞️", desc: "Odisha Joint Entrance Examination overview." },
+  { name: "REAP Rajasthan Exam", link: "11REAP-RAJASTHAN-EXAM.html", icon: "🏜️", desc: "Rajasthan Engineering Admission Process details." },
+  { name: "TS EAPCET", link: "11TS-EAPCET-EXAM.html", icon: "📘", desc: "Telangana State Engineering entrance test." },
+  { name: "UPCET Uttar Pradesh", link: "11UPCET-UTTHAR.html", icon: "🕌", desc: "Uttar Pradesh Combined Entrance Test (UPCET) details." },
+
+
+
+  { name: "WBJEE Bengal Exam", link: "11WBJEE-BENGAL-EXAM.HTML", icon: "🏙️", desc: "West Bengal Joint Entrance Examination overview." },
+  { name: "Ashoka University Exam", link: "12ashoka-EXAM.html", icon: "🎓", desc: "Entrance details for Ashoka University programs." },
+  { name: "ISBF Exam", link: "12ISBF-EXAM.html", icon: "📈", desc: "Indian School of Business & Finance admission test." },
+  { name: "SNUSAT Exam", link: "12SNSAT-EXAM.html", icon: "📘", desc: "Shiv Nadar University SAT entrance exam info." },
+  { name: "UGC-IITH Entrance", link: "12UGC-IITH-EXAM.html", icon: "🔬", desc: "UGC-based entrance exam at IIT Hyderabad." },
+  { name: "AI & ML", link: "13AIML.html", icon: "🤖", desc: "Learn about Artificial Intelligence and Machine Learning programs." },
+  { name: "Cloud Computing", link: "13cloud_computing.html", icon: "☁️", desc: "Explore cloud computing courses and career scope." },
+  { name: "CSE", link: "13cse.html", icon: "💻", desc: "Computer Science & Engineering program details." },
+  { name: "Cyber Security", link: "13CYBER.html", icon: "🛡️", desc: "Cybersecurity specializations and job opportunities." },
+  { name: "Data Science", link: "13data_science.html", icon: "📊", desc: "Explore data science courses and scope." },
+  { name: "IoT", link: "13IOT.html", icon: "📡", desc: "Internet of Things — career paths and courses." },
+  { name: "Information Technology", link: "13IT.html", icon: "💾", desc: "IT branch subjects, scope, and roles." },
+  { name: "Software Engineering", link: "13software engineering.html", icon: "🧑‍💻", desc: "Career and course overview in Software Engineering." },
+  { name: "Chemical Engineering", link: "14chemical.html", icon: "⚗️", desc: "Explore chemical engineering career options." },
+  { name: "Civil Engineering", link: "14civil.html", icon: "🏗️", desc: "Civil engineering subjects and job opportunities." },
+  { name: "Electronics & Communication", link: "14ece.html", icon: "📡", desc: "ECE branch info – circuits, signals, and more." },
+  { name: "Electrical & Electronics", link: "14eee.html", icon: "🔌", desc: "EEE specialization and engineering jobs." },
+  { name: "Mechanical Engineering", link: "14mech.html", icon: "⚙️", desc: "Mech branch details — machines, design, and scope." },
+  { name: "Biotechnology", link: "15biotech.html", icon: "🧬", desc: "Biotech courses, scope, and job areas." },
+  { name: "Environmental Engineering", link: "15Environmental-Engin.html", icon: "🌿", desc: "Environmental engineering for sustainability careers." },
+  { name: "Food Technology", link: "15food_tech.html", icon: "🍱", desc: "Food tech courses and job roles in industry." },
+
+  { name: "Aerospace Engineering", link: "16aerospace.html", icon: "✈️", desc: "Courses and careers in aerospace engineering." },
+  { name: "Engineering Physics", link: "16engineering_physics.html", icon: "🧲", desc: "Explore core physics applied in engineering." },
+  { name: "Mining Engineering", link: "16mining.html", icon: "⛏️", desc: "Mining engineering branch and its opportunities." },
+  { name: "Robotics", link: "16robotics.html", icon: "🤖", desc: "Learn about robotics engineering and automation." },
+  { name: "IIIT Index Page", link: "23index-iiit.html", icon: "🏫", desc: "Central list of IIIT colleges and info." },
+  { name: "Top 20 TS Colleges", link: "100-ts-20.html", icon: "📋", desc: "Top 20 engineering colleges in Telangana." },
+  { name: "CBIT - Telangana", link: "101-ts-cbit.html", icon: "🏛️", desc: "CBIT Hyderabad - courses, cutoffs, and more." },
+  { name: "MVSR - Telangana", link: "101-ts-mvsr.html", icon: "🏫", desc: "MVSR Engineering College details in Telangana." },
+  { name: "VASAVI - Telangana", link: "103-ts-vasavi.html", icon: "🎓", desc: "Vasavi Engineering College overview." },
+  { name: "JNTU Hyderabad", link: "104-ts-jntu-h.html", icon: "🏢", desc: "JNTU-Hyderabad college details and ranking." },
+  { name: "Gokaraju College", link: "105-ts-gokaraju.html", icon: "📘", desc: "Gokaraju Rangaraju Engineering College info." },
+  { name: "VNR VJIET College", link: "106-ts-vnr vijet.html", icon: "🏫", desc: "Details of VNR Vignana Jyothi Institute." },
+  { name: "Sreenidhi College", link: "107-ts-sreenidhi.html", icon: "📗", desc: "Sreenidhi Institute of Science & Technology." },
+  { name: "TSMJ CET Exam", link: "108-tsmjcet.html", icon: "🕌", desc: "Minority Engineering College CET - Telangana." },
+  { name: "MRCE College", link: "109-TS-MRCE.html", icon: "🏫", desc: "MRCE Engineering College details." },
+  { name: "NRCM College", link: "109-TS-nrcm.html", icon: "🏫", desc: "Narsimha Reddy College of Engineering & Management." },
+  { name: "St. Mary's College", link: "109-TS-ST-MARY'S.html", icon: "⛪", desc: "St. Mary's Engineering College overview." },
+  { name: "MRCET College", link: "109-TS-MRCET.html", icon: "🏫", desc: "Details for Malla Reddy College of Engineering & Tech." },
+  { name: "MREC College", link: "110-TS-MREC.html", icon: "🏫", desc: "Malla Reddy Engineering College full info." },
+  { name: "MRUH University", link: "110-TS-MRUH.html", icon: "🏛️", desc: "Malla Reddy University Hyderabad details." },
+  { name: "CMRCET College", link: "111-TS-CMRCET.HTML", icon: "🏫", desc: "CMR College of Engineering & Technology, Telangana." },
+  
+  
+  { name: "CVR College", link: "112-ts-cvr.html", icon: "🏫", desc: "CVR College of Engineering - Hyderabad." },
+  { name: "MLR Institute", link: "113-ts-mlr.html", icon: "🏛️", desc: "MLR Institute of Technology - Telangana." },
+  { name: "IARE College", link: "114-ts-iare.html", icon: "🚀", desc: "Institute of Aeronautical Engineering (IARE), Hyderabad." },
+  { name: "Stanley College", link: "115-ts-stanley.html", icon: "👩‍🎓", desc: "Stanley College of Engineering for Women." },
+  { name: "Bhoj Reddy College", link: "116-ts-bhojreddy.html", icon: "🎓", desc: "Bhoj Reddy Engineering College for Women." },
+  { name: "TKR College", link: "117-ts-tkr.html", icon: "🏫", desc: "TKR College of Engineering & Technology." },
+  { name: "Mahindra University", link: "118-ts-mahindra-university.html", icon: "🏢", desc: "Engineering and research programs at Mahindra University." },
+  { name: "GITAM University", link: "119-ts-gitam-university.html", icon: "📘", desc: "GITAM Hyderabad Campus - Engineering and more." },
+  { name: "IIITH - Hyderabad", link: "120-ts-iiith.html", icon: "🏛️", desc: "International Institute of Information Technology, Hyderabad." },
+  { name: "Anurag University", link: "121-ts-anurag-university.html", icon: "🎓", desc: "Engineering programs at Anurag University." },
+  { name: "AVN Institute", link: "122-ts-AVN.html", icon: "🏫", desc: "AVN Institute of Engineering & Technology." },
+  { name: "BV Raju Institute", link: "122-ts-bv-raju.html", icon: "🧪", desc: "B V Raju Institute of Technology (BVRIT)." },
+  { name: "JNTU - Sultanpur", link: "122-ts-jntu-sul.html", icon: "🏢", desc: "Jawaharlal Nehru Technological University, Sultanpur." },
+  { name: "Osmania University", link: "122-ts-osmania.html", icon: "🏛️", desc: "Osmania University - oldest and reputed in Hyderabad." },
+  { name: "Vardhaman College", link: "122-ts-vaardhaman.html", icon: "🏫", desc: "Vardhaman College of Engineering, Hyderabad." },
+  { name: "KITS College", link: "123-ts-kits.html", icon: "📗", desc: "Kakatiya Institute of Technology & Science." },
+  { name: "Vaagdevi College", link: "124-ta-vaagdevi.html", icon: "📘", desc: "Vaagdevi College of Engineering - Warangal." },
+  { name: "SR Engineering College", link: "125-ts-sr.html", icon: "🏫", desc: "SR Engineering College, Warangal - Telangana." },
+  { name: "Kakatiya University", link: "126-ts-kakatiya.html", icon: "🏛️", desc: "Kakatiya University – public university in Warangal." },
+  { name: "Jayamukhi Institute", link: "127-ts-jayamukhi.html", icon: "🏫", desc: "Jayamukhi Institute of Tech and Sciences." },
+  { name: "Jyothishmathi Institute", link: "128-ts-jyothishmathi.html", icon: "📘", desc: "Jyothishmathi Institute of Technology & Science." },
+
+  { name: "VITS - Telangana", link: "129-ts-vits.html", icon: "🏫", desc: "Vaagdevi Institute of Technology and Science." },
+  { name: "GURUNANAK - Nizamabad", link: "130-TS-GURUNANAK-nlzambad.html", icon: "🏛️", desc: "Guru Nanak Institute of Technology, Nizamabad." },
+  { name: "SBIT - Telangana", link: "131-ts-sbit.html", icon: "🏫", desc: "St. Mary's Bethany Institute of Technology (SBIT)." },
+  { name: "Anurag - Kodad", link: "132-ts-anurag-kodad.html", icon: "🏫", desc: "Anurag Engineering College, Kodad." },
+  { name: "Priyadarshini College", link: "132-ts-PRIYADARSHINI.html", icon: "🎓", desc: "Priyadarshini Institute of Tech and Science." },
+  { name: "MGIT - Telangana", link: "133-ts-mgit.html", icon: "🏢", desc: "Mahatma Gandhi Institute of Technology." },
+  { name: "FAQs", link: "150-Faqs.html", icon: "❓", desc: "Frequently Asked Questions about counselling and admission." },
+  { name: "Filters Page", link: "150-ts-FILTER.html", icon: "🧮", desc: "Filter college options by rank, location, or course." },
+  { name: "Government Colleges List", link: "150-TS-GOVT.html", icon: "🏛️", desc: "List of top Government colleges in Telangana." },
+  { name: "Demo: Degree Page", link: "900-demo-degree.html", icon: "🧪", desc: "Demo page for UG degree navigation." },
+  { name: "Schools Connection", link: "991schools-con.html", icon: "🏫", desc: "Bridge between school data and counselling." },
+  { name: "Inter Connection", link: "992inter-con.html", icon: "🔗", desc: "Inter-related colleges and streams." },
+  { name: "Demo Site", link: "993demo-site.html", icon: "🌐", desc: "Sample project for college site structure." },
+  { name: "Campus Tours", link: "994campus-tours.html", icon: "🚌", desc: "Explore campus tours and virtual visits." },
+  { name: "Contact & Degree", link: "995constarct-degree.html", icon: "📞", desc: "Contact info and degree details in one page." },
+  { name: "TS College Filter Tool", link: "999-TS-COLLEGE-FILTER.html", icon: "🎛️", desc: "Smart filter for TS colleges by preferences." },
+  { name: "College Predictor", link: "999-TS-COLLEGE-PREDUCTOR.HTML", icon: "🔮", desc: "Predict your college with our smart rank analyzer." },
+  { name: "Paid Counselling", link: "1000paid-cousilling.html", icon: "💰", desc: "Paid counselling service for personal guidance." },
+  { name: "Thank You Page", link: "1000-thank.html", icon: "🙏", desc: "Thank you message after successful session." },
+  { name: "College Profile Template", link: "1003-college-profile.html", icon: "📄", desc: "Sample layout for individual college profiles." },
+  { name: "Final Demo Page", link: "1003-demo.html", icon: "🧪", desc: "Last demo for full navigation structure." },
+
+
+ 
+  { name: "TS EAMCET Cut Off", link: "01-cut-off.html", icon: "📉", desc: "Latest TS EAMCET cutoff ranks by college & category." },
+  { name: "BITSAT Exam", link: "10BITSAT.html", icon: "🎯", desc: "Birla Institute of Technology Admission Test details." },
+  { name: "Anurag University", link: "121-ts-anurag-university.html", icon: "🏫", desc: "Anurag University – course, fees, placement info." },
+  
+  { name: "College Profile Template", link: "1003-college-profile.html", icon: "📄", desc: "Sample layout for individual college profiles." }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ];
 
     function showResults() {
