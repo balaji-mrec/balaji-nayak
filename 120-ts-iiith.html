@@ -3,139 +3,489 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IIIT Hyderabad Admissions | Balaju Consultancy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>II-Hyderabad  | Balanju Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-   :root {
-  --primary: #1B5E20;
-  --secondary: #66BB6A;
-  --bg: #f0fdf4;
-  --white: #ffffff;
-  --radius: 12px;
-  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    :root {
+      --primary: #003366;
+      --secondary: #ffd700;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --radius: 16px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Mobile-first Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, #004080 100%);
+      padding: 1rem;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .header .tagline {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .header .college-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .header .college-full {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    /* Mobile Navigation */
+    .nav {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0.5rem 0;
+    }
+
+    .nav-scroll {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-scroll a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      white-space: nowrap;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .nav-scroll a:hover, .nav-scroll a:active {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* Sections */
+    .section {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .section h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .section h4 {
+      font-size: 1.125rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .section p {
+      color: var(--text);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Highlight boxes */
+    .highlight {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      padding: 1.25rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .highlight ul {
+      padding-left: 1.25rem;
+      margin: 0.75rem 0;
+    }
+
+    .highlight li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Mobile-optimized Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Mobile-friendly Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 1rem 0;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      font-size: 0.875rem;
+    }
+
+    th, td {
+      padding: 0.75rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: var(--primary);
+      position: sticky;
+      top: 0;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.875rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--primary);
+      color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-block {
+      display: block;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    /* CTA sections */
+    .cta {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    /* FAQ accordions */
+    details {
+      margin-bottom: 0.75rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    details summary {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      padding: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--primary);
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    details div {
+      padding: 1rem;
+      background: var(--white);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Video containers */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin: 1rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .whatsapp-float a {
+      background: #25D366;
+      color: white;
+      padding: 0.875rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Connect section */
+    .connect-section {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius);
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .connect-section h2 {
+      color: #15803d;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-links a {
+      padding: 0.875rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .instagram { background: #e91e63; color: white; }
+    .youtube { background: #d32f2f; color: white; }
+    .whatsapp { background: #25D366; color: white; }
+    .linkedin { background: #0077b5; color: white; }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    .footer {
+      background: #fffbeb;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      margin-top: 2rem;
+    }
+
+    /* Responsive improvements */
+    @media (min-width: 640px) {
+      .header h1 { font-size: 1.75rem; }
+      .header .college-name { font-size: 2rem; }
+      .section { padding: 2rem; }
+      .section h2 { font-size: 1.75rem; }
+      .gallery { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .gallery img { height: 150px; }
+      .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container { padding: 2rem; }
+      .nav-scroll { 
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+      .gallery img { height: 180px; }
+    }
+
+    @media (min-width: 1024px) {
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 2rem;
+      }
+      
+      .header-left, .header-right {
+        flex: 1;
+      }
+      
+      .header-right {
+        text-align: right;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Loading animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* Apply this CSS */
+.header {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically if header has height */
+  height: 100px;           /* Optional: add height */
+  background-color: #f0f0f0; /* Optional: for visibility */
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
-header { display: flex; justify-content: space-between; align-items: center; background: rgb(109, 217, 224); padding: 20px 30px; border-bottom: 1px solid #4cb4af; flex-wrap: wrap; }
-.header-left h1 { font-size: 20px; line-height: 1.3; color: var(--primary); text-transform: uppercase; }
-.header-center { flex: 1; text-align: center; }
-.header-center h2 { font-size: 24px; color: var(--primary); font-weight: 800; }
-.header-center p { font-size: 16px; color: #2c8e48; font-weight: 600; }
-nav { background: var(--white); box-shadow: var(--shadow); padding: 12px 20px; position: sticky; top: 0; z-index: 1000; }
-nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 20px; }
-nav a { color: var(--primary); font-weight: 600; text-decoration: none; padding: 6px 12px; transition: 0.3s ease; }
-nav a:hover { background: var(--secondary); color: white; border-radius: 8px; }
-.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px; margin-bottom: 40px; }
-section h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; }
-.highlight { background: #e8f5e9; padding: 20px; border-radius: 12px; margin-top: 15px; }
-.gallery { display: flex; gap: 20px; overflow-x: auto; margin-top: 15px; }
-.gallery img { height: 180px; border-radius: 12px; box-shadow: var(--shadow); }
-iframe { width: 100%; height: 360px; margin-top: 25px; border-radius: var(--radius); border: none; }
-details summary { background: #f1f8e9; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
-.cta { text-align: center; margin-top: 40px; }
-.cta a { background: var(--secondary); color: white; padding: 14px 30px; font-size: 18px; font-weight: 600; border-radius: 40px; text-decoration: none; box-shadow: var(--shadow); transition: 0.3s ease; }
-.cta a:hover { background: #43a047; }
-.whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 100; }
-.whatsapp-float a { background: #25D366; color: white; padding: 14px 22px; border-radius: 40px; text-decoration: none; font-weight: bold; box-shadow: var(--shadow); }
-footer { background: #dcedc8; text-align: center; padding: 20px; font-size: 14px; color: #555; }
-@media (max-width: 768px) {
-  header { flex-direction: column; align-items: flex-start; text-align: left; }
-  .header-center { text-align: left; margin-top: 10px; }
-  nav ul { flex-direction: column; align-items: center; gap: 16px; }
-  .gallery { flex-direction: column; align-items: center; }
+
+.header-right {
+  text-align: center;
 }
 
-/* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
+.college-name {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-  .main-header .left h1 {
-    font-size: 22px;
-  }
-
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-
-  .scroll-text {
-    font-size: 13px;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
-
-  .section {
-    padding: 20px 15px;
-  }
-
-  .section h3 {
-    font-size: 20px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
+.college-full {
+  font-size: 16px;
 }
 
   </style>
 </head>
-<body><header>
-  <div class="header-left">
-    <h1><font size="6" color="black" face="roboto">🎓 BALANJU<br>CONSULTANCY</font></h1>
-    <p><font size="4" color="green" face="roboto">Your trusted partner in college admissions.</font></p>
-  </div>
-  <div class="header-center">
-    <h2><font size="6" color="RED" face="roboto">IIIT HYDERABAD</font></h2>
-    <p><font size="6" color="blue" face="roboto">International Institute of Information Technology, Hyderabad</font></p>
-    <a href="https://www.iiit.ac.in/files/iiit-logo.png"></a>
-  </div>
-</header>
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#courses">Courses Offered</a></li>
-    <li><a href="#admissions">Admission Process</a></li>
-    <li><a href="#cutoff">Cut-Offs</a></li>
-    <li><a href="#fees">Fees & Scholarships</a></li>
-    <li><a href="#placements">Placements</a></li>
-    <li><a href="#facilities">Facilities</a></li>
-    <li><a href="#campus-life">Campus Life</a></li>
-    <li><a href="#campus-tour">Campus Tour</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#faqs">FAQs</a></li>
-  </ul>
-</nav>
-<div class="container">
-<section id="about">
+<body>
+  <header class="header">
+   
+    <div class="header-right">
+      <div class="college-name">IIT-H</div>
+      <div class="college-full">International Institute of Information Technology, Hyderabad</div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-scroll">
+      <a href="#about">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#cutoff">Cut-Offs</a>
+      <a href="#fees">Fees</a>
+      <a href="#placements">Placements</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#campus-life">Campus Life</a>
+      <a href="#contact">Contact</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="section">
   <h2>About IIIT Hyderabad</h2>
   <p>
     <strong>International Institute of Information Technology, Hyderabad (IIIT-H)</strong>, established in 1998, is a premier autonomous university focused on information technology and computer science. Renowned for its research-driven approach, IIIT-H is consistently ranked among the top engineering institutes in India.
@@ -467,9 +817,9 @@ footer { background: #dcedc8; text-align: center; padding: 20px; font-size: 14px
 </section>
 
 <section id="connect" style="background-color: #f1f8e9; padding: 50px 20px; border-radius: 12px; margin-top: 60px; text-align: center; font-family: 'Segoe UI', sans-serif;">
-  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with CBIT</h2>
+  <h2 style="color: #33691e; font-size: 32px; margin-bottom: 20px;">Stay Connected with IIT-H</h2>
   <p style="font-size: 18px; max-width: 800px; margin: 0 auto 20px; color: #424242;">
-    Your CBIT journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
+    Your IIT-H journey goes beyond the website. Stay in the loop with <strong>real-time campus updates, placement highlights, student stories, and event insights</strong> by following us on our official platforms.
   </p>
   <p style="font-size: 16px; color: #558b2f; margin-bottom: 30px;">
     🎯 Don’t just explore — become a part of our vibrant online community.

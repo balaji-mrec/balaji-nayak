@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balanju Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #002147;
+      --secondary-color: #ffeb3b;
+      --accent-color: #0d47a1;
+      --highlight-color: #0cad31;
+      --text-color: #333;
+      --light-bg: #e3f2fd;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    .main-header {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 15px;
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .header-text h1 {
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .header-text p {
+      color: #dcdcdc;
+      font-size: 0.9rem;
+    }
+
+    .notification-bar {
+      width: 100%;
+      background: #ffc107;
+      border-radius: 6px;
+      padding: 12px;
+      margin-top: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  font-weight: bold;
+  color: #000;
+  min-width: 100%;
+  will-change: transform;
+  transform: translateX(100%);
+}
+
+   
+
+
+    .scroll-text a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    @media (max-width: 768px) {
+  .scroll-text {
+    animation: scroll-left 15s linear infinite;
+  }
+}
+
+    @keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+    /* Main Content */
+    .container {
+      padding: 20px 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Search Section */
+    .search-section {
+      background-color: var(--light-bg);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 1rem;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .search-results {
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .result-card {
+      background-color: var(--white);
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .result-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .result-card h3 {
+      color: var(--accent-color);
+      margin-bottom: 5px;
+    }
+
+    /* Quick Links */
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .quick-link {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quick-link i {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .quick-link:hover {
+      background-color: var(--highlight-color);
+      transform: translateY(-3px);
+    }
+
+    /* EAMCET Section */
+    .eamcet-section {
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+      border-top: 2px solid #ddd;
+    }
+
+    .eamcet-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .eamcet-btn {
+      background-color: #0066cc;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .eamcet-btn:hover {
+      background-color: #004b99;
+      transform: translateY(-2px);
+    }
+
+    /* Video Section */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Form Section */
+    .form-section {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-submit {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+
+    .form-submit:hover {
+      background-color: #0d47a1;
+    }
+
+    .thank-you-message {
+      display: none;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* Feedback Section */
+    .feedback-section {
+      background-color: #fff8e1;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--light-bg);
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-links {
+      margin: 15px 0;
+    }
+
+    .social-links a {
+      color: #1565c0;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    /* Tablet Layout */
+    @media (min-width: 768px) {
+      .main-header {
+        flex-direction: row;
+        align-items: center;
+        padding: 25px;
+      }
+      
+      .notification-bar {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+      
+      .header-text h1 {
+        font-size: 2rem;
+      }
+      
+      .quick-links {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      
+      .form-section {
+        padding: 30px;
+      }
+    }
+
+    /* Desktop Layout */
+    @media (min-width: 1024px) {
+      .container {
+        padding: 30px;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+        margin: 30px 0;
+      }
+      
+      .quick-links {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+    }
+    
+   /* Update Bar Inside Header */
+.floating-update-bar.header-version {
+  position: static;
+  margin-top: 15px;
+  transform: none;
+  background: linear-gradient(to right, gold, #ffeb3b);
+  padding: 14px 20px;
+  font-size: 1rem;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.6s ease-in-out;
+}
+
+.floating-update-bar.header-version .update-btn {
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  background: #0d47a1;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.floating-update-bar.header-version .update-btn:hover {
+  background: #1565c0;
+}
+
+#updateText, #updateLink {
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Entry Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.result-card {
+  background-color: white;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.result-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: #0d47a1;
+}
+
+.result-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+.result-card {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+  .about-trust {
+  background: gold;
+  padding: 50px 20px;
+}
+
+.about-box {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.founder-photo img {
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.founder-text {
+  flex: 1;
+}
+
+.founder-text h2 {
+  color: #0d47a1;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.founder-text h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.founder-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.founder-text ul {
+  margin: 15px 0;
+  padding-left: 20px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.founder-text li {
+  margin-bottom: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .founder-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-image img {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .founder-content h2 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .founder-content .tagline {
+    font-size: 1rem;
+  }
+
+  .founder-content .badges {
+    justify-content: center;
+  }
+}
+  .note-message {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 20px;
+  background: #fff8e1;
+  padding: 15px 20px;
+  border-left: 4px solid #fbc02d;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-top">
+      <div class="header-text">
+        <h1><font face="roboto">🎓 BALANJU<br> CONSULTANCY</font></h1>
+        <p><b>Explore all educational paths at one place</b></p>
+      </div>
+    </div><font color="black">
+    <div class="floating-update-bar header-version" id="updateBar">
+  <span id="updateText">📢 TS EAMCET 2024 Cutoffs Updated!</span>
+  <a href="01-cut-off.html" class="update-btn" id="updateLink">View</a>
+    </font>
+
+</div>
+
+
+
+
+
+
+
+
+  </header>
+
+  <script>
+  const updates = [
+    {
+      text: "📢 TS EAMCET 2024 Cutoffs Updated!",
+      link: "01-cut-off.html"
+    },
+    {
+      text: "🗓️ Counseling starts from June 15",
+      link: "01-ts-eamcet-updated.html"
+    },
+    {
+      text: "🎯 College Predictor Tool Launched",
+      link: "999-TS-COLLEGE-PREDUCTOR.HTML"
+    },
+    {
+      text: "📚 Branch-wise Cutoffs Uploaded",
+      link: "index-branches.html"
+    },
+    {
+      text: "🏆 View Top Colleges for CSE, AI & DS",
+      link: "100-ts-20.html"
+    }
+  ];
+
+  let index = 0;
+  const updateText = document.getElementById("updateText");
+  const updateLink = document.getElementById("updateLink");
+
+  setInterval(() => {
+    updateText.style.opacity = 0;
+    updateLink.style.opacity = 0;
+
+    setTimeout(() => {
+      updateText.textContent = updates[index].text;
+      updateLink.href = updates[index].link;
+
+      updateText.style.opacity = 1;
+      updateLink.style.opacity = 1;
+
+      index = (index + 1) % updates.length;
+    }, 300); // Delay for fade out
+  }, 2000); // 2 seconds between updates
+</script>
+
+
+
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Search Section -->
+    <section class="search-section">
+      <h2 class="section-title">🔍 Find What You're Looking For</h2>
+      <input type="text" id="searchBox" class="search-box" placeholder="Search for CSE, Pharmacy, Cutoff, ECE..." oninput="showResults()">
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+    <!-- EAMCET Quick Access -->
+    <section class="eamcet-section">
+      <h2 class="section-title">🎓 EAPCET Quick Access</h2>
+      <div class="eamcet-buttons">
+        <a href="999-TS-COLLEGE-FILTER..html" class="eamcet-btn">🎯 College Filter</a>
+        <a href="999-TS-COLLEGE-PREDUCTOR.HTML" class="eamcet-btn">📊 College Predictor</a>
+        <a href="index-branches.html" class="eamcet-btn">📚 Branch-wise Info</a>
+        <a href="100-ts-20.html" class="eamcet-btn">🏆 Top Colleges</a>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <h2 class="section-title">📚 Explore Our Resources</h2>
+    <div class="quick-links">
+      <a href="index-engineering.html" class="quick-link">
+        <i class="fas fa-laptop-code"></i>
+        Engineering
+      </a>
+      <a href="900-demo-degree.html" class="quick-link">
+        <i class="fas fa-graduation-cap"></i>
+        Degree
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-flask"></i>
+        Pharma
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-school"></i>
+        Intermediate
+      </a>
+      <a href="991schools-con.html" class="quick-link">
+        <i class="fas fa-chalkboard-teacher"></i>
+        Schools
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-university"></i>
+        MBA
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-file-pdf"></i>
+        Cutoff PDFs
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-rupee-sign"></i>
+        Paid Courses
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-phone-alt"></i>
+        Contact Us
+      </a>
+      <a href="#" class="quick-link">
+        <i class="fas fa-comment-alt"></i>
+        Student Feedback
+      </a>
+    </div>
+
+    <!-- Video Section -->
+    <section>
+      <h2 class="section-title">📺 Watch Our Introduction</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+      <h2 class="section-title">📅 Book Your Counseling Appointment</h2>
+      <form id="contact-form" action="https://formspree.io/f/mdkgrwal" method="POST">
+        <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+        <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+        <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required>
+        <textarea name="message" class="form-input" rows="4" placeholder="What do you need help with?" required></textarea>
+        <button type="submit" class="form-submit">Submit Request</button>
+      </form>
+      <div id="thank-you-message" class="thank-you-message">
+        <p>✅ <strong>Thank you for choosing BALANJU CONSULTANCY!</strong></p>
+        <p>Your counseling request has been received successfully. One of our experts will reach out to you shortly with personalized guidance.</p>
+        <p>⏳ In the meantime, feel free to explore our tools or contact us for urgent queries.</p>
+        <p>💬 <em>We're here to support your journey — every step of the way.</em></p>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+      <h2 class="section-title">📝 Got Feedback or Need Help?</h2>
+      <p>Have something to say? Tell us how we can help or what you think about our service.</p>
+      <form action="https://formspree.io/f/mwpodlvj" method="POST" style="margin-top: 20px;">
+        <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+        <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+        <textarea name="message" class="form-input" rows="4" placeholder="Your Feedback or Help Request..." required></textarea>
+        <button type="submit" class="form-submit">
+          <i class="fas fa-paper-plane"></i> Submit Feedback
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a class="whatsapp-float" href="https://wa.me/7207800211" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+
+  <section class="about-trust">
+  <div class="about-box">
+    <div class="founder-photo">
+      <img src="https://i.postimg.cc/dVD9RqnR/Whats-App-Image-2025-05-28-at-13-04-13-9ffa63de.jpg" alt="Founder - Balaji Nayak">
+    </div>
+    <div class="founder-text">
+      <h2>Hi, I'm Balaji Nayak</h2>
+<p class="tagline">Founder of this platform — built to guide every student, every step.</p>
+<p class="bio">
+  This site is not just for EAMCET or JEE. I built it to support all types of students — school, 10th, inter, diploma, degree, entrance exams, and even PG admissions like MBA/MCA.
+  <br><br>
+  Whether you're confused about career options, looking for exam dates, cutoff info, or full guidance — everything is here. Verified. Updated. Designed to save your time and guide you right.
+  <br><br>
+  I also offer paid group exam guidance, online sessions, and course recommendations. You don’t need to run around — just start here.
+</p>
+<ul class="badges">
+  <li>🎯 All Career Paths</li>
+  <li>📊 Admission & Exam Support</li>
+  <li>📚 JEE, EAMCET, NEET, Degree, PG</li>
+  <li>💬 Paid Counseling & Doubt Sessions</li>
+</ul>
+  <h2>"I’m not here to impress — I’m here to guide. And I’m just getting started.” 💪</h2>
+
+  <p class="note-message"><font color="black" face="roboto">
+  Many more services, tools, and features are still under development. <span class="highlight">We’re working to bring everything very soon.</span> Thank you for trusting us. 🙏
+</font></p>
+
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by BALAJI NAYAK </p>
+    <div class="social-links">
+     
+      <a href="https://youtube.com/@balajimrec227?si=WzyjSDIymR_X-6ai" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <p>&copy; 2025 Your Future Begins with Balanju.</p>
+  </footer>
+
+  <script>
+    const searchData = [
+
+/*BRANCHES*/ 
+  { name: "CSE - Computer Science", link: "13cse.html", icon: "💻", desc: "Core programming, software, and IT career path." },
+  { name: "Cyber Security", link: "13CYBER.html", icon: "🛡️", desc: "Learn network protection, ethical hacking, and defense." },
+  { name: "Data Science (DS)", link: "13data_science.html", icon: "📊", desc: "Big data, analytics, and AI-powered insights." },
+  { name: "IoT - Internet of Things", link: "13IOT.html", icon: "🌐", desc: "Smart devices, automation, and connected tech." },
+  { name: "Software Engineering", link: "13software engineering.html", icon: "🖥️", desc: "Application development and project architecture." },
+  { name: "ECE - Electronics & Communication", link: "14ece.html", icon: "📡", desc: "Design circuits, embedded systems, and telecom." },
+  { name: "EEE - Electrical Engineering", link: "14eee.html", icon: "⚡", desc: "Focus on power systems, machines, and control." },
+  { name: "IT - Information Technology", link: "13IT.html", icon: "💾", desc: "Computer networks, databases, and system admin." },
+  { name: "Mechanical Engineering", link: "14mech.html", icon: "🔧", desc: "Machines, robotics, thermal, and automotive design." },
+  { name: "Civil Engineering", link: "14civil.html", icon: "🏗️", desc: "Structures, roads, bridges, and infrastructure." },
+  { name: "Pharmacy", link: "pharmacy.html", icon: "💊", desc: "Study of medicines, B.Pharm & D.Pharm options." },
+  { name: "Cutoffs", link: "cutoffs.html", icon: "📊", desc: "Last year cutoffs for EAMCET, JEE, etc." },
+  { name: "Counseling", link: "counseling.html", icon: "📞", desc: "Book a session with our experts." },
+  { name: "TS Top 20 Colleges", link: "100-ts-20.html", icon: "🏛️", desc: "View top colleges across branches." },
+  { name: "CBIT", link: "101-ts-cbit.html", icon: "🏫", desc: "CBIT Hyderabad – Top engineering institution." },
+  
+
+/*TELANGANA ENGINEERING COLLEGES*/ 
+
+
+
+    { name: "MVSR", link: "101-ts-mvsr.html", icon: "🏫", desc: "MVSR College of Engineering, Hyderabad." },
+  { name: "Vasavi College", link: "103-ts-vasavi.html", icon: "💻", desc: "Vasavi Engineering College – top for CSE, ECE." },
+  { name: "JNTU-Hyderabad", link: "104-ts-jntu-h.html", icon: "🎓", desc: "Jawaharlal Nehru Technological University, Hyderabad." },
+  { name: "MGIT", link: "133-ts-mgit.html", icon: "🏫", desc: "MGIT – Maturi G. Engineering Institute, Hyderabad." },
+  { name: "Gokaraju Rangaraju", link: "105-ts-gokaraju.html", icon: "🏫", desc: "GRIET – Top-ranked private engineering college." },
+  { name: "VNR VJIET", link: "106-ts-vnr.html", icon: "🏫", desc: "VNR VJIET – Best for core and IT branches." },
+  { name: "CVR College", link: "107-ts-cvr.html", icon: "🏫", desc: "CVR College of Engineering – near Hyderabad." },
+  { name: "Stanley College", link: "108-ts-stanley.html", icon: "🎓", desc: "Stanley College for Women – EAMCET & degree courses." },
+  { name: "Malla Reddy College", link: "109-ts-malla-reddy.html", icon: "🏫", desc: "MREC, Hyderabad – a popular private engineering group." },
+  { name: "CMR College", link: "110-ts-cmr.html", icon: "🏫", desc: "CMR Group of Institutions – multiple campuses in TS." },
+  { name: "ACE Engineering", link: "111-ts-ace.html", icon: "🎓", desc: "ACE College of Engineering – focused on core streams." },
+  { name: "Vignan Institute", link: "112-ts-vignan.html", icon: "🏫", desc: "Vignan Institute – located in Telangana." },
+  { name: "Anurag University", link: "113-ts-anurag.html", icon: "🎓", desc: "Anurag University – private university in TS." },
+  { name: "Mahindra University", link: "114-ts-mahindra.html", icon: "🎓", desc: "Mahindra University – premium private institute." },
+  { name: "IIIT Hyderabad", link: "115-ts-iiit.html", icon: "🏫", desc: "International Institute of Information Technology, Hyderabad." },
+
+   { name: "KMIT", link: "116-ts-kmit.html", icon: "🏫", desc: "Keshav Memorial Institute of Technology, Hyderabad." },
+  { name: "Maturi Engineering", link: "117-ts-maturi.html", icon: "🏫", desc: "Maturi Engineering College – technical excellence." },
+  { name: "BVRIT", link: "118-ts-bvrit.html", icon: "🏫", desc: "BVRIT – known for innovation and industry links." },
+  { name: "IARE", link: "119-ts-iare.html", icon: "🏫", desc: "IARE – Institute of Aeronautical Engineering." },
+  { name: "SNIST", link: "120-ts-snist.html", icon: "🏫", desc: "Sreenidhi Institute of Science and Technology." },
+  { name: "Nalla Malla Reddy", link: "121-ts-nalla.html", icon: "🏫", desc: "Nalla Malla Reddy Engineering College, Ghatkesar." },
+  { name: "CMR Technical Campus", link: "122-ts-cmr-tech.html", icon: "🏫", desc: "CMR Technical Campus – top private college." },
+  { name: "Keshav Memorial College", link: "123-ts-keshav.html", icon: "🏫", desc: "Keshav Memorial – intermediate & UG programs." },
+  { name: "SIT – Siddhartha", link: "124-ts-siddhartha.html", icon: "🏫", desc: "SIT Siddhartha Institute – engineering & PG courses." },
+  { name: "Holy Mary Institute", link: "125-ts-holy-mary.html", icon: "🏫", desc: "Holy Mary Group – rural campus, core streams." },
+  { name: "Guru Nanak Institutions", link: "126-ts-gnit.html", icon: "🏫", desc: "GNIT – Guru Nanak Institutions in Ibrahimpatnam." },
+  { name: "TKR Engineering", link: "127-ts-tkr.html", icon: "🏫", desc: "TKR – part of the MNR Group of Colleges." },
+  { name: "MNR Engineering", link: "128-ts-mnr.html", icon: "🏫", desc: "MNR Engineering College – Hyderabad." },
+  { name: "Aurora Engineering", link: "129-ts-aurora.html", icon: "🏫", desc: "Aurora’s Group – multiple colleges in TS." },
+  { name: "Vishwa Bharathi Institute", link: "130-ts-vbi.html", icon: "🏫", desc: "Vishwa Bharathi Institute – emerging college." },
+  
+
+    { name: "Sri Indu College", link: "131-ts-sri-indu.html", icon: "🏫", desc: "Sri Indu College of Engineering & Technology." },
+  { name: "Narasimha Reddy Engineering", link: "132-ts-narasimha.html", icon: "🏫", desc: "Narasimha Reddy Engineering College, Hyderabad." },
+  { name: "Gurunanak Institutions – Technical", link: "133-ts-gnit-tech.html", icon: "🏫", desc: "GNIT Technical Campus – Guru Nanak Group." },
+  { name: "Brilliant Group of Institutions", link: "134-ts-brilliant.html", icon: "🏫", desc: "Brilliant Engineering College – Narsampet campus." },
+  { name: "JBIT", link: "135-ts-jbit.html", icon: "🏫", desc: "JB Institute of Engineering and Technology, TS." },
+  { name: "Geetanjali Institute", link: "136-ts-geetanjali.html", icon: "🏫", desc: "Geetanjali Institute of Science and Technology." },
+  { name: "Mahatma Gandhi Institute", link: "137-ts-mgit.html", icon: "🏫", desc: "MGIT – premium private engineering college." },
+  { name: "Bhoj Reddy College", link: "138-ts-bhoj-reddy.html", icon: "🏫", desc: "Bhoj Reddy Engineering College for Women." },
+  { name: "Scient Institute", link: "139-ts-scient.html", icon: "🏫", desc: "Scient Institute of Technology – Ibrahimpatnam." },
+  { name: "KGR Engineering", link: "140-ts-kgr.html", icon: "🏫", desc: "KGR Engineering College – affordable private college." },
+  { name: "Vidya Jyothi Institute", link: "141-ts-vjiet.html", icon: "🏫", desc: "VJIT – Vidya Jyothi Institute of Technology." },
+  { name: "Sreyas Institute", link: "142-ts-sreyas.html", icon: "🏫", desc: "Sreyas Institute – known for placements and training." },
+  { name: "Swami Vivekananda College", link: "143-ts-vivekananda.html", icon: "🏫", desc: "SV College – focused on engineering education." },
+  { name: "Ashoka Institute", link: "144-ts-ashoka.html", icon: "🏫", desc: "Ashoka Engineering College – TS-based institute." },
+  { name: "Matrusri College", link: "145-ts-matrusri.html", icon: "🏫", desc: "Matrusri Engineering College – Hyderabad center." },
+
+    { name: "TRR Engineering College", link: "146-ts-trr.html", icon: "🏫", desc: "TRR College of Engineering – private TS institute." },
+  { name: "Vignan Bharathi Institute", link: "147-ts-vbit.html", icon: "🏫", desc: "VBIT – Vignan Bharathi Institute of Tech, Hyderabad." },
+  { name: "Annamacharya Institute", link: "148-ts-anns.html", icon: "🏫", desc: "Annamacharya Institute of Tech and Sciences." },
+  { name: "CMR Institute – UGC", link: "149-ts-cmr-ugc.html", icon: "🏫", desc: "CMR Institute – AICTE/UGC approved private college." },
+  { name: "DRK College", link: "150-ts-drk.html", icon: "🏫", desc: "DRK College of Engineering – Hyderabad-based." },
+  { name: "Shadan College", link: "151-ts-shadan.html", icon: "🏫", desc: "Shadan Women’s Engineering College." },
+  { name: "TKR Institute", link: "152-ts-tkr-institute.html", icon: "🏫", desc: "TKR Institute of Engineering and Technology." },
+  { name: "Malla Reddy Women’s College", link: "153-ts-malla-women.html", icon: "🏫", desc: "MRECW – Malla Reddy Women’s campus." },
+  { name: "Samskruti College", link: "154-ts-samskruti.html", icon: "🏫", desc: "Samskruti Engineering College – Telangana region." },
+  { name: "Kakatiya Institute", link: "155-ts-kakatiya.html", icon: "🏫", desc: "KITS – Kakatiya Institute of Technology & Science." },
+  { name: "Balaji Institute", link: "156-ts-balaji.html", icon: "🏫", desc: "Balaji Institute of Technology – Telangana based." },
+  { name: "Princeton Engineering", link: "157-ts-princeton.html", icon: "🏫", desc: "Princeton College of Engineering & Tech." },
+  { name: "St. Mary’s Engineering", link: "158-ts-st-marys.html", icon: "🏫", desc: "St. Mary’s Engineering College, Hyderabad." },
+  { name: "Mother Teresa Institute", link: "159-ts-mother-teresa.html", icon: "🏫", desc: "Mother Teresa Engineering College – placements-focused." },
+  { name: "Sri Chaitanya Engineering", link: "160-ts-sri-chaitanya.html", icon: "🏫", desc: "Sri Chaitanya College of Engineering – private TS group." },
+  
+
+
+    { name: "Nalla Narasimha Reddy College", link: "161-ts-nnr.html", icon: "🏫", desc: "NNRG – Nalla Narasimha Reddy Engineering College." },
+  { name: "Vaagdevi Engineering College", link: "162-ts-vaagdevi.html", icon: "🏫", desc: "Vaagdevi College of Engineering, Warangal." },
+  { name: "Siddhartha Institute", link: "163-ts-siddhartha.html", icon: "🏫", desc: "Siddhartha Institute of Technology & Sciences." },
+  { name: "Sphoorthy Engineering College", link: "164-ts-sphoorthy.html", icon: "🏫", desc: "Sphoorthy College – known for ECE & CSE branches." },
+  { name: "Jayamukhi Institute", link: "165-ts-jayamukhi.html", icon: "🏫", desc: "Jayamukhi Institute of Technology & Sciences." },
+  { name: "Arjun College of Tech", link: "166-ts-arjun.html", icon: "🏫", desc: "Arjun College of Technology and Sciences, Hyderabad." },
+  { name: "Sri Sai Institute", link: "167-ts-sri-sai.html", icon: "🏫", desc: "Sri Sai Institute of Technology & Science, TS." },
+  { name: "Mother Mary Institute", link: "168-ts-mother-mary.html", icon: "🏫", desc: "Mother Mary Engineering College, Hyderabad." },
+  { name: "SVS Group of Institutions", link: "169-ts-svs.html", icon: "🏫", desc: "SVS Group – engineering and management programs." },
+  { name: "MLR Institute of Technology", link: "170-ts-mlr.html", icon: "🏫", desc: "MLRIT – high-ranked private college in TS." },
+  { name: "Aurora’s Technological Institute", link: "171-ts-aurora-tech.html", icon: "🏫", desc: "Aurora's Technological & Research Institute." },
+  { name: "AVN Institute of Engineering", link: "172-ts-avn.html", icon: "🏫", desc: "AVN Institute – known for discipline and academics." },
+  { name: "NRI Institute of Tech", link: "173-ts-nri.html", icon: "🏫", desc: "NRI Institute of Tech – private engineering college." },
+  { name: "Swarna Bharathi Institute", link: "174-ts-swarna.html", icon: "🏫", desc: "Swarna Bharathi Institute – Warangal region." },
+  { name: "Vikas College of Engineering", link: "175-ts-vikas.html", icon: "🏫", desc: "Vikas College – upcoming institution in TS." },
+
+    { name: "Indur Institute of Engineering", link: "176-ts-indur.html", icon: "🏫", desc: "Indur Institute – Engineering college in TS." },
+  { name: "Sree Dattha Institute", link: "177-ts-sree-dattha.html", icon: "🏫", desc: "Sree Dattha Institute of Engineering & Sciences." },
+  { name: "Gates Institute of Technology", link: "178-ts-gates.html", icon: "🏫", desc: "Gates Institute – known for academic excellence." },
+  { name: "Aurora’s Scientific Institute", link: "179-ts-aurora-scientific.html", icon: "🏫", desc: "Aurora’s Scientific & Technological Institute." },
+  { name: "SR University", link: "180-ts-sr-university.html", icon: "🎓", desc: "SR University – private deemed university in TS." },
+  { name: "SITAMS", link: "181-ts-sitams.html", icon: "🏫", desc: "SITAMS – engineering and MBA programs." },
+  { name: "Sri Venkateswara College", link: "182-ts-svcet.html", icon: "🏫", desc: "Sri Venkateswara College of Engineering & Tech." },
+  { name: "Jyothishmathi Institute", link: "183-ts-jyothishmathi.html", icon: "🏫", desc: "Jyothishmathi College – Warangal-based." },
+  { name: "Annamacharya Institute (Kadapa)", link: "184-ts-annamacharya-kadapa.html", icon: "🏫", desc: "Annamacharya Institute, Kadapa branch." },
+  { name: "Sree Chaitanya Institute", link: "185-ts-sree-chaitanya.html", icon: "🏫", desc: "Sree Chaitanya Engineering College – TS." },
+  { name: "Sree Kavitha Institute", link: "186-ts-kavitha.html", icon: "🏫", desc: "Sree Kavitha Institute of Science and Tech." },
+  { name: "Krishna Murthy Institute", link: "187-ts-kmit.html", icon: "🏫", desc: "KMIT – Krishna Murthy Institute of Technology." },
+  { name: "SV Engineering College", link: "188-ts-sv.html", icon: "🏫", desc: "SV College of Engineering – emerging college in TS." },
+  { name: "Balaji Institute (Narsampet)", link: "189-ts-balaji-narsampet.html", icon: "🏫", desc: "Balaji Institute – Narsampet campus." },
+  { name: "Vaagdevi College (PG)", link: "190-ts-vaagdevi-pg.html", icon: "🎓", desc: "Vaagdevi PG College – PG/MBA/MCA options." },
+  
+
+
+
+    { name: "Kakatiya University", link: "191-ts-ku.html", icon: "🎓", desc: "Kakatiya University – Warangal-based public university." },
+  { name: "Osmania University", link: "192-ts-ou.html", icon: "🎓", desc: "Osmania University – Hyderabad’s oldest university." },
+  { name: "Telangana University", link: "193-ts-tu.html", icon: "🎓", desc: "TU – Telangana University for UG & PG admissions." },
+  { name: "MG University", link: "194-ts-mg.html", icon: "🎓", desc: "Mahatma Gandhi University – Nalgonda campus." },
+  { name: "Palamuru University", link: "195-ts-pu.html", icon: "🎓", desc: "Palamuru University – UG/PG programs in TS." },
+  { name: "Satavahana University", link: "196-ts-su.html", icon: "🎓", desc: "Satavahana University – Karimnagar-based UG & PG." },
+  { name: "RGUKT Basar", link: "197-ts-rgukt.html", icon: "🏫", desc: "IIIT Basar – 6-year integrated engineering program." },
+  { name: "ICFAI Foundation", link: "198-ts-icfai.html", icon: "🏫", desc: "ICFAI University – private institute in Hyderabad." },
+  { name: "NIT Warangal", link: "199-ts-nit.html", icon: "🎓", desc: "NITW – National Institute of Technology, Warangal." },
+  { name: "IIIT Hyderabad", link: "200-ts-iiith.html", icon: "🏫", desc: "IIIT-H – Premier institute for CS & AI research." },
+  { name: "BITS Hyderabad", link: "201-ts-bits.html", icon: "🎓", desc: "BITS Pilani – Hyderabad campus for elite programs." },
+  { name: "ISB Hyderabad", link: "202-ts-isb.html", icon: "💼", desc: "Indian School of Business – MBA and PGPM courses." },
+  { name: "University of Hyderabad", link: "203-ts-uoh.html", icon: "🎓", desc: "UOH – Central university offering PG and research." },
+  { name: "English and Foreign Languages University", link: "204-ts-eflu.html", icon: "🗣️", desc: "EFLU – Language, literature, and linguistics." },
+  { name: "TSCHE Portal Info", link: "205-ts-tsche.html", icon: "📘", desc: "Telangana State Council for Higher Education." },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+     
+
+  
+
+  { name: "TS EAMCET 2024 Cutoffs", link: "01-cut-off.html", icon: "📊", desc: "Latest category-wise TS EAMCET 2024 cutoff ranks." },
+  { name: "TS EAMCET Counseling Schedule", link: "01-ts-eamcet-updated.html", icon: "🗓️", desc: "Full counseling timeline and phases." },
+  { name: "Top 20 Engineering Colleges in TS", link: "100-ts-20.html", icon: "🏛️", desc: "Best ranked engineering colleges in Telangana." },
+
+  { name: "Counseling Support Services", link: "1000paid-cousilling.html", icon: "💬", desc: "Get expert help for EAMCET/JEE/NEET counseling." },
+  { name: "College Detailed Profile", link: "1003-college-profile.html", icon: "🏫", desc: "Explore infrastructure, courses, and facilities." },
+  { name: "Branch-Wise Cutoffs", link: "1004-cutoff.html", icon: "📊", desc: "Check cutoff ranks by branch and category." },
+  { name: "Branch-Wise College List", link: "1005-branch-wise.html", icon: "🧭", desc: "Find colleges offering your preferred branch." },
+  { name: "College Predictor Tool", link: "1006-predictor.html", icon: "🎯", desc: "Enter your rank to predict suitable colleges." },
+  { name: "Counseling Event Schedule", link: "1007-schedule.html", icon: "🗓️", desc: "Date-wise EAMCET admission process overview." },
+
+  { name: "College Admission Summary", link: "101-college.html", icon: "🏫", desc: "Basic details about admission processes." },
+  { name: "Exam Results - TS/JEE/NEET", link: "102-results.html", icon: "📈", desc: "Find and access all result links here." },
+  { name: "Downloadable Student Resources", link: "103-resources.html", icon: "📚", desc: "Get PDFs, materials, and practice sets." },
+  { name: "TS EAMCET Syllabus", link: "104-syllabus.html", icon: "📚", desc: "Full subject-wise official syllabus." },
+  { name: "Important Exam Dates", link: "105-exam-dates.html", icon: "🗓️", desc: "Entrance test schedules and deadlines." },
+  { name: "Useful Government Links", link: "106-important-links.html", icon: "🔗", desc: "Quick links to TSCHE, JNTUH, etc." },
+
+  { name: "TS Rank Predictor Tool", link: "107-rank-predictor.html", icon: "🎯", desc: "Estimate your rank from marks." },
+  { name: "College Admission Info", link: "108-college-info.html", icon: "🏫", desc: "College intake, NAAC status, approvals." },
+  { name: "Application Form Help", link: "109-application-help.html", icon: "🧾", desc: "How to fill online applications properly." },
+  { name: "Top Colleges List", link: "110-college-list.html", icon: "🏫", desc: "All major colleges sorted and listed." },
+
+  { name: "Previous Year Papers", link: "111-previous-papers.html", icon: "📚", desc: "Download TS EAMCET and JEE past papers." },
+  { name: "Entrance Exam Guide", link: "112-exam-guide.html", icon: "📘", desc: "How to prepare and attempt major exams." },
+  { name: "Live Updates Section", link: "113-updates.html", icon: "📰", desc: "Recent changes, alerts, and official news." },
+  { name: "Education News", link: "114-news.html", icon: "📰", desc: "Latest education and exam news." },
+  { name: "TS Notifications", link: "115-notifications.html", icon: "📰", desc: "Official notices from TSCHE, JNTUH, etc." },
+  { name: "Student Tools & Calculators", link: "116-tools.html", icon: "🛠️", desc: "CGPA calculator, rank checker, etc." },
+  { name: "Rank vs College Analysis", link: "117-rank-analysis.html", icon: "📊", desc: "See which college suits which rank range." },
+
+
+
+   
+{ name: "13Software Engineering", link: "13software engineering.html", icon: "💻", desc: "All about Software Engineering & IT career path." },
+{ name: "14Chemical", link: "14chemical.html", icon: "🧪", desc: "Explore Chemical Engineering branch and admissions." },
+{ name: "14Civil", link: "14civil.html", icon: "🏗️", desc: "Civil Engineering overview, careers, and colleges." },
+{ name: "14Ece", link: "14ece.html", icon: "📡", desc: "Electronics and Communication branch information." },
+{ name: "14Eee", link: "14eee.html", icon: "🔌", desc: "Electrical & Electronics Engineering details." },
+{ name: "14Mech", link: "14mech.html", icon: "⚙️", desc: "Mechanical Engineering course & future scope." },
+{ name: "150 Faqs", link: "150-Faqs.html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "EAPCET Filter", link: "150-ts-FILTER.html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "150 Ts Govt", link: "150-TS-GOVT.html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "15Biotech", link: "15biotech.html", icon: "🧬", desc: "Biotech Engineering and research opportunities." },
+{ name: "15Environmental Engin", link: "15Environmental-Engin.html", icon: "🌿", desc: "Environmental Engineering details and relevance." },
+{ name: "15Food Tech", link: "15food_tech.html", icon: "🍜", desc: "Food Technology & processing course guide." },
+{ name: "16Aerospace", link: "16aerospace.html", icon: "🚀", desc: "Aerospace Engineering & career prospects." },
+{ name: "16Engineering Physics", link: "16engineering_physics.html", icon: "🏗️", desc: "General Engineering information and updates." },
+{ name: "16Mining", link: "16mining.html", icon: "⛏️", desc: "Mining Engineering and industrial scope." },
+{ name: "16Robotics", link: "16robotics.html", icon: "🤖", desc: "Robotics Engineering & automation trends." },
+{ name: "23Index Iiit", link: "23index-iiit.html", icon: "🏫", desc: "IIIT-related information and college access." },
+{ name: "900 Demo Degree", link: "900-demo-degree.html", icon: "🎓", desc: "General Degree admission demo and guidance." },
+{ name: "991Schools Con", link: "991schools-con.html", icon: "🏫", desc: "Guidance for school-level students." },
+{ name: "992Inter Con", link: "992inter-con.html", icon: "📘", desc: "Help and advice for intermediate students." },
+{ name: "993Demo Site", link: "993demo-site.html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "994Campus Tours", link: "994campus-tours.html", icon: "🏞️", desc: "Virtual campus tours and college insights." },
+{ name: "995Constarct Degree", link: "995constarct-degree.html", icon: "🎓", desc: "General Degree admission demo and guidance." },
+{ name: "999 Ts College Filter.", link: "999-TS-COLLEGE-FILTER..html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "Index Branches", link: "index-branches.html", icon: "🧭", desc: "Branch comparison and selection help." },
+{ name: "Index Engineering College", link: "index-engineering-college.html", icon: "🏗️", desc: "General Engineering information and updates." },
+{ name: "Index Engineering", link: "index-engineering.html", icon: "🏗️", desc: "General Engineering information and updates." },
+{ name: "Index Trending Branc", link: "index-trending-branc.html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "Index Ts College", link: "index-ts-college.html", icon: "📄", desc: "Informational page on education or guidance." },
+{ name: "Index", link: "index.html", icon: "📄", desc: "Informational page on education or guidance." }
+
+
+
+    ];
+
+    function showResults() {
+      const input = document.getElementById('searchBox').value.toLowerCase().trim();
+      const resultsContainer = document.getElementById('searchResults');
+      resultsContainer.innerHTML = "";
+
+      if (input.length === 0) return;
+
+      const filtered = searchData.filter(item =>
+        item.name.toLowerCase().includes(input) || 
+        (item.desc && item.desc.toLowerCase().includes(input)) ||
+        (item.city && item.city.toLowerCase().includes(input))
+      );
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = "<div class='result-card'>❌ No results found. Try different keywords.</div>";
+        return;
+      }
+
+      filtered.forEach(item => {
+        const resultCard = document.createElement("a");
+        resultCard.href = item.link;
+        resultCard.className = "result-card";
+        resultCard.innerHTML = `
+          <h3>${item.icon || '📌'} ${item.name}</h3>
+          <p>${item.desc || ''} ${item.city ? `<br><small>📍 ${item.city}</small>` : ''}</p>
+        `;
+        resultsContainer.appendChild(resultCard);
+      });
+    }
+
+    // Form submission handler
+    const form = document.getElementById("contact-form");
+    const thankYouMessage = document.getElementById("thank-you-message");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          thankYouMessage.style.display = "block";
+        } else {
+          alert("❌ Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        alert("❌ Submission failed. Please check your internet and try again.");
+      }
+    });
+  </script>
+</body>
+</html>
