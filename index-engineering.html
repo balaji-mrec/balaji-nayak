@@ -194,15 +194,170 @@
     text-align: center;
   }
 }
+.floating-update-bar.header-version {
+  position: static;
+  margin-top: 10px;
+  transform: none;
+  background: linear-gradient(to right, gold, #ffeb3b);
+  padding: 12px 14px;             /* ↓ Reduced padding */
+  font-size: 0.9rem;             /* ↓ Smaller text */
+  border-radius: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;                    /* ↓ Slightly narrower width */
+  max-width: 800px;              /* Optional: limits size on wide screens */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 10px;                     /* ↓ Reduced spacing between elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* ↓ Softer shadow */
+  animation: slideIn 0.6s ease-in-out;
+}
+
+
+.floating-update-bar.header-version .update-btn {
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  background: #0d47a1;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.floating-update-bar.header-version .update-btn:hover {
+  background: #1565c0;
+}
+
+#updateText, #updateLink {
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Entry Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.result-card {
+  background-color: white;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.result-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: #0d47a1;
+}
+
+.result-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+.result-card {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
 
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">🚀</div>
-    <h1>Explore Engineering with Balanju</h1>
+  <header class="main-header">
+    <div class="header-top">
+      <div class="header-text">
+        <h1><font face="roboto">🎓EXPLORE <br>ENGINEERING</font></h1>
+       
+      </div>
+    </div><font color="black">
+    <div class="floating-update-bar header-version" id="updateBar">
+  <span id="updateText">📢 TS EAMCET 2024 Cutoffs Updated!</span>
+  <a href="01-cut-off.html" class="update-btn" id="updateLink">View</a>
+    </font>
+
+</div>
+
+
+
+
+
+
+
   </header>
+
+
+
+    <script>
+  const updates = [
+    {
+      text: "📢 TS EAMCET 2024 Cutoffs Updated!",
+      link: "01-cut-off.html"
+    },
+    {
+      text: "🗓️ Counseling starts from June 15",
+      link: "01-ts-eamcet-updated.html"
+    },
+    {
+      text: "🎯 College Predictor Tool Launched",
+      link: "999-TS-COLLEGE-PREDUCTOR.HTML"
+    },
+    {
+      text: "📚 Branch-wise Cutoffs Uploaded",
+      link: "index-branches.html"
+    },
+    {
+      text: "🏆 View Top Colleges for CSE, AI & DS",
+      link: "100-ts-20.html"
+    }
+  ];
+
+  let index = 0;
+  const updateText = document.getElementById("updateText");
+  const updateLink = document.getElementById("updateLink");
+
+  setInterval(() => {
+    updateText.style.opacity = 0;
+    updateLink.style.opacity = 0;
+
+    setTimeout(() => {
+      updateText.textContent = updates[index].text;
+      updateLink.href = updates[index].link;
+
+      updateText.style.opacity = 1;
+      updateLink.style.opacity = 1;
+
+      index = (index + 1) % updates.length;
+    }, 300); // Delay for fade out
+  }, 2000); // 2 seconds between updates
+</script>
 
   <div class="subheader"><b>
     Your trusted guide for B.Tech branches, colleges, exams, and expert counseling.</b>
@@ -280,9 +435,9 @@
     </div>
 
 
-  <footer>
+  
 
-    
+<footer>
     Made with ❤️ by Team Balanju |<br>
     📧 <a href="mailto:balanjuconsultancy@gmail.com" target="_blank">Email</a>
     |📺 <a href="https://youtube.com/@balajimrec227" target="_blank">YouTube</a> |
@@ -291,12 +446,11 @@
 
   <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
 
- <a href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20admission." 
-   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:998; font-family:'Segoe UI', sans-serif;" 
-   target="_blank" aria-label="Chat with Balanju on WhatsApp">
-   💬 Chat with Us
-</a>
-
+  <a href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20admission."
+     style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:998; font-family:'Segoe UI', sans-serif;"
+     target="_blank" aria-label="Chat with Balanju on WhatsApp">
+     💬 Chat with Us
+  </a>
 
   <script>
     function toggleDarkMode() {
@@ -313,3 +467,4 @@
 
 </body>
 </html>
+
