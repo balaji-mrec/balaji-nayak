@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Top Telangana Colleges | 2025 Admissions, Rankings & Info</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --main-color: #0d47a1;
       --accent-color: #43b581;
       --bg-light: #f4f6fc;
       --text-dark: #2e2e2e;
+      --text-light: #5a5a5a;
       --radius: 12px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --mobile-padding: 15px;
     }
 
     * {
@@ -25,26 +28,47 @@
       background: var(--bg-light);
       color: var(--text-dark);
       line-height: 1.6;
+      font-size: 16px;
     }
 
     header {
       background-color: var(--main-color);
       color: #fff;
-      padding: 40px 20px;
+      padding: 30px var(--mobile-padding);
       text-align: center;
     }
 
     header h1 {
-      font-size: 32px;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 16px;
+      opacity: 0.9;
     }
 
     nav {
       background: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 12px 20px;
+      padding: 12px var(--mobile-padding);
       position: sticky;
       top: 0;
       z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--main-color);
+      font-size: 24px;
+      cursor: pointer;
     }
 
     nav ul {
@@ -52,44 +76,48 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 12px;
     }
 
     nav a {
       color: var(--main-color);
       font-weight: 600;
       text-decoration: none;
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 6px;
-      transition: background 0.2s;
+      transition: all 0.2s;
+      font-size: 15px;
+      white-space: nowrap;
     }
 
-    nav a:hover {
+    nav a:hover, nav a:focus {
       background-color: #e3f2fd;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 20px var(--mobile-padding);
     }
 
     .search-box {
       text-align: center;
-      margin: 20px 0 30px;
+      margin: 15px 0 25px;
     }
 
     .search-box input {
-      padding: 12px 20px;
-      border: 1px solid #ccc;
+      padding: 14px 20px;
+      border: 1px solid #ddd;
       border-radius: 30px;
-      width: 80%;
+      width: 100%;
       max-width: 500px;
       font-size: 16px;
+      box-shadow: var(--shadow);
     }
 
     #search-results {
-      margin-top: 20px;
+      margin-top: 15px;
+      text-align: left;
     }
 
     #search-results ul {
@@ -99,50 +127,64 @@
 
     #search-results li {
       background: #fff;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 14px;
+      margin-bottom: 8px;
       border-left: 5px solid var(--accent-color);
       border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow);
     }
 
     #search-results li a {
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: bold;
+      font-weight: 600;
+      display: block;
     }
 
     .categories-scroll {
       display: flex;
       overflow-x: auto;
-      gap: 15px;
-      padding: 20px 0;
+      gap: 12px;
+      padding: 15px 0 20px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
 
-    .categories-scroll button {
+    .categories-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .categories-scroll a {
       flex: 0 0 auto;
       background: #fff;
-      border: none;
       border-radius: 20px;
-      padding: 10px 20px;
+      padding: 12px 18px;
       font-weight: 600;
       color: var(--main-color);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      cursor: pointer;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      font-size: 15px;
+      white-space: nowrap;
     }
 
     section {
       background: #fff;
-      padding: 30px;
-      margin-bottom: 30px;
+      padding: 25px;
+      margin-bottom: 20px;
       border-radius: var(--radius);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
     }
 
     section h2 {
-      font-size: 24px;
+      font-size: 22px;
       color: var(--main-color);
       margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    section p, section li {
+      color: var(--text-light);
+      font-size: 15px;
     }
 
     ul {
@@ -150,13 +192,25 @@
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    details {
+      margin-bottom: 12px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 12px;
     }
 
     details summary {
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-weight: 600;
+      color: var(--text-dark);
+      padding: 8px 0;
       cursor: pointer;
+      outline: none;
+    }
+
+    details p {
+      padding: 8px 0 4px;
     }
 
     footer {
@@ -164,95 +218,121 @@
       background: #e3f2fd;
       padding: 20px;
       font-size: 14px;
+      color: var(--text-light);
     }
 
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
+      z-index: 100;
     }
 
     .whatsapp-float a {
       background: #25D366;
       color: #fff;
-      padding: 12px 18px;
+      padding: 14px 20px;
       border-radius: 40px;
-      font-weight: bold;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
     }
 
+    .whatsapp-float a::before {
+      content: "📱";
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    /* 📱 Mobile Responsive Styles */
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
+      header {
+        padding: 25px var(--mobile-padding);
       }
-      .search-box input {
-        width: 95%;
+      
+      header h1 {
+        font-size: 24px;
+      }
+      
+      header p {
+        font-size: 15px;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: var(--mobile-padding);
+        top: 10px;
+      }
+      
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        padding-top: 10px;
+      }
+      
+      nav ul.show {
+        display: flex;
+      }
+      
+      nav a {
+        display: block;
+        padding: 10px 8px;
+        border-radius: 4px;
+      }
+      
+      .container {
+        padding: 15px var(--mobile-padding);
+      }
+      
+      section {
+        padding: 20px;
+      }
+      
+      section h2 {
+        font-size: 20px;
+      }
+      
+      .categories-scroll {
+        padding: 12px 0 15px;
+      }
+      
+      .categories-scroll a {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+      
+      .whatsapp-float a {
+        padding: 12px 16px;
+        font-size: 14px;
       }
     }
 
-
-    /* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
-
-  .main-header .left h1 {
-    font-size: 22px;
-  }
-
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-
-  .scroll-text {
-    font-size: 13px;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
-
-  .section {
-    padding: 20px 15px;
-  }
-
-  .section h3 {
-    font-size: 20px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
-
+    @media (max-width: 480px) {
+      :root {
+        --mobile-padding: 12px;
+      }
+      
+      header {
+        padding: 20px var(--mobile-padding);
+      }
+      
+      header h1 {
+        font-size: 22px;
+      }
+      
+      section {
+        padding: 18px;
+      }
+      
+      .search-box input {
+        padding: 12px 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -263,27 +343,30 @@
 </header>
 
 <nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#types">College Types</a></li>
-    <li><a href="#location">Locations</a></li>
-    <li><a href="#placements">Placements</a></li>
-    <li><a href="#fees">Low Fees</a></li>
-    <li><a href="#faqs">FAQs</a></li>
-  </ul>
+  <div class="nav-container">
+    <button class="mobile-menu-btn">☰</button>
+    <ul id="nav-menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#types">College Types</a></li>
+      <li><a href="#location">Locations</a></li>
+      <li><a href="#placements">Placements</a></li>
+      <li><a href="#fees">Low Fees</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
   <div class="search-box">
-    <input type="text" placeholder="🔍 Search colleges by name, city, or stream...">
+    <input type="text" placeholder="🔍 Search colleges by name, city, or stream..." id="college-search">
     <div id="search-results"></div>
   </div>
 
   <div class="categories-scroll">
-    <a href="govt.university.html"><button>🏛 EAPCET Colleges</button></a>
-    <a href="100-ts-20.html"><button>🏫 TOP-20 EAPCET COLLEGES</button></a>
-    <a href="150-TS-GOVT.html"><button>🎓 GOVT.COLLEGES</button></a>
-    <a href="autonomous-colleges.html"><button>🏢 T 10 GOVT.Colleges</button></a>
+    <a href="govt.university.html">🏛 EAPCET Colleges</a>
+    <a href="100-ts-20.html">🏫 TOP-20 EAPCET</a>
+    <a href="150-TS-GOVT.html">🎓 GOVT Colleges</a>
+    <a href="autonomous-colleges.html">🏢 T10 GOVT Colleges</a>
   </div>
 
   <section id="about">
@@ -294,18 +377,18 @@
   <section id="types">
     <h2>College Types</h2>
     <ul>
-      <li><strong>Government Universities</strong>: Osmania University, JNTU-H, Kakatiya University <a href="govt.university.html">click here for all colleges..</a></li>
-      <li><strong>Private Universities</strong>: ICFAI, Woxsen, Mahindra University, Malla Reddy University <a href="private_university.html">click here</a></li>
-      <li><strong>Deemed Universities</strong>: IIIT-H, GITAM Hyderabad <a href="deemed-universities.html">click here</a></li>
-      <li><strong>Government Colleges</strong>: Government City College, Nizam College <a href="govt-engineering-colleges.html">click here</a></li>
-      <li><strong>Autonomous Colleges</strong>: CBIT, MVSR, MREC <a href="autonomous-colleges.html">click here</a></li>
-      <li><strong>JNTUH-affiliated Colleges</strong>: CBIT, MVSR, MREC <a href="jutu_affilited(ts).html">click here</a></li>
-      <li><strong>OU-affiliated Colleges</strong>: CBIT, MVSR, MREC <a href="ou-affiliated-colleges.html">click here</a></li>
+      <li><strong>Government Universities</strong>: Osmania University, JNTU-H, Kakatiya University <a href="govt.university.html">View all</a></li>
+      <li><strong>Private Universities</strong>: ICFAI, Woxsen, Mahindra University <a href="private_university.html">View all</a></li>
+      <li><strong>Deemed Universities</strong>: IIIT-H, GITAM Hyderabad <a href="deemed-universities.html">View all</a></li>
+      <li><strong>Government Colleges</strong>: Government City College, Nizam College <a href="govt-engineering-colleges.html">View all</a></li>
+      <li><strong>Autonomous Colleges</strong>: CBIT, MVSR, MREC <a href="autonomous-colleges.html">View all</a></li>
+      <li><strong>JNTUH-affiliated Colleges</strong>: CBIT, MVSR, MREC <a href="jutu_affilited(ts).html">View all</a></li>
+      <li><strong>OU-affiliated Colleges</strong>: CBIT, MVSR, MREC <a href="ou-affiliated-colleges.html">View all</a></li>
     </ul>
   </section>
 
   <section id="location">
-    <h2><a href="college ts.html">Search District/city wise</a></h2>
+    <h2><a href="college ts.html">Search District/City Wise</a></h2>
     <ul>
       <li><a href="hyd.html">Hyderabad</a></li>
       <li><a href="wrangal.html">Warangal</a></li>
@@ -313,7 +396,7 @@
       <li><a href="khammam.html">Khammam</a></li>
       <li><a href="sangareddy.html">Sangareddy</a></li>
       <li><a href="karimnager.html">Karimnagar</a></li>
-      <li><a href="college ts.html">Click here for all districts</a></li>
+      <li><a href="college ts.html">View all districts</a></li>
     </ul>
   </section>
 
@@ -349,7 +432,7 @@
 </div>
 
 <div class="whatsapp-float">
-  <a href="150-ts-FILTER.html" target="_blank">📱 College Filter</a>
+  <a href="150-ts-FILTER.html" target="_blank">College Filter</a>
 </div>
 
 <footer>
@@ -358,77 +441,86 @@
 
 <!-- 🔍 SEARCH SCRIPT -->
 <script>
- const colleges = [
-  // HYDERABAD & RANGAREDDY
-  { name: "CBIT", city: "Hyderabad", stream: "Engineering", url: "101-ts-cbit.html" },
-  { name: "MVSR", city: "Hyderabad", stream: "Engineering", url: "101-ts-mvsr.html" },
-  { name: "Vasavi College of Engineering", city: "Hyderabad", stream: "Engineering", url: "103-ts-vasavi.html" },
-  { name: "JNTU-Hyderabad", city: "Hyderabad", stream: "Engineering", url: "104-ts-jntu-h.html" },
-  { name: "MJCET", city: "Hyderabad", stream: "Engineering", url: "108-tsmjcet.html" },
-  { name: "VNR VJIET", city: "Hyderabad", stream: "Engineering", url: "106-ts-vnr vjiet.html" },
-  { name: "Gokaraju Rangaraju Institute of Engineering", city: "Hyderabad", stream: "Engineering", url: "105-ts-gokaraju.html" },
-  { name: "Sreenidhi Institute of Science and Technology", city: "Hyderabad", stream: "Engineering", url: "107-ts-sreenidhi.html" },
-  { name: "Malla Reddy College of Engineering", city: "Hyderabad", stream: "Engineering", url: "109-TS-MRCE.html" },
-  { name: "Narsimha Reddy College of Engineering", city: "Hyderabad", stream: "Engineering", url: "109-TS-nrcm.html" },
-  { name: "St. Mary's Engineering College", city: "Hyderabad", stream: "Engineering", url: "109-TS-ST-MARY'S.html" },
-  { name: "Malla Reddy College of Engineering Intitution", city: "Hyderabad", stream: "Engineering", url: "110-TS-MRCET.html" },
-  { name: "Malla Reddy Uiversity", city: "Hyderabad", stream: "Engineering", url: "110-TS-MRUH.html" },
-  { name: "CMR Institute of Technology", city: "Hyderabad", stream: "Engineering", url: "111-TS-CMRCET.HTML" },
-  { name: "CVR College of Engineering", city: "Ibrahimpatnam", stream: "Engineering", url: "112-ts-cvr.html" },
-  { name: "MLR Institute of Technology", city: "Dundigal", stream: "Engineering", url: "113-ts-mlr.html" },
-  { name: "Institute of Aeronautical Engineering", city: "Dundigal", stream: "Engineering", url: "114-ts-iare.html" },
-  { name: "Stanley College of Engineering for Women", city: "Hyderabad", stream: "Engineering", url: "115-ts-stanley.html" },
-  { name: "Bhoj Reddy Engineering College for Women", city: "Hyderabad", stream: "Engineering", url: "116-ts-bhojreddy.html" },
-  { name: "TKR College of Engineering", city: "Hyderabad", stream: "Engineering", url: "117-ts-tkr.html" },
-  { name: "Mahindra University", city: "Hyderabad", stream: "Engineering", url: "118-ts-mahindra-university.html" },
-  { name: "GITAM University", city: "Hyderabad", stream: "Engineering", url: "119-ts-gitam-university.html" },
-  { name: "IIIT-Hyderabad", city: "Hyderabad", stream: "Engineering", url: "120-ts-iiith.html" },
-  { name: "Anurag University", city: "Hyderabad", stream: "Engineering", url: "121-ts-anurag-university.html" },
-  { name: "BV RAJU COLLEGE ", city: "Hyderabad", stream: "Engineering", url: "122-ts-bv-raju.html" },
-  { name: "ou osmania university ", city: "Hyderabad", stream: "Engineering", url: "122-ts-osmania.html" },
-  { name: "jntu sulthanpur ", city: "Hyderabad", stream: "Engineering", url: "122-ts-jntu-sul.html" },
-  { name: "jntu sulthanpur ", city: "Hyderabad", stream: "Engineering", url: "122-ts-vaardhaman.html" },
-  { name: "AVN Engineering College ", city: "Hyderabad", stream: "Engineering", url: "122-ts-AVN.html" },
+  const colleges = [
+    // HYDERABAD & RANGAREDDY
+    { name: "CBIT", city: "Hyderabad", stream: "Engineering", url: "101-ts-cbit.html" },
+    { name: "MVSR", city: "Hyderabad", stream: "Engineering", url: "101-ts-mvsr.html" },
+    { name: "Vasavi College of Engineering", city: "Hyderabad", stream: "Engineering", url: "103-ts-vasavi.html" },
+    { name: "JNTU-Hyderabad", city: "Hyderabad", stream: "Engineering", url: "104-ts-jntu-h.html" },
+    { name: "MJCET", city: "Hyderabad", stream: "Engineering", url: "108-tsmjcet.html" },
+    { name: "VNR VJIET", city: "Hyderabad", stream: "Engineering", url: "106-ts-vnr vjiet.html" },
+    { name: "Gokaraju Rangaraju Institute of Engineering", city: "Hyderabad", stream: "Engineering", url: "105-ts-gokaraju.html" },
+    { name: "Sreenidhi Institute of Science and Technology", city: "Hyderabad", stream: "Engineering", url: "107-ts-sreenidhi.html" },
+    { name: "Malla Reddy College of Engineering", city: "Hyderabad", stream: "Engineering", url: "109-TS-MRCE.html" },
+    { name: "Narsimha Reddy College of Engineering", city: "Hyderabad", stream: "Engineering", url: "109-TS-nrcm.html" },
+    { name: "St. Mary's Engineering College", city: "Hyderabad", stream: "Engineering", url: "109-TS-ST-MARY'S.html" },
+    { name: "Malla Reddy College of Engineering Intitution", city: "Hyderabad", stream: "Engineering", url: "110-TS-MRCET.html" },
+    { name: "Malla Reddy Uiversity", city: "Hyderabad", stream: "Engineering", url: "110-TS-MRUH.html" },
+    { name: "CMR Institute of Technology", city: "Hyderabad", stream: "Engineering", url: "111-TS-CMRCET.HTML" },
+    { name: "CVR College of Engineering", city: "Ibrahimpatnam", stream: "Engineering", url: "112-ts-cvr.html" },
+    { name: "MLR Institute of Technology", city: "Dundigal", stream: "Engineering", url: "113-ts-mlr.html" },
+    { name: "Institute of Aeronautical Engineering", city: "Dundigal", stream: "Engineering", url: "114-ts-iare.html" },
+    { name: "Stanley College of Engineering for Women", city: "Hyderabad", stream: "Engineering", url: "115-ts-stanley.html" },
+    { name: "Bhoj Reddy Engineering College for Women", city: "Hyderabad", stream: "Engineering", url: "116-ts-bhojreddy.html" },
+    { name: "TKR College of Engineering", city: "Hyderabad", stream: "Engineering", url: "117-ts-tkr.html" },
+    { name: "Mahindra University", city: "Hyderabad", stream: "Engineering", url: "118-ts-mahindra-university.html" },
+    { name: "GITAM University", city: "Hyderabad", stream: "Engineering", url: "119-ts-gitam-university.html" },
+    { name: "IIIT-Hyderabad", city: "Hyderabad", stream: "Engineering", url: "120-ts-iiith.html" },
+    { name: "Anurag University", city: "Hyderabad", stream: "Engineering", url: "121-ts-anurag-university.html" },
+    { name: "BV RAJU COLLEGE", city: "Hyderabad", stream: "Engineering", url: "122-ts-bv-raju.html" },
+    { name: "OU osmania university", city: "Hyderabad", stream: "Engineering", url: "122-ts-osmania.html" },
+    { name: "jntu sulthanpur", city: "Hyderabad", stream: "Engineering", url: "122-ts-jntu-sul.html" },
+    { name: "jntu sulthanpur", city: "Hyderabad", stream: "Engineering", url: "122-ts-vaardhaman.html" },
+    { name: "AVN Engineering College", city: "Hyderabad", stream: "Engineering", url: "122-ts-AVN.html" },
 
-  // WARANGAL
-  { name: "Kakatiya Institute of Technology and Science", city: "Warangal", stream: "Engineering", url: "123-ts-kits.html" },
-  { name: "Vaagdevi Engineering College", city: "Warangal", stream: "Engineering", url: "124-ta-vaagdevi.html" },
-  { name: "SR University College", city: "Warangal", stream: "Engineering", url: "125-ts-sr.html" },
-  { name: "Kakatiya University", city: "Warangal", stream: "Engineering", url: "126-ts-kakatiya.html" },
-  { name: "Jayamukhi Institute of Technological Sciences", city: "Narsampet", stream: "Engineering", url: "127-ts-jayamukhi.html" },
+    // WARANGAL
+    { name: "Kakatiya Institute of Technology and Science", city: "Warangal", stream: "Engineering", url: "123-ts-kits.html" },
+    { name: "Vaagdevi Engineering College", city: "Warangal", stream: "Engineering", url: "124-ta-vaagdevi.html" },
+    { name: "SR University College", city: "Warangal", stream: "Engineering", url: "125-ts-sr.html" },
+    { name: "Kakatiya University", city: "Warangal", stream: "Engineering", url: "126-ts-kakatiya.html" },
+    { name: "Jayamukhi Institute of Technological Sciences", city: "Narsampet", stream: "Engineering", url: "127-ts-jayamukhi.html" },
 
-  // KARIMNAGAR
-  { name: "Jyothishmathi Institute of Technology and Science", city: "Karimnagar", stream: "Engineering", url: "128-ts-jyothishmathi.html" },
-  { name: "VITS Karimnagar", city: "Karimnagar", stream: "Engineering", url: "129-ts-vits.html" },
+    // KARIMNAGAR
+    { name: "JITS(Jyothishmathi Institute of Technology and Science)", city: "Karimnagar", stream: "Engineering", url: "128-ts-jyothishmathi.html" },
+    { name: "VITS Karimnagar", city: "Karimnagar", stream: "Engineering", url: "129-ts-vits.html" },
 
-  // NIZAMABAD
-  { name: "Gurunanak Institute of Technology", city: "Nizamabad", stream: "Engineering", url: "130-TS-GURUNANAK-nIzambad.html" },
-  { name: "Nizam Institute of Engineering and Technology", city: "Nizamabad", stream: "Engineering", url: "nizamiet.html" },
+    // NIZAMABAD
+    { name: "Gurunanak Institute of Technology", city: "Nizamabad", stream: "Engineering", url: "130-TS-GURUNANAK-nIzambad.html" },
+    { name: "Nizam Institute of Engineering and Technology", city: "Nizamabad", stream: "Engineering", url: "nizamiet.html" },
 
-  // KHAMMAM
-  { name: "Swarna Bharathi Institute of Science and Technology", city: "Khammam", stream: "Engineering", url: "131-ts-sbit.html" },
-  { name: "Anurag Engineering College", city: "Kodad", stream: "Engineering", url: "132-ts-anurag-kodad.html" },
-  { name: "Priyadarshini Engineering College", city: "Khammam", stream: "Engineering", url: "132-ts-PRIYADARSHINI.html" },
+    // KHAMMAM
+    { name: "SBIT (Swarna Bharathi Institute of Science and Technology)", city: "Khammam", stream: "Engineering", url: "131-ts-sbit.html" },
+    { name: "Anurag Engineering College", city: "Kodad", stream: "Engineering", url: "132-ts-anurag-kodad.html" },
+    { name: "Priyadarshini Engineering College", city: "Khammam", stream: "Engineering", url: "132-ts-PRIYADARSHINI.html" },
 
-  // SANGAREDDY
-  { name: "MGIT", city: "Sangareddy", stream: "Engineering", url: "133-ts-mgit.html" },
+    // SANGAREDDY
+    { name: "MGIT", city: "Sangareddy", stream: "Engineering", url: "133-ts-mgit.html" },
  
 
-  // MEDAK
-  { name: "Medak Institute of Technology", city: "Medak", stream: "Engineering", url: "134-ts-medaktech.html" },
+    // MEDAK
+    { name: "MIT(Medak Institute of Technology)", city: "Medak", stream: "Engineering", url: "134-ts-medaktech.html" },
 
-  // MAHABUBNAGAR
-  { name: "Palamuru University Engineering College", city: "Mahabubnagar", stream: "Engineering", url: "palamuru.html" },
+    // MAHABUBNAGAR
+    { name: "Palamuru University Engineering College", city: "Mahabubnagar", stream: "Engineering", url: "palamuru.html" },
 
-  // NALGONDA
-  { name: "Nalgonda Institute of Technology", city: "Nalgonda", stream: "Engineering", url: "nalgonda-tech.html" },
-  { name: "Ellenki College of Engineering and Technology", city: "Patelguda", stream: "Engineering", url: "ellenki.html" }
-];
+    // NALGONDA
+    { name: "Nalgonda Institute of Technology", city: "Nalgonda", stream: "Engineering", url: "nalgonda-tech.html" },
+    { name: "Ellenki College of Engineering and Technology", city: "Patelguda", stream: "Engineering", url: "ellenki.html" }
+  ];
 
-  const searchInput = document.querySelector('.search-box input');
+  // Mobile menu toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  
+  mobileMenuBtn.addEventListener('click', function() {
+    navMenu.classList.toggle('show');
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('college-search');
   const resultsContainer = document.getElementById('search-results');
 
-  searchInput.addEventListener('input', function () {
+  searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase().trim();
     resultsContainer.innerHTML = "";
 
@@ -441,18 +533,25 @@
     );
 
     if (filtered.length === 0) {
-      resultsContainer.innerHTML = "<p>No colleges found.</p>";
+      resultsContainer.innerHTML = "<p>No colleges found. Try a different search term.</p>";
       return;
     }
 
     const list = document.createElement("ul");
     filtered.forEach(college => {
       const item = document.createElement("li");
-      item.innerHTML = `<a href="${college.url}" target="_blank">${college.name}</a> – ${college.city} (${college.stream})`;
+      item.innerHTML = `<a href="${college.url}">${college.name}</a> – ${college.city} (${college.stream})`;
       list.appendChild(item);
     });
 
     resultsContainer.appendChild(list);
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
   });
 </script>
 
