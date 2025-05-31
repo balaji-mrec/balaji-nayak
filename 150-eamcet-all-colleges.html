@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TS EAPCET Engineering Colleges - Telangana</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            font-size: 16px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+            background: white;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+        .search-box {
+            margin: 15px 0;
+            padding: 10px;
+            background: #eaf2f8;
+            border-radius: 5px;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        .profile-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .profile-btn:hover {
+            background-color: #27ae60;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.3rem;
+                margin: 10px 0;
+            }
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+            .profile-btn {
+                padding: 5px 8px;
+                font-size: 0.75rem;
+            }
+            .search-box {
+                margin: 10px 0;
+                padding: 8px;
+            }
+        }
+        
+        /* Very small devices */
+        @media (max-width: 400px) {
+            th, td {
+                padding: 6px 8px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Engineering Colleges in Telangana - TS EAPCET 2025</h1>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search by college name or location..." onkeyup="searchTable()">
+        </div>
+
+        <div class="table-responsive">
+            <table id="collegeTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>College Name</th>
+                        <th>Location</th>
+                        <th>EAPCET Code</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Top 12 from original list -->
+                    <tr>
+                        <td>1</td>
+                        <td>JNTU Hyderabad</td>
+                        <td>Kukatpally, Hyderabad</td>
+                        <td>JNTH</td>
+                        <td>Government</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>OU College of Engineering</td>
+                        <td>OU Campus, Hyderabad</td>
+                        <td>OUCE</td>
+                        <td>Government</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>CBIT (Chaitanya Bharathi Institute)</td>
+                        <td>Gandipet, Hyderabad</td>
+                        <td>CBIT</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>VNR VJIET</td>
+                        <td>Bachupally, Hyderabad</td>
+                        <td>VNRV</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Vasavi College of Engineering</td>
+                        <td>Ibrahimbagh, Hyderabad</td>
+                        <td>VASA</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Gokaraju Rangaraju Institute (GRIET)</td>
+                        <td>Miyapur, Hyderabad</td>
+                        <td>GRIE</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>MVSR Engineering College</td>
+                        <td>Nadergul, Hyderabad</td>
+                        <td>MVSR</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>CVR College of Engineering</td>
+                        <td>Ibrahimpatnam, Hyderabad</td>
+                        <td>CVRC</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Sreenidhi Institute of Science & Tech</td>
+                        <td>Ghaitkesar, Hyderabad</td>
+                        <td>SNIS</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>MGIT (Mahatma Gandhi Institute of Tech)</td>
+                        <td>Gandipet, Hyderabad</td>
+                        <td>MGIT</td>
+                        <td>Private</td>
+                        <td><a href="#" class="profile-btn">View</a></td>
+                    </tr>
+
+
+
+                     
+                <tr>
+                    <td>11</td>
+                    <td>KITS Warangal (Kakatiya Institute)</td>
+                    <td>Warangal</td>
+                    <td>KITW</td>
+                    <td>Government</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>JNTU Sultanpur</td>
+                    <td>Sultanpur</td>
+                    <td>JNTS</td>
+                    <td>Government</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                
+                <!-- Additional colleges -->
+                <tr>
+                    <td>13</td>
+                    <td>BVRIT Hyderabad</td>
+                    <td>Nizampet, Hyderabad</td>
+                    <td>BVRH</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Malla Reddy Engineering College</td>
+                    <td>Secunderabad</td>
+                    <td>MREC</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Anurag University (Formerly CVSR)</td>
+                    <td>Venkatapur, Hyderabad</td>
+                    <td>ANUR</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Stanley College of Engineering</td>
+                    <td>Abids, Hyderabad</td>
+                    <td>STAN</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>TKR College of Engineering</td>
+                    <td>Meerpet, Hyderabad</td>
+                    <td>TKRC</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Guru Nanak Institutions</td>
+                    <td>Ibrahimpatnam</td>
+                    <td>GNIE</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>St. Martin's Engineering College</td>
+                    <td>Dhulapally, Hyderabad</td>
+                    <td>SMEC</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>MLR Institute of Technology</td>
+                    <td>Dundigal, Hyderabad</td>
+                    <td>MLRI</td>
+                    <td>Private</td>
+                    <td><a href="#" class="profile-btn">Profile</a></td>
+                </tr>
+                <tr>
+  <td>21</td>
+  <td>CMR College of Engineering & Technology</td>
+  <td>Kandlakoya, Hyderabad</td>
+  <td>CMRK</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>22</td>
+  <td>Gokaraju Rangaraju Institute of Engineering and Technology</td>
+  <td>Bachupally, Hyderabad</td>
+  <td>GRRR</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>23</td>
+  <td>Sreenidhi Institute of Science and Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>SNIS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>24</td>
+  <td>Vasavi College of Engineering</td>
+  <td>Ibrahimbagh, Hyderabad</td>
+  <td>VASV</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>25</td>
+  <td>CVR College of Engineering</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>CVRH</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>26</td>
+  <td>VNR Vignana Jyothi Institute of Engineering and Technology</td>
+  <td>Bachupally, Hyderabad</td>
+  <td>VNRV</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>27</td>
+  <td>Institute of Aeronautical Engineering</td>
+  <td>Dundigal, Hyderabad</td>
+  <td>IARE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>28</td>
+  <td>Mahindra University École Centrale School of Engineering</td>
+  <td>Bahadurpally, Hyderabad</td>
+  <td>MUHY</td>
+  <td>Private (Deemed)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>29</td>
+  <td>CMR Institute of Technology</td>
+  <td>Kandlakoya, Hyderabad</td>
+  <td>CMRM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>30</td>
+  <td>G Narayanamma Institute of Technology and Science (for Women)</td>
+  <td>Shaikpet, Hyderabad</td>
+  <td>GNIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>31</td>
+  <td>Vardhaman College of Engineering</td>
+  <td>Shamshabad, Hyderabad</td>
+  <td>VMEG</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>32</td>
+  <td>Mahatma Gandhi Institute of Technology (MGIT)</td>
+  <td>Gandipet, Hyderabad</td>
+  <td>MGIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>33</td>
+  <td>Vidya Jyothi Institute of Technology</td>
+  <td>Aziznagar, Hyderabad</td>
+  <td>VJIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>34</td>
+  <td>Holy Mary Institute of Technology & Science</td>
+  <td>Bogaram, Hyderabad</td>
+  <td>HITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>35</td>
+  <td>Sridevi Women's Engineering College</td>
+  <td>Vattinagulapally, Hyderabad</td>
+  <td>SWEH</td>
+  <td>Private (Women)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>36</td>
+  <td>Bharat Institute of Engineering and Technology</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>BHRT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>37</td>
+  <td>MLR Institute of Technology and Management</td>
+  <td>Hyderabad</td>
+  <td>MLRM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>38</td>
+  <td>Kommuri Pratap Reddy Institute of Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>KPRT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>39</td>
+  <td>Marri Laxman Reddy Institute of Technology and Management</td>
+  <td>Dundigal, Hyderabad</td>
+  <td>MLRM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>40</td>
+  <td>JB Institute of Engineering and Technology</td>
+  <td>Moinabad, Hyderabad</td>
+  <td>JBIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>41</td>
+  <td>Institute of Aeronautical Engineering</td>
+  <td>Dundigal, Hyderabad</td>
+  <td>IARE</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>42</td>
+  <td>CMR Technical Campus</td>
+  <td>Kandlakoya, Hyderabad</td>
+  <td>CMRM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>43</td>
+  <td>BV Raju Institute of Technology</td>
+  <td>Narsapur, Medak</td>
+  <td>BVRM</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>44</td>
+  <td>Guru Nanak Institute of Technology</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>GNIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>45</td>
+  <td>Keshav Memorial Institute of Technology</td>
+  <td>Narayanguda, Hyderabad</td>
+  <td>KMIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>46</td>
+  <td>Indur Institute of Engineering and Technology</td>
+  <td>Siddipet</td>
+  <td>INUR</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>47</td>
+  <td>Sphoorthy Engineering College</td>
+  <td>Nadargul, Hyderabad</td>
+  <td>SPHO</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>48</td>
+  <td>Teegala Krishna Reddy Engineering College</td>
+  <td>Meerpet, Hyderabad</td>
+  <td>TKRE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>49</td>
+  <td>Vignana Bharathi Institute of Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>VBIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>50</td>
+  <td>Sreenidhi Institute of Science and Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>SNIS</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>51</td>
+  <td>Holy Mary Institute of Technology and Science</td>
+  <td>Bogaram, Hyderabad</td>
+  <td>HITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>52</td>
+  <td>Mahaveer Institute of Science and Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>53</td>
+  <td>Kakatiya Institute of Technology and Science</td>
+  <td>Warangal</td>
+  <td>KITS</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>54</td>
+  <td>Arjun College of Technology and Science</td>
+  <td>Batasingaram, Hyderabad</td>
+  <td>ARJN</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>55</td>
+  <td>Aurora's Engineering College</td>
+  <td>Bhongir</td>
+  <td>AECB</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>56</td>
+  <td>Vardhaman College of Engineering</td>
+  <td>Shamshabad, Hyderabad</td>
+  <td>VMEG</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>57</td>
+  <td>Maturi Venkata Subba Rao Engineering College (MVSR)</td>
+  <td>Nadergul, Hyderabad</td>
+  <td>MVSR</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>58</td>
+  <td>Aurora's Technological and Research Institute</td>
+  <td>Parvathapur, Hyderabad</td>
+  <td>ATRI</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>59</td>
+  <td>Vaagdevi College of Engineering</td>
+  <td>Warangal</td>
+  <td>VGCE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>60</td>
+  <td>CMR Institute of Technology</td>
+  <td>Kandlakoya, Hyderabad</td>
+  <td>CMRM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>61</td>
+  <td>Sreenidhi Institute of Science and Technology</td>
+  <td>Yamnampet, Ghatkesar</td>
+  <td>SNIS</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>62</td>
+  <td>Bhoj Reddy Engineering College for Women</td>
+  <td>Santosh Nagar, Hyderabad</td>
+  <td>BREW</td>
+  <td>Private (Women)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>63</td>
+  <td>Vignan Institute of Technology and Science</td>
+  <td>Deshmukhi, Hyderabad</td>
+  <td>VITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>64</td>
+  <td>Guru Nanak Institute of Technology</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>GNIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>65</td>
+  <td>Sri Indu College of Engineering and Technology</td>
+  <td>Sheriguda, Ibrahimpatnam</td>
+  <td>SRIN</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>66</td>
+  <td>VNR Vignana Jyothi Institute of Engineering and Technology</td>
+  <td>Bachupally, Hyderabad</td>
+  <td>VNRV</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>67</td>
+  <td>Keshav Memorial Institute of Technology</td>
+  <td>Narayanguda, Hyderabad</td>
+  <td>KMIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>68</td>
+  <td>MLRITM (MLR Institute of Technology and Management)</td>
+  <td>Hyderabad</td>
+  <td>MLRM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>69</td>
+  <td>Institute of Aeronautical Engineering (IARE)</td>
+  <td>Dundigal, Hyderabad</td>
+  <td>IARE</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>70</td>
+  <td>Sri Chaitanya Technical Campus</td>
+  <td>Kommadi, Hyderabad</td>
+  <td>SCTC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>71</td>
+  <td>TKR College of Engineering and Technology</td>
+  <td>Meerpet, Hyderabad</td>
+  <td>TKRC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>72</td>
+  <td>Geethanjali College of Engineering and Technology</td>
+  <td>Keesara, Hyderabad</td>
+  <td>GCTC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>73</td>
+  <td>St. Peter's Engineering College</td>
+  <td>Dhulapally, Hyderabad</td>
+  <td>SPEC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>74</td>
+  <td>Holy Mary Institute of Technology and Science</td>
+  <td>Keesara, Hyderabad</td>
+  <td>HMTS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>75</td>
+  <td>Mahatma Gandhi Institute of Technology</td>
+  <td>Gandipet, Hyderabad</td>
+  <td>MGIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>76</td>
+  <td>CMR Institute of Technology</td>
+  <td>Kandlakoya, Hyderabad</td>
+  <td>CMRI</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>77</td>
+  <td>Methodist College of Engineering and Technology</td>
+  <td>Abids, Hyderabad</td>
+  <td>MCET</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>78</td>
+  <td>Vivekananda Institute of Technology and Science</td>
+  <td>Keshampet, Shadnagar</td>
+  <td>VITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>79</td>
+  <td>Narsimha Reddy Engineering College</td>
+  <td>Maisammaguda, Hyderabad</td>
+  <td>NREC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>80</td>
+  <td>Arjun College of Technology and Science</td>
+  <td>Batasingaram, Ranga Reddy</td>
+  <td>ACTS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr><tr>
+  <td>81</td>
+  <td>Global Institute of Engineering and Technology</td>
+  <td>Chelmilla, Ranga Reddy</td>
+  <td>GIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>82</td>
+  <td>VNR Vignana Jyothi Institute of Engineering and Technology</td>
+  <td>Bachupally, Hyderabad</td>
+  <td>VNRVJIET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>83</td>
+  <td>Kommuri Pratap Reddy Institute of Technology</td>
+  <td>Ghanpur, Ghatkesar</td>
+  <td>KPRIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>84</td>
+  <td>Islamia College of Engineering and Technology for Women</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>ICETW</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>85</td>
+  <td>Keshav Memorial Institute of Technology</td>
+  <td>Narayanguda, Hyderabad</td>
+  <td>KMIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>86</td>
+  <td>Vidya Jyothi Institute of Technology</td>
+  <td>Aziznagar, Hyderabad</td>
+  <td>VJIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>87</td>
+  <td>Institute of Aeronautical Engineering</td>
+  <td>Dundigal, Hyderabad</td>
+  <td>IARE</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>88</td>
+  <td>Nalla Narasimha Reddy Education Society's Group of Institutions</td>
+  <td>Chowdariguda, Ghatkesar</td>
+  <td>NNRG</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>89</td>
+  <td>CMR Technical Campus</td>
+  <td>Kandlakoya, Medchal</td>
+  <td>CMRTC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>90</td>
+  <td>Stanley College of Engineering and Technology for Women</td>
+  <td>Abids, Hyderabad</td>
+  <td>SCETW</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>91</td>
+  <td>Malla Reddy College of Engineering and Technology</td>
+  <td>Maisammaguda, Hyderabad</td>
+  <td>MRCET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>92</td>
+  <td>Geetanjali College of Engineering and Technology</td>
+  <td>Keesara, Hyderabad</td>
+  <td>GCET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>93</td>
+  <td>Shadan College of Engineering and Technology</td>
+  <td>Khayyamnagar, Hyderabad</td>
+  <td>SCET</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>94</td>
+  <td>Gokaraju Rangaraju Institute of Engineering and Technology</td>
+  <td>Bachupally, Hyderabad</td>
+  <td>GRIET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>95</td>
+  <td>Arjun College of Technology and Science</td>
+  <td>Batasingaram, Hyderabad</td>
+  <td>ACTS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>96</td>
+  <td>Moghal College of Engineering and Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MCET</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>97</td>
+  <td>Bhoj Reddy Engineering College for Women</td>
+  <td>Santosh Nagar, Hyderabad</td>
+  <td>BRECW</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>98</td>
+  <td>Sreenidhi Institute of Science and Technology</td>
+  <td>Yamnampet, Ghatkesar</td>
+  <td>SNIST</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>99</td>
+  <td>Siddhartha Institute of Technology and Sciences</td>
+  <td>Narapally, Hyderabad</td>
+  <td>SITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>100</td>
+  <td>Joginpally B R Engineering College</td>
+  <td>Moinabad, Hyderabad</td>
+  <td>JBREC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>101</td>
+  <td>Mahaveer Institute of Science and Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>102</td>
+  <td>Stanley College of Engineering and Technology for Women</td>
+  <td>Abids, Hyderabad</td>
+  <td>SCETW</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>103</td>
+  <td>Maturi Venkata Subba Rao Engineering College</td>
+  <td>Nadergul, Hyderabad</td>
+  <td>MVSR</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>104</td>
+  <td>Nawab Shah Alam Khan College of Engineering and Technology</td>
+  <td>New Malakpet, Hyderabad</td>
+  <td>NSAKCET</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>105</td>
+  <td>CMR College of Engineering and Technology</td>
+  <td>Kandlakoya, Medchal</td>
+  <td>CMRCET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>106</td>
+  <td>Guru Nanak Institute of Technology</td>
+  <td>IBP Road, Hyderabad</td>
+  <td>GNIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>107</td>
+  <td>Vignana Bharathi Institute of Technology</td>
+  <td>Aushapur, Ghatkesar</td>
+  <td>VBIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>108</td>
+  <td>Anurag Engineering College</td>
+  <td>Kodad, Suryapet</td>
+  <td>AEC</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>109</td>
+  <td>Kakatiya Institute of Technology and Science</td>
+  <td>Warangal</td>
+  <td>KITSW</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>110</td>
+  <td>Balaji Institute of Technology and Science</td>
+  <td>Narsampet, Warangal</td>
+  <td>BITSW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>111</td>
+  <td>Vaagdevi Engineering College</td>
+  <td>Warangal</td>
+  <td>VECW</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>112</td>
+  <td>JNTUH College of Engineering Manthani</td>
+  <td>Manthani, Peddapalli</td>
+  <td>JNTUHM</td>
+  <td>Public</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>113</td>
+  <td>Jyothishmathi Institute of Technology and Science</td>
+  <td>Karimnagar</td>
+  <td>JITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>114</td>
+  <td>Vivekananda Institute of Technology and Science</td>
+  <td>Karimnagar</td>
+  <td>VITSK</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>115</td>
+  <td>Kakatiya Institute of Engineering and Technology</td>
+  <td>Warangal</td>
+  <td>KIET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>116</td>
+  <td>Ramappa Engineering College</td>
+  <td>Hanamkonda</td>
+  <td>REC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>117</td>
+  <td>SR Engineering College</td>
+  <td>Warangal</td>
+  <td>SRECW</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>118</td>
+  <td>Srinidhi Institute of Science and Technology - Autonomous</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>SNIST-A</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>119</td>
+  <td>Kommuri Pratap Reddy Institute of Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>KPRIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>Indur Institute of Engineering and Technology</td>
+  <td>Siddipet</td>
+  <td>IIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>121</td>
+  <td>Christu Jyoti Institute of Technology and Science</td>
+  <td>Jangaon</td>
+  <td>CJITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>122</td>
+  <td>Bharat Institute of Engineering and Technology</td>
+  <td>Mangalpally, Hyderabad</td>
+  <td>BIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>123</td>
+  <td>Mahaveer Institute of Science and Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>124</td>
+  <td>Geethanjali College of Engineering and Technology</td>
+  <td>Keesara, Hyderabad</td>
+  <td>GCET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>125</td>
+  <td>Swami Ramananda Tirtha Institute of Science and Technology</td>
+  <td>Nalgonda</td>
+  <td>SRTIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>126</td>
+  <td>KGR Institute of Technology and Management</td>
+  <td>Rampally, Hyderabad</td>
+  <td>KGRITM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>127</td>
+  <td>Vignan Institute of Technology and Science</td>
+  <td>Deshmukhi, Hyderabad</td>
+  <td>VITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>128</td>
+  <td>Siddhartha Institute of Technology and Sciences</td>
+  <td>Narapally, Hyderabad</td>
+  <td>SITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>129</td>
+  <td>Stanley College of Engineering and Technology for Women</td>
+  <td>Abids, Hyderabad</td>
+  <td>SCETW</td>
+  <td>Private (Women)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>130</td>
+  <td>Sphoorthy Engineering College</td>
+  <td>Nadargul, Hyderabad</td>
+  <td>SEC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>131</td>
+  <td>Moghal College of Engineering and Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MCET</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>132</td>
+  <td>Indur Institute of Engineering and Technology</td>
+  <td>Siddipet</td>
+  <td>IIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>133</td>
+  <td>CVR College of Engineering</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>CVR</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>134</td>
+  <td>Gurunanak Institute of Technology</td>
+  <td>Khanapur, Ibrahimpatnam</td>
+  <td>GNIT</td>
+  <td>Private (Minority)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>135</td>
+  <td>St. Martin's Engineering College</td>
+  <td>Dhulapally, Hyderabad</td>
+  <td>SMEC</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>136</td>
+  <td>Kommuri Pratap Reddy Institute of Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>KPRIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>137</td>
+  <td>Institute of Aeronautical Engineering</td>
+  <td>Dundigal, Hyderabad</td>
+  <td>IARE</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>138</td>
+  <td>TRR College of Engineering</td>
+  <td>Patancheru, Hyderabad</td>
+  <td>TRRCE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>139</td>
+  <td>Malla Reddy College of Engineering and Technology</td>
+  <td>Kompally, Hyderabad</td>
+  <td>MRCET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>140</td>
+  <td>Narsimha Reddy Engineering College</td>
+  <td>Maisammaguda, Hyderabad</td>
+  <td>NREC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>141</td>
+  <td>TKR College of Engineering and Technology</td>
+  <td>Meerpet, Hyderabad</td>
+  <td>TKRCET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>142</td>
+  <td>Vignan Institute of Technology and Science</td>
+  <td>Deshmukhi, Nalgonda</td>
+  <td>VITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>143</td>
+  <td>JNTUH College of Engineering Manthani</td>
+  <td>Manthani, Peddapalli</td>
+  <td>JNTUHM</td>
+  <td>Public</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>144</td>
+  <td>Vardhaman College of Engineering</td>
+  <td>Shamshabad, Hyderabad</td>
+  <td>VMEG</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>145</td>
+  <td>Sree Dattha Institute of Engineering and Science</td>
+  <td>Shabad, Rangareddy</td>
+  <td>SDIES</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>146</td>
+  <td>Krishna Murthy Institute of Technology and Engineering</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>KITE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>147</td>
+  <td>Samskruti College of Engineering and Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>SCET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>148</td>
+  <td>Maturi Venkata Subba Rao Engineering College</td>
+  <td>Nadergul, Hyderabad</td>
+  <td>MVSR</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>149</td>
+  <td>Scient Institute of Technology</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>SIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>150</td>
+  <td>Vidya Jyothi Institute of Technology</td>
+  <td>Aziz Nagar, Hyderabad</td>
+  <td>VJIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>151</td>
+  <td>Gokaraju Rangaraju Institute of Engineering and Technology</td>
+  <td>Bachupally, Hyderabad</td>
+  <td>GRIET</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>152</td>
+  <td>St. Peter’s Engineering College</td>
+  <td>Dhulapally, Hyderabad</td>
+  <td>SPEC</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>153</td>
+  <td>CVR College of Engineering</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>CVR</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>154</td>
+  <td>Guru Nanak Institute of Technology</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>GNIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>155</td>
+  <td>SR International Institute of Technology</td>
+  <td>Rampally, Hyderabad</td>
+  <td>SRIIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>156</td>
+  <td>Sreyas Institute of Engineering and Technology</td>
+  <td>Nagole, Hyderabad</td>
+  <td>SREYAS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>157</td>
+  <td>Vignana Bharathi Institute of Technology</td>
+  <td>Aushapur, Hyderabad</td>
+  <td>VBIT</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>158</td>
+  <td>Anurag University (formerly CVSR College of Engineering)</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>AU</td>
+  <td>Private University</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>159</td>
+  <td>Sri Indu College of Engineering and Technology</td>
+  <td>Ibrahimpatnam, Hyderabad</td>
+  <td>SICET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>160</td>
+  <td>Teegala Krishna Reddy Engineering College</td>
+  <td>Meerpet, Hyderabad</td>
+  <td>TKREC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>161</td>
+  <td>Vardhaman College of Engineering</td>
+  <td>Shamshabad, Rangareddy</td>
+  <td>VMEG</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>162</td>
+  <td>SR Engineering College</td>
+  <td>Warangal (Urban)</td>
+  <td>SRECW</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>163</td>
+  <td>Kakatiya Institute of Technology & Science</td>
+  <td>Warangal (Urban)</td>
+  <td>KITSW</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>164</td>
+  <td>BITS Institute of Technology</td>
+  <td>Khammam</td>
+  <td>BITSK</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>165</td>
+  <td>Jyothishmathi Institute of Technology and Science</td>
+  <td>Karimnagar</td>
+  <td>JITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>166</td>
+  <td>Stanley College of Engineering and Technology for Women</td>
+  <td>Hyderabad</td>
+  <td>STANW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>167</td>
+  <td>Aurora's Technological and Research Institute</td>
+  <td>Uppal, Medchal–Malkajgiri</td>
+  <td>AURT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>168</td>
+  <td>Swami Ramananda Tirtha Institute of Science and Technology</td>
+  <td>Nalgonda</td>
+  <td>SRTIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>169</td>
+  <td>Trinity College of Engineering and Technology</td>
+  <td>Peddapalli</td>
+  <td>TCET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>170</td>
+  <td>Mahaveer Institute of Science & Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>171</td>
+  <td>Mother Theresa Institute of Engineering and Technology</td>
+  <td>Peddapalli</td>
+  <td>MTIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>172</td>
+  <td>Gnyana Saraswati College of Engineering and Technology</td>
+  <td>Nizamabad</td>
+  <td>GSCET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>173</td>
+  <td>VITS Engineering College</td>
+  <td>Karimnagar</td>
+  <td>VITSK</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>174</td>
+  <td>KGR Institute of Technology and Management</td>
+  <td>Ranga Reddy</td>
+  <td>KGRITM</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>175</td>
+  <td>Arjun College of Technology and Sciences</td>
+  <td>Batasingaram, Hyderabad</td>
+  <td>ACTS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>176</td>
+  <td>Teegala Krishna Reddy Engineering College</td>
+  <td>Meerpet, Hyderabad</td>
+  <td>TKREC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>177</td>
+  <td>Vasavi College of Engineering</td>
+  <td>Ibrahim Bagh, Hyderabad</td>
+  <td>VASV</td>
+  <td>Private (Autonomous)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>178</td>
+  <td>Rajiv Gandhi University of Knowledge Technologies</td>
+  <td>Basar, Nirmal</td>
+  <td>RGUKT</td>
+  <td>State Govt.</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>179</td>
+  <td>KIMS College of Engineering</td>
+  <td>Mahbubnagar</td>
+  <td>KIMS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>180</td>
+  <td>Pragati Engineering College</td>
+  <td>Adilabad</td>
+  <td>PRAGAD</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>181</td>
+  <td>Sana Engineering College</td>
+  <td>Kodad, Suryapet</td>
+  <td>SANA</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>182</td>
+  <td>Sree Chaitanya College of Engineering</td>
+  <td>Karepalli, Khammam</td>
+  <td>SCCE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>183</td>
+  <td>Stanley College of Engineering and Technology for Women</td>
+  <td>Abids, Hyderabad</td>
+  <td>STANW</td>
+  <td>Private (Women)</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>184</td>
+  <td>Swarna Bharathi Institute of Science and Technology</td>
+  <td>Khammam</td>
+  <td>SBIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>185</td>
+  <td>Abhinav Hi-Tech College of Engineering</td>
+  <td>Gandipet, Ranga Reddy</td>
+  <td>AHTCE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>186</td>
+  <td>Jawaharlal Nehru Institute of Technology</td>
+  <td>Moinabad, Ranga Reddy</td>
+  <td>JNIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>187</td>
+  <td>Government Polytechnic College for Women</td>
+  <td>Warangal</td>
+  <td>GPCW</td>
+  <td>Government</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>188</td>
+  <td>Jyothishmathi Institute of Technology and Science</td>
+  <td>Karimnagar</td>
+  <td>JITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>189</td>
+  <td>Sri Indu College of Engineering and Technology</td>
+  <td>Ibrahimpatnam, Ranga Reddy</td>
+  <td>SICET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>190</td>
+  <td>Mahaveer Institute of Science and Technology</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>MIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>191</td>
+  <td>Holy Mary Institute of Technology & Science</td>
+  <td>Keesara, Medchal</td>
+  <td>HITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>192</td>
+  <td>Nishitha College of Engineering and Technology</td>
+  <td>Lemoor, Ranga Reddy</td>
+  <td>NCET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>193</td>
+  <td>Ramappa Engineering College</td>
+  <td>Hanamkonda, Warangal</td>
+  <td>RECW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>194</td>
+  <td>Vaagdevi Engineering College</td>
+  <td>Warangal</td>
+  <td>VECW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>195</td>
+  <td>Bharat Institute of Engineering and Technology</td>
+  <td>Ibrahimpatnam, Ranga Reddy</td>
+  <td>BIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>196</td>
+  <td>Mahatma Gandhi Institute of Technology</td>
+  <td>Gandipet, Hyderabad</td>
+  <td>MGIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>197</td>
+  <td>ACE Engineering College</td>
+  <td>Ankushapur, Ghatkesar</td>
+  <td>ACE</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>198</td>
+  <td>RRS College of Engineering and Technology</td>
+  <td>Patancheru, Sangareddy</td>
+  <td>RRS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>199</td>
+  <td>Tudi Narasimha Reddy Institute of Technology & Science</td>
+  <td>Gowrelli, Bibinagar</td>
+  <td>TNRITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>200</td>
+  <td>Vignan Institute of Technology and Science</td>
+  <td>Deshmukhi, Nalgonda</td>
+  <td>VITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>201</td>
+  <td>Balaji Institute of Technology & Science</td>
+  <td>Narsampet, Warangal</td>
+  <td>BITSW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>202</td>
+  <td>Arjun College of Technology and Science</td>
+  <td>Batasingaram, Ranga Reddy</td>
+  <td>ACTS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>203</td>
+  <td>Aurora's Scientific Technological & Research Academy</td>
+  <td>Bandlaguda, Hyderabad</td>
+  <td>ASTRA</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>204</td>
+  <td>Anurag Engineering College</td>
+  <td>Kodad, Suryapet</td>
+  <td>AEC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>205</td>
+  <td>Vikas College of Engineering and Technology</td>
+  <td>Nunna, Khammam</td>
+  <td>VIKAS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>206</td>
+  <td>Jyothishmathi Institute of Technology and Science</td>
+  <td>Karimnagar</td>
+  <td>JITS</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>207</td>
+  <td>Mother Theresa Institute of Engineering & Technology</td>
+  <td>Peddapalli</td>
+  <td>MTIET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>208</td>
+  <td>Kamala Institute of Technology & Science</td>
+  <td>Huzurabad, Karimnagar</td>
+  <td>KITSK</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>209</td>
+  <td>Sai Spurthi Institute of Technology</td>
+  <td>Sathupally, Khammam</td>
+  <td>SSIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>210</td>
+  <td>Jayamukhi Institute of Technological Sciences</td>
+  <td>Narsampet, Warangal</td>
+  <td>JITSW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>211</td>
+  <td>Sri Indu College of Engineering & Technology</td>
+  <td>IBP, Hyderabad</td>
+  <td>SICET</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>212</td>
+  <td>Vaagdevi College of Engineering</td>
+  <td>Warangal</td>
+  <td>VCEW</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>213</td>
+  <td>Nalla Malla Reddy Engineering College</td>
+  <td>Ghatkesar, Medchal</td>
+  <td>NMREC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>214</td>
+  <td>Kommuri Pratap Reddy Institute of Technology</td>
+  <td>Ghatkesar, Hyderabad</td>
+  <td>KPRIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>215</td>
+  <td>St. Peter's Engineering College</td>
+  <td>Maisammaguda, Medchal</td>
+  <td>SPEC</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>216</td>
+  <td>Swami Vivekananda Institute of Technology</td>
+  <td>Patny, Hyderabad</td>
+  <td>SVIT</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>217</td>
+  <td>Mother Teresa Institute of Science and Technology</td>
+  <td>Sanketika Nagar, Khammam</td>
+  <td>MTIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>218</td>
+  <td>VITS Engineering College</td>
+  <td>Deshmukhi, Nalgonda</td>
+  <td>VITSN</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>219</td>
+  <td>Sreenidhi Institute of Science and Technology</td>
+  <td>Yamnampet, Ghatkesar</td>
+  <td>SNIST</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+<tr>
+  <td>220</td>
+  <td>Jayamukhi Institute of Technological Sciences (Another Campus)</td>
+  <td>Hanamkonda, Warangal</td>
+  <td>JITS-H</td>
+  <td>Private</td>
+  <td><a href="#" class="profile-btn">Profile</a></td>
+</tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>© 2025 TS EAPCET Engineering Colleges Guide | Data sourced from official TSCHE reports</p>
+        </footer>
+    </div>
+
+    <script>
+        function searchTable() {
+            let input = document.getElementById("searchInput");
+            let filter = input.value.toUpperCase();
+            let table = document.getElementById("collegeTable");
+            let tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                let tdCollege = tr[i].getElementsByTagName("td")[1];
+                let tdLocation = tr[i].getElementsByTagName("td")[2];
+                if (tdCollege || tdLocation) {
+                    let txtValueCollege = tdCollege.textContent || tdCollege.innerText;
+                    let txtValueLocation = tdLocation.textContent || tdLocation.innerText;
+                    if (txtValueCollege.toUpperCase().indexOf(filter) > -1 || 
+                        txtValueLocation.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
