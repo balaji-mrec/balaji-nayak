@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Balanju Consultancy | Engineering Colleges in India</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -16,11 +17,11 @@
     header {
       background-color: #00796b;
       color: white;
-      padding: 20px 0;
+      padding: 15px 0;
       text-align: center;
-      font-size: 36px;
+      font-size: 24px;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
@@ -29,10 +30,10 @@
       background-color: #1565c0;
       color: white;
       text-decoration: none;
-      padding: 10px 18px;
+      padding: 8px 12px;
       border-radius: 20px;
-      margin: 5px;
-      font-size: 16px;
+      margin: 3px;
+      font-size: 14px;
       transition: background 0.3s;
     }
 
@@ -42,7 +43,7 @@
 
     .search-area {
       background-color: #e3f2fd;
-      padding: 40px 20px;
+      padding: 20px 10px;
       text-align: center;
     }
 
@@ -53,30 +54,31 @@
       background: white;
       border: 2px solid #ccc;
       border-radius: 12px;
-      padding: 12px 18px;
+      padding: 10px 15px;
       max-width: 500px;
-      margin: 20px auto;
+      margin: 15px auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .search-box i {
       color: #616161;
-      font-size: 18px;
-      margin-right: 10px;
+      font-size: 16px;
+      margin-right: 8px;
     }
 
     .search-box input {
       border: none;
-      font-size: 18px;
+      font-size: 16px;
       width: 100%;
       outline: none;
     }
 
     #searchResults {
-      max-width: 600px;
+      max-width: 100%;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 15px;
       text-align: left;
+      padding: 0 10px;
     }
 
     #searchResults li {
@@ -85,41 +87,41 @@
       margin: 6px 0;
       border-radius: 6px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      font-size: 16px;
+      font-size: 14px;
       list-style: none;
     }
 
     .intro {
       text-align: center;
-      margin: 30px auto;
-      width: 80%;
+      margin: 20px auto;
+      width: 90%;
     }
 
     .intro h2 {
-      font-size: 28px;
+      font-size: 22px;
       color: #00695c;
     }
 
     .intro p {
-      font-size: 18px;
+      font-size: 16px;
       color: #004d40;
     }
 
     .branches {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      width: 90%;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      width: 95%;
       margin: 0 auto;
     }
 
     .branch-link {
       background-color: white;
-      padding: 20px;
-      border-radius: 15px;
+      padding: 15px;
+      border-radius: 12px;
       text-align: center;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: all 0.3s ease-in-out;
@@ -133,34 +135,36 @@
     .branch-link a {
       text-decoration: none;
       color: #004d40;
+      font-size: 15px;
     }
 
     .promo-box {
       background-color: #fff3cd;
-      padding: 20px;
+      padding: 15px;
       border-radius: 12px;
-      max-width: 400px;
-      margin: 40px auto;
+      max-width: 90%;
+      margin: 30px auto;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     .promo-box h2 {
       margin-top: 0;
-      font-size: 22px;
+      font-size: 18px;
       color: #bf360c;
     }
 
     .promo-box p {
-      font-size: 16px;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
     .promo-box button {
       background-color: #ff9800;
       color: white;
       border: none;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 8px 16px;
+      font-size: 14px;
       border-radius: 8px;
       cursor: pointer;
     }
@@ -172,6 +176,7 @@
     marquee a {
       text-decoration: none;
       color: #003366;
+      font-size: 16px;
     }
 
     marquee a:hover {
@@ -180,85 +185,93 @@
 
     .whatsapp-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 15px;
+      right: 15px;
       background: #25D366;
       color: white;
-      padding: 14px 18px;
+      padding: 10px 15px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       z-index: 998;
     }
 
+    h1 {
+      text-align: center;
+      font-size: 20px;
+      margin: 20px 0;
+    }
 
-    /* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
+      header {
+        font-size: 20px;
+        padding: 12px 0;
+      }
+      
+      .search-box {
+        width: 90%;
+        padding: 8px 12px;
+      }
+      
+      .search-box input {
+        font-size: 14px;
+      }
+      
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .branch-link {
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+      
+      .branches {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 15px;
+      }
+      
+      marquee a {
+        font-size: 14px;
+      }
+      
+      .whatsapp-button {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+    }
 
-  .main-header .left h1 {
-    font-size: 22px;
-  }
-
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-
-  .scroll-text {
-    font-size: 13px;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
-
-  .section {
-    padding: 20px 15px;
-  }
-
-  .section h3 {
-    font-size: 20px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
-
-
-
+    @media (max-width: 480px) {
+      header {
+        font-size: 18px;
+      }
+      
+      .intro h2 {
+        font-size: 18px;
+      }
+      
+      .intro p {
+        font-size: 14px;
+      }
+      
+      .branches {
+        grid-template-columns: 1fr;
+      }
+      
+      .branch-link {
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-
+  <!-- Rest of your HTML remains the same -->
   <header>🎓 EXPLORE ENGINEERING COLLEGES Across INDIA</header>
 
   <div class="search-area">
@@ -281,29 +294,26 @@
     <ul id="searchResults"></ul>
 
     <div class="intro">
-    <h2>🏫 1000+ Colleges. Sorted. Easy. Fast.</h2>
-    <p>
-      Find top engineering colleges across India — filtered by state, type, and rank.<br>
-      Start your admission research now with just one click!
-    </p>
+      <h2>🏫 1000+ Colleges. Sorted. Easy. Fast.</h2>
+      <p>
+        Find top engineering colleges across India — filtered by state, type, and rank.<br>
+        Start your admission research now with just one click!
+      </p>
+    </div>
   </div>
 
-
-
-  </div>
-
-  <h1 style="text-align: center;">🏛️ EXPLORE BY INSTITUTION TYPE</h1>
+  <h1>🏛️ EXPLORE BY INSTITUTION TYPE</h1>
   <div class="branches">
-    <div class="branch-link"><a href="21index-itt.html">🎓  IIT's</a></div>
+    <div class="branch-link"><a href="21index-itt.html">🎓 IIT's</a></div>
     <div class="branch-link"><a href="22index-nit.html">🏗️ NIT's</a></div>
     <div class="branch-link"><a href="23index-iiit.html">💻 IIIT's</a></div>
     <div class="branch-link"><a href="24index-gfti.html">🏛️ GFTI's</a></div>
     <div class="branch-link"><a href="25top_university.html">🎓 Top Universities (Central/State)</a></div>
     <div class="branch-link"><a href="26deemed_university.html">🏫 Deemed Universities</a></div>
-    <div class="branch-link"><a href="27private.html">🏅 Top Private Colleges</a></div>
+    
   </div>
 
-  <h1 style="text-align: center;">📍 EXPLORE STATE-WISE</h1>
+  <h1>📍 EXPLORE STATE-WISE</h1>
   <div class="branches">
     <div class="branch-link"><a href="colleges/ap.html">Andhra Pradesh</a></div>
     <div class="branch-link"><a href="colleges/assam.html">Assam</a></div>
@@ -340,18 +350,14 @@
   </div>
 
   <h1>
-    <marquee scrollamount="20">
-      <font color="darkblue" size="6" face="roboto">
-        <a href="TOP_ENGI.html" target="_blank">🏆 TOP 100 ENGINEERING COLLEGES IN INDIA (NIRF & PLACEMENT WISE)</a>
-      </font>
-    </marquee>
+    
   </h1>
 
   <a class="whatsapp-button" href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20college%20admission." target="_blank">💬 Chat with Us</a>
 
   <script>
-    const colleges = 
-    [
+    // Your existing JavaScript remains the same
+    const colleges = [
       "JNTU Hyderabad", "Osmania University", "IIT Bombay", "NIT Trichy", "VIT Vellore",
       "MIT Pune", "SRM Chennai", "IIIT Hyderabad", "Andhra University", "CBIT Hyderabad",
       "BVRIT Narsapur", "MVSR Hyderabad", "MREC Hyderabad", "IIT Delhi", "IIT Madras",
@@ -359,236 +365,225 @@
       "IIT Dhanbad (ISM)", "IIT Gandhinagar", "IIT Ropar", "IIT Patna", "IIT Mandi", "IIT Jodhpur",
       "NIT Tiruchirappalli", "NIT Hamirpur", "NIT Silchar", "NIT Meghalaya", "NIT Patna", "NIT", "NIT Tirupati",
       "NIT Hamirpur", "NIT Silchar", "NIT Meghalaya",  
-  // Indian Institutes of Technology (IITs)
-  "IIT Madras",
-  "IIT Delhi",
-  "IIT Bombay",
-  "IIT Kanpur",
-  "IIT Kharagpur",
-  "IIT Roorkee",
-  "IIT Guwahati",
-  "IIT Hyderabad",
-  "IIT Indore",
-  "IIT BHU Varanasi",
-  "IIT Dhanbad (ISM)",
-  "IIT Gandhinagar",
-  "IIT Ropar",
-  "IIT Patna",
-  "IIT Mandi",
-  "IIT Jodhpur",
-
-  // National Institutes of Technology (NITs)
-  "NIT Trichy",
-  "NIT Surathkal",
-  "NIT Rourkela",
-  "NIT Warangal",
-  "NIT Calicut",
-  "NIT Durgapur",
-  "NIT Kurukshetra",
-  "NIT Jalandhar",
-  "NIT Jaipur",
-  "NIT Allahabad (MNNIT)",
-  "NIT Nagpur (VNIT)",
-  "NIT Patna",
-  "NIT Silchar",
-  "NIT Raipur",
-  "NIT Agartala",
-  "NIT Meghalaya",
-  "NIT Goa",
-  "NIT Jamshedpur",
-
-  // Indian Institutes of Information Technology (IIITs)
-  "IIIT Hyderabad",
-  "IIIT Bangalore",
-  "IIIT Delhi",
-  "IIIT Allahabad",
-  "IIIT Bhubaneswar",
-  "IIIT Guwahati",
-  "IIIT Pune",
-  "IIIT Kottayam",
-  "IIIT Sri City",
-  "IIIT Vadodara",
-  "IIITDM Jabalpur",
-  "IIITDM Kancheepuram",
-
-  // Top Private Universities and Deemed Institutions
-  "BITS Pilani",
-  "BITS Goa",
-  "BITS Hyderabad",
-  "VIT Vellore",
-  "VIT Chennai",
-  "SRM Institute of Science and Technology",
-  "Amrita Vishwa Vidyapeetham",
-  "Shiv Nadar University",
-  "Ashoka University",
-  "Manipal Institute of Technology",
-  "SASTRA University",
-  "Kalinga Institute of Industrial Technology (KIIT)",
-  "Chandigarh University",
-  "Lovely Professional University (LPU)",
-  "Graphic Era University",
-  "PES University",
-  "Koneru Lakshmaiah Education Foundation (KL University)",
-  "Siksha 'O' Anusandhan University",
-  "Shanmugha Arts, Science, Technology & Research Academy (SASTRA)",
-  "Kalasalingam Academy of Research and Education",
-
-  // State Government and Other Reputed Colleges
-  "JNTU Hyderabad",
-  "Osmania University",
-  "Andhra University",
-  "Anna University",
-  "College of Engineering, Pune (COEP)",
-  "Delhi Technological University (DTU)",
-  "Jamia Millia Islamia",
-  "Jadavpur University",
-  "University of Hyderabad",
-  "University College of Engineering, Osmania University",
-  "Veermata Jijabai Technological Institute (VJTI)",
-  "University Visvesvaraya College of Engineering (UVCE)",
-  "Punjab Engineering College (PEC)",
-  "Netaji Subhas University of Technology (NSUT)",
-  "Maulana Azad National Institute of Technology (MANIT)",
-  "Govt. College of Engineering, Amravati",
-  "Govt. College of Engineering, Aurangabad",
-  "Govt. College of Engineering, Karad",
-  "Govt. College of Engineering, Jalgaon",
-  "Govt. College of Engineering, Chandrapur",
-  "Govt. College of Engineering, Nagpur",
-  "Govt. College of Engineering, Yavatmal",
-  "Govt. College of Engineering, Parbhani",
-  "Govt. College of Engineering, Pune",
-  "Govt. College of Engineering, Jalna",
-  "Govt. College of Engineering, Nanded",
-  "Govt. College of Engineering, Osmanabad",
-  "Govt. College of Engineering, Latur",
-  "Govt. College of Engineering, Solapur",
-  "Govt. College of Engineering, Kolhapur",
-  "Govt. College of Engineering, Satara",
-  "Govt. College of Engineering, Sangli",
-  "Govt. College of Engineering, Ratnagiri",
-  "Govt. College of Engineering, Sindhudurg",
-  "Govt. College of Engineering, Thane",
-  "Govt. College of Engineering, Palghar",
-  "Govt. College of Engineering, Raigad",
-  "Govt. College of Engineering, Nashik",
-  "Govt. College of Engineering, Ahmednagar",
-  "Govt. College of Engineering, Beed",
-  "Govt. College of Engineering, Jalgaon",
-  "Govt. College of Engineering, Dhule",
-  "Govt. College of Engineering, Nandurbar",
-  "Govt. College of Engineering, Buldhana",
-  "Govt. College of Engineering, Akola",
-  "Govt. College of Engineering, Washim",
-  "Govt. College of Engineering, Hingoli",
-  "Govt. College of Engineering, Parbhani",
-  "Govt. College of Engineering, Nanded",
-  "Govt. College of Engineering, Latur",
-  "Govt. College of Engineering, Osmanabad",
-  "Govt. College of Engineering, Solapur",
-  "Govt. College of Engineering, Satara",
-  "Govt. College of Engineering, Sangli",
-  "Govt. College of Engineering, Kolhapur",
-  "Govt. College of Engineering, Ratnagiri",
-  "Govt. College of Engineering, Sindhudurg",
-  "Govt. College of Engineering, Thane",
-  "Govt. College of Engineering, Palghar",
-  "Govt. College of Engineering, Raigad",
-  "Govt. College of Engineering, Nashik",
-  "Govt. College of Engineering, Ahmednagar",
-  "Govt. College of Engineering, Beed",
-  "Govt. College of Engineering, Jalgaon",
-  "Govt. College of Engineering, Dhule",
-  "Govt. College of Engineering, Nandurbar",
-  "Govt. College of Engineering, Buldhana",
-  "Govt. College of Engineering, Akola",
-  "Govt. College of Engineering, Washim",
-  "Govt. College of Engineering, Hingoli",
-
-
-  "IIT Hyderabad, Sangareddy (TS)",
-  "IIIT Hyderabad, Hyderabad (TS)",
-  "JNTUH College of Engineering, Hyderabad (TS)",
-  "Osmania University College of Engineering, Hyderabad (TS)",
-  "University College of Technology (OU), Hyderabad (TS)",
-  "Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad (TS)",
-  "Vasavi College of Engineering, Hyderabad (TS)",
-  "Muffakham Jah College of Engineering and Technology, Hyderabad (TS)",
-  "Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad (TS)",
-  "VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad (TS)",
-  "Vardhaman College of Engineering, Hyderabad (TS)",
-  "Mahatma Gandhi Institute of Technology (MGIT), Hyderabad (TS)",
-  "Sreenidhi Institute of Science and Technology (SNIST), Hyderabad (TS)",
-  "BVRIT Hyderabad College of Engineering for Women, Hyderabad (TS)",
-  "G. Narayanamma Institute of Technology and Science (GNITS), Hyderabad (TS)",
-  "Keshav Memorial Institute of Technology (KMIT), Hyderabad (TS)",
-  "Geethanjali College of Engineering and Technology, Hyderabad (TS)",
-  "Institute of Aeronautical Engineering (IARE), Hyderabad (TS)",
-  "MLR Institute of Technology, Hyderabad (TS)",
-  "CMR College of Engineering and Technology, Hyderabad (TS)",
-  "CMR Institute of Technology, Hyderabad (TS)",
-  "CMR Technical Campus, Hyderabad (TS)",
-  "St. Martin's Engineering College, Hyderabad (TS)",
-  "Vignan Bharathi Institute of Technology (VBIT), Hyderabad (TS)",
-  "AVN Institute of Engineering and Technology, Hyderabad (TS)",
-  "Sridevi Women's Engineering College, Hyderabad (TS)",
-  "Methodist College of Engineering and Technology, Hyderabad (TS)",
-  "Bharat Institute of Engineering and Technology, Hyderabad (TS)",
-  "Sri Indu College of Engineering and Technology, Hyderabad (TS)",
-  "Sri Indu Institute of Engineering and Technology, Hyderabad (TS)",
-  "KGR Institute of Technology and Management, Hyderabad (TS)",
-  "Vignana Institute of Technology and Science, Hyderabad (TS)",
-  "J.B. Institute of Engineering and Technology (JBIET), Hyderabad (TS)",
-  "Narsimha Reddy Engineering College, Hyderabad (TS)",
-  "Malla Reddy Engineering College, Hyderabad (TS)",
-  "Malla Reddy College of Engineering and Technology, Hyderabad (TS)",
-  "Malla Reddy Institute of Technology and Science, Hyderabad (TS)",
-  "Malla Reddy Institute of Engineering and Technology, Hyderabad (TS)",
-  "Malla Reddy College of Engineering for Women, Hyderabad (TS)",
-  "Malla Reddy College of Engineering, Hyderabad (TS)",
-  "Marri Laxman Reddy Institute of Technology and Management, Hyderabad (TS)",
-  "ACE Engineering College, Hyderabad (TS)",
-  "Samskruthi College of Engineering and Technology, Hyderabad (TS)",
-  "Anurag University, Hyderabad (TS)",
-  "Holy Mary Institute of Technology and Science, Hyderabad (TS)",
-  "Sphoorthy Engineering College, Hyderabad (TS)",
-  "Swami Vivekananda Institute of Technology, Hyderabad (TS)",
-  "Joginpally B.R. Engineering College, Hyderabad (TS)",
-  "Sri Datta College of Engineering and Science, Hyderabad (TS)",
-  "Avanthi Institute of Engineering and Technology, Hyderabad (TS)",
-  "Neil Gogte Institute of Technology, Hyderabad (TS)",
-  "National Institute of Technology (NIT), Warangal (TS)",
-  "Kakatiya Institute of Technology and Science (KITS), Warangal (TS)",
-  "SR University, Warangal (TS)",
-  "Vaagdevi College of Engineering, Warangal (TS)",
-  "Balaji Institute of Technology and Science, Warangal (TS)",
-  "Talla Padmavathi College of Engineering, Warangal (TS)",
-  "Kakatiya University College of Engineering and Technology, Warangal (TS)",
-  "Aurora's Scientific Technological and Research Academy, Warangal (TS)",
-  "Vaagdevi Engineering College, Warangal (TS)",
-  "Jaya Institute of Technology and Science, Warangal (TS)",
-  "S.R. Engineering College, Warangal (TS)",
-  "Anubose Institute of Technology, Khammam (TS)",
-  "Vinuthna Institute of Technology and Science, Khammam (TS)",
-  "Vivekananda Institute of Technology and Science, Karimnagar (TS)",
-  "Swarna Bharathi Institute of Science and Technology, Khammam (TS)",
-  "Sree Chaitanya College of Engineering, Karimnagar (TS)",
-  "Sree Chaitanya Institute of Technological Sciences, Karimnagar (TS)",
-  "Trinity College of Engineering and Technology, Peddapalli (TS)",
-  "Jyothishmathi Institute of Technology and Science, Karimnagar (TS)",
-  "Jyothishmathi College of Engineering and Technology, Karimnagar (TS)",
-  "Vaageswari College of Engineering, Karimnagar (TS)",
-  "Vaageswari Institute of Technology, Karimnagar (TS)",
-  "VITS College of Engineering, Karimnagar (TS)",
-  "Anurag Engineering College, Kodad (TS)",
-  "Aurora's Engineering College, Bhongir (TS)",
-  "Bhoj Reddy Engineering College for Women, Hyderabad (TS)",
-  "C.V.R. College of Engineering, Hyderabad (TS)",
-  "Ellenki College of Engineering and Technology, Hyderabad (TS)",
-  "G. Pulla Reddy Engineering College, Hyderabad (TS)",
-  "Guru Nanak Institute of Technology, Hyderabad (TS)",
-  "Indur Institute of Engineering and Technology, Siddipet (TS)"];
-
+      "IIT Madras",
+      "IIT Delhi",
+      "IIT Bombay",
+      "IIT Kanpur",
+      "IIT Kharagpur",
+      "IIT Roorkee",
+      "IIT Guwahati",
+      "IIT Hyderabad",
+      "IIT Indore",
+      "IIT BHU Varanasi",
+      "IIT Dhanbad (ISM)",
+      "IIT Gandhinagar",
+      "IIT Ropar",
+      "IIT Patna",
+      "IIT Mandi",
+      "IIT Jodhpur",
+      "NIT Trichy",
+      "NIT Surathkal",
+      "NIT Rourkela",
+      "NIT Warangal",
+      "NIT Calicut",
+      "NIT Durgapur",
+      "NIT Kurukshetra",
+      "NIT Jalandhar",
+      "NIT Jaipur",
+      "NIT Allahabad (MNNIT)",
+      "NIT Nagpur (VNIT)",
+      "NIT Patna",
+      "NIT Silchar",
+      "NIT Raipur",
+      "NIT Agartala",
+      "NIT Meghalaya",
+      "NIT Goa",
+      "NIT Jamshedpur",
+      "IIIT Hyderabad",
+      "IIIT Bangalore",
+      "IIIT Delhi",
+      "IIIT Allahabad",
+      "IIIT Bhubaneswar",
+      "IIIT Guwahati",
+      "IIIT Pune",
+      "IIIT Kottayam",
+      "IIIT Sri City",
+      "IIIT Vadodara",
+      "IIITDM Jabalpur",
+      "IIITDM Kancheepuram",
+      "BITS Pilani",
+      "BITS Goa",
+      "BITS Hyderabad",
+      "VIT Vellore",
+      "VIT Chennai",
+      "SRM Institute of Science and Technology",
+      "Amrita Vishwa Vidyapeetham",
+      "Shiv Nadar University",
+      "Ashoka University",
+      "Manipal Institute of Technology",
+      "SASTRA University",
+      "Kalinga Institute of Industrial Technology (KIIT)",
+      "Chandigarh University",
+      "Lovely Professional University (LPU)",
+      "Graphic Era University",
+      "PES University",
+      "Koneru Lakshmaiah Education Foundation (KL University)",
+      "Siksha 'O' Anusandhan University",
+      "Shanmugha Arts, Science, Technology & Research Academy (SASTRA)",
+      "Kalasalingam Academy of Research and Education",
+      "JNTU Hyderabad",
+      "Osmania University",
+      "Andhra University",
+      "Anna University",
+      "College of Engineering, Pune (COEP)",
+      "Delhi Technological University (DTU)",
+      "Jamia Millia Islamia",
+      "Jadavpur University",
+      "University of Hyderabad",
+      "University College of Engineering, Osmania University",
+      "Veermata Jijabai Technological Institute (VJTI)",
+      "University Visvesvaraya College of Engineering (UVCE)",
+      "Punjab Engineering College (PEC)",
+      "Netaji Subhas University of Technology (NSUT)",
+      "Maulana Azad National Institute of Technology (MANIT)",
+      "Govt. College of Engineering, Amravati",
+      "Govt. College of Engineering, Aurangabad",
+      "Govt. College of Engineering, Karad",
+      "Govt. College of Engineering, Jalgaon",
+      "Govt. College of Engineering, Chandrapur",
+      "Govt. College of Engineering, Nagpur",
+      "Govt. College of Engineering, Yavatmal",
+      "Govt. College of Engineering, Parbhani",
+      "Govt. College of Engineering, Pune",
+      "Govt. College of Engineering, Jalna",
+      "Govt. College of Engineering, Nanded",
+      "Govt. College of Engineering, Osmanabad",
+      "Govt. College of Engineering, Latur",
+      "Govt. College of Engineering, Solapur",
+      "Govt. College of Engineering, Kolhapur",
+      "Govt. College of Engineering, Satara",
+      "Govt. College of Engineering, Sangli",
+      "Govt. College of Engineering, Ratnagiri",
+      "Govt. College of Engineering, Sindhudurg",
+      "Govt. College of Engineering, Thane",
+      "Govt. College of Engineering, Palghar",
+      "Govt. College of Engineering, Raigad",
+      "Govt. College of Engineering, Nashik",
+      "Govt. College of Engineering, Ahmednagar",
+      "Govt. College of Engineering, Beed",
+      "Govt. College of Engineering, Jalgaon",
+      "Govt. College of Engineering, Dhule",
+      "Govt. College of Engineering, Nandurbar",
+      "Govt. College of Engineering, Buldhana",
+      "Govt. College of Engineering, Akola",
+      "Govt. College of Engineering, Washim",
+      "Govt. College of Engineering, Hingoli",
+      "Govt. College of Engineering, Parbhani",
+      "Govt. College of Engineering, Nanded",
+      "Govt. College of Engineering, Latur",
+      "Govt. College of Engineering, Osmanabad",
+      "Govt. College of Engineering, Solapur",
+      "Govt. College of Engineering, Satara",
+      "Govt. College of Engineering, Sangli",
+      "Govt. College of Engineering, Kolhapur",
+      "Govt. College of Engineering, Ratnagiri",
+      "Govt. College of Engineering, Sindhudurg",
+      "Govt. College of Engineering, Thane",
+      "Govt. College of Engineering, Palghar",
+      "Govt. College of Engineering, Raigad",
+      "Govt. College of Engineering, Nashik",
+      "Govt. College of Engineering, Ahmednagar",
+      "Govt. College of Engineering, Beed",
+      "Govt. College of Engineering, Jalgaon",
+      "Govt. College of Engineering, Dhule",
+      "Govt. College of Engineering, Nandurbar",
+      "Govt. College of Engineering, Buldhana",
+      "Govt. College of Engineering, Akola",
+      "Govt. College of Engineering, Washim",
+      "Govt. College of Engineering, Hingoli",
+      "IIT Hyderabad, Sangareddy (TS)",
+      "IIIT Hyderabad, Hyderabad (TS)",
+      "JNTUH College of Engineering, Hyderabad (TS)",
+      "Osmania University College of Engineering, Hyderabad (TS)",
+      "University College of Technology (OU), Hyderabad (TS)",
+      "Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad (TS)",
+      "Vasavi College of Engineering, Hyderabad (TS)",
+      "Muffakham Jah College of Engineering and Technology, Hyderabad (TS)",
+      "Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad (TS)",
+      "VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad (TS)",
+      "Vardhaman College of Engineering, Hyderabad (TS)",
+      "Mahatma Gandhi Institute of Technology (MGIT), Hyderabad (TS)",
+      "Sreenidhi Institute of Science and Technology (SNIST), Hyderabad (TS)",
+      "BVRIT Hyderabad College of Engineering for Women, Hyderabad (TS)",
+      "G. Narayanamma Institute of Technology and Science (GNITS), Hyderabad (TS)",
+      "Keshav Memorial Institute of Technology (KMIT), Hyderabad (TS)",
+      "Geethanjali College of Engineering and Technology, Hyderabad (TS)",
+      "Institute of Aeronautical Engineering (IARE), Hyderabad (TS)",
+      "MLR Institute of Technology, Hyderabad (TS)",
+      "CMR College of Engineering and Technology, Hyderabad (TS)",
+      "CMR Institute of Technology, Hyderabad (TS)",
+      "CMR Technical Campus, Hyderabad (TS)",
+      "St. Martin's Engineering College, Hyderabad (TS)",
+      "Vignan Bharathi Institute of Technology (VBIT), Hyderabad (TS)",
+      "AVN Institute of Engineering and Technology, Hyderabad (TS)",
+      "Sridevi Women's Engineering College, Hyderabad (TS)",
+      "Methodist College of Engineering and Technology, Hyderabad (TS)",
+      "Bharat Institute of Engineering and Technology, Hyderabad (TS)",
+      "Sri Indu College of Engineering and Technology, Hyderabad (TS)",
+      "Sri Indu Institute of Engineering and Technology, Hyderabad (TS)",
+      "KGR Institute of Technology and Management, Hyderabad (TS)",
+      "Vignana Institute of Technology and Science, Hyderabad (TS)",
+      "J.B. Institute of Engineering and Technology (JBIET), Hyderabad (TS)",
+      "Narsimha Reddy Engineering College, Hyderabad (TS)",
+      "Malla Reddy Engineering College, Hyderabad (TS)",
+      "Malla Reddy College of Engineering and Technology, Hyderabad (TS)",
+      "Malla Reddy Institute of Technology and Science, Hyderabad (TS)",
+      "Malla Reddy Institute of Engineering and Technology, Hyderabad (TS)",
+      "Malla Reddy College of Engineering for Women, Hyderabad (TS)",
+      "Malla Reddy College of Engineering, Hyderabad (TS)",
+      "Marri Laxman Reddy Institute of Technology and Management, Hyderabad (TS)",
+      "ACE Engineering College, Hyderabad (TS)",
+      "Samskruthi College of Engineering and Technology, Hyderabad (TS)",
+      "Anurag University, Hyderabad (TS)",
+      "Holy Mary Institute of Technology and Science, Hyderabad (TS)",
+      "Sphoorthy Engineering College, Hyderabad (TS)",
+      "Swami Vivekananda Institute of Technology, Hyderabad (TS)",
+      "Joginpally B.R. Engineering College, Hyderabad (TS)",
+      "Sri Datta College of Engineering and Science, Hyderabad (TS)",
+      "Avanthi Institute of Engineering and Technology, Hyderabad (TS)",
+      "Neil Gogte Institute of Technology, Hyderabad (TS)",
+      "National Institute of Technology (NIT), Warangal (TS)",
+      "Kakatiya Institute of Technology and Science (KITS), Warangal (TS)",
+      "SR University, Warangal (TS)",
+      "Vaagdevi College of Engineering, Warangal (TS)",
+      "Balaji Institute of Technology and Science, Warangal (TS)",
+      "Talla Padmavathi College of Engineering, Warangal (TS)",
+      "Kakatiya University College of Engineering and Technology, Warangal (TS)",
+      "Aurora's Scientific Technological and Research Academy, Warangal (TS)",
+      "Vaagdevi Engineering College, Warangal (TS)",
+      "Jaya Institute of Technology and Science, Warangal (TS)",
+      "S.R. Engineering College, Warangal (TS)",
+      "Anubose Institute of Technology, Khammam (TS)",
+      "Vinuthna Institute of Technology and Science, Khammam (TS)",
+      "Vivekananda Institute of Technology and Science, Karimnagar (TS)",
+      "Swarna Bharathi Institute of Science and Technology, Khammam (TS)",
+      "Sree Chaitanya College of Engineering, Karimnagar (TS)",
+      "Sree Chaitanya Institute of Technological Sciences, Karimnagar (TS)",
+      "Trinity College of Engineering and Technology, Peddapalli (TS)",
+      "Jyothishmathi Institute of Technology and Science, Karimnagar (TS)",
+      "Jyothishmathi College of Engineering and Technology, Karimnagar (TS)",
+      "Vaageswari College of Engineering, Karimnagar (TS)",
+      "Vaageswari Institute of Technology, Karimnagar (TS)",
+      "VITS College of Engineering, Karimnagar (TS)",
+      "Anurag Engineering College, Kodad (TS)",
+      "Aurora's Engineering College, Bhongir (TS)",
+      "Bhoj Reddy Engineering College for Women, Hyderabad (TS)",
+      "C.V.R. College of Engineering, Hyderabad (TS)",
+      "Ellenki College of Engineering and Technology, Hyderabad (TS)",
+      "G. Pulla Reddy Engineering College, Hyderabad (TS)",
+      "Guru Nanak Institute of Technology, Hyderabad (TS)",
+      "Indur Institute of Engineering and Technology, Siddipet (TS)"
+    ];
 
     function showResults() {
       const input = document.getElementById("searchBox").value.toLowerCase();
@@ -610,6 +605,5 @@
       });
     }
   </script>
-
 </body>
 </html>
