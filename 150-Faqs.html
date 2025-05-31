@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Engineering Admission FAQs | Balanju Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,6 +34,8 @@
     h2 {
       text-align: center;
       color: #2e7d32;
+      font-size: 26px;
+      margin-bottom: 20px;
     }
 
     .faq {
@@ -46,11 +49,10 @@
       border: none;
       width: 100%;
       text-align: left;
-      outline: none;
       font-size: 18px;
-      transition: background-color 0.3s ease;
       border-radius: 8px;
       margin-bottom: 10px;
+      transition: background-color 0.3s ease;
     }
 
     .question:hover {
@@ -76,72 +78,43 @@
       background-color: #e0f2f1;
     }
 
+    /* 📱 Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        font-size: 22px;
+        padding: 16px;
+      }
 
-    /* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
+      .container {
+        margin: 20px 10px;
+        padding: 15px;
+      }
 
-  .main-header .left h1 {
-    font-size: 22px;
-  }
+      h2 {
+        font-size: 22px;
+      }
 
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
+      .question {
+        font-size: 16px;
+        padding: 14px;
+      }
 
-  .scroll-text {
-    font-size: 13px;
-  }
+      .answer {
+        font-size: 15px;
+      }
 
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
-
-  .section {
-    padding: 20px 15px;
-  }
-
-  .section h3 {
-    font-size: 20px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
-
+      footer {
+        font-size: 13px;
+        padding: 15px;
+      }
+    }
   </style>
 </head>
-<body>
 
-  <header>🔍 Engineering Admission FAQs</header>
+<body>
+  <header>
+    Engineering Admission FAQs
+  </header>
 
   <div class="container">
     <h2>Frequently Asked Questions</h2>
@@ -171,25 +144,18 @@
   </div>
 
   <footer>
-    💡 Need more help? <br>
-    <a href="https://wa.me/917207800211" target="_blank">Chat with Balanju Team on WhatsApp</a>
+    © 2025 Balanju Consultancy | All Rights Reserved
   </footer>
 
   <script>
-    // Toggle answer display on click
     const questions = document.querySelectorAll('.question');
-    questions.forEach(q => {
-      q.addEventListener('click', () => {
-        q.classList.toggle('active');
-        const answer = q.nextElementSibling;
-        if (answer.style.display === "block") {
-          answer.style.display = "none";
-        } else {
-          answer.style.display = "block";
-        }
+    questions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const answer = btn.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
   </script>
-
 </body>
 </html>
