@@ -1,248 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Branches Info| Balanju Consultancy </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Branches Info | Balanju Consultancy</title>
   <style>
-    /* Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f0f9f9;
-        color: #003344;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e0f7fa;
+      color: #004d40;
     }
 
     header {
-        background-color: #00796b;
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
-        font-size: 34px;
-        font-weight: bold;
-        letter-spacing: 1.5px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    h1 {
-        font-size: 28px;
-        text-align: center;
-        margin: 40px 0 20px;
-        color: #00695c;
+      background-color: #00796b;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .intro {
-        text-align: center;
-        margin: 20px auto;
-        padding: 0 20px;
-        max-width: 900px;
+      text-align: center;
+      padding: 20px;
     }
 
     .intro h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: #00796b;
+      font-size: 24px;
+      color: #00695c;
     }
 
     .intro p {
-        font-size: 17px;
-        line-height: 1.6;
-        color: #004d40;
+      font-size: 16px;
+      color: #004d40;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      color: #00796b;
+      margin: 30px 0 10px;
     }
 
     .branches {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 20px;
-        padding: 0 5%;
-        margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 16px;
+      padding: 0 16px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .branch-link {
-        background-color: white;
-        border-radius: 12px;
-        padding: 18px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 600;
-        color: #004d40;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s, background-color 0.3s;
-    }
-
-    .branch-link a {
-        color: inherit;
-        text-decoration: none;
-        display: block;
+      background-color: white;
+      padding: 14px 10px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
     }
 
     .branch-link:hover {
-        background-color: #e0f2f1;
-        transform: translateY(-5px);
+      background-color: #b2dfdb;
+      transform: scale(1.05);
     }
 
-    /* Promo container */
+    .branch-link a {
+      text-decoration: none;
+      color: #004d40;
+      display: block;
+    }
+
     .branch-promo-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        padding: 0 5%;
-        justify-content: center;
-        margin-bottom: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .promo-box {
-        background-color: #fff3cd;
-        padding: 25px;
-        border-radius: 15px;
-        max-width: 350px;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex: 1 1 250px;
+      background-color: #fff3cd;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     .promo-box h2 {
-        color: #d84315;
-        font-size: 20px;
-        margin-bottom: 10px;
+      font-size: 20px;
+      color: #bf360c;
+      margin-bottom: 10px;
     }
 
     .promo-box p {
-        font-size: 15px;
-        margin-bottom: 20px;
-        color: #5d4037;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     .promo-box button {
-        background-color: #ff9800;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
     .promo-box button:hover {
-        background-color: #f57c00;
+      background-color: #f57c00;
     }
 
-    /* Marquee Link */
-    marquee a {
-        text-decoration: none;
+    marquee {
+      margin-top: 30px;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 600px) {
+      .branch-link {
+        font-size: 14px;
+        padding: 12px;
+      }
+
+      h1 {
         font-size: 20px;
-        color: green;
+      }
+
+      .promo-box h2 {
+        font-size: 18px;
+      }
+
+      .promo-box p {
+        font-size: 14px;
+      }
+
+      .promo-box button {
+        font-size: 14px;
+      }
     }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-        header {
-            font-size: 26px;
-            padding: 20px 10px;
-        }
-
-        h1 {
-            font-size: 22px;
-            margin: 30px 0 15px;
-        }
-
-        .intro h2 {
-            font-size: 20px;
-        }
-
-        .intro p {
-            font-size: 15px;
-        }
-
-        .branch-link {
-            font-size: 16px;
-            padding: 14px;
-        }
-
-        .promo-box {
-            padding: 20px;
-        }
-
-        .promo-box h2 {
-            font-size: 18px;
-        }
-
-        .promo-box p {
-            font-size: 14px;
-        }
-
-        .promo-box button {
-            font-size: 15px;
-            padding: 10px 18px;
-        }
-
-        marquee a {
-            font-size: 16px;
-        }
-    }
-</style>
-
+  </style>
 </head>
 <body>
-    <header>🚀EXPLORE ENGINEERING BRANCHES🚀</header>
 
-    <div class="intro">
-        <h2>📚B.Tech Branches</h2>
-        <p>
-            Explore detailed information about the most in-demand engineering branches.<br>
-            Learn about core subjects, job opportunities, future scope, and top recruiters.<br>
-            Click any branch below to get started!
-        </p>
+  <header>🚀 EXPLORE ENGINEERING BRANCHES 🚀</header>
+
+  <div class="intro">
+    <h2>📚 B.Tech Branches</h2>
+    <p>
+      Explore detailed information about the most in-demand engineering branches.<br>
+      Learn about core subjects, job opportunities, future scope, and top recruiters.<br>
+      Click any branch below to get started!
+    </p>
+  </div>
+
+  <h1>💻 Computer & IT Related Branches</h1>
+  <div class="branches">
+    <div class="branch-link"><a href="13cse.html">💻 CSE</a></div>
+    <div class="branch-link"><a href="13AIML.html">🤖 AIML</a></div>
+    <div class="branch-link"><a href="13CYBER.html">🔐 Cyber Security</a></div>
+    <div class="branch-link"><a href="13IT.html">💾 IT</a></div>
+    <div class="branch-link"><a href="13IOT.html">🌐 IoT</a></div>
+    <div class="branch-link"><a href="13data_science.html">📊 Data Science</a></div>
+    <div class="branch-link"><a href="13software engineering.html">💻 Software Engi</a></div>
+    <div class="branch-link"><a href="13cloud_computing.html">☁️ Cloud Computing</a></div>
+  </div>
+
+  <h1>🔧 Core Engineering Branches (Traditional)</h1>
+  <div class="branches">
+    <div class="branch-link"><a href="14ece.html">📡 ECE</a></div>
+    <div class="branch-link"><a href="14eee.html">⚡ EEE</a></div>
+    <div class="branch-link"><a href="14civil.html">🏗️ Civil</a></div>
+    <div class="branch-link"><a href="14mech.html">⚙️ Mechanical</a></div>
+    <div class="branch-link"><a href="14chemical.html">🧪 Chemical</a></div>
+  </div>
+
+  <h1>🧬 Bio & Environmental</h1>
+  <div class="branches">
+    <div class="branch-link"><a href="15biotech.html">🧬 Biotechnology</a></div>
+    <div class="branch-link"><a href="15food_tech.html">🥗 Food Technology</a></div>
+    <div class="branch-link"><a href="15Environmental-Engin.html">🌱 Environmental</a></div>
+  </div>
+
+  <h1>🚀 Specialized & Interdisciplinary</h1>
+  <div class="branch-promo-container">
+    <div class="branches" style="flex: 3;">
+      <div class="branch-link"><a href="16robotics.html">🤖 Robotics</a></div>
+      <div class="branch-link"><a href="16aerospace.html">🚀 Aerospace</a></div>
+      <div class="branch-link"><a href="16mining.html">⛏️ Mining</a></div>
+      <div class="branch-link"><a href="16engineering_physics.html">🧪 Engineering Physics</a></div>
+      <div class="branch-link"><a href="16chemical.html">🧪 Chemical</a></div>
     </div>
 
-    <h1>💻 Computer & IT Related Branches</h1>
-    <div class="branches">
-        <div class="branch-link"><a href="13cse.html">💻 CSE</a></div>
-        <div class="branch-link"><a href="13AIML.html">🤖 AIML</a></div>
-        <div class="branch-link"><a href="13CYBER.html">🔐 Cyber Security</a></div>
-        <div class="branch-link"><a href="13IT.html">💾 IT</a></div>
-        <div class="branch-link"><a href="13IOT.html">🌐 IoT</a></div>
-        <div class="branch-link"><a href="13data_science.html">📊 Data Science</a></div>
-        <div class="branch-link"><a href="13software engineering.html">💻 Software Engi</a></div>
-        <div class="branch-link"><a href="13cloud_computing.html">☁️ Cloud Computing</a></div>
+    <div class="promo-box">
+      <h2>📌 Need Help with EAMCET Counseling?</h2>
+      <p>Confused about choosing the right branch? Book our 1-on-1 <strong>paid counseling</strong> session for expert guidance. We'll help you make the smartest choice!</p>
+      <a href="1000paid-cousilling.html" target="_blank">
+        <button>💬 Get Counseling Help</button>
+      </a>
     </div>
+  </div>
 
-    <h1>🔧 Core Engineering Branches </h1>
-    <div class="branches">
-        <div class="branch-link"><a href="14ece.html">📡 ECE</a></div>
-        <div class="branch-link"><a href="14eee.html">⚡ EEE</a></div>
-        <div class="branch-link"><a href="14civil.html">🏗️ Civil</a></div>
-        <div class="branch-link"><a href="14mech.html">⚙️ Mechanical</a></div>
-        <div class="branch-link"><a href="14chemical.html">🧪 Chemical</a></div>
-    </div>
-
-    <h1>🧬 Bio & Environmental</h1>
-    <div class="branches">
-        <div class="branch-link"><a href="15biotech.html">🧬 Biotechnology</a></div>
-        <div class="branch-link"><a href="15food_tech.html">🥗 Food Technology</a></div>
-        <div class="branch-link"><a href="15Environmental-Engin.html">🌱 Environmental</a></div>
-    </div>
-
-    <h1>🚀 Specialized & Interdisciplinary</h1>
-    <div class="branch-promo-container">
-        <div class="branches" style="flex: 3;">
-            <div class="branch-link"><a href="16robotics.html">🤖 Robotics</a></div>
-            <div class="branch-link"><a href="16aerospace.html">🚀 Aerospace</a></div>
-            <div class="branch-link"><a href="16mining.html">⛏️ Mining</a></div>
-            <div class="branch-link"><a href="16engineering_physics.html">🧪 Engineering Physics</a></div>
-            <div class="branch-link"><a href="16chemical.html">🧪 Chemical</a></div>
-        </div>
-
-        <div class="promo-box">
-            <h2>📌 Need Help with EAMCET Counseling?</h2>
-            <p>Confused about choosing the right branch? Book our 1-on-1 <strong>paid counseling</strong> session for expert guidance. We'll help you make the smartest choice!</p>
-            <a href="1000paid-cousilling.html" target="_blank">
-                <button>💬 Get Counseling Help</button>
-            </a>
-        </div>
-    </div>
-    <h1><marquee scrollamount="10"><font color="GREEN" size="20" FACE="roboto"><a href="index-trending-branc.html">TOP 10 BRANCHES IN ENGINEERING</a></font></marquee></h1>
+  <marquee scrollamount="20">
+    <font color="GREEN" size="6" face="roboto">
+      <a href="index-trending-branc.html">TOP 10 BRANCHES IN ENGINEERING</a>
+    </font>
+  </marquee>
 
 </body>
 </html>
