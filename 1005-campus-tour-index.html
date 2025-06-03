@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Campus Tour</title>
+    <style>
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: #004080;
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #0055a5;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e65c00;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #003366;
+        }
+
+        .tour-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tour-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tour-card-content {
+            padding: 1.5rem;
+        }
+
+        .tour-card h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+        .virtual-tour {
+            background-color: #004080;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .virtual-tour h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .schedule-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff6600;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">University Name</div>
+        <p>Explore Our Beautiful Campus</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#tour-options">Tour Options</a></li>
+            <li><a href="#virtual-tour">Virtual Tour</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#schedule">Schedule a Tour</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Discover Our Campus</h1>
+        <p>Experience the vibrant life, state-of-the-art facilities, and beautiful surroundings that make our university unique.</p>
+        <a href="#schedule" class="btn">Schedule Your Visit</a>
+    </section>
+
+    <div class="container">
+        <section id="tour-options">
+            <h2 class="section-title">Campus Tour Options</h2>
+            <div class="tour-options">
+                <div class="tour-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="General Tour">
+                    <div class="tour-card-content">
+                        <h3>General Campus Tour</h3>
+                        <p>Join our student ambassadors for a comprehensive tour of campus highlights, including academic buildings, libraries, and student centers.</p>
+                        <button class="btn" onclick="openModal('general-tour')">Learn More</button>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Academic Tour">
+                    <div class="tour-card-content">
+                        <h3>Academic Department Tour</h3>
+                        <p>Explore facilities specific to your academic interests with faculty and current students in your intended major.</p>
+                        <button class="btn" onclick="openModal('academic-tour')">Learn More</button>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Housing Tour">
+                    <div class="tour-card-content">
+                        <h3>Residence Hall Tour</h3>
+                        <p>See where you'll live! Tour our residence halls and learn about campus housing options and living-learning communities.</p>
+                        <button class="btn" onclick="openModal('housing-tour')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="virtual-tour" id="virtual-tour">
+            <h2>Can't Visit in Person?</h2>
+            <p>Take our interactive virtual tour from anywhere in the world</p>
+            <a href="#" class="btn">Start Virtual Tour</a>
+        </section>
+
+        <section id="gallery">
+            <h2 class="section-title">Campus Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80" alt="Library">
+                    <div class="gallery-caption">University Library</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Dormitory">
+                    <div class="gallery-caption">Student Residence Hall</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campus View">
+                    <div class="gallery-caption">Main Quadrangle</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Classroom">
+                    <div class="gallery-caption">Science Laboratory</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sports Facility">
+                    <div class="gallery-caption">Athletics Center</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cafeteria">
+                    <div class="gallery-caption">Dining Commons</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule">
+            <h2 class="section-title">Schedule Your Campus Tour</h2>
+            <div class="schedule-form">
+                <form id="tour-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Tour Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tour-type">Tour Type</label>
+                        <select id="tour-type" name="tour-type" required>
+                            <option value="">Select a tour type</option>
+                            <option value="general">General Campus Tour</option>
+                            <option value="academic">Academic Department Tour</option>
+                            <option value="housing">Residence Hall Tour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" max="10" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Special Requests or Questions</label>
+                        <textarea id="comments" name="comments"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Request</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for tour details -->
+    <div id="general-tour" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('general-tour')">&times;</span>
+            <h2>General Campus Tour</h2>
+            <p>Our general campus tour lasts approximately 90 minutes and covers all the highlights of our beautiful campus. You'll see:</p>
+            <ul>
+                <li>Academic buildings and classrooms</li>
+                <li>University library and study spaces</li>
+                <li>Student union and dining facilities</li>
+                <li>Recreational and athletic facilities</li>
+                <li>Outdoor spaces and landmarks</li>
+            </ul>
+            <p>Tours are led by current student ambassadors who can share their personal experiences and answer your questions.</p>
+            <p><strong>Availability:</strong> Monday-Friday at 10am and 2pm, Saturday at 11am</p>
+        </div>
+    </div>
+
+    <div id="academic-tour" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('academic-tour')">&times;</span>
+            <h2>Academic Department Tour</h2>
+            <p>Our academic department tours allow you to explore facilities specific to your intended major. These tours include:</p>
+            <ul>
+                <li>Department-specific classrooms and labs</li>
+                <li>Meetings with faculty in your area of interest</li>
+                <li>Discussions with current students in the program</li>
+                <li>Information about research opportunities</li>
+                <li>Career preparation resources</li>
+            </ul>
+            <p>Please schedule at least 2 weeks in advance to allow time for department coordination.</p>
+            <p><strong>Availability:</strong> Varies by department</p>
+        </div>
+    </div>
+
+    <div id="housing-tour" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('housing-tour')">&times;</span>
+            <h2>Residence Hall Tour</h2>
+            <p>Our residence hall tours give you a firsthand look at campus living options. You'll see:</p>
+            <ul>
+                <li>Sample dorm rooms (single, double, and suite-style)</li>
+                <li>Community bathrooms and laundry facilities</li>
+                <li>Common areas and study lounges</li>
+                <li>Dining halls and meal plan options</li>
+                <li>Residential life staff and resources</li>
+            </ul>
+            <p>Tours are led by resident advisors who can answer all your questions about campus life.</p>
+            <p><strong>Availability:</strong> Monday-Friday at 1pm and 3pm</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo">University Name</div>
+        <p>123 College Avenue, University Town, ST 12345</p>
+        <p>Phone: (123) 456-7890 | Email: admissions@university.edu</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2023 University Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for interactive elements
+        document.getElementById('tour-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const tourType = document.getElementById('tour-type').value;
+            
+            // Simple validation
+            if (name && email && date && tourType) {
+                alert(`Thank you, ${name}! Your ${tourType.replace('-', ' ')} request for ${date} has been submitted. We'll contact you at ${email} to confirm.`);
+                document.getElementById('tour-form').reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set minimum date for tour scheduling (today)
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+
+    <!-- Font Awesome for icons (would normally be a CDN link) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</body>
+</html>
