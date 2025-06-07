@@ -6,23 +6,48 @@
   <title>Balanju Consultancy | Engineering Colleges in India</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #00796b;
+      --secondary-color: #004d40;
+      --accent-color: #ff9800;
+      --light-bg: #e0f7fa;
+      --card-bg: #ffffff;
+      --text-color: #003344;
+      --text-light: #616161;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e0f7fa;
-      color: #003344;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.5;
     }
 
     header {
-      background-color: #00796b;
+      background-color: var(--primary-color);
       color: white;
-      padding: 15px 0;
+      padding: 12px 0;
       text-align: center;
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 24px);
       font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
     }
 
     .tag {
@@ -30,157 +55,168 @@
       background-color: #1565c0;
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 20px;
-      margin: 3px;
-      font-size: 14px;
-      transition: background 0.3s;
+      padding: 6px 10px;
+      border-radius: 16px;
+      margin: 4px;
+      font-size: 13px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
     }
 
     .tag:hover {
       background-color: #0d47a1;
+      transform: translateY(-1px);
     }
 
     .search-area {
       background-color: #e3f2fd;
-      padding: 20px 10px;
+      padding: 15px 0;
       text-align: center;
     }
 
     .search-box {
       display: flex;
       align-items: center;
-      justify-content: center;
       background: white;
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px 12px;
+      width: 100%;
       max-width: 500px;
-      margin: 15px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 10px auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     .search-box i {
-      color: #616161;
-      font-size: 16px;
+      color: var(--text-light);
+      font-size: 15px;
       margin-right: 8px;
     }
 
     .search-box input {
       border: none;
-      font-size: 16px;
+      font-size: 15px;
       width: 100%;
       outline: none;
+      padding: 4px 0;
     }
 
     #searchResults {
-      max-width: 100%;
-      margin: 0 auto;
-      margin-top: 15px;
-      text-align: left;
-      padding: 0 10px;
+      width: 100%;
+      max-width: 500px;
+      margin: 10px auto;
+      padding: 0;
     }
 
     #searchResults li {
-      background:white;
-      padding: 10px;
-      margin: 6px 0;
+      background: var(--card-bg);
+      padding: 10px 15px;
+      margin: 5px 0;
       border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
       font-size: 14px;
       list-style: none;
+      transition: transform 0.2s;
+    }
+
+    #searchResults li:hover {
+      transform: translateX(3px);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(18px, 4vw, 20px);
+      color: var(--secondary-color);
+      margin: 20px 0 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #b2dfdb;
     }
 
     .intro {
       text-align: center;
-      margin: 20px auto;
-      width: 90%;
+      margin: 15px auto;
+      max-width: 800px;
     }
 
     .intro h2 {
-      font-size: 22px;
-      color: #00695c;
+      font-size: clamp(18px, 4vw, 22px);
+      color: var(--primary-color);
+      margin-bottom: 8px;
     }
 
     .intro p {
-      font-size: 16px;
-      color: #004d40;
+      font-size: clamp(14px, 3vw, 16px);
+      color: var(--secondary-color);
+      margin: 8px 0;
     }
 
-    .branches {
+    .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-      width: 95%;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      padding: 10px 0;
     }
 
-    .branch-link {
-      background-color: white;
-      padding: 15px;
-      border-radius: 12px;
+    .card {
+      background-color: var(--card-bg);
+      padding: 12px 8px;
+      border-radius: 8px;
       text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: all 0.3s ease-in-out;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.2s ease;
     }
 
-    .branch-link:hover {
+    .card:hover {
       background-color: #b2dfdb;
-      transform: scale(1.03);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     }
 
-    .branch-link a {
+    .card a {
       text-decoration: none;
-      color: #004d40;
-      font-size: 15px;
+      color: var(--secondary-color);
+      display: block;
+      height: 100%;
     }
 
     .promo-box {
       background-color: #fff3cd;
       padding: 15px;
-      border-radius: 12px;
-      max-width: 90%;
-      margin: 30px auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      margin: 20px auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       text-align: center;
+      max-width: 600px;
     }
 
     .promo-box h2 {
-      margin-top: 0;
-      font-size: 18px;
+      margin: 0 0 10px;
+      font-size: 17px;
       color: #bf360c;
     }
 
     .promo-box p {
       font-size: 14px;
-      margin-bottom: 15px;
+      margin: 0 0 12px;
+      color: #5d4037;
     }
 
-    .promo-box button {
-      background-color: #ff9800;
+    .btn {
+      background-color: var(--accent-color);
       color: white;
       border: none;
       padding: 8px 16px;
       font-size: 14px;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
-    }
-
-    .promo-box button:hover {
-      background-color: #f57c00;
-    }
-
-    marquee a {
+      transition: background 0.2s;
+      display: inline-block;
       text-decoration: none;
-      color: #003366;
-      font-size: 16px;
     }
 
-    marquee a:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background-color: #e65100;
     }
 
     .whatsapp-button {
@@ -194,169 +230,303 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 998;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 20px;
-      margin: 20px 0;
+    .whatsapp-button i {
+      font-size: 18px;
     }
 
-    /* Mobile-specific styles */
-    @media (max-width: 768px) {
-      header {
-        font-size: 20px;
-        padding: 12px 0;
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 10px 0;
+      gap: 5px;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 480px) {
+      .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       }
       
-      .search-box {
-        width: 90%;
-        padding: 8px 12px;
-      }
-      
-      .search-box input {
-        font-size: 14px;
-      }
-      
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .branch-link {
-        padding: 12px 8px;
-        font-size: 14px;
-      }
-      
-      .branches {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        padding: 15px;
-      }
-      
-      marquee a {
-        font-size: 14px;
+      .card {
+        padding: 10px 5px;
+        font-size: 13px;
       }
       
       .whatsapp-button {
-        font-size: 12px;
+        font-size: 13px;
         padding: 8px 12px;
+      }
+      
+      .promo-box {
+        padding: 12px;
       }
     }
 
-    @media (max-width: 480px) {
-      header {
-        font-size: 18px;
-      }
-      
-      .intro h2 {
-        font-size: 18px;
-      }
-      
-      .intro p {
-        font-size: 14px;
-      }
-      
-      .branches {
-        grid-template-columns: 1fr;
-      }
-      
-      .branch-link {
-        padding: 10px;
-      }
-    }
+
+    .professional-footer {
+  background: linear-gradient(135deg, #1a3a4a 0%, #0d2b3a 100%);
+  color: #ffffff;
+  padding: 3rem 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 3px solid #2a9d8f;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2a9d8f;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #e9c46a;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #d3e0e4;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.highlight-link {
+  color: #e9c46a !important;
+  font-weight: 500;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #d3e0e4;
+  font-size: 0.95rem;
+}
+
+.contact-info i {
+  width: 20px;
+  color: #2a9d8f;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-media a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+  background: #2a9d8f;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a8c0c8;
+}
+
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legal-links a {
+  color: #a8c0c8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #e9c46a;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-heading {
+    margin-top: 1.5rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
-  <!-- Rest of your HTML remains the same -->
   <header>🎓 EXPLORE ENGINEERING COLLEGES Across INDIA</header>
 
   <div class="search-area">
-    <h2>🔍 JUST TYPE COLLEGE NAME & EXPLORE</h2>
-    <div class="search-box">
-      <i class="fas fa-search"></i>
-      <input type="text" id="searchBox" placeholder="Search for college name..." oninput="showResults()">
+    <div class="container">
+      <h2>🔍 JUST TYPE COLLEGE NAME & EXPLORE</h2>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchBox" placeholder="Search for college name..." oninput="showResults()">
+      </div>
+
+      <div class="tags-container">
+        <a href="23-IIT-index.html" class="tag">IITS</a>
+        <a href="23-nit-index.html" class="tag">NITS</a>
+        <a href="23index-iiit.html" class="tag">IIITS</a>
+        <a href="23-gfti-index.html" class="tag">GFTIS</a>
+        <a href="25top_university.html" class="tag">UNIVERSITY</a>
+      </div>
+
+      <ul id="searchResults"></ul>
+
+      <div class="intro">
+        <h2>🏫 1000+ Colleges. Sorted. Easy. Fast.</h2>
+        <p>
+          Find top engineering colleges across India — filtered by state, type, and rank.<br>
+          Start your admission research now with just one click!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">🏛️ EXPLORE BY INSTITUTION TYPE</h2>
+    <div class="grid-container">
+      <div class="card"><a href="23-IIT-index.html">🎓 IIT's</a></div>
+      <div class="card"><a href="23-nit-index.html">🏗️ NIT's</a></div>
+      <div class="card"><a href="23index-iiit.html">💻 IIIT's</a></div>
+      <div class="card"><a href="23-gfti-index.html">🏛️ GFTI's</a></div>
+      <div class="card"><a href="23-universite-index.html">🎓 Top Universities</a></div>
     </div>
 
-    <div class="tags">
-      <a href="23-IIT-index.html" class="tag">IITS</a>
-      <a href="23-nit-index.html" class="tag">NITS</a>
-      <a href="23index-iiit.html" class="tag">IIITS</a>
-      <a href="23-gfti-index.html" class="tag">GFTIS</a>
-      <a href="25top_university.html" class="tag">UNIVERSITY</a>
-      
-      
+    <h2 class="section-title">📍 EXPLORE STATE-WISE</h2>
+    <div class="grid-container">
+<div class="card"><a href="index-AP-COLLEGE.html">Andhra Pradesh</a></div>
+<div class="card"><a href="index-arunachal-college.html">Arunachal Pradesh</a></div>
+<div class="card"><a href="index-assam-college.html">Assam</a></div>
+<div class="card"><a href="index-bihar-college.html">Bihar</a></div>
+<div class="card"><a href="index-chhattisgarh-college.html">Chhattisgarh</a></div>
+<div class="card"><a href="index-dehli-college.html">Delhi</a></div>
+<div class="card"><a href="index-goa-college.html">Goa</a></div>
+<div class="card"><a href="index-gujarath-college.html">Gujarat</a></div>
+<div class="card"><a href="index-haryana-college.html">Haryana</a></div>
+<div class="card"><a href="index-hemachal-college.html">Himachal Pradesh</a></div>
+<div class="card"><a href="index-jarkhand-college.html">Jharkhand</a></div>
+<div class="card"><a href="index-karnataka-college-index.html">Karnataka</a></div>
+<div class="card"><a href="index-kerala-college.html">Kerala</a></div>
+<div class="card"><a href="index-madhyaprad-college.html">Madhya Pradesh</a></div>
+<div class="card"><a href="index-maharastha-college.html">Maharashtra</a></div>
+<div class="card"><a href="index-manipur-college.html">Manipur</a></div>
+<div class="card"><a href="index-meghalaya-college.html">Meghalaya</a></div>
+<div class="card"><a href="index-mezoram-college.html">Mizoram</a></div>
+<div class="card"><a href="index-nagaland-college.html">Nagaland</a></div>
+<div class="card"><a href="index-odisha-college.html">Odisha</a></div>
+<div class="card"><a href="index-pb-college.html">Punjab</a></div>
+<div class="card"><a href="index-rajasthan-college.html">Rajasthan</a></div>
+<div class="card"><a href="index-sikkim-college.html">Sikkim</a></div>
+<div class="card"><a href="index-THAMIL-COLLEGE.html">Tamil Nadu</a></div>
+<div class="card"><a href="index-ts-college.html">Telangana</a></div>
+<div class="card"><a href="index-tripura-college.html">Tripura</a></div>
+<div class="card"><a href="index-uttarakhand-college.html">Uttarakhand</a></div>
+<div class="card"><a href="index-uttarprad-college.html">Uttar Pradesh</a></div>
+<div class="card"><a href="index-west-bengal-college.html">West Bengal</a></div>
+
+
+
+
     </div>
 
-    <ul id="searchResults"></ul>
-
-    <div class="intro">
-      <h2>🏫 1000+ Colleges. Sorted. Easy. Fast.</h2>
-      <p>
-        Find top engineering colleges across India — filtered by state, type, and rank.<br>
-        Start your admission research now with just one click!
-      </p>
+    <div class="promo-box fade-in">
+      <h2>📌 Need Help Choosing a College?</h2>
+      <p>Our expert team helps you compare placements, NIRF rank, infra & fees. Book a <strong>1-on-1 paid counseling</strong> today!</p>
+      <a href="1000paid-cousilling.html" target="_blank" class="btn">🎯 Get Expert Help</a>
     </div>
   </div>
 
-  <h1>🏛️ EXPLORE BY INSTITUTION TYPE</h1>
-  <div class="branches">
-    <div class="branch-link"><a href="23-IIT-index.html">🎓 IIT's</a></div>
-    <div class="branch-link"><a href="23-nit-index.html">🏗️ NIT's</a></div>
-    <div class="branch-link"><a href="23index-iiit.html">💻 IIIT's</a></div>
-    <div class="branch-link"><a href="23-gfti-index.html">🏛️ GFTI's</a></div>
-    <div class="branch-link"><a href="23-universite-index.html">🎓 Top Universities (Central/State)</a></div>
-    
-    
-  </div>
-
-  <h1>📍 EXPLORE STATE-WISE</h1>
-  <div class="branches">
-    <div class="branch-link"><a href="colleges/ap.html">Andhra Pradesh</a></div>
-    <div class="branch-link"><a href="colleges/assam.html">Assam</a></div>
-    <div class="branch-link"><a href="colleges/bihar.html">Bihar</a></div>
-    <div class="branch-link"><a href="colleges/chhattisgarh.html">Chhattisgarh</a></div>
-    <div class="branch-link"><a href="colleges/delhi.html">Delhi NCR</a></div>
-    <div class="branch-link"><a href="colleges/goa.html">Goa</a></div>
-    <div class="branch-link"><a href="colleges/gujarat.html">Gujarat</a></div>
-    <div class="branch-link"><a href="colleges/haryana.html">Haryana</a></div>
-    <div class="branch-link"><a href="colleges/himachal.html">Himachal Pradesh</a></div>
-    <div class="branch-link"><a href="colleges/jharkhand.html">Jharkhand</a></div>
-    <div class="branch-link"><a href="colleges/karnataka.html">Karnataka</a></div>
-    <div class="branch-link"><a href="colleges/kerala.html">Kerala</a></div>
-    <div class="branch-link"><a href="colleges/mp.html">Madhya Pradesh</a></div>
-    <div class="branch-link"><a href="colleges/maha.html">Maharashtra</a></div>
-    <div class="branch-link"><a href="colleges/manipur.html">Manipur</a></div>
-    <div class="branch-link"><a href="colleges/odisha.html">Odisha</a></div>
-    <div class="branch-link"><a href="colleges/punjab.html">Punjab</a></div>
-    <div class="branch-link"><a href="colleges/rajasthan.html">Rajasthan</a></div>
-    <div class="branch-link"><a href="colleges/tn.html">Tamil Nadu</a></div>
-    <div class="branch-link"><a href="index-ts-college.html">Telangana</a></div>
-    <div class="branch-link"><a href="colleges/up.html">Uttar Pradesh</a></div>
-    <div class="branch-link"><a href="colleges/uttarakhand.html">Uttarakhand</a></div>
-    <div class="branch-link"><a href="colleges/wb.html">West Bengal</a></div>
-  </div>
-
-  <div class="promo-box">
-    <h2>📌 Need Help Choosing a College?</h2>
-    <p>Our expert team helps you compare placements, NIRF rank, infra & fees.<br>
-      Book a <strong>1-on-1 paid counseling</strong> today!</p>
-    <a href="1000paid-cousilling.html" target="_blank">
-      <button>🎯 Get Expert Help</button>
-    </a>
-  </div>
-
-  <h1>
-    
-  </h1>
-
-  <a class="whatsapp-button" href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20college%20admission." target="_blank">💬 Chat with Us</a>
+  <a class="whatsapp-button" href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20college%20admission." target="_blank">
+    <i class="fab fa-whatsapp"></i> Chat with Us
+  </a>
 
   <script>
-    // Your existing JavaScript remains the same
     const colleges = [
       "JNTU Hyderabad", "Osmania University", "IIT Bombay", "NIT Trichy", "VIT Vellore",
       "MIT Pune", "SRM Chennai", "IIIT Hyderabad", "Andhra University", "CBIT Hyderabad",
@@ -585,25 +755,107 @@
       "Indur Institute of Engineering and Technology, Siddipet (TS)"
     ];
 
+
     function showResults() {
-      const input = document.getElementById("searchBox").value.toLowerCase();
-      const resultsDiv = document.getElementById("searchResults");
-
-      resultsDiv.innerHTML = "";
-
-      const filtered = colleges.filter(college => college.toLowerCase().includes(input));
-
-      if (filtered.length === 0 && input !== "") {
-        resultsDiv.innerHTML = "<li>No colleges found.</li>";
+      const input = document.getElementById('searchBox').value.toLowerCase();
+      const resultsDiv = document.getElementById('searchResults');
+    
+      resultsDiv.innerHTML = ""; // Clear previous results
+    
+      if (input.length < 2) { // Only show results if input has at least 2 characters
         return;
       }
+    
+      const filtered = colleges.filter(college => college.toLowerCase().includes(input));
 
+      if (filtered.length === 0) {
+        resultsDiv.innerHTML = "<li>No colleges found. Try a different search term.</li>";
+        return;
+      }
+    
       filtered.forEach(college => {
         const li = document.createElement("li");
         li.textContent = college;
+        li.style.animationDelay = `${filtered.indexOf(college) * 0.05}s`;
+        li.classList.add('fade-in');
         resultsDiv.appendChild(li);
+    
+        // Add functionality to each result
+        li.addEventListener('click', () => {
+          console.log(`Selected: ${college}`);
+          // You can redirect if needed: window.location.href = `index-${college.toLowerCase()}.html`;
+        });
       });
     }
+
   </script>
+
+
+<footer class="professional-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      
+      <div class="footer-column">
+        <h4 class="footer-heading">Quick Questions</h4>
+        <ul class="footer-links">
+          <li><a href="#">What are the top branches in Engineering?</a></li>
+          <li><a href="#">Which exams are required for Engineering admission?</a></li>
+          <li><a href="#">How to apply for state engineering counseling?</a></li>
+          <li><a href="#">Which NIRF colleges are best for B.Tech?</a></li>
+          <li><a href="#" class="highlight-link">Chat with Counselor</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4 class="footer-heading">Top Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#">Top Government Colleges</a></li>
+          <li><a href="#">Top Private Colleges</a></li>
+          <li><a href="#">Autonomous Institutes</a></li>
+          <li><a href="#">Deemed Universities</a></li>
+          <li><a href="#">Emerging Colleges</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Placement Reports</a></li>
+          <li><a href="#">Fee Comparison</a></li>
+          <li><a href="#">Cutoff Analysis</a></li>
+          <li><a href="#">Scholarship Options</a></li>
+          <li><a href="#">Branch Selector Tool</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4 class="footer-heading">Contact Us</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +91 9876543210</p>
+          <p><i class="fas fa-envelope"></i> info@engineeringindex.in</p>
+          <p><i class="fas fa-map-marker-alt"></i> Hyderabad, India</p>
+        </div>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@balajimrec227?si=7uKNTWzmGJqzbI1S"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/balaji_mrec_?igsh=MXB6NmNuaGJ2azA3bg=="><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/lucky-nayak-027050360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Engineering College Index. All Rights Reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

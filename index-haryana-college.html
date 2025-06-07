@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Haryana Colleges | 2025 Admissions, Rankings & Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --main-color: #FF9933; /* Using a saffron-like color */
+      --accent-color: #138808; /* Using a green-like color */
+      --secondary-color: #000080; /* Using a dark blue for contrast */
+      --bg-light: #f8f9fa;
+      --text-dark: #2a2a2a;
+      --text-light: #5a5a5a;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --mobile-padding: 15px;
+      --gradient: linear-gradient(135deg, #ff33e0 0%, #FF5722 100%); /* Using a gradient with main-color */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: var(--gradient);
+      color: #fff;
+      padding: 40px var(--mobile-padding);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+      background-size: cover;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      position: relative;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    nav {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 12px var(--mobile-padding);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--main-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    nav a:hover, nav a:focus {
+      color: var(--main-color);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 60%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 var(--mobile-padding);
+    }
+
+    .search-box {
+      text-align: center;
+      margin: 25px 0 35px;
+      position: relative;
+    }
+
+    .search-box input {
+      padding: 16px 25px;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      width: 100%;
+      max-width: 600px;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      padding-left: 50px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235a5a5a' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 20px center;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 15px rgba(19, 136, 8, 0.2);
+      outline: none;
+    }
+
+    #search-results {
+      margin-top: 15px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #search-results ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #search-results li {
+      background: #fff;
+      padding: 16px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    #search-results li:hover {
+      transform: translateY(-2px);
+    }
+
+    #search-results li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: block;
+    }
+
+    #search-results li span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 5px;
+    }
+
+    .categories-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 20px 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      margin: 0 -10px;
+    }
+
+    .categories-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .categories-scroll a {
+      flex: 0 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-weight: 600;
+      color: var(--main-color);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: all 0.3s;
+      border: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .categories-scroll a:hover {
+      background: var(--main-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    section {
+      background: #fff;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--accent-color);
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      line-height: 1.3;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 3px;
+    }
+
+    section p, section li {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: '•';
+      color: var(--accent-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    details {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    details summary {
+      font-weight: 600;
+      color: var(--text-dark);
+      padding: 10px 0;
+      cursor: pointer;
+      outline: none;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      list-style: none;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    details summary:hover {
+      color: var(--main-color);
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    details[open] summary::before {
+      content: '-';
+      background: var(--main-color);
+    }
+
+    details p {
+      padding: 10px 0 5px 30px;
+      color: var(--text-light);
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e9e9e9 100%);
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: 50px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--main-color);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--main-color);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 100;
+    }
+
+    .whatsapp-float a {
+      background: #25D366;
+      color: #fff;
+      padding: 14px 20px 14px 50px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-float a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .whatsapp-float a::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      width: 24px;
+      height: 24px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+    }
+
+    /* 📱 Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      header {
+        padding: 30px var(--mobile-padding);
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      
+      nav ul.show {
+        display: flex;
+      }
+      
+      nav a {
+        display: block;
+        padding: 10px 8px;
+      }
+      
+      .container {
+        padding: 0 var(--mobile-padding);
+      }
+      
+      section {
+        padding: 20px;
+      }
+      
+      section h2 {
+        font-size: 1.4rem;
+      }
+      
+      .categories-scroll {
+        padding: 15px 0;
+      }
+      
+      .categories-scroll a {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+      }
+      
+      .whatsapp-float a {
+        padding: 12px 16px 12px 42px;
+        font-size: 0.9rem;
+      }
+
+      .whatsapp-float a::before {
+        left: 12px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --mobile-padding: 12px;
+      }
+      
+      header {
+        padding: 25px var(--mobile-padding);
+      }
+      
+      header h1 {
+        font-size: 1.6rem;
+      }
+      
+      section {
+        padding: 18px;
+      }
+      
+      .search-box input {
+        padding: 14px 20px 14px 45px;
+        font-size: 0.95rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+  .info-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 25px;
+      margin: 30px 0;
+      position: relative;
+      overflow: hidden;
+      border-top: 3px solid var(--accent-color);
+    }
+
+    .info-card h3 {
+      color: var(--secondary-color);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .info-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent-color);
+    }
+
+    .info-card p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .info-card .highlight {
+      color: var(--main-color);
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-item {
+      background: rgba(255, 153, 51, 0.05);
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      border: 1px solid rgba(255, 153, 51, 0.1);
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--main-color);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    
+    </style>
+</head>
+<body>
+
+<header>
+  <h1>Haryana Colleges Directory 2025</h1>
+  <p>Discover premier educational institutions across Haryana with comprehensive rankings, admission details, and placement records</p>
+</header>
+
+<nav>
+  <div class="nav-container">
+    <button class="mobile-menu-btn">☰</button>
+    <ul id="nav-menu">
+      <li><a href="#about"><i class="fas fa-info-circle"></i> About HR</a></li>
+      <li><a href="#universities"><i class="fas fa-university"></i> Universities</a></li>
+      <li><a href="#cities"><i class="fas fa-map-marker-alt"></i> Cities</a></li>
+      <li><a href="#placements"><i class="fas fa-briefcase"></i> Placements</a></li>
+      <li><a href="#scholarships"><i class="fas fa-rupee-sign"></i> Scholarships</a></li>
+      <li><a href="#faqs"><i class="fas fa-question-circle"></i> FAQs</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="search-box">
+    <input type="text" placeholder="Search colleges by name, city, or stream..." id="college-search">
+    <div id="search-results"></div>
+  </div>
+
+  <div class="categories-scroll">
+    <a href="hr-hstes-info.html"><i class="fas fa-graduation-cap"></i> HSTES Info</a>
+    <a href="hr-jee-main-cutoffs.html"><i class="fas fa-chart-line"></i> JEE Main Cutoffs HR</a>
+    <a href="hr-neet-cutoffs.html"><i class="fas fa-chart-line"></i> NEET Cutoffs HR</a>
+    <a href="hr-college-predictor.html"><i class="fas fa-calculator"></i> College Predictor HR</a>
+    <a href="hr-top-engineering.html"><i class="fas fa-cogs"></i> Top Engineering HR</a>
+    <a href="hr-top-medical.html"><i class="fas fa-hospital"></i> Medical Colleges HR</a>
+    <a href="hr-government-colleges.html"><i class="fas fa-landmark"></i> Government Colleges HR</a>
+  </div>
+
+  <div class="info-card">
+    <h3>About Higher Education in Haryana</h3>
+    <p>
+      Haryana has a developing higher education sector with a focus on <span class="highlight">technical</span>, <span class="highlight">management</span>, and <span class="highlight">agricultural</span> education. The state is increasing its number of universities and colleges, aiming to provide quality education across various disciplines. Key educational centers include <span class="highlight">Kurukshetra</span>, <span class="highlight">Rohtak</span>, and the NCR regions like <span class="highlight">Gurugram</span> and <span class="highlight">Faridabad</span>.
+    </p>
+    <p>
+      Admissions to many professional courses are conducted through state-level counseling based on national exams like <span class="highlight">JEE Main</span> (for engineering), <span class="highlight">NEET</span> (for medical), and through the <span class="highlight">HSTES</span> (Haryana State Technical Education Society) counseling for various technical programs. The state government offers several <span class="highlight">scholarship schemes</span>.
+    </p>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">~600+</div>
+        <div class="stat-label">Colleges (Est.)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">~30+</div>
+        <div class="stat-label">Universities (Est.)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Improving</div>
+        <div class="stat-label">Placement Scenario</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">22</div>
+        <div class="stat-label">Districts</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="universities">
+    <h2>Major Universities & Institutions</h2>
+    <ul>
+      <li><strong>Kurukshetra University (KUK)</strong> - Kurukshetra: One of the oldest state universities</li>
+      <li><strong>Maharshi Dayanand University (MDU)</strong> - Rohtak: Major state university</li>
+      <li><strong>Guru Jambheshwar University of Science & Technology (GJU)</strong> - Hisar: Focus on science and technology</li>
+      <li><strong>Deenbandhu Chhotu Ram University of Science and Technology (DCRUST)</strong> - Murthal: State technical university</li>
+      <li><strong>National Dairy Research Institute (NDRI)</strong> - Karnal: Premier agricultural research institute</li>
+      <li><strong>IIT Delhi (Extension Campus)</strong> - Jhajjar: Part of IIT Delhi</li>
+      <li><strong>AIIMS (All India Institute of Medical Sciences)</strong> - Rewari: Premier medical institute</li>
+      <li><strong>Thapar Institute of Engineering & Technology</strong> - Patiala (Near Haryana border, popular among HR students)</li>
+      <li><strong>OP Jindal Global University (JGU)</strong> - Sonipat: Private university with diverse programs</li>
+    </ul>
+  </section>
+
+  <section id="cities">
+    <h2>Key Educational Cities/Regions</h2>
+    <ul>
+      <li><strong>Kurukshetra</strong>: KUK, NIT Kurukshetra (National Institute of Technology)</li>
+      <li><strong>Rohtak</strong>: MDU, Pt. B.D. Sharma University of Health Sciences</li>
+      <li><strong>Hisar</strong>: GJU, Chaudhary Charan Singh Haryana Agricultural University (CCSHAU)</li>
+      <li><strong>Gurugram & Faridabad (NCR)</strong>: Many private engineering, management, and IT colleges; Amity University Haryana, Manav Rachna University</li>
+      <li><strong>Karnal</strong>: NDRI, Dyal Singh College</li>
+      <li><strong>Sonipat</strong>: OP Jindal Global University, Bhagat Phool Singh Mahila Vishwavidyalaya</li>
+    </ul>
+  </section>
+
+  <section id="placements">
+    <h2>Placements Overview in Haryana</h2>
+    <ul>
+      <li>Placements are strong in institutions located near Delhi-NCR (Gurugram, Faridabad, Sonipat) due to proximity to corporate hubs.</li>
+      <li>Engineering and management graduates, especially in CS/IT, see good opportunities.</li>
+      <li>Traditional universities also have placement cells, particularly for core engineering and science fields.</li>
+      <li>Leading recruiters often include: IT companies (Infosys, Wipro, TCS), manufacturing firms in the industrial belts (Gurugram, Faridabad), and service sector companies.</li>
+    </ul>
+    <p style="margin-top: 15px;">Placement statistics vary widely by institution and location. Refer to individual college placement reports.</p>
+  </section>
+
+  <section id="scholarships">
+    <h2>Scholarships & Financial Aid in Haryana</h2>
+    <ul>
+      <li><strong>Haryana Government Scholarships</strong>: Schemes for Scheduled Castes, Backward Classes, Economically Weaker Sections, and other categories.</li>
+      <li><strong>Post Matric Scholarship Schemes</strong>: For SC/BC students studying in Haryana.</li>
+      <li><strong>Haryana State Technical Education Society (HSTES) Schemes</strong>: May include fee waivers or scholarships for technical courses.</li>
+      <li><strong>National Scholarship Portal</strong>: Access to central government scholarships applicable in Haryana.</li>
+      <li><strong>University and College Specific Scholarships</strong>: Many institutions, particularly private ones, offer their own merit-based or need-based scholarships.</li>
+    </ul>
+  </section>
+
+  <section id="faqs">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What is HSTES counseling?</summary>
+      <p>HSTES (Haryana State Technical Education Society) conducts online counseling for admissions to B.Tech, B.Arch, B.E., B.Pharmacy, and other technical diploma/degree courses in government and private institutions in Haryana based on JEE Main, NEET, and qualifying exam ranks.</p>
+    </details>
+    <details>
+      <summary>Is JEE Main required for engineering admission in Haryana?</summary>
+      <p>Yes, most B.Tech admissions in Haryana are based on JEE Main rank, followed by HSTES counseling.</p>
+    </details>
+    <details>
+      <summary>Are there good medical colleges in Haryana?</summary>
+      <p>Yes, Haryana has government and private medical colleges. Admissions are based on NEET scores, followed by counseling conducted by the Directorate of Medical Education and Research (DMER), Haryana.</p>
+    </details>
+    <details>
+      <summary>Which cities in Haryana are best for higher education?</summary>
+      <p>Kurukshetra, Rohtak, Hisar, and cities in the NCR region like Gurugram and Faridabad are considered major educational hubs.</p>
+    </details>
+    <details>
+      <summary>How can I apply for government scholarships in Haryana?</summary>
+      <p>Applications for most state government scholarships are processed online through dedicated portals like the Haryana Welfare of Scheduled Castes and Backward Classes Department portal or the National Scholarship Portal.</p>
+    </details>
+  </section>
+</div>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919876543210?text=I%20have%20a%20question%20about%20Haryana%20colleges" target="_blank">Chat with Counselor</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+  <p>© 2025 Haryana Education Consultants. All rights reserved.</p>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script>
+  const colleges = [
+    // KURUKSHETRA
+    { name: "Kurukshetra University", city: "Kurukshetra", stream: "University", url: "hr-kuk.html" },
+    { name: "NIT Kurukshetra", city: "Kurukshetra", stream: "Engineering", url: "hr-nitk.html" },
+    
+    // ROHTAK
+    { name: "Maharshi Dayanand University", city: "Rohtak", stream: "University", url: "hr-mdu.html" },
+    { name: "Pt. B.D. Sharma University of Health Sciences", city: "Rohtak", stream: "Medical University", url: "hr-uhsr.html" },
+    
+    // HISAR
+    { name: "Guru Jambheshwar University", city: "Hisar", stream: "Science & Tech University", url: "hr-gju.html" },
+    { name: "CCSHAU Hisar", city: "Hisar", stream: "Agriculture University", url: "hr-ccshau.html" },
+
+    // NCR REGION
+    { name: "Amity University Haryana", city: "Gurugram", stream: "Private University", url: "hr-amitygurugram.html" },
+    { name: "Manav Rachna University", city: "Faridabad", stream: "Private University", url: "hr-mrufaridabad.html" },
+    { name: "OP Jindal Global University", city: "Sonipat", stream: "Private University", url: "hr-jgu.html" },
+
+    // OTHER
+    { name: "DCRUST Murthal", city: "Murthal", stream: "Technical University", url: "hr-dcrust.html" },
+    { name: "NDRI Karnal", city: "Karnal", stream: "Agriculture Research", url: "hr-ndri.html" }
+  ];
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navMenu = document.getElementById('nav-menu');
+  
+  mobileMenuBtn.addEventListener('click', function() {
+    navMenu.classList.toggle('show');
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('college-search');
+  const resultsContainer = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    resultsContainer.innerHTML = "";
+
+    if (query === "") return;
+
+    const filtered = colleges.filter(college =>
+      college.name.toLowerCase().includes(query) ||
+      college.city.toLowerCase().includes(query) ||
+      college.stream.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      resultsContainer.innerHTML = "<p>No colleges found. Try a different search term.</p>";
+      return;
+    }
+
+    const list = document.createElement("ul");
+    filtered.forEach(college => {
+      const item = document.createElement("li");
+      item.innerHTML = `
+        <a href="${college.url}">${college.name}</a>
+        <span>${college.city} • ${college.stream}</span>
+      `;
+      list.appendChild(item);
+    });
+
+    resultsContainer.appendChild(list);
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html> 
