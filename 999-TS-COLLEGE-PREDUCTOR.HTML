@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TS EAMCET College Predictor</title>
+    <title>TS EAPCET College Predictor 2024</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <style>
         * {
@@ -44,6 +44,15 @@
         .header p {
             font-size: 1.1em;
             opacity: 0.9;
+        }
+
+        .year-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: inline-block;
         }
 
         .form-section {
@@ -183,6 +192,24 @@
             color: #4facfe;
         }
 
+        .college-type {
+            background: #e8f5e8;
+            color: #2d5a2d;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .tuition-fee {
+            background: #fff3cd;
+            color: #856404;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
         .no-results {
             text-align: center;
             padding: 50px;
@@ -242,6 +269,7 @@
             margin-bottom: 20px;
             border: 1px solid #f5c6cb;
         }
+
         .counseling {
             background-color: #fff3cd;
             padding: 20px;
@@ -257,69 +285,59 @@
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 8px;
-           
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        /* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
+        .counseling button:hover {
+            background-color: #e68900;
+        }
 
-  .main-header .left h1 {
-    font-size: 22px;
-  }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
 
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
+        .stat-card {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e1e5e9;
+        }
 
-  .scroll-text {
-    font-size: 13px;
-  }
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #4facfe;
+        }
 
-  .hero h2 {
-    font-size: 24px;
-  }
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
 
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
-
-  .section {
-    padding: 20px 15px;
-  }
-
-  .section h3 {
-    font-size: 20px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
-
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .college-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -327,17 +345,18 @@
         <div class="header">
             <h1>TS EAPCET College Predictor</h1>
             <p>Find colleges based on your rank and category</p>
+            <div class="year-badge">🎓 2024 Updated Data</div>
         </div>
 
         <div class="form-section">
             <div class="file-upload" id="loadingStatus">
                 <h3>Loading College Data...</h3>
-                <p>Please wait while we load the college database</p>
+                <p>Please wait while we load the 2024 college database</p>
             </div>
 
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="rank">Your EAMCET Rank</label>
+                    <label for="rank">Your EAPCET Rank</label>
                     <input type="number" id="rank" placeholder="Enter your rank" min="1" />
                 </div>
 
@@ -354,13 +373,15 @@
                     <label for="category">Caste Category</label>
                     <select id="category">
                         <option value="">Select Category</option>
-                        <option value="BC-A">BC-A</option>
-                        <option value="BC-B">BC-B</option>
-                        <option value="BC-C">BC-C</option>
-                        <option value="BC-D">BC-D</option>
-                        
+                        <option value="OC">Open Category (OC)</option>
+                        <option value="BC_A">BC-A</option>
+                        <option value="BC_B">BC-B</option>
+                        <option value="BC_C">BC-C</option>
+                        <option value="BC_D">BC-D</option>
+                        <option value="BC_E">BC-E</option>
                         <option value="SC">SC</option>
                         <option value="ST">ST</option>
+                        <option value="EWS">EWS</option>
                     </select>
                 </div>
 
@@ -376,24 +397,52 @@
                     <label for="location">Preferred Location (Optional)</label>
                     <input type="text" id="location" placeholder="Enter city/district" />
                 </div>
+
+                <div class="form-group">
+                    <label for="collegeType">College Type (Optional)</label>
+                    <select id="collegeType">
+                        <option value="">All Types</option>
+                        <option value="COED">Co-Education</option>
+                        <option value="BOYS">Boys Only</option>
+                        <option value="GIRLS">Girls Only</option>
+                    </select>
+                </div>
             </div>
 
             <button class="predict-btn" onclick="predictColleges()" disabled>
-                Predict Colleges
+                🔍 Predict Colleges
             </button>
         </div>
 
         <div class="results-section" id="resultsSection">
             <div class="results-header">
                 <div class="results-count" id="resultsCount"></div>
+                <div class="stats-grid" id="statsGrid"></div>
             </div>
             <div class="college-grid" id="collegeGrid"></div>
         </div>
+
+        <div class="counseling">
+            <h3>📌 Need Help with EAPCET Counseling?</h3>
+            <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
+            <button onclick="window.open('1000paid-cousilling.html', '_blank')">💬 Get Counseling Help</button>
+        </div>
     </div>
 
-     <script>
+    <script>
         let collegesData = [];
         let availableColumns = [];
+
+        // Updated column mapping based on your CSV structure
+        const COLUMN_MAPPING = {
+            instituteName: 'Institute Name',
+            place: 'Place',
+            district: 'Dist Code',
+            branch: 'Branch Code',
+            collegeType: 'Co Education',
+            tuitionFee: 'Tuition Fee',
+            affiliated: 'Affiliated To'
+        };
 
         // Load CSV file automatically on page load
         document.addEventListener('DOMContentLoaded', function() {
@@ -402,8 +451,8 @@
 
         async function loadCollegesData() {
             try {
-                // Try to load from your colleges.csv file
-                const response = await fetch('colleges.csv');
+                // Updated to load from your college.csv file (not colleges.csv)
+                const response = await fetch('college.csv');
                 
                 if (!response.ok) {
                     throw new Error(`Failed to load CSV: ${response.status}`);
@@ -418,8 +467,8 @@
                 // Show error message and provide fallback options
                 document.getElementById('loadingStatus').innerHTML = `
                     <div class="error-msg">
-                        <h3>Could not load colleges.csv</h3>
-                        <p>Please make sure the colleges.csv file is in the same folder as this HTML file.</p>
+                        <h3>Could not load college.csv</h3>
+                        <p>Please make sure the college.csv file is in the same folder as this HTML file.</p>
                         <p><strong>Alternative options:</strong></p>
                         <div style="margin-top: 15px;">
                             <input type="file" id="csvFile" accept=".csv" style="margin-bottom: 10px;" />
@@ -450,11 +499,20 @@
                 Papa.parse(csvText, {
                     header: true,
                     skipEmptyLines: true,
-                    dynamicTyping: false, // Keep as strings to avoid parsing issues
+                    dynamicTyping: false,
                     complete: function(results) {
-                        collegesData = results.data;
-                        
-                        // Get available columns and populate branch dropdown
+                        collegesData = results.data.map(record => {
+                            const cleaned = {};
+                            for (let key in record) {
+                                const cleanKey = key.replace(/\s+/g, ' ').trim();
+                                let value = record[key];
+                                if (typeof value === 'string') value = value.trim();
+                                cleaned[cleanKey] = value;
+                            }
+                            return cleaned;
+                        });
+
+                        // Get available columns
                         if (collegesData.length > 0) {
                             availableColumns = Object.keys(collegesData[0]);
                             console.log('Available columns:', availableColumns);
@@ -466,18 +524,18 @@
                         console.log('CSV parsed successfully:', collegesData.length, 'records');
                         console.log('Sample record:', collegesData[0]);
                         
-                        // Hide loading message and show form
+                        // Hide loading message
                         document.getElementById('loadingStatus').style.display = 'none';
                         
                         // Enable the predict button
                         document.querySelector('.predict-btn').disabled = false;
                         
-                        // Show success message with debug info
+                        // Show success message
                         const successMsg = document.createElement('div');
                         successMsg.className = 'success-msg';
                         successMsg.innerHTML = `
-                            we completlly guide in your EAMCET JOUNEY
-                    
+                            ✅ Successfully loaded ${collegesData.length} college records from 2024 data!
+                            <br><small>Data includes all major engineering colleges in Telangana with updated cutoff ranks.</small>
                         `;
                         document.querySelector('.form-grid').parentNode.insertBefore(successMsg, document.querySelector('.form-grid'));
                     },
@@ -508,7 +566,7 @@
             
             // Extract unique branches from the data
             collegesData.forEach(college => {
-                const branch = college['BRANCH'];
+                const branch = college['Branch Code'];
                 if (branch && branch.trim() !== '' && branch !== 'N/A') {
                     branches.add(branch.trim());
                 }
@@ -537,6 +595,7 @@
             const category = document.getElementById('category').value;
             const branch = document.getElementById('branch').value;
             const location = document.getElementById('location').value.toLowerCase().trim();
+            const collegeType = document.getElementById('collegeType').value;
 
             // Validation
             if (!rank || !gender || !category) {
@@ -552,150 +611,66 @@
             // Show loading
             const resultsSection = document.getElementById('resultsSection');
             resultsSection.style.display = 'block';
-            resultsSection.innerHTML = '<div class="loading">Filtering colleges...</div>';
+            resultsSection.innerHTML = '<div class="loading">🔍 Analyzing colleges based on your criteria...</div>';
 
             // Filter colleges
             setTimeout(() => {
-                const filteredColleges = filterColleges(rank, gender, category, branch, location);
+                const filteredColleges = filterColleges(rank, gender, category, branch, location, collegeType);
                 displayResults(filteredColleges, rank, gender, category, branch);
             }, 500);
         }
 
-        function findColumnName(college, category, gender) {
-            // Standardize the category format (BC_A -> BC-A)
-            const standardizedCategory = category.replace('_', '-');
-            
-            // Possible column name patterns to check
-            const patterns = [
-                `${category} ${gender}`,       // "BC_A BOYS"
-                `${category}_${gender}`,       // "BC_A_BOYS"
-                `${category}-${gender}`,       // "BC-A-BOYS"
-                `${standardizedCategory} ${gender}`, // "BC-A BOYS"
-                `${standardizedCategory}_${gender}`, // "BC-A_BOYS"
-                category,                      // Just the category
-                standardizedCategory           // Standardized category
-            ];
-
-            // Check each pattern against the college's columns
-            for (const pattern of patterns) {
-                // Exact match
-                if (college[pattern] !== undefined) {
-                    return pattern;
-                }
-                
-                // Case-insensitive match
-                const foundKey = Object.keys(college).find(
-                    key => key.toLowerCase() === pattern.toLowerCase()
-                );
-                if (foundKey) {
-                    return foundKey;
-                }
+        function getCutoffColumnName(category, gender) {
+            // Fixed column name mapping based on your CSV structure
+            if (category === 'EWS') {
+                return `EWS ${gender}`;
+            } else if (category === 'OC') {
+                return `OC ${gender}`;
+            } else {
+                return `${category} ${gender}`;
             }
-
-            // If nothing found, try some common variations
-            const fallbackPatterns = [
-                `${category}${gender}`,       // "BC_ABOYS"
-                `${category}_GEN`,            // "BC_A_GEN"
-                `${category}_GENERAL`,        // "BC_A_GENERAL"
-                `${category}_${gender.slice(0,1)}` // "BC_A_B"
-            ];
-
-            for (const pattern of fallbackPatterns) {
-                if (college[pattern] !== undefined) {
-                    return pattern;
-                }
-            }
-
-            return null;
         }
 
-        function filterColleges(userRank, gender, category, branch, location) {
+        function filterColleges(userRank, gender, category, branch, location, collegeType) {
             const filtered = [];
             let debugInfo = {
                 totalRecords: collegesData.length,
                 processedRecords: 0,
                 foundCutoffs: 0,
-                qualifiedColleges: 0,
-                columnIssues: [],
-                testedColumns: []
+                qualifiedColleges: 0
             };
+
+            // Get the correct column name for cutoff
+            const cutoffColumnName = getCutoffColumnName(category, gender);
+            console.log('Looking for cutoff column:', cutoffColumnName);
 
             collegesData.forEach((college, index) => {
                 try {
                     debugInfo.processedRecords++;
 
                     // Branch filter (if specified)
-                    if (branch && college['BRANCH'] && college['BRANCH'].toLowerCase() !== branch.toLowerCase()) {
+                    if (branch && college['Branch Code'] && 
+                        college['Branch Code'].toLowerCase() !== branch.toLowerCase()) {
                         return;
                     }
 
-                    // Special handling for OC category which has separate BOYS/GIRLS columns
-                    if (category === 'OC') {
-                        const columnName = `OC ${gender}`;
-                        const cutoffValue = college[columnName];
-                        
-                        if (!cutoffValue || cutoffValue === '' || cutoffValue === 'N/A' || cutoffValue === '-') {
-                            return;
-                        }
-
-                        const cutoffRank = parseInt(cutoffValue.toString().replace(/[^\d]/g, ''));
-                        
-                        if (isNaN(cutoffRank) || cutoffRank <= 0) {
-                            return;
-                        }
-
-                        debugInfo.foundCutoffs++;
-
-                        if (userRank <= cutoffRank) {
-                            if (location) {
-                                const instituteName = (college['INSTITUTE NAME'] || '').toLowerCase();
-                                const place = (college['PLACE'] || '').toLowerCase();
-                                const district = (college['DIST'] || '').toLowerCase();
-                                
-                                if (!instituteName.includes(location) && 
-                                    !place.includes(location) && 
-                                    !district.includes(location)) {
-                                    return;
-                                }
-                            }
-
-                            debugInfo.qualifiedColleges++;
-
-                            filtered.push({
-                                name: college['INSTITUTE NAME'] || 'N/A',
-                                branch: college['BRANCH'] || 'N/A',
-                                place: college['PLACE'] || 'N/A',
-                                district: college['DIST'] || 'N/A',
-                                cutoffRank: cutoffRank,
-                                category: columnName,
-                                originalData: college
-                            });
-                        }
+                    // College type filter (if specified)
+                    if (collegeType && college['Co Education'] && 
+                        college['Co Education'] !== collegeType) {
                         return;
                     }
 
-                    // For other categories (BC_A, BC_B, SC, ST, etc.)
-                    const columnName = findColumnName(college, category, gender);
+                    // Get cutoff rank for this category and gender
+                    let cutoffValue = college[cutoffColumnName];
                     
-                    if (!columnName) {
-                        debugInfo.columnIssues.push(`Row ${index + 1}: No column found for ${category} ${gender}`);
+                    if (!cutoffValue || cutoffValue === '' || cutoffValue === 'N/A' || cutoffValue === '-') {
                         return;
                     }
 
-                    debugInfo.testedColumns.push(columnName);
-
-                    // Get cutoff rank for this category
-                    let cutoffValue = college[columnName];
-                    
-                    // Handle various cutoff value formats
-                    if (typeof cutoffValue === 'string') {
-                        // Remove any text in parentheses
-                        cutoffValue = cutoffValue.replace(/\(.*?\)/g, '');
-                        // Remove commas and other non-digit characters
-                        cutoffValue = cutoffValue.replace(/[^\d]/g, '');
-                    }
-
-                    const cutoffRank = parseInt(cutoffValue);
+                    // Clean and parse cutoff value
+                    let cleanCutoff = cutoffValue.toString();
+                    cleanCutoff = cleanCutoff.replace(/[^\d]/g, ''); // Remove non-digits
+                    const cutoffRank = parseInt(cleanCutoff);
                     
                     if (isNaN(cutoffRank) || cutoffRank <= 0) {
                         return;
@@ -703,13 +678,13 @@
 
                     debugInfo.foundCutoffs++;
 
-                    // Check if user's rank is better than (less than or equal to) cutoff
+                    // Check if user's rank qualifies (rank should be less than or equal to cutoff)
                     if (userRank <= cutoffRank) {
-                        // Location filter (optional)
+                        // Location filter (if specified)
                         if (location) {
-                            const instituteName = (college['INSTITUTE NAME'] || '').toLowerCase();
-                            const place = (college['PLACE'] || '').toLowerCase();
-                            const district = (college['DIST'] || '').toLowerCase();
+                            const instituteName = (college['Institute Name'] || '').toLowerCase();
+                            const place = (college['Place'] || '').toLowerCase();
+                            const district = (college['Dist Code'] || '').toLowerCase();
                             
                             if (!instituteName.includes(location) && 
                                 !place.includes(location) && 
@@ -721,23 +696,24 @@
                         debugInfo.qualifiedColleges++;
 
                         filtered.push({
-                            name: college['INSTITUTE NAME'] || 'N/A',
-                            branch: college['BRANCH'] || 'N/A',
-                            place: college['PLACE'] || 'N/A',
-                            district: college['DIST'] || 'N/A',
+                            name: college['Institute Name'] || 'N/A',
+                            branch: college['Branch Code'] || 'N/A',
+                            place: college['Place'] || 'N/A',
+                            district: college['Dist Code'] || 'N/A',
                             cutoffRank: cutoffRank,
-                            category: columnName,
+                            category: cutoffColumnName,
+                            collegeType: college['Co Education'] || 'N/A',
+                            tuitionFee: college['Tuition Fee'] || 'N/A',
+                            affiliated: college['Affiliated To'] || 'N/A',
                             originalData: college
                         });
                     }
                 } catch (error) {
-                    console.error('Error processing college at index', index, ':', error, college);
+                    console.error('Error processing college at index', index, ':', error);
                 }
             });
 
-            // Log debug information
             console.log('Filtering Debug Info:', debugInfo);
-            console.log('Unique columns tested:', [...new Set(debugInfo.testedColumns)]);
             
             // Sort by cutoff rank (ascending - easier colleges first)
             filtered.sort((a, b) => a.cutoffRank - b.cutoffRank);
@@ -751,51 +727,57 @@
             resultsSection.innerHTML = `
                 <div class="results-header">
                     <div class="results-count" id="resultsCount"></div>
+                    <div class="stats-grid" id="statsGrid"></div>
                 </div>
                 <div class="college-grid" id="collegeGrid"></div>
             `;
 
             const resultsCount = document.getElementById('resultsCount');
+            const statsGrid = document.getElementById('statsGrid');
             const collegeGrid = document.getElementById('collegeGrid');
 
             if (colleges.length === 0) {
-                // Get sample of first college to show available columns
-                const sampleCollege = collegesData.length > 0 ? collegesData[0] : null;
-                const sampleColumns = sampleCollege ? Object.keys(sampleCollege) : [];
-                
                 resultsCount.textContent = 'No colleges found matching your criteria';
                 collegeGrid.innerHTML = `
                     <div class="no-results">
                         <h3>No Colleges Found</h3>
-                        <p><strong>Debug Information:</strong></p>
-                        <div class="debug-info">
-                            <p><strong>Search Criteria:</strong></p>
-                            <p>Rank: ${userRank}, Gender: ${gender}, Category: ${category}, Branch: ${branch || 'All'}</p>
-                            
-                            <p><strong>Available Columns in Data:</strong></p>
-                            <p>${sampleColumns.join(', ')}</p>
-                            
-                            <p><strong>Common Category Column Patterns:</strong></p>
-                            <p>${[
-                                `${category} ${gender}`,
-                                `${category}_${gender}`,
-                                `${category}-${gender}`,
-                                category
-                            ].join(', ')}</p>
-                            
-                            <p><strong>Possible Issues:</strong></p>
-                            <ul>
-                                <li>Your rank might be higher than cutoff ranks</li>
-                                <li>The CSV might not have data for ${category} ${gender} category</li>
-                                <li>Column names in CSV might not match expected format</li>
-                            </ul>
-                        </div>
+                        <p>Try adjusting your search criteria:</p>
+                        <ul style="text-align: left; display: inline-block; margin-top: 15px;">
+                            <li>Check if your rank is competitive for your category</li>
+                            <li>Try removing location or branch filters</li>
+                            <li>Consider different college types</li>
+                        </ul>
                     </div>
                 `;
                 return;
             }
 
             resultsCount.textContent = `Found ${colleges.length} college(s) matching your criteria`;
+
+            // Calculate and display statistics
+            const totalColleges = colleges.length;
+            const avgCutoff = Math.round(colleges.reduce((sum, college) => sum + college.cutoffRank, 0) / totalColleges);
+            const bestCutoff = Math.max(...colleges.map(c => c.cutoffRank));
+            const worstCutoff = Math.min(...colleges.map(c => c.cutoffRank));
+
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${totalColleges}</div>
+                    <div class="stat-label">Total Options</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${avgCutoff}</div>
+                    <div class="stat-label">Avg Cutoff</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${bestCutoff}</div>
+                    <div class="stat-label">Best Cutoff</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${worstCutoff}</div>
+                    <div class="stat-label">Safest Option</div>
+                </div>
+            `;
 
             const collegeCards = colleges.map(college => `
                 <div class="college-card">
@@ -805,13 +787,21 @@
                             <span class="detail-label">Branch:</span>
                             <span class="detail-value">${college.branch}</span>
                         </div>
-                       <div class="detail-item">
+                        <div class="detail-item">
                             <span class="detail-label">Location:</span>
-                            <span class="detail-value">${college.place}</span>
+                            <span class="detail-value">${college.place}, ${college.district}</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">District:</span>
-                            <span class="detail-value">${college.district}</span>
+                            <span class="detail-label">Type:</span>
+                            <span class="college-type">${college.collegeType}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Fee:</span>
+                            <span class="tuition-fee">₹${college.tuitionFee}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Affiliated:</span>
+                            <span class="detail-value">${college.affiliated}</span>
                         </div>
                     </div>
                     <div class="cutoff-info">
@@ -822,83 +812,153 @@
             `).join('');
 
             collegeGrid.innerHTML = collegeCards;
+            addExportButton(colleges);
         }
 
-        // Sample data for testing (can be used as fallback)
+       // Sample data for testing (updated for 2024 structure)
         function loadSampleData() {
             collegesData = [
                 {
-                    'INSTITUTE NAME': 'AAR MAH/BANDLAGUDAM HYD',
-                    'PLACE': 'Hyderabad',
-                    'DIST': 'Hyderabad',
-                    'BRANCH': 'CSE',
-                    'OC BOYS': '26303',
-                    'OC GIRLS': '26303',
-                    'BC_A': '86999',
-                    'BC_B': '57408',
-                    'BC_C': '26303',
-                    'BC_D': '65938',
-                    'BC_E': '85977',
-                    'SC': '95181',
-                    'ST': '92961'
+                    'Institute Name': 'AARM/BANDLAGUDA HYD',
+                    'Place': 'BANDLAGUDA',
+                    'Dist': 'HYD',
+                    'Co Education': 'COED',
+                    'Branch': 'CSE',
+                    'OC BOYS': '29938',
+                    'OC GIRLS': '29938',
+                    'BC_A BOYS': '129031',
+                    'BC_A GIRLS': '148571',
+                    'BC_B BOYS': '79270',
+                    'BC_B GIRLS': '79270',
+                    'BC_C BOYS': '29938',
+                    'BC_C GIRLS': '80709',
+                    'BC_D BOYS': '66675',
+                    'BC_D GIRLS': '66675',
+                    'BC_E BOYS': '102225',
+                    'BC_E GIRLS': '102225',
+                    'SC BOYS': '149860',
+                    'SC GIRLS': '149860',
+                    'ST BOYS': '170044',
+                    'ST GIRLS': '170044',
+                    'EWS BOYS': '53269',
+                    'EWS GIRLS': '53269',
+                    'Tuition Fee': '60000',
+                    'Affiliated To': 'JNTUH'
+                },
+                                {
+                    'Institute Name': 'Sample College 2',
+                    'Place': 'Warangal',
+                    'Dist': 'Warangal',
+                    'Co Education': 'COED',
+                    'Branch': 'ECE',
+                    'OC BOYS': '45000',
+                    'OC GIRLS': '48000',
+                    'BC_A BOYS': '150000',
+                    'BC_A GIRLS': '160000',
+                    'Tuition Fee': '55000',
+                    'Affiliated To': 'JNTUH'
                 },
                 {
-                    'INSTITUTE NAME': 'AAR MAH/BANDLAGUDAM HYD',
-                    'PLACE': 'Hyderabad',
-                    'DIST': 'Hyderabad',
-                    'BRANCH': 'CSM',
-                    'OC BOYS': '40918',
-                    'OC GIRLS': '55055',
-                    'BC_A': '108367',
-                    'BC_B': '88878',
-                    'BC_C': '40918',
-                    'BC_D': '101397',
-                    'BC_E': '113868',
-                    'SC': '125450',
-                    'ST': '123488'
-                },
-                {
-                    'INSTITUTE NAME': 'AAR MAH/BANDLAGUDAM HYD',
-                    'PLACE': 'Hyderabad',
-                    'DIST': 'Hyderabad',
-                    'BRANCH': 'ECE',
-                    'OC BOYS': '52680',
-                    'OC GIRLS': '97089',
-                    'BC_A': '98439',
-                    'BC_B': '112273',
-                    'BC_C': '52680',
-                    'BC_D': '112231',
-                    'BC_E': '92750',
-                    'SC': '125323',
-                    'ST': '121767'
+                    'Institute Name': 'Sample College 3',
+                    'Place': 'Hyderabad',
+                    'Dist': 'HYD',
+                    'Co Education': 'GIRLS',
+                    'Branch': 'CSE',
+                    'OC BOYS': 'N/A',
+                    'OC GIRLS': '35000',
+                    'Tuition Fee': '65000',
+                    'Affiliated To': 'OU'
                 }
             ];
             
-            availableColumns = Object.keys(collegesData[0]);
+            console.log('Loaded sample data with', collegesData.length, 'colleges');
             
-            // Hide loading status and show success
-            document.getElementById('loadingStatus').innerHTML = `
-                <div class="success-msg">
-                    ⚠️ Using sample data for testing purposes (${collegesData.length} records loaded)
-                    <div class="debug-info">
-                        <strong>Available columns:</strong><br>
-                        ${availableColumns.join(', ')}
-                    </div>
-                </div>
-            `;
+            // Hide loading message
+            document.getElementById('loadingStatus').style.display = 'none';
             
+            // Enable the predict button
             document.querySelector('.predict-btn').disabled = false;
+            
+            // Show success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'success-msg';
+            successMsg.innerHTML = `
+                ✅ Loaded ${collegesData.length} sample college records for testing.
+                <br><small>For full functionality, please use the actual college.csv file.</small>
+            `;
+            document.querySelector('.form-grid').parentNode.insertBefore(successMsg, document.querySelector('.form-grid'));
+            
+            // Populate branch dropdown
             populateBranchDropdown();
-            console.log('Sample data loaded:', collegesData.length, 'records');
-            console.log('Available columns:', availableColumns);
+        }
+
+        function addExportButton(colleges) {
+            const exportBtn = document.createElement('button');
+            exportBtn.className = 'predict-btn';
+            exportBtn.style.marginTop = '20px';
+            exportBtn.style.backgroundColor = '#28a745';
+            exportBtn.innerHTML = '📥 Export Results as CSV';
+            exportBtn.onclick = () => exportResults(colleges);
+            
+            document.getElementById('resultsSection').appendChild(exportBtn);
+        }
+
+        function exportResults(colleges) {
+            if (colleges.length === 0) {
+                alert('No results to export');
+                return;
+            }
+            
+            // Prepare CSV data
+            const headers = [
+                'College Name', 'Branch', 'Location', 'District', 
+                'College Type', 'Cutoff Rank', 'Category', 
+                'Tuition Fee', 'Affiliated To'
+            ];
+            
+            const data = colleges.map(college => [
+                college.name,
+                college.branch,
+                college.place,
+                college.district,
+                college.collegeType,
+                college.cutoffRank,
+                college.category,
+                college.tuitionFee,
+                college.affiliated
+            ]);
+            
+            // Create CSV content
+            let csvContent = headers.join(',') + '\n';
+            data.forEach(row => {
+                csvContent += row.map(field => `"${field}"`).join(',') + '\n';
+            });
+            
+            // Create download link
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', `eapcet_college_predictor_results_${new Date().toISOString().slice(0,10)}.csv`);
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Helper function to show debug info
+        function showDebugInfo(info) {
+            const debugDiv = document.createElement('div');
+            debugDiv.className = 'debug-info';
+            debugDiv.innerHTML = `
+                <h4>Debug Information</h4>
+                <p>Total records: ${info.totalRecords}</p>
+                <p>Processed records: ${info.processedRecords}</p>
+                <p>Found cutoffs: ${info.foundCutoffs}</p>
+                <p>Qualified colleges: ${info.qualifiedColleges}</p>
+            `;
+            return debugDiv;
         }
     </script>
 </body>
- <div class="counseling">
-        <h3>📌 Need Help with EAMCET Counseling?</h3>
-        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
-        <a href="1000paid-cousilling.html" target="_blank">
-            <button>💬 Get Counseling Help</button>
-        </a>
-    </div>
 </html>
