@@ -102,6 +102,10 @@
   }
 }
 
+
+
+
+
     /* Main Content */
     .container {
       padding: 20px 15px;
@@ -294,29 +298,11 @@
       margin: 30px 0;
     }
 
-    /* Footer */
-    footer {
-      background-color: var(--light-bg);
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
-    }
 
-    .social-links {
-      margin: 15px 0;
-    }
 
-    .social-links a {
-      color: #1565c0;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 1.2rem;
-    }
 
-    .social-links a:hover {
-      color: var(--accent-color);
-    }
 
+    
     /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
@@ -616,7 +602,274 @@
 
 
 
+/* Footer Styles */
+.professional-footer {
+  background: linear-gradient(135deg, #0D2B3A 0%, #1A3A4A 100%);
+  color: #FFFFFF;
+  padding: 3rem 0 1.5rem;
+  position: relative;
+}
 
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column {
+  margin-bottom: 1.5rem;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #4FC3F7;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #ffeb3b;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #B0BEC5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+  transform: translateX(5px);
+}
+
+.highlight-link {
+  color: #ffeb3b !important;
+  font-weight: 500;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  color: #B0BEC5;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-info i {
+  margin-top: 3px;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-media a {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+  background: #0d47a1;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #90A4AE;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+}
+
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.legal-links a {
+  color: #90A4AE;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #FFFFFF;
+}
+
+
+
+/* Footer Styles */
+.professional-footer {
+  background: linear-gradient(135deg, #0D2B3A 0%, #1A3A4A 100%);
+  color: #FFFFFF;
+  padding: 3rem 2rem 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.footer-column {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #4FC3F7;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #ffeb3b;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #B0BEC5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  font-size: 0.9rem;
+  color: #90A4AE;
+}
+
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+
+.yellow-line {
+  height: 4px;
+  background-color: #ffeb3b; /* Yellow color */
+  margin: 20px 0;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-media {
+    justify-content: center;
+  }
+  
+  .legal-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 
 
 
@@ -624,6 +877,8 @@
 
 
   </style>
+
+  
 </head>
 <body>
   <!-- Header Section -->
@@ -737,7 +992,7 @@
     </section>
 
     <!-- Quick Links -->
-    <h2 class="section-title">📚 Explore Our Resources</h2>
+    <h2 class="section-title">📚 Find your path</h2>
     <div class="quick-links">
       <a href="index-engineering.html" class="quick-link">
         <i class="fas fa-laptop-code"></i>
@@ -763,28 +1018,8 @@
         <i class="fas fa-university"></i>
         MBA
       </a>
-      <a href="01-cut-off.html" class="quick-link">
-        <i class="fas fa-file-pdf"></i>
-        Cutoff PDFs
-      </a>
-      <a href="INDEX-PAIDCORCES.html" class="quick-link">
-        <i class="fas fa-rupee-sign"></i>
-        Paid Courses
-      </a>
-      <a href="" class="quick-link">
-        <i class="fas fa-phone-alt"></i>
-        Contact Us
-      </a>
-      <a href="#" class="quick-link">
-        <i class="fas fa-comment-alt"></i>
-        Student Feedback
-      </a>
+     
     </div>
-
-
-
-
-
 
 
     <!-- Video Section -->
@@ -838,7 +1073,7 @@
   <section class="about-trust">
   <div class="about-box">
     <div class="founder-photo">
-      <img src="https://i.postimg.cc/dVD9RqnR/Whats-App-Image-2025-05-28-at-13-04-13-9ffa63de.jpg" alt="Founder - Balaji Nayak">
+
     </div>
     <div class="founder-text">
       <h2>Hi, I'm Balaji Nayak</h2>
@@ -862,23 +1097,82 @@
   Many more services, tools, and features are still under development. <span class="highlight">We’re working to bring everything very soon.</span> Thank you for trusting us. 🙏
 </font></p>
 
+
+
+
+
+
+
 </section>
 
+<!-- Footer -->
+<footer class="professional-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <!-- Column 1: General FAQs -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Popular Questions</h4>
+        <ul class="footer-links">
+          <li><a href="#">What is career counseling?</a></li>
+          <li><a href="#">How to choose the right college?</a></li>
+          <li><a href="#">Which courses have good scope?</a></li>
+          <li><a href="#">Is EAMCET enough to get a seat?</a></li>
+          <li><a href="#" class="highlight-link">Chat with our Counselor</a></li>
+        </ul>
+      </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Made with ❤️ by BALAJI NAYAK </p>
-    <div class="social-links">
-     
-      <a href="https://youtube.com/@balajimrec227?si=WzyjSDIymR_X-6ai" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
+      <!-- Column 2: Categories -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Top Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#">Engineering</a></li>
+          <li><a href="#">Medical</a></li>
+          <li><a href="#">Diploma & Polytechnic</a></li>
+          <li><a href="#">Pharmacy</a></li>
+          <li><a href="#">ITI Courses</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Student Resources -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Cutoff Ranks</a></li>
+          <li><a href="#">College List (PDF)</a></li>
+          <li><a href="#">Scholarships</a></li>
+          <li><a href="#">Admission Process</a></li>
+          <li><a href="#">Application Dates</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Social -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Contact</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +91 720 7800 211</p>
+          <p><i class="fas fa-envelope"></i> balanjuinfo@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</p>
+        </div>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2025 Your Future Begins with Balanju.</p>
-  </footer>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>Balanju.com</strong> — Educational & Career Support.</p>
+      <div class="legal-links">
+        <a href="#">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <script>
     const searchData = [
@@ -888,6 +1182,8 @@
 
 /*INDEXES*/
 /*states*/
+
+  
 
    
   { name: "Andhra Pradesh (AP COLLEGE INDEX)", link: "index-ap-college.html", icon: "🏫", desc: "Explore top colleges in Andhra Pradesh." },
@@ -1067,6 +1363,10 @@
 { name: "NIT Directory", link: "23-nit-index.html", icon: "🏫", desc: "Detailed profiles of National Institutes of Technology (NITs)." },
 { name: "IIIT Directory", link: "23index-iiit.html", icon: "🏫", desc: "Information and profiles of Indian Institutes of Information Technology (IIITs)." },
 { name: "GFTI Directory", link: "23-gfti-index.html", icon: "🏫", desc: "Institutional profiles of Government Funded Technical Institutes (GFTIs)." }
+
+
+
+
 
 
 
