@@ -592,49 +592,66 @@
   background-color: #218838;
 }
 
-/* Animation */
-@keyframes floatUpDown {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-5px); }
-}
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 480px) {
+      .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      
+      .card {
+        padding: 10px 5px;
+        font-size: 13px;
+      }
+      
+      .whatsapp-button {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+      
+      .promo-box {
+        padding: 12px;
+      }
+    }
 
 
-
-
-
-/* Footer Styles */
-.professional-footer {
-  background: linear-gradient(135deg, #0D2B3A 0%, #1A3A4A 100%);
-  color: #FFFFFF;
+    .professional-footer {
+  background: linear-gradient(135deg, #1a3a4a 0%, #0d2b3a 100%);
+  color: #ffffff;
   padding: 3rem 0 1.5rem;
-  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 3px solid #2a9d8f;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 20px;
 }
 
 .footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2.5rem;
   margin-bottom: 2rem;
 }
 
-.footer-column {
-  margin-bottom: 1.5rem;
-}
-
 .footer-heading {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #4FC3F7;
+  color: #2a9d8f;
   position: relative;
   padding-bottom: 0.5rem;
-  font-family: 'Roboto', sans-serif;
 }
 
 .footer-heading::after {
@@ -644,11 +661,12 @@
   bottom: 0;
   width: 40px;
   height: 2px;
-  background: #ffeb3b;
+  background: #e9c46a;
 }
 
 .footer-links {
   list-style: none;
+  padding: 0;
 }
 
 .footer-links li {
@@ -656,36 +674,35 @@
 }
 
 .footer-links a {
-  color: #B0BEC5;
+  color: #d3e0e4;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.95rem;
-  display: inline-block;
-  padding: 0.2rem 0;
+  display: block;
 }
 
 .footer-links a:hover {
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translateX(5px);
 }
 
 .highlight-link {
-  color: #ffeb3b !important;
+  color: #e9c46a !important;
   font-weight: 500;
 }
 
 .contact-info p {
   margin-bottom: 1rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.8rem;
-  color: #B0BEC5;
+  color: #d3e0e4;
   font-size: 0.95rem;
-  line-height: 1.5;
 }
 
 .contact-info i {
-  margin-top: 3px;
+  width: 20px;
+  color: #2a9d8f;
 }
 
 .social-media {
@@ -695,10 +712,10 @@
 }
 
 .social-media a {
-  color: #FFFFFF;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.1);
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -707,7 +724,7 @@
 }
 
 .social-media a:hover {
-  background: #0d47a1;
+  background: #2a9d8f;
   transform: translateY(-3px);
 }
 
@@ -719,131 +736,34 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   font-size: 0.9rem;
-  color: #90A4AE;
-}
-
-.footer-bottom p {
-  margin-bottom: 0.5rem;
+  color: #a8c0c8;
 }
 
 .legal-links {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .legal-links a {
-  color: #90A4AE;
+  color: #a8c0c8;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .legal-links a:hover {
-  color: #FFFFFF;
+  color: #e9c46a;
 }
 
-
-
-/* Footer Styles */
-.professional-footer {
-  background: linear-gradient(135deg, #0D2B3A 0%, #1A3A4A 100%);
-  color: #FFFFFF;
-  padding: 3rem 2rem 1.5rem;
-  position: relative;
-  text-align: left;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.footer-column {
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.footer-heading {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #4FC3F7;
-  position: relative;
-  padding-bottom: 0.5rem;
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-}
-
-.footer-heading::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 40px;
-  height: 2px;
-  background: #ffeb3b;
-}
-
-.footer-links {
-  list-style: none;
-  padding-left: 0;
-  text-align: left;
-}
-
-.footer-links li {
-  margin-bottom: 0.8rem;
-}
-
-.footer-links a {
-  color: #B0BEC5;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-  display: inline-block;
-  padding: 0.2rem 0;
-}
-
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: left;
-  font-size: 0.9rem;
-  color: #90A4AE;
-}
-
-.legal-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  justify-content: flex-start;
-}
-
-
-.yellow-line {
-  height: 4px;
-  background-color: #ffeb3b; /* Yellow color */
-  margin: 20px 0;
-  width: 100%;
-  border-radius: 2px;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .footer-top {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
   }
 }
 
@@ -852,26 +772,10 @@
     grid-template-columns: 1fr;
   }
   
-  .footer-column {
-    text-align: center;
-  }
-  
-  .footer-heading::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .social-media {
-    justify-content: center;
-  }
-  
-  .legal-links {
-    flex-direction: column;
-    gap: 0.5rem;
+  .footer-heading {
+    margin-top: 1.5rem;
   }
 }
-
-
 
 
 
@@ -880,7 +784,6 @@
 
   
 </head>
-   <link rel="icon" type="image/png" href="  https://i.postimg.cc/cLMSjKCq/Upload-from-mobile-1750140414-Screenshot-20250616-190853-Whats-App-Business.png">
 <body>
   <!-- Header Section -->
   <header class="main-header">
