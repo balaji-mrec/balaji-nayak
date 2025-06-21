@@ -346,6 +346,70 @@
   line-height: 1.6;
 }
 
+
+/* Professional Circle Navigation */
+.circle-nav {
+  padding: 25px 0;
+  margin: 20px 0;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.circle-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 80px;
+}
+
+.circle-icon {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 3px solid var(--color);
+  transition: all 0.3s ease;
+}
+
+.circle-btn span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.circle-btn:hover .circle-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  background-color: var(--color);
+  color: white;
+}
+
+/* Pulsing animation for active item */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.circle-btn.active .circle-icon {
+  animation: pulse 1.5s infinite;
+  background-color: var(--color);
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -374,13 +438,26 @@
     <input type="text" placeholder="🔍 Search colleges by name, city, or stream..." id="college-search">
     <div id="search-results"></div>
   </div>
-
-  <div class="categories-scroll">
-    <a href="150-eamcet-all-colleges.html">🏛 EAPCET Colleges</a>
-    <a href="150-eapcet-cut-offs.html">🎓 Eapcet Cut-off's</a>
-    <a href="999-TS-COLLEGE-PREDUCTOR.HTML">🏫college Predictor</a>
-    
+<div class="circle-nav">
+  <div class="circle-container">
+    <a href="150-eamcet-all-colleges.html" class="circle-btn" style="--color: #5e35b1;">
+      <div class="circle-icon">🏛</div>
+      <span>EAPCET Colleges</span>
+    </a>
+    <a href="150-eapcet-cut-offs.html" class="circle-btn" style="--color: #43a047;">
+      <div class="circle-icon">📊</div>
+      <span>previous Cut-offs</span>
+    </a>
+    <a href="999-TS-COLLEGE-PREDUCTOR.HTML" class="circle-btn" style="--color: #e53935;">
+      <div class="circle-icon">🔮</div>
+      <span> College Predictor</span>
+    </a>
+    <a href="200-ts-top20-college.html" class="circle-btn" style="--color: #fb8c00;">
+      <div class="circle-icon">🏫</div>
+      <span>TOP 30 Colleges </span>
+    </a>
   </div>
+</div>
 
  <div class="info-box">
   <h3 style="color: #0d47a1; font-weight: bold;">About Telangana Colleges</h3>
