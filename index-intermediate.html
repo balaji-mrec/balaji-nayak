@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balanju | Explore Intermediate Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #2c3e50;
+      --card-bg: #e74c3c;
+      --primary: #e74c3c;
+      --secondary: #f39c12;
+      --accent: #3498db;
+    }
+
+    body.dark-mode {
+      --bg: #2c3e50;
+      --text: #ecf0f1;
+      --card-bg: #c0392b;
+      background: #2c3e50;
+      color: var(--text);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 25px 40px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    header .logo {
+      font-size: 40px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .subheader {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      padding: 0 20px;
+      color: #e74c3c;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 40px 20px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 28px;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      background-color: var(--card-bg);
+      color: white;
+      padding: 18px;
+      font-size: 17px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .menu a:hover {
+      background-color: #f39c12;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--card-bg);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+
+       /* 📱 Enhanced Responsive Design */
+    @media (max-width: 768px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 15px;
+      }
+
+      .main-header .left h1 {
+        font-size: 22px;
+      }
+
+      .main-header .right {
+        width: 100%;
+        margin-left: 0;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+
+      .scroll-text {
+        font-size: 13px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 20px 15px;
+      }
+
+      .section h3 {
+        font-size: 20px;
+      }
+
+      .section p {
+        font-size: 15px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 10px 15px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    }
+
+    .floating-update-bar.header-version {
+      position: static;
+      margin-top: 10px;
+      transform: none;
+      background: linear-gradient(to right, #f39c12, #e67e22);
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      gap: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      animation: slideIn 0.6s ease-in-out;
+    }
+
+    .floating-update-bar.header-version .update-btn {
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      background: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .floating-update-bar.header-version .update-btn:hover {
+      background: #c0392b;
+    }
+
+    #updateText, #updateLink {
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #e74c3c;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+
+    .box {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(231, 76, 60, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+    }
+
+    .box i {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .box h4 {
+      margin: 5px 0 0 0;
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    .engineering-footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-section h3 {
+      color: #e74c3c;
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background: #f39c12;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .footer-links a:hover {
+      color: #f39c12;
+      transform: translateX(5px);
+    }
+
+    .footer-contact {
+      color: #ecf0f1;
+    }
+
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-contact i {
+      margin-right: 10px;
+      color: #f39c12;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid #e74c3c;
+      color: #bdc3c7;
+      font-size: 14px;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .footer-bottom-links a {
+      color: #95a5a6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #f39c12;
+    }
+
+    .chat-counselor {
+      background: #f39c12;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .chat-counselor:hover {
+      background: #e67e22;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .top-categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .highlight-section {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin: 30px auto;
+      max-width: 800px;
+    }
+
+    .highlight-section h2 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .highlight-section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-btn {
+      background: #e74c3c;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .highlight-btn:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    }
+
+    .social-media {
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      color: #f39c12;
+      font-size: 20px;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .social-media a:hover {
+      color: #e74c3c;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-top">
+      <div class="header-text">
+        <h1><font face="roboto">🎓 EXPLORE INTERMEDIATE</font></h1>
+      </div>
+    </div>
+    <div class="floating-update-bar header-version" id="updateBar">
+      <span id="updateText">TS Inter 2025 Admissions Open!</span>
+      <a href="#" class="update-btn" id="updateLink">View</a>
+    </div>
+  </header>
+
+  <script>
+    const updates = [
+        {
+      text: "📢 TS Inter 2025 Admissions Open!",
+      link: "ts-inter-admissions.html"
+    },
+    {
+      text: "🎯 Intermediate College Index",
+      link: "intermediate-college-index.html"
+    },
+    {
+      text: "📚 MPC vs BiPC vs CEC Comparison",
+      link: "intermediate-groups-comparison.html"
+    },
+    {
+      text: "🏫 Top Junior Colleges 2025",
+      link: "top-junior-colleges.html"
+    },
+    {
+      text: "💡 Career Guidance for Inter Students",
+      link: "intermediate-career-guidance.html"
+    }
+    ];
+
+    let index = 0;
+    const updateText = document.getElementById("updateText");
+    const updateLink = document.getElementById("updateLink");
+
+    function updateAnnouncement() {
+      updateText.style.opacity = 0;
+      updateLink.style.opacity = 0;
+
+      setTimeout(() => {
+        updateText.textContent = updates[index].text;
+        updateLink.href = updates[index].link;
+
+        updateText.style.opacity = 1;
+        updateLink.style.opacity = 1;
+
+        index = (index + 1) % updates.length;
+      }, 300);
+    }
+
+    // Initial call
+    updateAnnouncement();
+
+    // Set interval for updates
+    setInterval(updateAnnouncement, 3000);
+  </script>
+
+  <div class="subheader"><b>
+    Your trusted guide for intermediate education, colleges, admissions, and expert counseling.
+  </b></div>
+
+  <section>
+    <h2>Overview</h2>
+    <p>Intermediate education is the crucial bridge between school and higher education. Balanju's Team helps you choose the right intermediate group, college, and career path to succeed in your academic journey. Find expert-curated content, admission guidance, and personalized counseling right here.</p>
+  </section>
+
+  <div class="container">
+    <h2>Explore Intermediate Groups</h2>
+    <div class="grid">
+      <a href="250-MPC-INDEX.HTML" class="box"><i class="fas fa-calculator"></i>MPC (Maths)</a>
+      <a href="251-BIPC-INDEX.html" class="box"><i class="fas fa-dna"></i>BiPC (Biology)</a>
+      <a href="250-CEC-INDEX.HTML" class="box"><i class="fas fa-chart-line"></i>CEC (Commerce)</a>
+      <a href="252-MEC.HTML" class="box"><i class="fas fa-book"></i>MEC (Economics)</a>
+      <a href="#" class="box"><i class="fas fa-language"></i>HEC (Humanities)</a>
+      <a href="#" class="box"><i class="fas fa-university"></i>Top Colleges</a>
+      <a href="#" class="box"><i class="fas fa-file-alt"></i>Admission Info</a>
+      <a href="#" class="box"><i class="fas fa-comments"></i>Counseling</a>
+      <a href="#" class="box"><i class="fas fa-graduation-cap"></i>Career Paths</a>
+      <a href="#" class="box"><i class="fas fa-chart-bar"></i>Results</a>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2>vocational </h2>
+    <div class="grid">
+      <a href="mlt.html" class="box"><i class="fas fa-vial"></i>Medical Lab Technician</a>
+<a href="mphw.html" class="box"><i class="fas fa-user-nurse"></i>Health Worker (MPHW)</a>
+<a href="radiology.html" class="box"><i class="fas fa-x-ray"></i>Radiology Assistant</a>
+<a href="pharmacy.html" class="box"><i class="fas fa-pills"></i>Pharmacy Assistant</a>
+
+     
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <h2>ITI(Industrial Training Institute)</h2>
+    <div class="grid">
+      <a href="electrical.html" class="box"><i class="fas fa-bolt"></i>Electrical Technician</a>
+<a href="mechanical.html" class="box"><i class="fas fa-cogs"></i>Mechanical Technician</a>
+<a href="automobile.html" class="box"><i class="fas fa-car"></i>Automobile Technician</a>
+<a href="welder.html" class="box"><i class="fas fa-tools"></i>Welding Technician</a>
+<a href="rac.html" class="box"><i class="fas fa-snowflake"></i>Refrigeration & AC</a>
+<a href="civil.html" class="box"><i class="fas fa-building"></i>Civil Assistant</a>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2>DIPLOMA</h2>
+    <div class="grid">
+      <a href="cse.html" class="box"><i class="fas fa-laptop-code"></i>Computer Science (Diploma Level)</a>
+<a href="electrical.html" class="box"><i class="fas fa-bolt"></i>Electrical Technician</a>
+<a href="ece.html" class="box"><i class="fas fa-microchip"></i>Electronics Technician</a>
+<a href="civil.html" class="box"><i class="fas fa-drafting-compass"></i>Civil Assistant</a>
+<a href="mechanical.html" class="box"><i class="fas fa-cogs"></i>Mechanical Technician</a>
+<a href="automobile.html" class="box"><i class="fas fa-car"></i>Automobile Technician</a>
+
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2>🏫 Telangana's Top Junior Colleges</h2>
+    <div class="grid">
+      <a href="#" class="box"><i class="fas fa-landmark"></i>Sri Chaitanya</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>Narayana</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>FIITJEE</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>Resonance</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>Government Colleges</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>Private Colleges</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>Corporate Colleges</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>International Schools</a>
+      <a href="#" class="box"><i class="fas fa-landmark"></i>CBSE Schools</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>🎯 Intermediate Career Paths</h2>
+    <div class="grid">
+      <a href="#" class="box">
+        <i class="fas fa-cogs"></i>
+        Engineering
+        <h4>(MPC → B.Tech)</h4>
+      </a>
+      <a href="#" class="box">
+        <i class="fas fa-user-md"></i>
+        Medical
+        <h4>(BiPC → MBBS/BDS)</h4>
+      </a>
+      <a href="#" class="box">
+        <i class="fas fa-chart-line"></i>
+        Commerce
+        <h4>(CEC → B.Com/CA)</h4>
+      </a>
+      <a href="#" class="box">
+        <i class="fas fa-graduation-cap"></i>
+        Arts & Humanities
+        <h4>(HEB → BA/MA)</h4>
+      </a>
+      <a href="#" class="box">
+        <i class="fas fa-laptop"></i>
+        Computer Science
+        <h4>(MPC → BCA/B.Tech)</h4>
+      </a>
+      <a href="#" class="box">
+        <i class="fas fa-briefcase"></i>
+        Business
+        <h4>(MEC → BBA/MBA)</h4>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>🎓 Telangana Intermediate Admissions Journey</h2>
+    <div class="grid">
+      <a href="ts-inter-admission-info.html" class="box">
+        <i class="fas fa-globe"></i>
+        Through TS Inter Board
+        <h4>(Class 10 marks based)</h4>
+      </a>
+      <a href="direct-inter-admission.html" class="box">
+        <i class="fas fa-handshake"></i>
+        Direct College Admission
+        <h4>(Management quota)</h4>
+      </a>
+      <a href="entrance-exam-admission.html" class="box">
+        <i class="fas fa-pen-alt"></i>
+        Entrance Exams
+        <h4>(JEE/NEET prep)</h4>
+      </a>
+    </div>
+  </div>
+
+  <!-- Highlight Section -->
+  <div class="highlight-section">
+    <h2>🌟 Why Choose Intermediate Education?</h2>
+    <p>Intermediate education is the foundation for your future career. Choose the right group and college to unlock your potential and achieve your dreams.</p>
+    <a href="#" class="highlight-btn">Get Expert Counseling</a>
+  </div>
+
+  <!-- New Footer -->
+  <footer class="engineering-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Questions</h3>
+        <ul class="footer-links">
+          <li><a href="#">Which intermediate group should I choose?</a></li>
+          <li><a href="#">What are the best junior colleges?</a></li>
+          <li><a href="#">How to prepare for JEE/NEET from Inter?</a></li>
+          <li><a href="#">Which colleges have top results?</a></li>
+          <li><a href="#" class="chat-counselor">Chat with Counselor</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <div class="top-categories">
+          <ul class="footer-links">
+            <li><a href="#">Top Government Junior Colleges</a></li>
+            <li><a href="#">Top Private Junior Colleges</a></li>
+            <li><a href="#">Corporate Colleges</a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="#">International Schools</a></li>
+            <li><a href="#">CBSE Schools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Intermediate Results Analysis</a></li>
+          <li><a href="#">College Fee Comparison</a></li>
+          <li><a href="#">Admission Cutoff Analysis</a></li>
+          <li><a href="#">Scholarship Options</a></li>
+          <li><a href="#">Group Selector Tool</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-phone"></i> +91 7207800211</p>
+          <p><i class="fas fa-envelope"></i> balanjuinfo@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Hyderabad, India</p>
+        </div>
+        <div class="social-media">
+          <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@balanjuconsultancy1?si=3s4r6SGrs-r2JKrx"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/balanju_consultancy?igsh=MXB6NmNuaGJ2azA3bg=="><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/balaji-nayak-027050360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 Intermediate College Index. All Rights Reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20intermediate%20admission."
+     style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:998; font-family:'Segoe UI', sans-serif;"
+     target="_blank" aria-label="Chat with Balanju on WhatsApp">
+     💬 Chat with Us
+  </a>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
+
+</body>
+</html> 
