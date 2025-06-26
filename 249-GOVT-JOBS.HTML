@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Jobs After Intermediate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-navy: #0a2463;
+      --accent-gold: #ffc107;
+      --accent-red: #d64045;
+      --bg-light: #f5f7fa;
+      --white: #fff;
+      --gray: #e1e5ee;
+      --success-green: #4caf50;
+      --text-dark: #212121;
+      --text-light: #616161;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-navy) 80%, var(--accent-gold) 100%);
+      color: var(--white);
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(10,36,99,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(10,36,99,0.08);
+    }
+    h1 {
+      color: var(--primary-navy);
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.3rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-navy);
+      margin-top: 45px;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-left: 5px solid var(--accent-gold);
+      padding-left: 15px;
+      font-weight: 600;
+    }
+    .highlight {
+      color: var(--accent-gold);
+      font-weight: 700;
+      background: #fff8e1;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .job-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .job-card {
+      background: var(--white);
+      padding: 25px 20px;
+      border-radius: 12px;
+      border-top: 5px solid var(--primary-navy);
+      box-shadow: 0 4px 12px rgba(10,36,99,0.08);
+      transition: transform 0.3s;
+    }
+    .job-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(10,36,99,0.12);
+    }
+    .job-card h3 {
+      color: var(--primary-navy);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    .job-card h3 i {
+      margin-right: 12px;
+      color: var(--accent-gold);
+    }
+    ul {
+      padding-left: 25px;
+    }
+    ul li {
+      margin-bottom: 12px;
+      position: relative;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+    }
+    ul li:before {
+      content: "▹";
+      position: absolute;
+      left: -20px;
+      color: var(--accent-gold);
+    }
+    .exam-details {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f5f7fa;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-red);
+    }
+    .exam-details h4 {
+      color: var(--accent-red);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .exam-details h4 i {
+      margin-right: 8px;
+    }
+    .salary {
+      font-weight: 600;
+      color: var(--success-green);
+      margin-top: 10px;
+    }
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary-navy);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(10,36,99,0.1);
+    }
+    .download-btn:hover {
+      background: var(--accent-red);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(214,64,69,0.15);
+    }
+    .download-btn i {
+      margin-right: 8px;
+      color: white;
+    }
+    .tips-container {
+      background: #e8f5e9;
+      padding: 25px 20px;
+      border-radius: 12px;
+      border-left: 5px solid var(--success-green);
+      margin-top: 35px;
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .tip-icon {
+      color: var(--success-green);
+      font-size: 22px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 25px 15px;
+      }
+      header {
+        font-size: 1.8rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px 10px;
+        padding: 20px 10px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .job-categories {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span><i class="fas fa-briefcase"></i> Government Jobs After Intermediate</span>
+  </header>
+  <div class="container">
+    <h1>Excellent <span class="highlight">Government Job Opportunities</span> After 12th Grade</h1>
+    
+    <h2><i class="fas fa-train"></i> Railway Jobs</h2>
+    <div class="job-categories">
+      <div class="job-card">
+        <h3><i class="fas fa-user-tie"></i> Railway Group D</h3>
+        <ul>
+          <li><strong>Posts:</strong> Track Maintainer, Helper, Gateman</li>
+          <li><strong>Eligibility:</strong> 10th/12th pass with ITI certificate</li>
+          <li><strong>Age Limit:</strong> 18-33 years (relaxation applicable)</li>
+          <li><strong>Selection Process:</strong> Computer Based Test + Physical Efficiency Test</li>
+        </ul>
+        <div class="exam-details">
+          <h4><i class="fas fa-calendar-alt"></i> RRB Group D Exam Pattern</h4>
+          <ul>
+            <li>Mathematics - 25 questions</li>
+            <li>General Intelligence - 30 questions</li>
+            <li>General Science - 25 questions</li>
+            <li>General Awareness - 20 questions</li>
+          </ul>
+          <div class="salary">Approx Salary: ₹18,000 - ₹22,000 per month</div>
+        </div>
+      </div>
+      <div class="job-card">
+        <h3><i class="fas fa-user-cog"></i> Railway Apprentice</h3>
+        <ul>
+          <li><strong>Posts:</strong> Technician, Fitter, Electrician</li>
+          <li><strong>Eligibility:</strong> 10th pass + ITI in relevant trade</li>
+          <li><strong>Age Limit:</strong> 15-24 years</li>
+          <li><strong>Selection Process:</strong> Written Test + Document Verification</li>
+        </ul>
+        <div class="exam-details">
+          <h4><i class="fas fa-calendar-alt"></i> RRB Apprentice Exam</h4>
+          <ul>
+            <li>Trade Theory - 50 questions</li>
+            <li>Trade Practical - 25 questions</li>
+            <li>General Awareness - 25 questions</li>
+          </ul>
+          <div class="salary">Stipend: ₹7,000 - ₹12,000 per month during training</div>
+        </div>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-landmark"></i> Other Government Jobs</h2>
+    <div class="job-categories">
+      <div class="job-card">
+        <h3><i class="fas fa-shield-alt"></i> Defence Jobs</h3>
+        <ul>
+          <li><strong>Indian Army Soldier (GD):</strong> 12th pass with 45% marks</li>
+          <li><strong>Indian Navy Sailor:</strong> 12th with Maths & Physics</li>
+          <li><strong>Indian Air Force (Airmen):</strong> 12th with 50% marks</li>
+          <li><strong>BSF/CRPF/SSB:</strong> Various constable positions</li>
+        </ul>
+        <div class="exam-details">
+          <h4><i class="fas fa-running"></i> Physical Standards</h4>
+          <ul>
+            <li>Height: 165-170 cm (varies by post)</li>
+            <li>Chest: 77-82 cm (expandable)</li>
+            <li>Running: 1.6km in 6-7 minutes</li>
+          </ul>
+          <div class="salary">Starting Salary: ₹21,700 - ₹25,500 per month</div>
+        </div>
+      </div>
+      <div class="job-card">
+        <h3><i class="fas fa-file-contract"></i> SSC & State Govt Jobs</h3>
+        <ul>
+          <li><strong>SSC CHSL:</strong> LDC, DEO, Postal Assistant</li>
+          <li><strong>SSC GD Constable:</strong> Police, CAPF, CISF</li>
+          <li><strong>State Police:</strong> Constable, Warder, Jail Guard</li>
+          <li><strong>Forest Department:</strong> Forest Guard, Watcher</li>
+        </ul>
+        <div class="exam-details">
+          <h4><i class="fas fa-book-open"></i> Common Exam Pattern</h4>
+          <ul>
+            <li>General Awareness - 25 questions</li>
+            <li>General Intelligence - 25 questions</li>
+            <li>Mathematics - 25 questions</li>
+            <li>English/Hindi - 25 questions</li>
+          </ul>
+          <div class="salary">Approx Salary: ₹18,000 - ₹25,000 per month</div>
+        </div>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-file-download"></i> Preparation Resources</h2>
+    <div class="downloads">
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> RRB Group D Syllabus</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> SSC CHSL Previous Papers</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Indian Army Sample Papers</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> General Knowledge Handbook</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Physical Fitness Guide</a>
+    </div>
+
+    <h2><i class="fas fa-lightbulb"></i> Preparation Strategy</h2>
+    <div class="tips-container">
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-clock"></i></div>
+        <div><strong>Time Management:</strong> Create a daily study schedule with 2-3 hours dedicated to exam preparation. Focus more on General Awareness and Mathematics.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-book"></i></div>
+        <div><strong>Study Material:</strong> Focus on NCERT books (10th level) for basic concepts. Use previous year question papers to understand the exam pattern.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-running"></i></div>
+        <div><strong>Physical Fitness:</strong> For defence and police jobs, start physical training early - focus on running, push-ups, and high jumps.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-newspaper"></i></div>
+        <div><strong>Current Affairs:</strong> Read newspapers daily and make notes of important government schemes, sports events, and awards.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div><strong>Mock Tests:</strong> Take online mock tests weekly to improve speed and accuracy. Analyze mistakes to avoid repetition.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

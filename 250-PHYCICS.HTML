@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics | PHYSICS GUIDE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #1565c0;
+      --accent-red: #ff5252;
+      --accent-blue: #42a5f5;
+      --bg-light: #f5f9ff;
+      --white: #fff;
+      --gray: #e3e8ee;
+      --success-green: #388e3c;
+      --text-dark: #1a202c;
+      --text-light: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-blue) 80%, var(--accent-red) 100%);
+      color: var(--white);
+      padding: 1.2rem 0 1.2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(21,101,192,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .header-btn {
+      background: var(--accent-red);
+      color: var(--white);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(255,82,82,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .header-btn:hover {
+      background: var(--accent-blue);
+      color: var(--white);
+    }
+    .container {
+      max-width: 1050px;
+      margin: 40px auto 30px auto;
+      background: var(--white);
+      padding: 40px 30px 30px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(21,101,192,0.08);
+    }
+    h1 {
+      color: var(--primary-blue);
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-blue);
+      margin-top: 38px;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border-left: 5px solid var(--accent-red);
+      padding-left: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .highlight {
+      color: var(--accent-red);
+      font-weight: 700;
+      background: #ffebee;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .syllabus-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 25px;
+    }
+    .year-card {
+      background: #f7fafc;
+      padding: 22px 18px 18px 18px;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary-blue);
+      box-shadow: 0 2px 10px rgba(21,101,192,0.05);
+    }
+    .year-card h3 {
+      color: var(--primary-blue);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .year-card h3 i {
+      margin-right: 10px;
+      color: var(--accent-red);
+    }
+    ul {
+      padding-left: 25px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+    ul li:before {
+      content: "▹";
+      position: absolute;
+      left: -20px;
+      color: var(--accent-red);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0 35px 0;
+      box-shadow: 0 2px 10px rgba(21,101,192,0.05);
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid var(--gray);
+      padding: 13px 15px;
+      text-align: center;
+      font-size: 1rem;
+    }
+    th {
+      background: linear-gradient(90deg, var(--primary-blue) 80%, var(--accent-red) 100%);
+      color: white;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent-red);
+    }
+    tr:nth-child(even) {
+      background-color: #f5f9ff;
+    }
+    tr:hover {
+      background-color: #e3e8ee;
+    }
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary-blue);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(21,101,192,0.08);
+    }
+    .download-btn:hover {
+      background: var(--accent-red);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255,82,82,0.13);
+    }
+    .download-btn i {
+      margin-right: 8px;
+      color: white;
+    }
+    .tips-container {
+      background: #f7fafc;
+      padding: 22px 18px;
+      border-radius: 12px;
+      border-left: 5px solid var(--success-green);
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(56,142,60,0.05);
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .tip-icon {
+      color: var(--success-green);
+      font-size: 20px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px 8px 18px 8px;
+      }
+      header {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px 2px;
+        padding: 10px 2px 10px 2px;
+      }
+      h1 {
+        font-size: 1.2rem;
+      }
+      h2 {
+        font-size: 1.05rem;
+        padding-left: 7px;
+      }
+      .syllabus-section {
+        grid-template-columns: 1fr;
+      }
+      .downloads {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .download-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span><i class="fas fa-atom"></i> PHYSICS – GUIDE</span>
+    <a href="#" class="header-btn"><i class="fas fa-balance-scale"></i> Physics Weightage</a>
+  </header>
+  <div class="container">
+    <h1>Physics is the <span class="highlight">fundamental science of matter and energy</span>, essential for engineering, technology, and understanding the natural world.</h1>
+    <h2><i class="fas fa-book-open"></i> Syllabus Breakdown</h2>
+    <div class="syllabus-section">
+      <div class="year-card">
+        <h3><i class="fas fa-calendar-alt"></i> First Year (Physics-I)</h3>
+        <ul>
+          <li><strong>Physical World:</strong> Nature of physical laws, Physics and technology</li>
+          <li><strong>Units and Measurements:</strong> Fundamental and derived units, Dimensional analysis</li>
+          <li><strong>Motion in a Straight Line:</strong> Kinematics, Uniform and non-uniform motion</li>
+          <li><strong>Motion in a Plane:</strong> Projectile motion, Uniform circular motion</li>
+          <li><strong>Laws of Motion:</strong> Newton's laws, Friction, Circular motion</li>
+          <li><strong>Work, Energy and Power:</strong> Kinetic and potential energy, Power</li>
+          <li><strong>System of Particles and Rotational Motion:</strong> Center of mass, Moment of inertia</li>
+          <li><strong>Oscillations:</strong> Simple harmonic motion, Pendulums</li>
+          <li><strong>Waves:</strong> Wave motion, Sound waves, Doppler effect</li>
+        </ul>
+      </div>
+      <div class="year-card">
+        <h3><i class="fas fa-calendar-alt"></i> Second Year (Physics-II)</h3>
+        <ul>
+          <li><strong>Electric Charges and Fields:</strong> Coulomb's law, Electric field, Gauss's law</li>
+          <li><strong>Electrostatic Potential and Capacitance:</strong> Potential, Capacitors, Dielectrics</li>
+          <li><strong>Current Electricity:</strong> Ohm's law, Resistivity, Kirchhoff's laws</li>
+          <li><strong>Moving Charges and Magnetism:</strong> Magnetic field, Biot-Savart law, Ampere's law</li>
+          <li><strong>Magnetism and Matter:</strong> Bar magnet, Earth's magnetism</li>
+          <li><strong>Electromagnetic Induction:</strong> Faraday's law, Lenz's law, AC generator</li>
+          <li><strong>Alternating Current:</strong> AC circuits, LCR circuits, Power factor</li>
+          <li><strong>Electromagnetic Waves:</strong> Displacement current, EM spectrum</li>
+          <li><strong>Ray Optics:</strong> Reflection, Refraction, Optical instruments</li>
+          <li><strong>Wave Optics:</strong> Huygens principle, Interference, Diffraction</li>
+          <li><strong>Dual Nature of Radiation:</strong> Photoelectric effect, de Broglie wavelength</li>
+          <li><strong>Atoms:</strong> Atomic models, Spectral series</li>
+          <li><strong>Nuclei:</strong> Nuclear properties, Radioactivity, Nuclear reactions</li>
+          <li><strong>Semiconductor Electronics:</strong> Diodes, Transistors, Logic gates</li>
+        </ul>
+      </div>
+    </div>
+    <h2><i class="fas fa-file-download"></i> Study Resources</h2>
+    <div class="downloads">
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> First Year Textbook</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Second Year Textbook</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> IPE Question papers PHYSICS</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Important Questions</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Formula Handbook</a>
+    </div>
+   <h2><i class="fas fa-chart-pie"></i> IPE 1st Year - Physics Weightage</h2>
+<table style="width: 100%; border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0">
+  <thead style="background-color: #1565c0; color: white;">
+    <tr>
+      <th>S.No</th>
+      <th>Chapter Name</th>
+      <th>VSAQ</th>
+      <th>SAQ</th>
+      <th>LAQ</th>
+      <th>No. of Questions</th>
+      <th>Total Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Physical World & Measurement</td><td>2</td><td>2</td><td>0</td><td>2</td><td>4</td></tr>
+    <tr><td>2</td><td>Kinematics</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>3</td><td>Laws of Motion</td><td>0</td><td>6</td><td>7</td><td>3</td><td>13</td></tr>
+    <tr><td>4</td><td>Work, Energy & Power</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>5</td><td>Motion of System of Particles</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>6</td><td>Gravitation</td><td>0</td><td>4</td><td>0</td><td>1</td><td>4</td></tr>
+    <tr><td>7</td><td>Properties of Bulk Matter</td><td>2</td><td>8</td><td>7</td><td>4</td><td>17</td></tr>
+    <tr><td>8</td><td>Thermodynamics</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>9</td><td>Behavior of Perfect Gas</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
+    <tr><td>10</td><td>Oscillations & Waves</td><td>0</td><td>8</td><td>7</td><td>4</td><td>15</td></tr>
+    <tr style="font-weight: bold; background-color: #f2f2f2;">
+      <td colspan="2">Total</td>
+      <td>4</td>
+      <td>46</td>
+      <td>50</td>
+      <td>27</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2><i class="fas fa-chart-pie"></i> IPE 2nd Year - Physics Weightage</h2>
+<table style="width: 100%; border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0">
+  <thead style="background-color: #1565c0; color: white;">
+    <tr>
+      <th>S.No</th>
+      <th>Chapter Name</th>
+      <th>VSAQ</th>
+      <th>SAQ</th>
+      <th>LAQ</th>
+      <th>No. of Questions</th>
+      <th>Total Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Electric Charges & Fields</td><td>0</td><td>6</td><td>7</td><td>3</td><td>13</td></tr>
+    <tr><td>2</td><td>Electrostatic Potential</td><td>0</td><td>4</td><td>0</td><td>1</td><td>4</td></tr>
+    <tr><td>3</td><td>Current Electricity</td><td>2</td><td>4</td><td>7</td><td>3</td><td>13</td></tr>
+    <tr><td>4</td><td>Moving Charges & Magnetism</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>5</td><td>Magnetism & Matter</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
+    <tr><td>6</td><td>Electromagnetic Induction</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>7</td><td>Alternating Current</td><td>0</td><td>4</td><td>7</td><td>3</td><td>11</td></tr>
+    <tr><td>8</td><td>Electromagnetic Waves</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
+    <tr><td>9</td><td>Ray Optics</td><td>2</td><td>6</td><td>7</td><td>4</td><td>15</td></tr>
+    <tr><td>10</td><td>Wave Optics</td><td>0</td><td>4</td><td>0</td><td>1</td><td>4</td></tr>
+    <tr><td>11</td><td>Dual Nature of Radiation</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
+    <tr><td>12</td><td>Atoms</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
+    <tr><td>13</td><td>Nuclei</td><td>0</td><td>2</td><td>7</td><td>3</td><td>9</td></tr>
+    <tr><td>14</td><td>Semiconductor Electronics</td><td>0</td><td>4</td><td>0</td><td>1</td><td>4</td></tr>
+    <tr style="font-weight: bold; background-color: #f2f2f2;">
+      <td colspan="2">Total</td>
+      <td>4</td>
+      <td>50</td>
+      <td>50</td>
+      <td>29</td>
+      <td>104</td>
+    </tr>
+  </tbody>
+</table>
+  
+
+<h2><i class="fas fa-atom"></i> Important Chapters for EAMCET – Physics</h2>
+
+<!-- Physics I -->
+<h3 style="color: #2c3e50;">📘 Physics – I (1st Year)</h3>
+<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: center;">
+  <thead style="background-color: #1565c0; color: white;">
+    <tr>
+      <th>S.No</th>
+      <th>Chapter Name</th>
+      <th>Importance</th>
+      <th>EAMCET Weightage (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Kinematics</td><td>⭐⭐⭐⭐</td><td>8–10%</td></tr>
+    <tr><td>2</td><td>Laws of Motion</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
+    <tr><td>3</td><td>Work, Energy & Power</td><td>⭐⭐⭐⭐</td><td>8–10%</td></tr>
+    <tr><td>4</td><td>System of Particles</td><td>⭐⭐⭐</td><td>7–9%</td></tr>
+    <tr><td>5</td><td>Properties of Bulk Matter</td><td>⭐⭐⭐</td><td>10–12%</td></tr>
+    <tr><td>6</td><td>Thermodynamics</td><td>⭐⭐⭐</td><td>6–8%</td></tr>
+    <tr><td>7</td><td>Oscillations & Waves</td><td>⭐⭐⭐⭐</td><td>12–15%</td></tr>
+  </tbody>
+</table>
+
+<!-- Physics II -->
+<h3 style="color: #2c3e50; margin-top: 40px;">📗 Physics – II (2nd Year)</h3>
+<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: center;">
+  <thead style="background-color: #42a5f5; color: white;">
+    <tr>
+      <th>S.No</th>
+      <th>Chapter Name</th>
+      <th>Importance</th>
+      <th>EAMCET Weightage (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Electric Charges & Fields</td><td>⭐⭐⭐⭐</td><td>8–10%</td></tr>
+    <tr><td>2</td><td>Current Electricity</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
+    <tr><td>3</td><td>Moving Charges & Magnetism</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
+    <tr><td>4</td><td>Electromagnetic Induction</td><td>⭐⭐⭐</td><td>8–10%</td></tr>
+    <tr><td>5</td><td>Alternating Current</td><td>⭐⭐⭐⭐</td><td>8–10%</td></tr>
+    <tr><td>6</td><td>Ray Optics</td><td>⭐⭐⭐⭐</td><td>12–15%</td></tr>
+    <tr><td>7</td><td>Wave Optics</td><td>⭐⭐⭐</td><td>6–8%</td></tr>
+    <tr><td>8</td><td>Semiconductor Electronics</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
+  </tbody>
+</table>
+
+    <h2><i class="fas fa-lightbulb"></i> Expert Study Tips</h2>
+    <div class="tips-container">
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-clock"></i></div>
+        <div><strong>Conceptual Understanding:</strong> Focus on understanding fundamental concepts rather than rote memorization</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-book"></i></div>
+        <div><strong>NCERT First:</strong> Master NCERT textbooks thoroughly before moving to reference books</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-chart-line"></i></div>
+        <div><strong>Weightage Strategy:</strong> Prioritize chapters with high marks weightage like Optics and Electromagnetism</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-stopwatch"></i></div>
+        <div><strong>Numerical Practice:</strong> Solve at least 30 numerical problems daily from different chapters</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-clipboard-check"></i></div>
+        <div><strong>Derivation Practice:</strong> Practice all important derivations with proper diagrams and explanations</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-flask"></i></div>
+        <div><strong>Experiment Diagrams:</strong> Memorize important experimental setups and circuit diagrams</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

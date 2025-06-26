@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English | Intermediate Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-purple: #6a1b9a;
+      --accent-pink: #ec407a;
+      --accent-purple: #9c27b0;
+      --bg-light: #f9f5fd;
+      --white: #fff;
+      --gray: #e3e8ee;
+      --success-green: #388e3c;
+      --text-dark: #1a202c;
+      --text-light: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-purple) 80%, var(--accent-pink) 100%);
+      color: var(--white);
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(106,27,154,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .header-btn {
+      background: var(--accent-pink);
+      color: var(--white);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(236,64,122,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .header-btn:hover {
+      background: var(--accent-purple);
+      color: var(--white);
+    }
+    .container {
+      max-width: 1050px;
+      margin: 40px auto 30px auto;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(106,27,154,0.08);
+    }
+    h1 {
+      color: var(--primary-purple);
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-purple);
+      margin-top: 38px;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border-left: 5px solid var(--accent-pink);
+      padding-left: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .highlight {
+      color: var(--accent-pink);
+      font-weight: 700;
+      background: #fce4ec;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .syllabus-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 25px;
+    }
+    .year-card {
+      background: #f7fafc;
+      padding: 22px 18px;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary-purple);
+      box-shadow: 0 2px 10px rgba(106,27,154,0.05);
+    }
+    .year-card h3 {
+      color: var(--primary-purple);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .year-card h3 i {
+      margin-right: 10px;
+      color: var(--accent-pink);
+    }
+    ul {
+      padding-left: 25px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+    ul li:before {
+      content: "▹";
+      position: absolute;
+      left: -20px;
+      color: var(--accent-pink);
+    }
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary-purple);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(106,27,154,0.08);
+    }
+    .download-btn:hover {
+      background: var(--accent-pink);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(236,64,122,0.13);
+    }
+    .download-btn i {
+      margin-right: 8px;
+      color: white;
+    }
+    .tips-container {
+      background: #f7fafc;
+      padding: 22px 18px;
+      border-radius: 12px;
+      border-left: 5px solid var(--success-green);
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(56,142,60,0.05);
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .tip-icon {
+      color: var(--success-green);
+      font-size: 20px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px 8px;
+      }
+      header {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px 2px;
+        padding: 10px 2px;
+      }
+      h1 {
+        font-size: 1.2rem;
+      }
+      h2 {
+        font-size: 1.05rem;
+        padding-left: 7px;
+      }
+      .syllabus-section {
+        grid-template-columns: 1fr;
+      }
+      .downloads {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .download-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span><i class="fas fa-book-open"></i> INTERMEDIATE ENGLISH GUIDE</span>
+    <a href="#" class="header-btn"><i class="fas fa-download"></i> Study Materials</a>
+  </header>
+  <div class="container">
+    <h1>Mastering English is <span class="highlight">essential for academic success</span> and opens doors to global opportunities in every field.</h1>
+    
+    <h2><i class="fas fa-book-open"></i> First Year Syllabus</h2>
+    <div class="syllabus-section">
+      <div class="year-card">
+        <h3><i class="fas fa-scroll"></i> Textbook: English Reader</h3>
+        <ul>
+          <li><strong>Unit I:</strong> Personality Development (Attitude, Gratitude)</li>
+          <li><strong>Unit II:</strong> Wit and Humor (The Dear Departed, The Brave Potter)</li>
+          <li><strong>Unit III:</strong> Human Relations (A Tale of Three Villages, The Journey)</li>
+          <li><strong>Unit IV:</strong> Films and Theatre (The Never-Never Nest, A Ghost's Story)</li>
+          <li><strong>Unit V:</strong> Sports and Wellness (The Winning Team, The Concert)</li>
+          <li><strong>Unit VI:</strong> Ethics and Values (The Bed of Arrows, The Merchant of Venice)</li>
+        </ul>
+      </div>
+      <div class="year-card">
+        <h3><i class="fas fa-pen-fancy"></i> Language Components</h3>
+        <ul>
+          <li><strong>Reading Comprehension:</strong> Unseen passages with questions</li>
+          <li><strong>Vocabulary:</strong> Synonyms, Antonyms, One-word substitutes</li>
+          <li><strong>Grammar:</strong> Tenses, Prepositions, Articles, Reported Speech</li>
+          <li><strong>Creative Writing:</strong> Essay writing, Letter writing, Report writing</li>
+          <li><strong>Study Skills:</strong> Note-making, Summarizing, Reference skills</li>
+          <li><strong>Oral Communication:</strong> Group discussions, Presentations</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-book-open"></i> Second Year Syllabus</h2>
+    <div class="syllabus-section">
+      <div class="year-card">
+        <h3><i class="fas fa-scroll"></i> Textbook: English Reader</h3>
+        <ul>
+          <li><strong>Unit I:</strong> Environment (The Three Questions, The Green Champion)</li>
+          <li><strong>Unit II:</strong> Science and Future (The Secret of Work, Space Travel)</li>
+          <li><strong>Unit III:</strong> Art and Culture (Indian Weavers, The Golden Touch)</li>
+          <li><strong>Unit IV:</strong> Women Empowerment (The Princess Who Wanted the Moon, The Story of an Hour)</li>
+          <li><strong>Unit V:</strong> Social Issues (The Refugee, The Last Leaf)</li>
+          <li><strong>Unit VI:</strong> Adventure and Mystery (The Adventure of the Dying Detective, The Open Window)</li>
+        </ul>
+      </div>
+      <div class="year-card">
+        <h3><i class="fas fa-pen-fancy"></i> Language Components</h3>
+        <ul>
+          <li><strong>Advanced Reading Comprehension:</strong> Complex passages with inference questions</li>
+          <li><strong>Vocabulary Enhancement:</strong> Idioms, Phrases, Word formation</li>
+          <li><strong>Advanced Grammar:</strong> Clauses, Transformation of sentences, Error correction</li>
+          <li><strong>Professional Writing:</strong> Formal letters, Job applications, Speech writing</li>
+          <li><strong>Critical Thinking:</strong> Argument analysis, Debate preparation</li>
+          <li><strong>Public Speaking:</strong> Elocution, Extempore, Interview skills</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-file-download"></i> Study Resources</h2>
+    <div class="downloads">
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> First Year Textbook PDF</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Second Year Textbook PDF</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Grammar Handbook</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Previous Question Papers</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Vocabulary Builder</a>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Writing Skills Guide</a>
+    </div>
+
+    <h2><i class="fas fa-lightbulb"></i> Study Tips for English</h2>
+    <div class="tips-container">
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-book-reader"></i></div>
+        <div><strong>Daily Reading:</strong> Read English newspapers, magazines or novels for at least 30 minutes daily to improve comprehension and vocabulary.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-edit"></i></div>
+        <div><strong>Writing Practice:</strong> Write one essay/letter/report daily on different topics to improve writing skills and speed.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-comments"></i></div>
+        <div><strong>Speaking Practice:</strong> Engage in English conversations with friends/family to improve fluency and confidence.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-list-alt"></i></div>
+        <div><strong>Grammar Drills:</strong> Complete at least 20 grammar exercises daily from different topics (tenses, prepositions, etc.)</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-brain"></i></div>
+        <div><strong>Vocabulary Building:</strong> Learn 10 new words daily with meanings and usage in sentences.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-clock"></i></div>
+        <div><strong>Time Management:</strong> Practice previous years' question papers within time limits to improve speed and accuracy.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
