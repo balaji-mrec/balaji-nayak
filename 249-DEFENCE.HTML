@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defense Careers After 12th | Join Indian Armed Forces</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-navy: #0a2463;
+      --accent-red: #d64045;
+      --accent-gold: #ffd700;
+      --bg-light: #f0f2f5;
+      --white: #fff;
+      --gray: #d3d3d3;
+      --success-green: #4caf50;
+      --text-dark: #212121;
+      --text-light: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=1000');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-navy) 60%, var(--accent-red) 100%);
+      color: var(--white);
+      padding: 1.8rem 0;
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--accent-gold);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      background: rgba(255,255,255,0.95);
+      padding: 40px 35px;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(10,36,99,0.15);
+      border: 1px solid var(--gray);
+    }
+    h1 {
+      color: var(--primary-navy);
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    h2 {
+      color: var(--primary-navy);
+      margin-top: 50px;
+      margin-bottom: 25px;
+      font-size: 1.7rem;
+      border-bottom: 2px solid var(--accent-red);
+      padding-bottom: 8px;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .highlight {
+      color: var(--accent-red);
+      font-weight: 700;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    }
+    .forces-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 35px;
+    }
+    .force-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-top: 5px solid var(--primary-navy);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .force-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+    .force-card h3 {
+      color: var(--primary-navy);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .force-card h3 i {
+      margin-right: 12px;
+      color: var(--accent-red);
+    }
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent-red);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    ul {
+      padding-left: 25px;
+    }
+    ul li {
+      margin-bottom: 12px;
+      position: relative;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+    }
+    ul li:before {
+      content: "▹";
+      position: absolute;
+      left: -20px;
+      color: var(--accent-red);
+      font-weight: bold;
+    }
+    .exam-box {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border-left: 3px solid var(--primary-navy);
+    }
+    .exam-box h4 {
+      color: var(--primary-navy);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .exam-box h4 i {
+      margin-right: 8px;
+      color: var(--accent-red);
+    }
+    .salary {
+      font-weight: 600;
+      color: var(--success-green);
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+    .physical {
+      margin-top: 15px;
+      padding: 10px;
+      background: #fff3f3;
+      border-radius: 5px;
+      border-left: 3px solid var(--accent-red);
+    }
+    .physical h5 {
+      color: var(--accent-red);
+      margin-bottom: 5px;
+    }
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary-navy);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 3px 10px rgba(10,36,99,0.2);
+    }
+    .btn:hover {
+      background: var(--accent-red);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(214,64,69,0.3);
+    }
+    .btn i {
+      margin-right: 8px;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-navy);
+      border: 2px solid var(--primary-navy);
+    }
+    .btn-outline:hover {
+      background: var(--primary-navy);
+      color: white;
+    }
+    .tips-section {
+      background: #f0f7ff;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+      border: 1px dashed var(--primary-navy);
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .tip-icon {
+      color: var(--accent-red);
+      font-size: 24px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    .timeline {
+      margin-top: 40px;
+    }
+    .timeline h3 {
+      color: var(--primary-navy);
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .timeline-steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .step {
+      background: var(--white);
+      padding: 15px;
+      border-radius: 8px;
+      width: 160px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .step:not(:last-child):after {
+      content: "→";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-red);
+      font-weight: bold;
+    }
+    .step-number {
+      background: var(--accent-red);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-weight: bold;
+    }
+    @media (max-width: 900px) {
+      header {
+        font-size: 1.8rem;
+        padding: 1.2rem 0;
+      }
+      .container {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .step:not(:last-child):after {
+        display: none;
+      }
+    }
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+      .container {
+        margin: 20px 10px;
+        padding: 20px 15px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .forces-container {
+        grid-template-columns: 1fr;
+      }
+      .downloads {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span><i class="fas fa-shield-alt"></i> Defense Careers After 12th</span>
+  </header>
+  <div class="container">
+    <h1>Join <span class="highlight">Indian Armed Forces</span> After Intermediate</h1>
+    
+    <h2><i class="fas fa-anchor"></i> Indian Navy Opportunities</h2>
+    <div class="forces-container">
+      <div class="force-card">
+        <div class="badge">Popular</div>
+        <h3><i class="fas fa-ship"></i> Navy Sailor (MR)</h3>
+        <ul>
+          <li><strong>Eligibility:</strong> 10+2 with 50% marks (Maths & Physics required)</li>
+          <li><strong>Age Limit:</strong> 17-21 years</li>
+          <li><strong>Selection Process:</strong> Written Exam → Physical Test → Medical Exam</li>
+          <li><strong>Training:</strong> 22 weeks basic training at INS Chilka</li>
+        </ul>
+        <div class="exam-box">
+          <h4><i class="fas fa-book"></i> Exam Pattern</h4>
+          <ul>
+            <li>Science - 25 questions</li>
+            <li>Mathematics - 25 questions</li>
+            <li>General Knowledge - 25 questions</li>
+            <li>English - 25 questions</li>
+          </ul>
+        </div>
+        <div class="physical">
+          <h5><i class="fas fa-running"></i> Physical Standards</h5>
+          <p>Height: 157 cm | Chest: 5 cm expansion | Running: 1.6 km in 7 minutes</p>
+        </div>
+        <div class="salary">Starting Salary: ₹21,700 - ₹69,100 per month</div>
+      </div>
+
+      <div class="force-card">
+        <h3><i class="fas fa-water"></i> Navy Artificer Apprentice</h3>
+        <ul>
+          <li><strong>Eligibility:</strong> 10+2 with 60% (PCM - 60% aggregate)</li>
+          <li><strong>Age Limit:</strong> 16.5-19.5 years</li>
+          <li><strong>Selection:</strong> Written Test → PFT → Medical</li>
+          <li><strong>Training:</strong> 9 weeks at INS Chilka + 2 years technical training</li>
+        </ul>
+        <div class="exam-box">
+          <h4><i class="fas fa-book"></i> Exam Pattern</h4>
+          <ul>
+            <li>Physics - 25 questions</li>
+            <li>Chemistry - 25 questions</li>
+            <li>Mathematics - 50 questions</li>
+          </ul>
+        </div>
+        <div class="physical">
+          <h5><i class="fas fa-running"></i> Physical Standards</h5>
+          <p>Height: 157 cm | Weight: Proportionate | Eyesight: 6/12 correctable</p>
+        </div>
+        <div class="salary">Stipend during training: ₹14,600 - ₹21,700 per month</div>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-fighter-jet"></i> Indian Air Force Opportunities</h2>
+    <div class="forces-container">
+      <div class="force-card">
+        <div class="badge">New</div>
+        <h3><i class="fas fa-plane"></i> Air Force Airmen (Group Y)</h3>
+        <ul>
+          <li><strong>Eligibility:</strong> 10+2 with 50% marks (any stream)</li>
+          <li><strong>Age Limit:</strong> 17-21 years</li>
+          <li><strong>Selection:</strong> Online Test → PFT → Adaptability Test → Medical</li>
+          <li><strong>Training:</strong> 24 weeks at Airmen Training School</li>
+        </ul>
+        <div class="exam-box">
+          <h4><i class="fas fa-book"></i> Exam Pattern</h4>
+          <ul>
+            <li>English - 15 questions</li>
+            <li>Reasoning - 15 questions</li>
+            <li>Mathematics - 15 questions</li>
+            <li>General Awareness - 15 questions</li>
+          </ul>
+        </div>
+        <div class="physical">
+          <h5><i class="fas fa-running"></i> Physical Standards</h5>
+          <p>Height: 152.5 cm | Running: 1.6 km in 8 minutes | Push-ups: 10 in 1 min</p>
+        </div>
+        <div class="salary">Starting Salary: ₹26,900 - ₹33,400 per month</div>
+      </div>
+
+      <div class="force-card">
+        <h3><i class="fas fa-helicopter"></i> Air Force Technical (Group X)</h3>
+        <ul>
+          <li><strong>Eligibility:</strong> 10+2 with 50% (PCM) or 3-year diploma</li>
+          <li><strong>Age Limit:</strong> 17-21 years</li>
+          <li><strong>Selection:</strong> Online Test → PFT → Adaptability Test → Medical</li>
+          <li><strong>Training:</strong> 52 weeks technical training</li>
+        </ul>
+        <div class="exam-box">
+          <h4><i class="fas fa-book"></i> Exam Pattern</h4>
+          <ul>
+            <li>Physics - 25 questions</li>
+            <li>Chemistry - 25 questions</li>
+            <li>Mathematics - 25 questions</li>
+            <li>English - 25 questions</li>
+          </ul>
+        </div>
+        <div class="physical">
+          <h5><i class="fas fa-running"></i> Physical Standards</h5>
+          <p>Height: 152.5 cm | Chest: 5 cm expansion | Eyesight: 6/12 correctable</p>
+        </div>
+        <div class="salary">Starting Salary: ₹33,100 - ₹40,700 per month</div>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-medal"></i> Indian Army Opportunities</h2>
+    <div class="forces-container">
+      <div class="force-card">
+        <div class="badge">Popular</div>
+        <h3><i class="fas fa-user-shield"></i> Army Soldier (General Duty)</h3>
+        <ul>
+          <li><strong>Eligibility:</strong> 10+2 with 45% marks (any stream)</li>
+          <li><strong>Age Limit:</strong> 17.5-21 years</li>
+          <li><strong>Selection:</strong> Written Test → Physical Test → Medical Exam</li>
+          <li><strong>Training:</strong> 12 months at various regimental centers</li>
+        </ul>
+        <div class="exam-box">
+          <h4><i class="fas fa-book"></i> Exam Pattern</h4>
+          <ul>
+            <li>General Knowledge - 25 questions</li>
+            <li>Mathematics - 25 questions</li>
+            <li>Science - 25 questions</li>
+            <li>Current Affairs - 25 questions</li>
+          </ul>
+        </div>
+        <div class="physical">
+          <h5><i class="fas fa-running"></i> Physical Standards</h5>
+          <p>Height: 166 cm | Chest: 77-82 cm | Running: 1.6 km in 6.5 minutes</p>
+        </div>
+        <div class="salary">Starting Salary: ₹21,700 - ₹69,100 per month</div>
+      </div>
+
+      <div class="force-card">
+        <h3><i class="fas fa-wrench"></i> Army Technical (TA)</h3>
+        <ul>
+          <li><strong>Eligibility:</strong> 10+2 with PCM (50% aggregate) or 3-year diploma</li>
+          <li><strong>Age Limit:</strong> 17.5-23 years</li>
+          <li><strong>Selection:</strong> Written Test → Trade Test → Physical Test → Medical</li>
+          <li><strong>Training:</strong> 1 year technical training</li>
+        </ul>
+        <div class="exam-box">
+          <h4><i class="fas fa-book"></i> Exam Pattern</h4>
+          <ul>
+            <li>General Knowledge - 20 questions</li>
+            <li>Physics - 25 questions</li>
+            <li>Chemistry - 15 questions</li>
+            <li>Mathematics - 40 questions</li>
+          </ul>
+        </div>
+        <div class="physical">
+          <h5><i class="fas fa-running"></i> Physical Standards</h5>
+          <p>Height: 165 cm | Weight: 50 kg | Eyesight: 6/36 correctable</p>
+        </div>
+        <div class="salary">Starting Salary: ₹29,200 - ₹92,300 per month</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <h3><i class="fas fa-calendar-check"></i> Recruitment Timeline</h3>
+      <div class="timeline-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div>Notification Release (June/Dec)</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div>Online Application (30 days)</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div>Admit Card (4 weeks before exam)</div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div>Written Exam (Oct/Mar)</div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div>Final Result (3-4 months after exam)</div>
+        </div>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-file-download"></i> Preparation Resources</h2>
+    <div class="downloads">
+      <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Navy MR Syllabus</a>
+      <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Air Force Previous Papers</a>
+      <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Army GD Study Material</a>
+      <a href="#" class="btn"><i class="fas fa-file-pdf"></i> Physical Training Guide</a>
+      <a href="#" class="btn btn-outline"><i class="fas fa-globe"></i> Official Websites</a>
+    </div>
+
+    <div class="tips-section">
+      <h2><i class="fas fa-lightbulb"></i> Preparation Strategy</h2>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-brain"></i></div>
+        <div><strong>Exam Preparation:</strong> Focus on NCERT 10th/12th books for basic concepts. Practice previous 5 years' question papers. Join online test series for mock exams.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-running"></i></div>
+        <div><strong>Physical Training:</strong> Start 3-6 months early. Daily routine should include running (1.6 km target), push-ups (20/day), sit-ups (30/day), and pull-ups (5/day).</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-eye"></i></div>
+        <div><strong>Medical Readiness:</strong> Get complete health checkup before applying. Correct vision if needed. Maintain BMI between 18.5-24.9. Avoid any tattoos on prohibited body parts.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-newspaper"></i></div>
+        <div><strong>Current Affairs:</strong> Read newspapers daily. Focus on defense news, government schemes, sports events, and international relations. Make monthly notes.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-user-tie"></i></div>
+        <div><strong>Interview Prep:</strong> Practice speaking clearly and confidently. Learn about Indian armed forces history, ranks, and recent achievements. Dress formally for SSB interviews.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
