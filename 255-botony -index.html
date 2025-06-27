@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chemistry | MPC Stream Guide</title>
+  <title>Botany | BiPC Stream Guide</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary-blue: #1a237e;
-      --accent-gold: #ffd600;
-      --bg-light: #f4f7fb;
+      --primary-green:  #153a6e;
+      --accent-leaf: #aee571;
+      --bg-light: #f1f8e9;
       --white: #fff;
       --gray: #e3e8ee;
       --text-dark: #1a202c;
@@ -23,14 +23,14 @@
       line-height: 1.7;
     }
     header {
-      background: var(--primary-blue);
+      background: var(--primary-green);
       color: var(--white);
       padding: 1.2rem 0;
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(26,35,126,0.13);
+      box-shadow: 0 4px 10px rgba(56,142,60,0.13);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -40,8 +40,8 @@
       gap: 1.5rem;
     }
     .header-btn {
-      background: var(--accent-gold);
-      color: var(--primary-blue);
+      background: var(--accent-leaf);
+      color: var(--primary-green);
       border: none;
       border-radius: 25px;
       padding: 0.5rem 1.3rem;
@@ -50,14 +50,14 @@
       margin-left: 1rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(255,214,0,0.13);
+      box-shadow: 0 2px 8px rgba(174,229,113,0.13);
       display: flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
     }
     .header-btn:hover {
-      background: #bfa800;
+      background: #7cb342;
       color: var(--white);
     }
     .container {
@@ -66,29 +66,29 @@
       background: var(--white);
       padding: 40px 30px;
       border-radius: 18px;
-      box-shadow: 0 6px 32px rgba(26,35,126,0.08);
+      box-shadow: 0 6px 32px rgba(56,142,60,0.08);
     }
     h1 {
-      color: var(--primary-blue);
+      color: var(--primary-green);
       text-align: center;
       margin-bottom: 18px;
       font-size: 2.1rem;
       font-weight: 700;
     }
     h2 {
-      color: var(--primary-blue);
+      color: var(--primary-green);
       margin-top: 38px;
       margin-bottom: 18px;
       font-size: 1.35rem;
-      border-left: 5px solid var(--accent-gold);
+      border-left: 5px solid var(--accent-leaf);
       padding-left: 12px;
       font-weight: 600;
       letter-spacing: 0.5px;
     }
     .highlight {
-      color: var(--accent-gold);
+      color: var(--accent-leaf);
       font-weight: 700;
-      background: #fffde7;
+      background: #f4ffef;
       padding: 2px 7px;
       border-radius: 4px;
     }
@@ -102,14 +102,14 @@
     .section-heading {
       font-size: 1.3rem;
       font-weight: 700;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       display: flex;
       align-items: center;
       gap: 12px;
       margin-bottom: 20px;
       padding: 10px 16px;
-      background-color: #eaf2ff;
-      border-left: 6px solid var(--accent-gold);
+      background-color: #eafaf1;
+      border-left: 6px solid var(--accent-leaf);
       border-radius: 8px;
     }
     .downloads-grid {
@@ -121,7 +121,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      background-color: var(--primary-blue);
+      background-color: var(--primary-green);
       color: white;
       padding: 12px 20px;
       border-radius: 10px;
@@ -131,11 +131,11 @@
       transition: background 0.3s;
     }
     .download-btn i {
-      color: var(--accent-gold);
+      color: var(--accent-leaf);
       font-size: 18px;
     }
     .download-btn:hover {
-      background-color: #0d133d;
+      background-color: #256029;
     }
     .video-container {
       display: flex;
@@ -156,7 +156,7 @@
     }
     .video-card h4 {
       padding: 15px;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       font-size: 1.1rem;
     }
     .video-frame {
@@ -166,13 +166,13 @@
     }
     .info-box {
       background: #f8f9fa;
-      border-left: 4px solid var(--accent-gold);
+      border-left: 4px solid var(--accent-leaf);
       padding: 15px;
       margin: 20px 0;
       border-radius: 0 8px 8px 0;
     }
     .info-box h3 {
-      color: var(--primary-blue);
+      color: var(--primary-green);
       margin-top: 0;
     }
     .tips-container {
@@ -188,10 +188,10 @@
       background: #f4f7fb;
       border-radius: 10px;
       padding: 15px;
-      box-shadow: 0 2px 8px rgba(26,35,126,0.04);
+      box-shadow: 0 2px 8px rgba(56,142,60,0.04);
     }
     .tip-icon {
-      color: var(--primary-blue);
+      color: var(--primary-green);
       font-size: 1.7rem;
       margin-top: 2px;
     }
@@ -199,7 +199,7 @@
       width: 100%;
       border-collapse: collapse;
       margin: 25px 0 35px 0;
-      box-shadow: 0 2px 10px rgba(26,35,126,0.05);
+      box-shadow: 0 2px 10px rgba(56,142,60,0.05);
       background: var(--white);
       border-radius: 10px;
       overflow: hidden;
@@ -211,10 +211,10 @@
       font-size: 1rem;
     }
     th {
-      background: var(--primary-blue);
+      background: var(--primary-green);
       color: white;
       font-weight: 600;
-      border-bottom: 2px solid var(--accent-gold);
+      border-bottom: 2px solid var(--accent-leaf);
     }
     tr:nth-child(even) {
       background-color: #f5f9ff;
@@ -230,7 +230,7 @@
     }
     .exam-badge {
       background: #e3e8ee;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       padding: 8px 15px;
       border-radius: 20px;
       font-weight: 600;
@@ -240,16 +240,16 @@
     }
     .exam-badge i {
       margin-right: 8px;
-      color: var(--primary-blue);
+      color: var(--primary-green);
     }
     .coming-soon {
       text-align: center;
       padding: 15px;
-      background: #fffde7;
+      background: #f4ffef;
       border-radius: 8px;
       margin-top: 20px;
       font-weight: 600;
-      color: var(--primary-blue);
+      color: var(--primary-green);
     }
     @media (max-width: 900px) {
       .container {
@@ -296,19 +296,19 @@
 </head>
 <body>
   <header>
-    <span><i class="fas fa-flask"></i> CHEMISTRY — IPE GUIDE</span>
-    <a href="chemistry-syllabus.html" class="header-btn">
-      <i class="fas fa-balance-scale"></i> GO FOR JEE|EAPCET GUIDE
+    <span><i class="fas fa-leaf"></i> BOTANY — IPE GUIDE</span>
+    <a href="botany-syllabus.html" class="header-btn">
+      <i class="fas fa-balance-scale"></i> GO FOR NEET|EAPCET GUIDE
     </a>
   </header>
 
   <div class="container">
-    <h1>Chemistry Complete Study Guide</h1>
-    <p>Welcome to the comprehensive Chemistry resource for Intermediate Public Examination (IPE) students in Andhra Pradesh and Telangana. This guide covers both 1st and 2nd year syllabus with essential study materials, previous year papers, and expert tips to excel in your exams.</p>
+    <h1>Botany Complete Study Guide</h1>
+    <p>Welcome to the comprehensive Botany resource for Intermediate Public Examination (IPE) students in Andhra Pradesh and Telangana. This guide covers both 1st and 2nd year syllabus with essential study materials, previous year papers, and expert tips to excel in your exams.</p>
     
     <div class="info-box">
-      <h3>About Chemistry</h3>
-      <p>Chemistry is a core subject for MPC stream students, exploring the composition, structure, properties, and changes of matter. The syllabus includes Physical, Organic, and Inorganic Chemistry, providing a strong foundation for competitive exams like EAMCET and JEE.</p>
+      <h3>About Botany</h3>
+      <p>Botany is a core subject for BiPC stream students, exploring the structure, growth, reproduction, metabolism, development, diseases, and chemical properties of plants. The syllabus includes Plant Diversity, Anatomy, Physiology, Genetics, Ecology, and Economic Botany, providing a strong foundation for competitive exams like EAMCET and NEET (for BAMS/BHMS).</p>
     </div>
 
     <div class="section-card">
@@ -316,13 +316,13 @@
         <i class="fas fa-book"></i>
         <span>Study Resources for IPE 1st Year</span>
       </h2>
-      <p>Comprehensive materials covering all chapters of 1st year Chemistry syllabus as prescribed by the Board of Intermediate Education.</p>
+      <p>Comprehensive materials covering all chapters of 1st year Botany syllabus as prescribed by the Board of Intermediate Education.</p>
       <div class="downloads-grid">
         <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (1st Year)</a>
         <a href="#" class="download-btn"><i class="fas fa-download"></i> Syllabus & Weightage</a>
         <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
         <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Questions</a>
-        <a href="#" class="download-btn"><i class="fas fa-vial"></i> Formula Handbook</a>
+        <a href="#" class="download-btn"><i class="fas fa-leaf"></i> Practical Handbook</a>
         <a href="#" class="download-btn"><i class="fas fa-chart-line"></i> Exam Strategy Guide</a>
       </div>
     </div>
@@ -332,57 +332,57 @@
         <i class="fas fa-book"></i>
         <span>Study Resources for IPE 2nd Year</span>
       </h2>
-      <p>Complete collection of study materials for 2nd year Chemistry, including advanced topics in Organic and Inorganic Chemistry.</p>
+      <p>Complete collection of study materials for 2nd year Botany, including advanced topics in Plant Physiology, Genetics, and Ecology.</p>
       <div class="downloads-grid">
         <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (2nd Year)</a>
         <a href="#" class="download-btn"><i class="fas fa-download"></i> Syllabus & Weightage</a>
         <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
         <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Questions</a>
-        <a href="#" class="download-btn"><i class="fas fa-vial"></i> Formula Handbook</a>
+        <a href="#" class="download-btn"><i class="fas fa-leaf"></i> Practical Handbook</a>
         <a href="#" class="download-btn"><i class="fas fa-chart-line"></i> Exam Strategy Guide</a>
       </div>
     </div>
 
-    <h2><i class="fas fa-video"></i> Chemistry Video Lectures</h2>
-    <p>Enhance your understanding with expert video lectures covering all topics in the Chemistry syllabus. These videos are specially designed for MPC stream students.</p>
+    <h2><i class="fas fa-video"></i> Botany Video Lectures</h2>
+    <p>Enhance your understanding with expert video lectures covering all topics in the Botany syllabus. These videos are specially designed for BiPC stream students.</p>
     
     <div class="video-container">
       <div class="video-card">
-        <h4><i class="fas fa-play-circle"></i> Chemical Bonding - Full Chapter</h4>
-        <iframe class="video-frame" src="https://www.youtube.com/embed/1TtGQnyPZ6g" title="Chemistry Chemical Bonding" allowfullscreen></iframe>
+        <h4><i class="fas fa-play-circle"></i> Plant Diversity - Full Chapter</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/1Q1Q1Q1Q1Q1" title="Botany Plant Diversity" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h4><i class="fas fa-play-circle"></i> Organic Chemistry - Important Reactions</h4>
-        <iframe class="video-frame" src="https://www.youtube.com/embed/2kA4yQK4k2w" title="Chemistry Organic" allowfullscreen></iframe>
+        <h4><i class="fas fa-play-circle"></i> Plant Physiology - Important Concepts</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/2Q2Q2Q2Q2Q2" title="Botany Physiology" allowfullscreen></iframe>
       </div>
       <div class="video-card">
-        <h4><i class="fas fa-play-circle"></i> Thermodynamics - Complete Guide</h4>
-        <iframe class="video-frame" src="https://www.youtube.com/embed/3QK4kQK4kQk" title="Chemistry Thermodynamics" allowfullscreen></iframe>
+        <h4><i class="fas fa-play-circle"></i> Genetics & Evolution - Complete Guide</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/3Q3Q3Q3Q3Q3" title="Botany Genetics" allowfullscreen></iframe>
       </div>
     </div>
 
-    <h2><i class="fas fa-video"></i> 2nd Year Chemistry Video Lectures</h2>
-    <p>Master the advanced concepts of 2nd Year Chemistry with these comprehensive video lectures. These tutorials cover the complete syllabus as prescribed by the Board of Intermediate Education for MPC stream students.</p>
+    <h2><i class="fas fa-video"></i> 2nd Year Botany Video Lectures</h2>
+    <p>Master the advanced concepts of 2nd Year Botany with these comprehensive video lectures. These tutorials cover the complete syllabus as prescribed by the Board of Intermediate Education for BiPC stream students.</p>
     <div class="video-container">
       <div class="video-card">
-        <h4><i class="fas fa-play-circle"></i> Coordination Compounds - Full Chapter</h4>
-        <iframe class="video-frame" src="https://www.youtube.com/embed/4QK4kQK4kQk" title="2nd Year Chemistry: Coordination Compounds" allowfullscreen></iframe>
+        <h4><i class="fas fa-play-circle"></i> Ecology & Environment - Full Chapter</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/4Q4Q4Q4Q4Q4" title="2nd Year Botany: Ecology" allowfullscreen></iframe>
         <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
-          <p><i class="fas fa-check-circle"></i> Covers structure, bonding, and applications</p>
+          <p><i class="fas fa-check-circle"></i> Covers ecosystems, biodiversity, and conservation</p>
         </div>
       </div>
       <div class="video-card">
-        <h4><i class="fas fa-play-circle"></i> Biomolecules - Important Concepts</h4>
-        <iframe class="video-frame" src="https://www.youtube.com/embed/5QK4kQK4kQk" title="2nd Year Chemistry: Biomolecules" allowfullscreen></iframe>
+        <h4><i class="fas fa-play-circle"></i> Economic Botany - Important Topics</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/5Q5Q5Q5Q5Q5" title="2nd Year Botany: Economic Botany" allowfullscreen></iframe>
         <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
-          <p><i class="fas fa-check-circle"></i> Focus on carbohydrates, proteins, and nucleic acids</p>
+          <p><i class="fas fa-check-circle"></i> Focus on useful plants and their applications</p>
         </div>
       </div>
       <div class="video-card">
-        <h4><i class="fas fa-play-circle"></i> Electrochemistry</h4>
-        <iframe class="video-frame" src="https://www.youtube.com/embed/6QK4kQK4kQk" title="2nd Year Chemistry: Electrochemistry" allowfullscreen></iframe>
+        <h4><i class="fas fa-play-circle"></i> Plant Anatomy & Morphology</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/6Q6Q6Q6Q6Q6" title="2nd Year Botany: Anatomy" allowfullscreen></iframe>
         <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
-          <p><i class="fas fa-star"></i> Complete guide to electrochemical cells and applications</p>
+          <p><i class="fas fa-star"></i> Complete guide to plant structure and function</p>
         </div>
       </div>
     </div>
@@ -397,26 +397,26 @@
         <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
         <div>
           <h3>Understand Concepts</h3>
-          <p>Focus on understanding the logic behind chemical reactions and mechanisms. Chemistry is conceptual and application-based.</p>
+          <p>Focus on understanding plant structures, functions, and processes. Botany is conceptual and application-based.</p>
         </div>
       </div>
       <div class="tip-item">
         <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
         <div>
-          <h3>Practice Equations</h3>
-          <p>Write and balance chemical equations regularly. Practice conversions and calculations for numericals.</p>
+          <h3>Practice Diagrams</h3>
+          <p>Draw and label diagrams regularly. Visual memory helps in Botany exams.</p>
         </div>
       </div>
       <div class="tip-item">
         <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
         <div>
           <h3>Revise Periodically</h3>
-          <p>Revise key concepts, formulas, and named reactions. Make summary notes for last-minute revision.</p>
+          <p>Revise key concepts, definitions, and examples. Make summary notes for last-minute revision.</p>
         </div>
       </div>
     </div>
 
-    <h2><i class="fas fa-clipboard-list"></i> Chemistry Exam Pattern</h2>
+    <h2><i class="fas fa-clipboard-list"></i> Botany Exam Pattern</h2>
     <table>
       <thead>
         <tr>
@@ -450,14 +450,14 @@
     </table>
 
     <h2><i class="fas fa-trophy"></i> Competitive Exam Preparation</h2>
-    <p>Chemistry syllabus covers a major portion of EAMCET/JEE Main Chemistry. Focus on these key topics for competitive exams:</p>
+    <p>Botany syllabus covers a major portion of EAMCET/NEET (BAMS/BHMS) and other life science entrance exams. Focus on these key topics for competitive exams:</p>
     <div class="exam-badges">
-      <div class="exam-badge"><i class="fas fa-flask"></i> Physical Chemistry</div>
-      <div class="exam-badge"><i class="fas fa-dna"></i> Organic Chemistry</div>
-      <div class="exam-badge"><i class="fas fa-atom"></i> Inorganic Chemistry</div>
-      <div class="exam-badge"><i class="fas fa-vial"></i> Chemical Bonding</div>
-      <div class="exam-badge"><i class="fas fa-burn"></i> Thermodynamics</div>
-      <div class="exam-badge"><i class="fas fa-charging-station"></i> Electrochemistry</div>
+      <div class="exam-badge"><i class="fas fa-leaf"></i> Plant Diversity</div>
+      <div class="exam-badge"><i class="fas fa-dna"></i> Genetics</div>
+      <div class="exam-badge"><i class="fas fa-seedling"></i> Plant Physiology</div>
+      <div class="exam-badge"><i class="fas fa-globe"></i> Ecology</div>
+      <div class="exam-badge"><i class="fas fa-flask"></i> Economic Botany</div>
+      <div class="exam-badge"><i class="fas fa-microscope"></i> Cell Biology</div>
     </div>
   </div>
 </body>

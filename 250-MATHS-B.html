@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathematics | MATHS-B</title>
+  <title>Mathematics-B | MPC Stream Guide</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary-teal: #00695c;
-      --accent-orange: #ff7043;
-      --accent-teal: #26a69a;
-      --bg-light: #f4f7fb;
+      --primary-green: #0e796c;
+      --accent-purple: #eadb04;
+      --accent-lavender: #d7f709;
+      --bg-light: #f5fbf6;
       --white: #fff;
-      --gray: #e3e8ee;
-      --success-green: #388e3c;
+      --gray: #e8f5e9;
+      --success-blue: #1565c0;
       --text-dark: #1a202c;
       --text-light: #6b7280;
     }
@@ -25,14 +25,14 @@
       line-height: 1.7;
     }
     header {
-      background: linear-gradient(90deg, var(--primary-teal) 80%, var(--accent-orange) 100%);
+      background: linear-gradient(90deg, var(--primary-green) 80%, var(--primary-green) 100%);
       color: var(--white);
-      padding: 1.2rem 0 1.2rem 0;
+      padding: 1.2rem 0;
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(0,105,92,0.13);
+      box-shadow: 0 4px 10px rgba(46,125,50,0.13);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -42,8 +42,8 @@
       gap: 1.5rem;
     }
     .header-btn {
-      background: var(--accent-orange);
-      color: var(--primary-teal);
+      background: var(--accent-purple);
+      color: var(--white);
       border: none;
       border-radius: 25px;
       padding: 0.5rem 1.3rem;
@@ -52,45 +52,45 @@
       margin-left: 1rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(255,112,67,0.13);
+      box-shadow: 0 2px 8px rgba(156,39,176,0.13);
       display: flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
     }
     .header-btn:hover {
-      background: var(--accent-teal);
+      background: var(--accent-lavender);
       color: var(--white);
     }
     .container {
       max-width: 1050px;
       margin: 40px auto 30px auto;
       background: var(--white);
-      padding: 40px 30px 30px 30px;
+      padding: 40px 30px;
       border-radius: 18px;
-      box-shadow: 0 6px 32px rgba(0,105,92,0.08);
+      box-shadow: 0 6px 32px rgba(46,125,50,0.08);
     }
     h1 {
-      color: var(--primary-teal);
+      color: var(--primary-green);
       text-align: center;
       margin-bottom: 18px;
       font-size: 2.1rem;
       font-weight: 700;
     }
     h2 {
-      color: var(--primary-teal);
+      color: var(--primary-green);
       margin-top: 38px;
       margin-bottom: 18px;
       font-size: 1.35rem;
-      border-left: 5px solid var(--accent-orange);
+      border-left: 5px solid var(--accent-purple);
       padding-left: 12px;
       font-weight: 600;
       letter-spacing: 0.5px;
     }
     .highlight {
-      color: var(--accent-orange);
+      color: var(--accent-purple);
       font-weight: 700;
-      background: #fff3e0;
+      background: #f3e5f5;
       padding: 2px 7px;
       border-radius: 4px;
     }
@@ -101,14 +101,14 @@
       margin-top: 25px;
     }
     .year-card {
-      background: #f7fafc;
-      padding: 22px 18px 18px 18px;
+      background: #f1f8e9;
+      padding: 22px 18px;
       border-radius: 12px;
-      border-left: 5px solid var(--primary-teal);
-      box-shadow: 0 2px 10px rgba(0,105,92,0.05);
+      border-left: 5px solid var(--primary-green);
+      box-shadow: 0 2px 10px rgba(46,125,50,0.05);
     }
     .year-card h3 {
-      color: var(--primary-teal);
+      color: var(--primary-green);
       margin-top: 0;
       display: flex;
       align-items: center;
@@ -117,7 +117,7 @@
     }
     .year-card h3 i {
       margin-right: 10px;
-      color: var(--accent-orange);
+      color: var(--accent-purple);
     }
     ul {
       padding-left: 25px;
@@ -132,13 +132,13 @@
       content: "▹";
       position: absolute;
       left: -20px;
-      color: var(--accent-orange);
+      color: var(--accent-purple);
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 25px 0 35px 0;
-      box-shadow: 0 2px 10px rgba(0,105,92,0.05);
+      box-shadow: 0 2px 10px rgba(46,125,50,0.05);
       background: var(--white);
       border-radius: 10px;
       overflow: hidden;
@@ -150,275 +150,347 @@
       font-size: 1rem;
     }
     th {
-      background: linear-gradient(90deg, var(--primary-teal) 80%, var(--accent-orange) 100%);
+      background: linear-gradient(90deg, var(--primary-green) 80%, var(--primary-green) 100%);
       color: white;
       font-weight: 600;
-      border-bottom: 2px solid var(--accent-orange);
+      border-bottom: 2px solid var(--accent-purple);
     }
     tr:nth-child(even) {
-      background-color: #f5f9ff;
+      background-color: #e8f5e9;
     }
     tr:hover {
-      background-color: #e3e8ee;
+      background-color: #c8e6c9;
     }
-    .downloads {
+    .section-card {
+      background: #f1f8e9;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-green);
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 20px;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #e8f5e9;
+      border-left: 6px solid var(--accent-purple);
+      border-radius: 8px;
+    }
+    .downloads-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     .download-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      background: var(--primary-teal);
+      gap: 10px;
+      background-color: var(--primary-green);
       color: white;
-      padding: 11px 20px;
-      border-radius: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
       text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 1rem;
-      box-shadow: 0 2px 8px rgba(0,105,92,0.08);
-    }
-    .download-btn:hover {
-      background: var(--accent-orange);
-      color: var(--primary-teal);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255,112,67,0.13);
+      font-size: 16px;
+      justify-content: flex-start;
+      transition: background 0.3s;
     }
     .download-btn i {
-      margin-right: 8px;
-      color: white;
+      color: var(--accent-lavender);
+      font-size: 18px;
     }
-    .tips-container {
-      background: #f7fafc;
-      padding: 22px 18px;
-      border-radius: 12px;
-      border-left: 5px solid var(--success-green);
-      margin-top: 20px;
-      box-shadow: 0 2px 10px rgba(56,142,60,0.05);
+    .download-btn:hover {
+      background-color: #1b5e20;
     }
-    .tip-item {
+    .video-container {
       display: flex;
-      align-items: flex-start;
-      margin-bottom: 15px;
+      gap: 20px;
+      margin-top: 25px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      scroll-snap-type: x mandatory;
     }
-    .tip-icon {
-      color: var(--success-green);
-      font-size: 20px;
-      margin-right: 15px;
-      flex-shrink: 0;
+    .video-card {
+      min-width: 350px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .video-card h4 {
+      padding: 15px;
+      color: var(--primary-green);
+      font-size: 1.1rem;
+    }
+    .video-frame {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+    .info-box {
+      background: #e8f5e9;
+      border-left: 4px solid var(--accent-purple);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .info-box h3 {
+      color: var(--primary-green);
+      margin-top: 0;
+    }
+    .exam-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .exam-badge {
+      background: #c8e6c9;
+      color: var(--primary-green);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .exam-badge i {
+      margin-right: 8px;
+      color: var(--primary-green);
+    }
+    .coming-soon {
+      text-align: center;
+      padding: 15px;
+      background: #f3e5f5;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: 600;
+      color: var(--primary-green);
     }
     @media (max-width: 900px) {
       .container {
-        padding: 20px 8px 18px 8px;
+        padding: 20px 15px;
       }
       header {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         flex-direction: column;
         gap: 0.7rem;
+        padding: 1rem;
+      }
+      .header-btn {
+        margin-left: 0;
       }
     }
     @media (max-width: 600px) {
       .container {
-        margin: 10px 2px;
-        padding: 10px 2px 10px 2px;
+        margin: 10px;
+        padding: 15px 10px;
       }
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
       h2 {
-        font-size: 1.05rem;
-        padding-left: 7px;
+        font-size: 1.15rem;
       }
-      .syllabus-section {
-        grid-template-columns: 1fr;
+      .section-heading {
+        font-size: 1.1rem;
       }
-      .downloads {
-        flex-direction: column;
-        gap: 10px;
+      .video-card {
+        min-width: 280px;
+      }
+    }
+    @media (min-width: 768px) {
+      .downloads-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
       }
       .download-btn {
-        width: 100%;
-        justify-content: center;
+        flex: 1 1 calc(50% - 10px);
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <span><i class="fas fa-calculator"></i> MATHS-B – GUIDE</span>
-    <a href="#" class="header-btn"><i class="fas fa-balance-scale"></i> Maths-B Weightage</a>
+  <header class="header-block">
+    <span><i class="fas fa-calculator"></i> MATHS-B— IPE GUIDE 2026</span>
+    <a href="maths-b-syllabus.html" class="header-btn">
+      <i class="fas fa-balance-scale"></i> GO FOR JEE|EAPCET GUIDE
+    </a>
   </header>
+
   <div class="container">
-    <h1>Mathematics-B is the <span class="highlight">foundation for advanced geometry and calculus</span>, essential for engineering, physics, and analytical careers.</h1>
-    <h2><i class="fas fa-book-open"></i> Syllabus Breakdown</h2>
-    <div class="syllabus-section">
-      <div class="year-card">
-        <h3><i class="fas fa-calendar-alt"></i> First Year (Maths-IB)</h3>
-        <ul>
-          <li><strong>Coordinate Geometry:</strong> Locus, Transformation of Axes, The Straight Line, Pair of Straight Lines</li>
-          <li><strong>3D Geometry:</strong> Three Dimensional Coordinates, Direction Cosines and Ratios, Plane</li>
-          <li><strong>Calculus:</strong> Limits, Continuity, Differentiation</li>
-          <li><strong>Applications of Derivatives:</strong> Errors and Approximations, Tangent-Normal, Rate Measure, Rolle's Theorem, Maxima-Minima</li>
-        </ul>
-      </div>
-      <div class="year-card">
-        <h3><i class="fas fa-calendar-alt"></i> Second Year (Maths-IIB)</h3>
-        <ul>
-          <li><strong>Coordinate Geometry:</strong> Circle, System of Circles, Parabola, Ellipse, Hyperbola</li>
-          <li><strong>Calculus:</strong> Integration, Definite Integrals, Differential Equations</li>
-        </ul>
+    <h1>Mathematics-B Complete Study Guide</h1>
+    <p>Welcome to the comprehensive Mathematics-B resource for Intermediate Public Examination (IPE) students in Andhra Pradesh and Telangana. This guide covers both 1st and 2nd year syllabus with essential study materials, previous year papers, and expert tips to excel in your exams.</p>
+    
+    <div class="info-box">
+      <h3>About Mathematics-B</h3>
+      <p>Mathematics-B focuses on advanced mathematical concepts including Coordinate Geometry, Calculus, and Algebra. This subject is crucial for MPC stream students aiming for engineering and medical entrance exams, covering topics that form the foundation for higher mathematics.</p>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-book"></i>
+        <span>Study Resources for IPE 1st Year</span>
+      </h2>
+      <p>Comprehensive materials covering all chapters of 1st year Mathematics-B syllabus as prescribed by the Board of Intermediate Education.</p>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (1st Year)</a>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Syllabus & Weightage</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
+        <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Questions</a>
+        <a href="#" class="download-btn"><i class="fas fa-calculator"></i> Formula Handbook</a>
+        <a href="#" class="download-btn"><i class="fas fa-chart-line"></i> Exam Strategy Guide</a>
       </div>
     </div>
-    <h2><i class="fas fa-file-download"></i> Study Resources</h2>
-    <div class="downloads">
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> First Year Textbook</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Second Year Textbook</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> IPE Question papers MATHS-B</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Important Questions</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Formula Handbook</a>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-book"></i>
+        <span>Study Resources for IPE 2nd Year</span>
+      </h2>
+      <p>Complete collection of study materials for 2nd year Mathematics-B, including advanced topics in Coordinate Geometry and Differential Equations.</p>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (2nd Year)</a>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Syllabus & Weightage</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
+        <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Questions</a>
+        <a href="#" class="download-btn"><i class="fas fa-calculator"></i> Formula Handbook</a>
+        <a href="#" class="download-btn"><i class="fas fa-chart-line"></i> Exam Strategy Guide</a>
+      </div>
     </div>
-   <h2><i class="fas fa-chart-pie"></i> IPE 1st Year - Mathematics B (IB) Weightage</h2>
-<table style="width: 100%; border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0">
-  <thead style="background-color: #007bff; color: white;">
-    <tr>
-      <th>S.No</th>
-      <th>Chapter Name</th>
-      <th>VSAQ</th>
-      <th>SAQ</th>
-      <th>LAQ</th>
-      <th>No. of Questions</th>
-      <th>Total Marks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Locus</td><td>0</td><td>4</td><td>0</td><td>1</td><td>4</td></tr>
-    <tr><td>2</td><td>Transformation of Axes</td><td>0</td><td>6</td><td>4</td><td>2</td><td>10</td></tr>
-    <tr><td>3</td><td>Straight Line</td><td>0</td><td>7</td><td>4</td><td>2</td><td>11</td></tr>
-    <tr><td>4</td><td>Pair of Straight Lines</td><td>2</td><td>2</td><td>1</td><td>2</td><td>5</td></tr>
-    <tr><td>5</td><td>3D Coordinates</td><td>0</td><td>7</td><td>2</td><td>2</td><td>9</td></tr>
-    <tr><td>6</td><td>Direction Cosines & Ratios</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
-    <tr><td>7</td><td>Plane</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
-    <tr><td>8</td><td>Limits & Continuity</td><td>0</td><td>4</td><td>4</td><td>3</td><td>8</td></tr>
-    <tr><td>9</td><td>Differentiation</td><td>0</td><td>4</td><td>7</td><td>2</td><td>15</td></tr>
-    <tr><td>10</td><td>Errors & Approximations</td><td>2</td><td>0</td><td>0</td><td>1</td><td>2</td></tr>
-    <tr><td>11</td><td>Tangent & Normal</td><td>0</td><td>1</td><td>4</td><td>2</td><td>5</td></tr>
-    <tr><td>12</td><td>Rate Measure</td><td>0</td><td>4</td><td>0</td><td>1</td><td>4</td></tr>
-    <tr><td>13</td><td>Rolle's & Lagrange Theorems</td><td>0</td><td>0</td><td>7</td><td>1</td><td>7</td></tr>
-    <tr><td>14</td><td>Maxima & Minima</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
-    <tr style="font-weight: bold; background-color: #f2f2f2;">
-      <td colspan="2">Total</td>
-      <td>4</td>
-      <td>55</td>
-      <td>38</td>
-      <td>24</td>
-      <td>97</td>
-    </tr>
-  </tbody>
-</table>
 
-  <h2><i class="fas fa-chart-pie"></i> IPE 2nd Year - Mathematics IIB Weightage</h2>
-<table style="width: 100%; border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0">
-  <thead style="background-color: #007bff; color: white;">
-    <tr>
-      <th>S.No</th>
-      <th>Chapter Name</th>
-      <th>VSAQ</th>
-      <th>SAQ</th>
-      <th>LAQ</th>
-      <th>No. of Questions</th>
-      <th>Total Marks</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Circle</td><td>2</td><td>8</td><td>12</td><td>3</td><td>22</td></tr>
-    <tr><td>2</td><td>System of Circles</td><td>0</td><td>6</td><td>0</td><td>1</td><td>6</td></tr>
-    <tr><td>3</td><td>Parabola</td><td>0</td><td>2</td><td>7</td><td>2</td><td>9</td></tr>
-    <tr><td>4</td><td>Ellipse</td><td>0</td><td>4</td><td>4</td><td>2</td><td>8</td></tr>
-    <tr><td>5</td><td>Hyperbola</td><td>0</td><td>6</td><td>0</td><td>1</td><td>6</td></tr>
-    <tr><td>6</td><td>Integration</td><td>2</td><td>6</td><td>10</td><td>3</td><td>18</td></tr>
-    <tr><td>7</td><td>Definite Integrals</td><td>0</td><td>6</td><td>9</td><td>3</td><td>15</td></tr>
-    <tr><td>8</td><td>Differential Equations</td><td>2</td><td>3</td><td>8</td><td>2</td><td>13</td></tr>
-    <tr style="font-weight: bold; background-color: #f2f2f2;">
-      <td colspan="2">Total</td>
-      <td>4</td>
-      <td>41</td>
-      <td>50</td>
-      <td>24</td>
-      <td>97</td>
-    </tr>
-  </tbody>
-</table>
-  
+    <h2><i class="fas fa-video"></i> Mathematics-B Video Lectures</h2>
+    <p>Enhance your understanding with expert video lectures covering all topics in the Mathematics-B syllabus. These videos are specially designed for MPC stream students.</p>
+    
+    <div class="video-container">
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Coordinate Geometry - Full Chapter</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/Wf6cm09bI6Y" title="Mathematics-B Coordinate Geometry" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Differential Equations</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/6W4qg7wLb9g" title="Mathematics-B Differential Equations" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Circle - Complete Guide</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/gnmQne7gW64" title="Mathematics-B Circle" allowfullscreen></iframe>
+      </div>
+    </div>
 
-<h2><i class="fas fa-calculator"></i> Important Chapters for EAMCET – Maths IB & IIB</h2>
+    <h2><i class="fas fa-video"></i> 2nd Year Mathematics-B Video Lectures</h2>
+    <p>Master the advanced concepts of 2nd Year Mathematics-B with these comprehensive video lectures covering the complete syllabus.</p>
 
-<!-- Maths IB -->
-<h3 style="color: #2c3e50;">📘 Maths – IB (1st Year)</h3>
-<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: center;">
-  <thead style="background-color: #3498db; color: white;">
-    <tr>
-      <th>S.No</th>
-      <th>Chapter Name</th>
-      <th>Importance</th>
-      <th>EAMCET Weightage (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Matrices</td><td>⭐⭐⭐⭐</td><td>12–15%</td></tr>
-    <tr><td>2</td><td>Trigonometric Ratios & Identities</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
-    <tr><td>3</td><td>Product of Vectors</td><td>⭐⭐⭐</td><td>8–10%</td></tr>
-    <tr><td>4</td><td>Properties of Triangles</td><td>⭐⭐⭐</td><td>7–9%</td></tr>
-    <tr><td>5</td><td>Inverse Trigonometric Functions</td><td>⭐⭐</td><td>3–5%</td></tr>
-    <tr><td>6</td><td>Hyperbolic Functions</td><td>⭐⭐</td><td>2–3%</td></tr>
-  </tbody>
-</table>
+    <div class="video-container">
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Parabola - Full Chapter Explanation</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/9ZtY6D9Xlqk" title="2nd Year Maths-B: Parabola" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-check-circle"></i> Special focus on tangent and normal equations</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Ellipse - Important Problems</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/9ZtY6D9Xlqk" title="2nd Year Maths-B: Ellipse" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-check-circle"></i> Special focus on parametric equations</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Hyperbola - Complete Guide</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/6W4qg7wLb9g" title="2nd Year Maths-B: Hyperbola" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-star"></i> Complete guide to asymptotes and eccentricity</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Differential Equations</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/gnmQne7gW64" title="2nd Year Maths-B: Differential Equations" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-cube"></i> Essential for EAMCET/JEE preparation</p>
+        </div>
+      </div>
+    </div>
 
-<!-- Maths IIB -->
-<h3 style="color: #2c3e50; margin-top: 40px;">📗 Maths – IIB (2nd Year)</h3>
-<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: center;">
-  <thead style="background-color: #2ecc71; color: white;">
-    <tr>
-      <th>S.No</th>
-      <th>Chapter Name</th>
-      <th>Importance</th>
-      <th>EAMCET Weightage (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Integration</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
-    <tr><td>2</td><td>Definite Integrals</td><td>⭐⭐⭐⭐</td><td>10–12%</td></tr>
-    <tr><td>3</td><td>Differential Equations</td><td>⭐⭐⭐⭐</td><td>8–10%</td></tr>
-    <tr><td>4</td><td>Circle</td><td>⭐⭐⭐</td><td>10–12%</td></tr>
-    <tr><td>5</td><td>Parabola / Ellipse / Hyperbola</td><td>⭐⭐⭐</td><td>15–18% (combined)</td></tr>
-    <tr><td>6</td><td>System of Circles</td><td>⭐⭐</td><td>3–4%</td></tr>
-  </tbody>
-</table>
+    <div class="coming-soon">
+      <i class="fas fa-bullhorn"></i> New videos added weekly! Bookmark this page for updates.
+    </div>
 
-    <h2><i class="fas fa-lightbulb"></i> Expert Study Tips</h2>
+    <h2><i class="fas fa-lightbulb"></i> Exam Preparation Tips</h2>
     <div class="tips-container">
       <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-clock"></i></div>
-        <div><strong>Daily Practice:</strong> Solve at least 20 problems daily from different chapters</div>
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Master the Formulas</h3>
+          <p>Mathematics-B requires memorization of numerous formulas. Create formula sheets for each chapter and revise them regularly.</p>
+        </div>
       </div>
       <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-book"></i></div>
-        <div><strong>Concept Clarity:</strong> Master NCERT/Intermediate textbooks before advanced problems</div>
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Diagram Practice</h3>
+          <p>For coordinate geometry chapters, practice drawing accurate diagrams. Visual representation helps solve problems faster.</p>
+        </div>
       </div>
       <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-chart-line"></i></div>
-        <div><strong>Weightage Strategy:</strong> Focus on Coordinate Geometry and Calculus for maximum marks</div>
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Time Management</h3>
+          <p>Allocate specific time for each section based on weightage: Coordinate Geometry (50%), Calculus (30%), Algebra (20%).</p>
+        </div>
       </div>
-      <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-stopwatch"></i></div>
-        <div><strong>Time Management:</strong> Practice timed tests to improve speed and accuracy</div>
-      </div>
-      <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-clipboard-check"></i></div>
-        <div><strong>Error Analysis:</strong> Maintain a mistake notebook to avoid repeating errors</div>
-      </div>
+    </div>
+
+    <h2><i class="fas fa-clipboard-list"></i> Mathematics-B Exam Pattern</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Marks</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Very Short Answer Questions</td>
+          <td>20</td>
+          <td>30 minutes</td>
+        </tr>
+        <tr>
+          <td>Short Answer Questions</td>
+          <td>20</td>
+          <td>1 hour</td>
+        </tr>
+        <tr>
+          <td>Long Answer Questions</td>
+          <td>35</td>
+          <td>1.5 hour</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>75</strong></td>
+          <td><strong>3 hours</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2><i class="fas fa-trophy"></i> Competitive Exam Preparation</h2>
+    <p>Mathematics-B syllabus covers 40% of EAMCET/JEE Main syllabus. Focus on these key topics for competitive exams:</p>
+    <div class="exam-badges">
+      <div class="exam-badge"><i class="fas fa-chart-line"></i> Coordinate Geometry</div>
+      <div class="exam-badge"><i class="fas fa-infinity"></i> Differential Equations</div>
+      <div class="exam-badge"><i class="fas fa-project-diagram"></i> Circle</div>
+      <div class="exam-badge"><i class="fas fa-shapes"></i> Parabola/Ellipse/Hyperbola</div>
+      <div class="exam-badge"><i class="fas fa-calculator"></i> Integration</div>
     </div>
   </div>
 </body>
-</html> 
+</html>
