@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CEC - Commerce, Economics, Civics</title>
+    <title>MEC - Maths, Economics, Commerce</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #1a73e8;
-            --dark-blue: #0d47a1;
-            --accent-orange: #ff6d00;
-            --light-orange: #ff9100;
+            --primary-purple: #7b1fa2;
+            --dark-purple: #4a148c;
+            --accent-teal: #00897b;
+            --light-teal: #00acc1;
             --dark-gray: #2d3748;
             --medium-gray: #4a5568;
             --light-gray: #f7fafc;
@@ -25,7 +25,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
             color: white;
             padding: 25px 0;
             text-align: center;
@@ -45,10 +45,10 @@
         }
         
         h2 {
-            color: #2E7D32;
+            color: var(--primary-purple);
             margin-top: 30px;
             font-size: 24px;
-            border-bottom: 3px solid #FF9800;
+            border-bottom: 3px solid var(--accent-teal);
             padding-bottom: 8px;
             display: inline-block;
         }
@@ -93,12 +93,12 @@
         }
         
         .next-btn {
-            background-color: #2E7D32;
+            background-color: var(--primary-purple);
             color: white;
         }
         
         .next-btn:hover {
-            background-color: #1B5E20;
+            background-color: var(--dark-purple);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -115,16 +115,16 @@
         }
         
         .counseling {
-            background-color: #e8f5e9;
+            background-color: #f3e5f5;
             padding: 25px;
             border-radius: 10px;
             margin-top: 35px;
             text-align: center;
-            border-left: 5px solid #FF9800;
+            border-left: 5px solid var(--accent-teal);
         }
         
         .counseling button {
-            background-color: #FF9800;
+            background-color: var(--accent-teal);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -136,7 +136,7 @@
         }
         
         .counseling button:hover {
-            background-color: #FFA726;
+            background-color: var(--light-teal);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -149,7 +149,7 @@
         }
 
         .box {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
             color: white;
             padding: 20px;
             text-align: center;
@@ -163,7 +163,7 @@
         .box:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            background: linear-gradient(135deg, #FF9800, #FFA726);
+            background: linear-gradient(135deg, var(--accent-teal), var(--light-teal));
         }
 
         .box i {
@@ -176,7 +176,7 @@
         .video-section {
             margin: 40px 0;
             padding: 30px;
-            background-color: #f0f7f1;
+            background-color: #f5f0fa;
             border-radius: 12px;
             text-align: center;
         }
@@ -202,7 +202,7 @@
         }
         
         .video-section h2 {
-            color: #2E7D32;
+            color: var(--primary-purple);
             margin-bottom: 15px;
         }
         
@@ -214,7 +214,7 @@
 
         /* Footer */
         .engineering-footer {
-            background: linear-gradient(135deg, #3E2723, #5D4037);
+            background: linear-gradient(135deg, #4527a0, #5e35b1);
             padding: 50px 20px 30px;
             color: white;
         }
@@ -228,7 +228,7 @@
         }
 
         .footer-section h3 {
-            color: #FF9800;
+            color: var(--accent-teal);
             font-size: 18px;
             margin-bottom: 20px;
             position: relative;
@@ -242,7 +242,7 @@
             bottom: 0;
             width: 40px;
             height: 3px;
-            background: #FF9800;
+            background: var(--accent-teal);
         }
 
         .footer-links {
@@ -263,7 +263,7 @@
         }
 
         .footer-links a:hover {
-            color: #FF9800;
+            color: var(--accent-teal);
             transform: translateX(5px);
         }
 
@@ -279,7 +279,7 @@
 
         .footer-contact i {
             margin-right: 10px;
-            color: #FF9800;
+            color: var(--accent-teal);
         }
 
         .footer-bottom {
@@ -306,11 +306,11 @@
         }
 
         .footer-bottom-links a:hover {
-            color: #FF9800;
+            color: var(--accent-teal);
         }
 
         .chat-counselor {
-            background: #FF9800;
+            background: var(--accent-teal);
             color: white;
             padding: 10px 15px;
             border-radius: 6px;
@@ -322,7 +322,7 @@
         }
 
         .chat-counselor:hover {
-            background: #FFA726;
+            background: var(--light-teal);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -332,7 +332,7 @@
         }
 
         .social-media a {
-            color: #FF9800;
+            color: var(--accent-teal);
             font-size: 20px;
             margin-right: 15px;
             transition: color 0.3s ease;
@@ -407,96 +407,78 @@
 </head>
 <body>
 <header>
-    CEC – Commerce, Economics, Civics
+    MEC – Mathematics, Economics, Commerce
 </header>
 <div class="container">
     <h2>📘 Overview</h2>
-    <p><span class="highlight">CEC (Commerce, Economics, Civics)</span> is the ideal intermediate group for students aiming for careers in business, finance, law, and public administration. It builds strong analytical, financial, and decision-making skills.</p>
-    <p>With CEC, you can pursue top courses like B.Com, BBA, CA, CS, CMA, Law, and prepare for competitive exams like CLAT, CA Foundation, and more.</p>
+    <p><span class="highlight">MEC (Mathematics, Economics, Commerce)</span> is the perfect intermediate combination for students aiming for careers in business analytics, economics, chartered accountancy, and financial management. It combines analytical skills with business knowledge.</p>
+    <p>With MEC, you can pursue top courses like B.Com, BBA, B.Sc Economics, CA, and prepare for competitive exams like CA Foundation, CLAT, and more.</p>
 
     <h2>📚 Subjects</h2>
-    <p>In the <strong>CEC stream</strong>, students study <strong>3 major subjects:</strong></p>
-    <p><i class="fas fa-calculator"></i> <strong>Commerce:</strong> Covers Accounting, Business Studies, and Financial Management. Essential for careers in business, finance, and entrepreneurship.</p>
-    <p><i class="fas fa-chart-line"></i> <strong>Economics:</strong> Studies production, distribution, and consumption of goods and services. Valuable for careers in banking, policy-making, and economic analysis.</p>
-    <p><i class="fas fa-landmark"></i> <strong>Civics:</strong> Focuses on political systems, governance, and citizenship. Important for careers in law, public administration, and civil services.</p>
+    <p>In the <strong>MEC stream</strong>, students study <strong>3 major subjects:</strong></p>
+    <p><i class="fas fa-calculator"></i> <strong>Mathematics:</strong> Develops analytical and problem-solving skills essential for economics and business analysis.</p>
+    <p><i class="fas fa-chart-line"></i> <strong>Economics:</strong> Studies market dynamics, economic theories, and financial systems - crucial for careers in finance and policy-making.</p>
+    <p><i class="fas fa-file-invoice-dollar"></i> <strong>Commerce:</strong> Covers accounting, business studies, and financial management - foundational for business careers.</p>
 
     <div class="grid">
-        <a href="255-commerce-index.html" class="box"><i class="fas fa-calculator"></i>Commerce</a>
-        <a href="255-ECONOMICS-INDEX.HTML" class="box"><i class="fas fa-chart-line"></i>Economics</a>
-        <a href="255-CIVICS-INDEX.HTML" class="box"><i class="fas fa-landmark"></i>Civics</a>
-        <a href="250-ENGLISH.HTML" class="box"><i class="fas fa-language"></i>English</a>
-        <a href="255-SECOUND-LANGUAGE.HTML" class="box"><i class="fas fa-university"></i>Second Language</a>
+        <a href="MATHS-A.HTML" class="box"><i class="fas fa-calculator"></i>Maths-A</a>
+        <a href="MATHS-B.HTML" class="box"><i class="fas fa-calculator"></i>Maths-B</a>
+        <a href="Economic-index.html" class="box"><i class="fas fa-chart-line"></i>Economics</a>
+        <a href="Commerce-index.html" class="box"><i class="fas fa-file-invoice-dollar"></i>Commerce</a>
+        <a href="#" class="box"><i class="fas fa-language"></i>English</a>
+        <a href="#" class="box"><i class="fas fa-university"></i>Second Language</a>
         
     </div>
 
-   <h2>🏆 Competitive Exams</h2>
-<div class="grid">
-    <a href="#" class="box"><i class="fas fa-gavel"></i>CLAT</a>
-    <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>CA Foundation</a>
-    <a href="#" class="box"><i class="fas fa-briefcase"></i>CS Foundation</a>
-    <a href="#" class="box"><i class="fas fa-calculator"></i>CMA Foundation</a>
-    <a href="#" class="box"><i class="fas fa-building"></i>BBA Entrance</a>
-    <a href="#" class="box"><i class="fas fa-balance-scale"></i>Law Entrance</a>
-    <a href="#" class="box"><i class="fas fa-hotel"></i>Hotel Management (NCHMCT-JEE)</a>
-    <a href="#" class="box"><i class="fas fa-university"></i>CUET (UG)</a>
-</div>
+    <h2>🏆 Competitive Exams</h2>
+    <div class="grid">
+        <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>CA Foundation</a>
+        <a href="#" class="box"><i class="fas fa-briefcase"></i>CS Foundation</a>
+        <a href="#" class="box"><i class="fas fa-calculator"></i>CMA Foundation</a>
+        <a href="#" class="box"><i class="fas fa-gavel"></i>CLAT</a>
+        <a href="#" class="box"><i class="fas fa-building"></i>BBA Entrance</a>
+        <a href="#" class="box"><i class="fas fa-balance-scale"></i>Law Entrance</a>
+        <a href="#" class="box"><i class="fas fa-rupee-sign"></i>Bank Exams</a>
+        <a href="#" class="box"><i class="fas fa-chart-pie"></i>Economic Honors</a>
+        <a href="#" class="box"><i class="fas fa-user-tie"></i>SSC CGL</a>
+    </div>
 
+    <h2>🎯 Career Paths</h2>
+    <div class="grid">
+        <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>Chartered Accountant</a>
+        <a href="#" class="box"><i class="fas fa-briefcase"></i>Company Secretary</a>
+        <a href="#" class="box"><i class="fas fa-calculator"></i>Cost Accountant</a>
+        <a href="#" class="box"><i class="fas fa-chart-line"></i>Financial Analyst</a>
+        <a href="#" class="box"><i class="fas fa-landmark"></i>Economist</a>
+        <a href="#" class="box"><i class="fas fa-building"></i>Business Management</a>
+        <a href="#" class="box"><i class="fas fa-database"></i>Business Analytics</a>
+        <a href="#" class="box"><i class="fas fa-rupee-sign"></i>Banking & Finance</a>
+        <a href="#" class="box"><i class="fas fa-user-tie"></i>Corporate Careers</a>
+    </div>
 
-   <h2>🚀 Career Paths After CEC</h2>
-<div class="grid">
-    <a href="degree-path.html" class="box"><i class="fas fa-university"></i>Degree Courses</a>
-    <a href="govt-jobs.html" class="box"><i class="fas fa-gavel"></i>Government Jobs</a>
-    <a href="defence-path.html" class="box"><i class="fas fa-shield-alt"></i>Defence & Uniform Services</a>
-</div>
+    <h2>🏫 Top Colleges</h2>
+    <div class="grid">
+        <a href="#" class="box"><i class="fas fa-university"></i>SRCC, Delhi</a>
+        <a href="#" class="box"><i class="fas fa-landmark"></i>Loyola College, Chennai</a>
+        <a href="#" class="box"><i class="fas fa-building"></i>Christ University</a>
+        <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>ICAI for CA</a>
+        <a href="#" class="box"><i class="fas fa-briefcase"></i>ICSI for CS</a>
+        <a href="#" class="box"><i class="fas fa-calculator"></i>ICMAI for CMA</a>
+        <a href="#" class="box"><i class="fas fa-chart-line"></i>Top Economics Colleges</a>
+        <a href="#" class="box"><i class="fas fa-gavel"></i>NLUs for Law</a>
+    </div>
 
-
-  <h2>🏫 Top Colleges & Institutes (by Category)</h2>
-
-<!-- Autonomous Colleges -->
-<h3>🎓 Top Autonomous Colleges</h3>
-<div class="grid">
-    <a href="#" class="box"><i class="fas fa-university"></i> SRCC, Delhi University</a>
-    <a href="#" class="box"><i class="fas fa-building"></i> Christ University, Bangalore</a>
-    <a href="#" class="box"><i class="fas fa-landmark"></i> Loyola College, Chennai</a>
-</div>
-
-<!-- Government Colleges -->
-<h3>🏛️ Top Government Colleges</h3>
-<div class="grid">
-    <a href="#" class="box"><i class="fas fa-university"></i> Osmania University Colleges</a>
-    <a href="#" class="box"><i class="fas fa-university"></i> Nizam College, Hyderabad</a>
-    <a href="#" class="box"><i class="fas fa-university"></i> BHU (Banaras Hindu University)</a>
-</div>
-
-<!-- Universities -->
-<h3>🏫 Top Universities</h3>
-<div class="grid">
-    <a href="#" class="box"><i class="fas fa-university"></i> Delhi University</a>
-    <a href="#" class="box"><i class="fas fa-university"></i> Mumbai University</a>
-    <a href="#" class="box"><i class="fas fa-university"></i> Osmania University</a>
-</div>
-
-<!-- Professional Institutes -->
-<h3>📘 Professional Institutes</h3>
-<div class="grid">
-    <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i> ICAI (Chartered Accountants)</a>
-    <a href="#" class="box"><i class="fas fa-briefcase"></i> ICSI (Company Secretaries)</a>
-    <a href="#" class="box"><i class="fas fa-calculator"></i> ICMAI (Cost Accountants)</a>
-    <a href="#" class="box"><i class="fas fa-balance-scale"></i> NLUs (National Law Universities)</a>
-</div>
-
-
-    <h2>✨ Why Choose CEC?</h2>
+    <h2>✨ Why Choose MEC?</h2>
     <ul>
-        <li>✅ Opens doors to prestigious careers in commerce and law</li>
+        <li>✅ Perfect blend of analytical and business skills</li>
         <li>✅ Strong foundation for professional courses like CA, CS, CMA</li>
-        <li>✅ Versatile: eligible for both corporate and government sectors</li>
-        <li>✅ High demand in finance, banking, and business sectors</li>
-        <li>✅ Opportunity to become entrepreneur or business leader</li>
+        <li>✅ Opens doors to high-demand careers in finance and analytics</li>
+        <li>✅ Versatile combination for both corporate and government sectors</li>
+        <li>✅ Excellent preparation for economics and business degrees</li>
     </ul>
 
     <div class="counseling">
-        <h3>📌 Need Help with CEC Admissions or Counseling?</h3>
+        <h3>📌 Need Help with MEC Admissions or Counseling?</h3>
         <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in choosing the right college and career path!</p>
         <a href="1000paid-cousilling.html">
             <button>💬 Get Counseling Help</button>
@@ -506,8 +488,8 @@
 <!-- Video Section -->
 <div class="video-section">
     <div class="container">
-        <h2>🎥 CEC Career Guidance</h2>
-        <p>Watch this video to understand the career opportunities available after choosing CEC stream:</p>
+        <h2>🎥 MEC Career Guidance</h2>
+        <p>Watch this video to understand the career opportunities available after choosing MEC stream:</p>
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/example-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -529,7 +511,7 @@
         </div>
         
         <div class="footer-section">
-            <h3>CEC Resources</h3>
+            <h3>MEC Resources</h3>
             <ul class="footer-links">
                 <li><a href="#">Syllabus</a></li>
                 <li><a href="#">Study Materials</a></li>
@@ -544,7 +526,7 @@
             <div class="footer-contact">
                 <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
                 <p><i class="fas fa-phone"></i> +91 9876543210</p>
-                <p><i class="fas fa-envelope"></i> info@cecguidance.com</p>
+                <p><i class="fas fa-envelope"></i> info@mecguidance.com</p>
             </div>
             <div class="social-media">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -564,7 +546,7 @@
     </div>
     
     <div class="footer-bottom">
-        <p>&copy; 2023 CEC Career Guidance. All Rights Reserved.</p>
+        <p>&copy; 2023 MEC Career Guidance. All Rights Reserved.</p>
         <div class="footer-bottom-links">
             <a href="#">Terms of Service</a>
             <a href="#">Privacy Policy</a>

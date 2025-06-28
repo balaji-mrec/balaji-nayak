@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English | Intermediate Guide</title>
+  <title>English | Communication Skills Guide</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary-purple: #6a1b9a;
-      --accent-pink: #ec407a;
-      --accent-purple: #9c27b0;
-      --bg-light: #f9f5fd;
+      --primary-blue: #1565c0;
+      --accent-teal: #26c6da;
+      --bg-light: #f5f9ff;
       --white: #fff;
       --gray: #e3e8ee;
-      --success-green: #388e3c;
       --text-dark: #1a202c;
       --text-light: #6b7280;
     }
@@ -25,14 +23,14 @@
       line-height: 1.7;
     }
     header {
-      background: linear-gradient(90deg, var(--primary-purple) 80%, var(--accent-pink) 100%);
+      background: var(--primary-blue);
       color: var(--white);
       padding: 1.2rem 0;
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(106,27,154,0.13);
+      box-shadow: 0 4px 10px rgba(21,101,192,0.13);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -42,8 +40,8 @@
       gap: 1.5rem;
     }
     .header-btn {
-      background: var(--accent-pink);
-      color: var(--white);
+      background: var(--accent-teal);
+      color: var(--primary-blue);
       border: none;
       border-radius: 25px;
       padding: 0.5rem 1.3rem;
@@ -52,14 +50,14 @@
       margin-left: 1rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(236,64,122,0.13);
+      box-shadow: 0 2px 8px rgba(38,198,218,0.13);
       display: flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
     }
     .header-btn:hover {
-      background: var(--accent-purple);
+      background: #00acc1;
       color: var(--white);
     }
     .container {
@@ -68,252 +66,420 @@
       background: var(--white);
       padding: 40px 30px;
       border-radius: 18px;
-      box-shadow: 0 6px 32px rgba(106,27,154,0.08);
+      box-shadow: 0 6px 32px rgba(21,101,192,0.08);
     }
     h1 {
-      color: var(--primary-purple);
+      color: var(--primary-blue);
       text-align: center;
       margin-bottom: 18px;
       font-size: 2.1rem;
       font-weight: 700;
     }
     h2 {
-      color: var(--primary-purple);
+      color: var(--primary-blue);
       margin-top: 38px;
       margin-bottom: 18px;
       font-size: 1.35rem;
-      border-left: 5px solid var(--accent-pink);
+      border-left: 5px solid var(--accent-teal);
       padding-left: 12px;
       font-weight: 600;
       letter-spacing: 0.5px;
     }
     .highlight {
-      color: var(--accent-pink);
+      color: var(--accent-teal);
       font-weight: 700;
-      background: #fce4ec;
+      background: #e0f7fa;
       padding: 2px 7px;
       border-radius: 4px;
     }
-    .syllabus-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      margin-top: 25px;
+    .section-card {
+      background: #f9fbfd;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
     }
-    .year-card {
-      background: #f7fafc;
-      padding: 22px 18px;
-      border-radius: 12px;
-      border-left: 5px solid var(--primary-purple);
-      box-shadow: 0 2px 10px rgba(106,27,154,0.05);
-    }
-    .year-card h3 {
-      color: var(--primary-purple);
-      margin-top: 0;
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-blue);
       display: flex;
       align-items: center;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #e3f2fd;
+      border-left: 6px solid var(--accent-teal);
+      border-radius: 8px;
     }
-    .year-card h3 i {
-      margin-right: 10px;
-      color: var(--accent-pink);
-    }
-    ul {
-      padding-left: 25px;
-    }
-    ul li {
-      margin-bottom: 10px;
-      position: relative;
-      color: var(--text-light);
-      font-size: 1rem;
-    }
-    ul li:before {
-      content: "▹";
-      position: absolute;
-      left: -20px;
-      color: var(--accent-pink);
-    }
-    .downloads {
+    .downloads-grid {
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 20px;
+      flex-direction: column;
+      gap: 10px;
     }
     .download-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      background: var(--primary-purple);
+      gap: 10px;
+      background-color: var(--primary-blue);
       color: white;
-      padding: 11px 20px;
-      border-radius: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
       text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      font-size: 1rem;
-      box-shadow: 0 2px 8px rgba(106,27,154,0.08);
-    }
-    .download-btn:hover {
-      background: var(--accent-pink);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(236,64,122,0.13);
+      font-size: 16px;
+      justify-content: flex-start;
+      transition: background 0.3s;
     }
     .download-btn i {
-      margin-right: 8px;
-      color: white;
+      color: var(--accent-teal);
+      font-size: 18px;
+    }
+    .download-btn:hover {
+      background-color: #0d47a1;
+    }
+    .video-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 25px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      scroll-snap-type: x mandatory;
+    }
+    .video-card {
+      min-width: 350px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .video-card h4 {
+      padding: 15px;
+      color: var(--primary-blue);
+      font-size: 1.1rem;
+    }
+    .video-frame {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+    .info-box {
+      background: #f8f9fa;
+      border-left: 4px solid var(--accent-teal);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .info-box h3 {
+      color: var(--primary-blue);
+      margin-top: 0;
     }
     .tips-container {
-      background: #f7fafc;
-      padding: 22px 18px;
-      border-radius: 12px;
-      border-left: 5px solid var(--success-green);
-      margin-top: 20px;
-      box-shadow: 0 2px 10px rgba(56,142,60,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin: 20px 0;
     }
     .tip-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 15px;
+      gap: 15px;
+      background: #f4f7fb;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(21,101,192,0.04);
     }
     .tip-icon {
-      color: var(--success-green);
-      font-size: 20px;
-      margin-right: 15px;
-      flex-shrink: 0;
+      color: var(--primary-blue);
+      font-size: 1.7rem;
+      margin-top: 2px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0 35px 0;
+      box-shadow: 0 2px 10px rgba(21,101,192,0.05);
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid var(--gray);
+      padding: 13px 15px;
+      text-align: center;
+      font-size: 1rem;
+    }
+    th {
+      background: var(--primary-blue);
+      color: white;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent-teal);
+    }
+    tr:nth-child(even) {
+      background-color: #f5f9ff;
+    }
+    tr:hover {
+      background-color: #e3e8ee;
+    }
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .skill-badge {
+      background: #e3f2fd;
+      color: var(--primary-blue);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .skill-badge i {
+      margin-right: 8px;
+      color: var(--primary-blue);
+    }
+    .coming-soon {
+      text-align: center;
+      padding: 15px;
+      background: #e0f7fa;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: 600;
+      color: var(--primary-blue);
     }
     @media (max-width: 900px) {
       .container {
-        padding: 20px 8px;
+        padding: 20px 15px;
       }
       header {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         flex-direction: column;
         gap: 0.7rem;
+        padding: 1rem;
+      }
+      .header-btn {
+        margin-left: 0;
       }
     }
     @media (max-width: 600px) {
       .container {
-        margin: 10px 2px;
-        padding: 10px 2px;
+        margin: 10px;
+        padding: 15px 10px;
       }
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
       h2 {
-        font-size: 1.05rem;
-        padding-left: 7px;
+        font-size: 1.15rem;
       }
-      .syllabus-section {
-        grid-template-columns: 1fr;
+      .section-heading {
+        font-size: 1.1rem;
       }
-      .downloads {
-        flex-direction: column;
-        gap: 10px;
+      .video-card {
+        min-width: 280px;
+      }
+    }
+    @media (min-width: 768px) {
+      .downloads-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
       }
       .download-btn {
-        width: 100%;
-        justify-content: center;
+        flex: 1 1 calc(50% - 10px);
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <span><i class="fas fa-book-open"></i> INTERMEDIATE ENGLISH GUIDE</span>
-    <a href="#" class="header-btn"><i class="fas fa-download"></i> Study Materials</a>
+    <span><i class="fas fa-language"></i> ENGLISH — IPE GUUIDE</span>
+    <a href="english-resources.html" class="header-btn">
+      <i class="fas fa-book-open"></i> EXTRA RESOURCES
+    </a>
   </header>
+
   <div class="container">
-    <h1>Mastering English is <span class="highlight">essential for academic success</span> and opens doors to global opportunities in every field.</h1>
+    <h1>English Communication Skills Mastery</h1>
+    <p>Welcome to the comprehensive English resource for Intermediate students. This guide focuses on developing essential communication skills, literary appreciation, and practical language use for academic and professional success.</p>
     
-    <h2><i class="fas fa-book-open"></i> First Year Syllabus</h2>
-    <div class="syllabus-section">
-      <div class="year-card">
-        <h3><i class="fas fa-scroll"></i> Textbook: English Reader</h3>
-        <ul>
-          <li><strong>Unit I:</strong> Personality Development (Attitude, Gratitude)</li>
-          <li><strong>Unit II:</strong> Wit and Humor (The Dear Departed, The Brave Potter)</li>
-          <li><strong>Unit III:</strong> Human Relations (A Tale of Three Villages, The Journey)</li>
-          <li><strong>Unit IV:</strong> Films and Theatre (The Never-Never Nest, A Ghost's Story)</li>
-          <li><strong>Unit V:</strong> Sports and Wellness (The Winning Team, The Concert)</li>
-          <li><strong>Unit VI:</strong> Ethics and Values (The Bed of Arrows, The Merchant of Venice)</li>
-        </ul>
-      </div>
-      <div class="year-card">
-        <h3><i class="fas fa-pen-fancy"></i> Language Components</h3>
-        <ul>
-          <li><strong>Reading Comprehension:</strong> Unseen passages with questions</li>
-          <li><strong>Vocabulary:</strong> Synonyms, Antonyms, One-word substitutes</li>
-          <li><strong>Grammar:</strong> Tenses, Prepositions, Articles, Reported Speech</li>
-          <li><strong>Creative Writing:</strong> Essay writing, Letter writing, Report writing</li>
-          <li><strong>Study Skills:</strong> Note-making, Summarizing, Reference skills</li>
-          <li><strong>Oral Communication:</strong> Group discussions, Presentations</li>
-        </ul>
+    <div class="info-box">
+      <h3>Why English Matters</h3>
+      <p>English is the global language of communication, business, and technology. Mastering English opens doors to higher education, career opportunities, and cross-cultural understanding. This course enhances your reading, writing, speaking, and critical thinking abilities.</p>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-book"></i>
+        <span>1st Year English Resources</span>
+      </h2>
+      <p>Develop foundational skills in reading comprehension, grammar, and basic communication through our comprehensive 1st year materials.</p>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (1st Year)</a>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Grammar Handbook</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
+        <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Essays & Letters</a>
+        <a href="#" class="download-btn"><i class="fas fa-comments"></i> Speaking Activities</a>
+        <a href="#" class="download-btn"><i class="fas fa-pen-fancy"></i> Creative Writing Guide</a>
       </div>
     </div>
 
-    <h2><i class="fas fa-book-open"></i> Second Year Syllabus</h2>
-    <div class="syllabus-section">
-      <div class="year-card">
-        <h3><i class="fas fa-scroll"></i> Textbook: English Reader</h3>
-        <ul>
-          <li><strong>Unit I:</strong> Environment (The Three Questions, The Green Champion)</li>
-          <li><strong>Unit II:</strong> Science and Future (The Secret of Work, Space Travel)</li>
-          <li><strong>Unit III:</strong> Art and Culture (Indian Weavers, The Golden Touch)</li>
-          <li><strong>Unit IV:</strong> Women Empowerment (The Princess Who Wanted the Moon, The Story of an Hour)</li>
-          <li><strong>Unit V:</strong> Social Issues (The Refugee, The Last Leaf)</li>
-          <li><strong>Unit VI:</strong> Adventure and Mystery (The Adventure of the Dying Detective, The Open Window)</li>
-        </ul>
-      </div>
-      <div class="year-card">
-        <h3><i class="fas fa-pen-fancy"></i> Language Components</h3>
-        <ul>
-          <li><strong>Advanced Reading Comprehension:</strong> Complex passages with inference questions</li>
-          <li><strong>Vocabulary Enhancement:</strong> Idioms, Phrases, Word formation</li>
-          <li><strong>Advanced Grammar:</strong> Clauses, Transformation of sentences, Error correction</li>
-          <li><strong>Professional Writing:</strong> Formal letters, Job applications, Speech writing</li>
-          <li><strong>Critical Thinking:</strong> Argument analysis, Debate preparation</li>
-          <li><strong>Public Speaking:</strong> Elocution, Extempore, Interview skills</li>
-        </ul>
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-book"></i>
+        <span>2nd Year English Resources</span>
+      </h2>
+      <p>Advanced materials focusing on professional communication, literary analysis, and sophisticated writing techniques.</p>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (2nd Year)</a>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Business Communication</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
+        <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Essays & Reports</a>
+        <a href="#" class="download-btn"><i class="fas fa-comments"></i> Debate & Discussion Topics</a>
+        <a href="#" class="download-btn"><i class="fas fa-pen-fancy"></i> Advanced Writing Guide</a>
       </div>
     </div>
 
-    <h2><i class="fas fa-file-download"></i> Study Resources</h2>
-    <div class="downloads">
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> First Year Textbook PDF</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Second Year Textbook PDF</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Grammar Handbook</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Previous Question Papers</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Vocabulary Builder</a>
-      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Writing Skills Guide</a>
+    <h2><i class="fas fa-video"></i> English Learning Videos</h2>
+    <p>Enhance your language skills with these engaging video lessons covering grammar, communication techniques, and literary analysis.</p>
+    
+    <div class="video-container">
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Mastering Grammar Fundamentals</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/1TtGQnyPZ6g" title="English Grammar" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Effective Public Speaking</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/2kA4yQK4k2w" title="Public Speaking" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Business Email Writing</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/3QK4kQK4kQk" title="Email Writing" allowfullscreen></iframe>
+      </div>
     </div>
 
-    <h2><i class="fas fa-lightbulb"></i> Study Tips for English</h2>
+    <h2><i class="fas fa-video"></i> 2nd Year English Videos</h2>
+    <p>Advanced video lessons focusing on professional communication, literary appreciation, and sophisticated language use.</p>
+    <div class="video-container">
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Professional Report Writing</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/4QK4kQK4kQk" title="Report Writing" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-check-circle"></i> Structure, format, and professional tone</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Literary Analysis Techniques</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/5QK4kQK4kQk" title="Literary Analysis" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-check-circle"></i> Analyzing poetry, prose, and drama</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Job Interview Skills</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/6QK4kQK4kQk" title="Job Interviews" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-star"></i> Communication strategies for career success</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="coming-soon">
+      <i class="fas fa-bullhorn"></i> More communication skill videos and interview preparation guides coming soon!
+    </div>
+
+    <h2><i class="fas fa-lightbulb"></i> English Exam Preparation Tips</h2>
     <div class="tips-container">
       <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-book-reader"></i></div>
-        <div><strong>Daily Reading:</strong> Read English newspapers, magazines or novels for at least 30 minutes daily to improve comprehension and vocabulary.</div>
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Read Widely</h3>
+          <p>Regular reading improves vocabulary, grammar, and writing style. Read newspapers, magazines, and quality literature.</p>
+        </div>
       </div>
       <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-edit"></i></div>
-        <div><strong>Writing Practice:</strong> Write one essay/letter/report daily on different topics to improve writing skills and speed.</div>
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Practice Writing</h3>
+          <p>Write essays, letters, and reports regularly. Focus on structure, coherence, and appropriate style for different formats.</p>
+        </div>
       </div>
       <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-comments"></i></div>
-        <div><strong>Speaking Practice:</strong> Engage in English conversations with friends/family to improve fluency and confidence.</div>
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Speak English Daily</h3>
+          <p>Practice speaking English with friends or in front of a mirror. Record yourself to improve pronunciation and fluency.</p>
+        </div>
       </div>
-      <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-list-alt"></i></div>
-        <div><strong>Grammar Drills:</strong> Complete at least 20 grammar exercises daily from different topics (tenses, prepositions, etc.)</div>
-      </div>
-      <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-brain"></i></div>
-        <div><strong>Vocabulary Building:</strong> Learn 10 new words daily with meanings and usage in sentences.</div>
-      </div>
-      <div class="tip-item">
-        <div class="tip-icon"><i class="fas fa-clock"></i></div>
-        <div><strong>Time Management:</strong> Practice previous years' question papers within time limits to improve speed and accuracy.</div>
-      </div>
+    </div>
+
+    <h2><i class="fas fa-clipboard-list"></i> English Exam Pattern</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Question Type</th>
+      <th>No. of Questions</th>
+      <th>Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Section A – Prose & Poetry</td>
+      <td>MCQs, Very Short, Short, Long Answers</td>
+      <td>3</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Section B – Reading Comprehension</td>
+      <td>Unseen Passages with Q&A</td>
+      <td>4</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>Section C – Grammar & Composition</td>
+      <td>Grammar and Composition Tasks</td>
+      <td>6</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>Section D – Internal Assessment</td>
+      <td>Listening, Presentation, Group Activities</td>
+      <td>-</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th colspan="3">Total</th>
+      <th>100 (80 + 20)</th>
+    </tr>
+  </tbody>
+</table>
+
+
+    <h2><i class="fas fa-briefcase"></i> Essential Communication Skills</h2>
+    <p>These English skills will benefit you in higher education and professional life:</p>
+    <div class="skill-badges">
+      <div class="skill-badge"><i class="fas fa-comment-alt"></i> Professional Email Writing</div>
+      <div class="skill-badge"><i class="fas fa-users"></i> Group Discussion</div>
+      <div class="skill-badge"><i class="fas fa-file-alt"></i> Report Preparation</div>
+      <div class="skill-badge"><i class="fas fa-presentation"></i> Presentation Skills</div>
+      <div class="skill-badge"><i class="fas fa-handshake"></i> Interview Techniques</div>
+      <div class="skill-badge"><i class="fas fa-brain"></i> Critical Thinking</div>
+    </div>
+    
+    <div class="info-box" style="margin-top: 30px;">
+      <h3>Future Applications</h3>
+      <p>Strong English skills are essential for:</p>
+      <ul style="margin-top: 10px; padding-left: 20px;">
+        <li>Higher education (including international studies)</li>
+        <li>Professional communication in any career</li>
+        <li>Competitive job markets</li>
+        <li>Technical writing and documentation</li>
+        <li>Leadership and management roles</li>
+      </ul>
     </div>
   </div>
 </body>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economics | CEC Stream Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-green: #2e7d32;
+      --accent-gold: #ffab00;
+      --bg-light: #f5f5f5;
+      --white: #fff;
+      --gray: #e0e0e0;
+      --text-dark: #212121;
+      --text-light: #616161;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: var(--primary-green);
+      color: var(--white);
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(46,125,50,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .header-btn {
+      background: var(--accent-gold);
+      color: var(--primary-green);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(255,171,0,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .header-btn:hover {
+      background: #cc8f00;
+      color: var(--white);
+    }
+    .container {
+      max-width: 1050px;
+      margin: 40px auto 30px auto;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(46,125,50,0.08);
+    }
+    h1 {
+      color: var(--primary-green);
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-green);
+      margin-top: 38px;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border-left: 5px solid var(--accent-gold);
+      padding-left: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .highlight {
+      color: var(--accent-gold);
+      font-weight: 700;
+      background: #fff8e1;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .section-card {
+      background: #f1f8e9;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-green);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #e8f5e9;
+      border-left: 6px solid var(--accent-gold);
+      border-radius: 8px;
+    }
+    .downloads-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--primary-green);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      justify-content: flex-start;
+      transition: background 0.3s;
+    }
+    .download-btn i {
+      color: var(--accent-gold);
+      font-size: 18px;
+    }
+    .download-btn:hover {
+      background-color: #1b5e20;
+    }
+    .video-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 25px;
+      overflow-x: auto;
+      padding-bottom: 15px;
+      scroll-snap-type: x mandatory;
+    }
+    .video-card {
+      min-width: 350px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .video-card h4 {
+      padding: 15px;
+      color: var(--primary-green);
+      font-size: 1.1rem;
+    }
+    .video-frame {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+    .info-box {
+      background: #f8f9fa;
+      border-left: 4px solid var(--accent-gold);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .info-box h3 {
+      color: var(--primary-green);
+      margin-top: 0;
+    }
+    .tips-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin: 20px 0;
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #f1f8e9;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(46,125,50,0.04);
+    }
+    .tip-icon {
+      color: var(--primary-green);
+      font-size: 1.7rem;
+      margin-top: 2px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0 35px 0;
+      box-shadow: 0 2px 10px rgba(46,125,50,0.05);
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid var(--gray);
+      padding: 13px 15px;
+      text-align: center;
+      font-size: 1rem;
+    }
+    th {
+      background: var(--primary-green);
+      color: white;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+    tr:nth-child(even) {
+      background-color: #edf7ee;
+    }
+    tr:hover {
+      background-color: #e0e0e0;
+    }
+    .exam-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .exam-badge {
+      background: #e8f5e9;
+      color: var(--primary-green);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .exam-badge i {
+      margin-right: 8px;
+      color: var(--primary-green);
+    }
+    .coming-soon {
+      text-align: center;
+      padding: 15px;
+      background: #fff8e1;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: 600;
+      color: var(--primary-green);
+    }
+    .ca-pathway {
+      background: #e3f2fd;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+    }
+    .ca-pathway h3 {
+      color: #1565c0;
+      margin-top: 0;
+    }
+    .ca-steps {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+    .ca-steps li {
+      margin-bottom: 10px;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px 15px;
+      }
+      header {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.7rem;
+        padding: 1rem;
+      }
+      .header-btn {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+      .section-heading {
+        font-size: 1.1rem;
+      }
+      .video-card {
+        min-width: 280px;
+      }
+    }
+    @media (min-width: 768px) {
+      .downloads-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .download-btn {
+        flex: 1 1 calc(50% - 10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span><i class="fas fa-chart-line"></i> ECONOMICS — IPE GUIDE</span>
+    <a href="economics-syllabus.html" class="header-btn">
+      <i class="fas fa-file-invoice-dollar"></i> CA FOUNDATION RESOURCES
+    </a>
+  </header>
+
+  <div class="container">
+    <h1>Economics Complete Study Guide</h1>
+    <p>Welcome to the comprehensive Economics resource for CEC (Commerce, Economics, Civics) stream students in Andhra Pradesh and Telangana. This guide covers both 1st and 2nd year syllabus with essential study materials, previous year papers, and expert tips to excel in your exams and CA Foundation preparation.</p>
+    
+    <div class="info-box">
+      <h3>About Economics in CEC Stream</h3>
+      <p>Economics is a core subject for CEC students, providing fundamental knowledge of economic theories, policies, and practices. The syllabus covers Microeconomics, Macroeconomics, Indian Economic Development, and Statistics, forming a strong foundation for CA, CS, CMA, and other commerce-related careers.</p>
+    </div>
+
+    <div class="ca-pathway">
+      <h3><i class="fas fa-user-tie"></i> Chartered Accountancy (CA) Pathway</h3>
+      <p>Economics forms the foundation for CA studies. Here's how CEC students can prepare for CA Foundation:</p>
+      <ul class="ca-steps">
+        <li><strong>After Intermediate:</strong> Register for CA Foundation course with ICAI</li>
+        <li><strong>Subjects Covered:</strong> Principles and Practice of Accounting, Business Laws, Business Mathematics, and Business Economics</li>
+        <li><strong>Exam Pattern:</strong> Four papers (200 marks each), objective and subjective questions</li>
+        <li><strong>Key Economics Topics:</strong> Demand and Supply, National Income, Money and Banking, International Trade</li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-book"></i>
+        <span>Study Resources for IPE 1st Year</span>
+      </h2>
+      <p>Comprehensive materials covering all chapters of 1st year Economics syllabus as prescribed by the Board of Intermediate Education.</p>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (1st Year)</a>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Syllabus & Weightage</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
+        <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Questions</a>
+        <a href="#" class="download-btn"><i class="fas fa-calculator"></i> Statistics Formulas</a>
+        <a href="#" class="download-btn"><i class="fas fa-chart-line"></i> Exam Strategy Guide</a>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-book"></i>
+        <span>Study Resources for IPE 2nd Year</span>
+      </h2>
+      <p>Complete collection of study materials for 2nd year Economics, including Indian Economic Development and advanced concepts.</p>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-book-open"></i> Textbook PDF (2nd Year)</a>
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> Syllabus & Weightage</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> Previous Year Papers</a>
+        <a href="#" class="download-btn"><i class="fas fa-star"></i> Important Questions</a>
+        <a href="#" class="download-btn"><i class="fas fa-rupee-sign"></i> Economic Policies</a>
+        <a href="#" class="download-btn"><i class="fas fa-chart-line"></i> Exam Strategy Guide</a>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-video"></i> Economics Video Lectures</h2>
+    <p>Enhance your understanding with expert video lectures covering all topics in the Economics syllabus. These videos are specially designed for CEC stream students.</p>
+    
+    <div class="video-container">
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Demand and Supply - Full Chapter</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/1TtGQnyPZ6g" title="Economics Demand and Supply" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> National Income Accounting</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/2kA4yQK4k2w" title="Economics National Income" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Money and Banking</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/3QK4kQK4kQk" title="Economics Money and Banking" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-video"></i> 2nd Year Economics Video Lectures</h2>
+    <p>Master the advanced concepts of 2nd Year Economics with these comprehensive video lectures covering Indian Economic Development and related topics.</p>
+    <div class="video-container">
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Indian Economy (1950-1990)</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/4QK4kQK4kQk" title="Indian Economy 1950-1990" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-check-circle"></i> Covers planning, agriculture, and industrial policies</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Liberalization and Globalization</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/5QK4kQK4kQk" title="Liberalization and Globalization" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-check-circle"></i> Economic reforms of 1991 and their impact</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <h4><i class="fas fa-play-circle"></i> Poverty and Human Capital</h4>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/6QK4kQK4kQk" title="Poverty and Human Capital" allowfullscreen></iframe>
+        <div class="video-desc" style="padding: 10px; font-size: 0.9rem; color: var(--text-light);">
+          <p><i class="fas fa-star"></i> Analysis of poverty and employment in India</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="coming-soon">
+      <i class="fas fa-bullhorn"></i> More video lectures and CA Foundation guidance videos coming soon!
+    </div>
+
+    <h2><i class="fas fa-lightbulb"></i> Exam Preparation Tips</h2>
+    <div class="tips-container">
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Understand Economic Concepts</h3>
+          <p>Focus on understanding economic theories and their real-world applications. Relate concepts to current economic scenarios.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Practice Diagrams</h3>
+          <p>Master drawing and interpreting economic diagrams (demand-supply curves, production possibility curves, etc.) which carry significant marks.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+        <div>
+          <h3>Current Economic Affairs</h3>
+          <p>Stay updated with recent economic developments, budgets, and policies as they help in answering application-based questions.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-clipboard-list"></i> Economics Exam Pattern</h2>
+   <table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Marks</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Very Short Answer Questions</td>
+      <td>15x2=30</td>
+      <td>30 minutes</td>
+    </tr>
+    <tr>
+      <td>Short Answer Questions</td>
+      <td>8x5=40</td>
+      <td>1 hour</td>
+    </tr>
+    <tr>
+      <td>Long Answer Questions</td>
+      <td>3x10=30</td>
+      <td>1.5 hours</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td><strong>100</strong></td>
+      <td><strong>3 hours</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    <h2><i class="fas fa-user-tie"></i> Career Pathways</h2>
+    <p>Economics in CEC stream opens doors to various professional courses and careers. Focus on these key areas for professional exams:</p>
+    <div class="exam-badges">
+      <div class="exam-badge"><i class="fas fa-file-invoice-dollar"></i> CA Foundation</div>
+      <div class="exam-badge"><i class="fas fa-briefcase"></i> CS Foundation</div>
+      <div class="exam-badge"><i class="fas fa-calculator"></i> CMA Foundation</div>
+      <div class="exam-badge"><i class="fas fa-university"></i> B.Com/BBA</div>
+      <div class="exam-badge"><i class="fas fa-chart-pie"></i> Economic Analyst</div>
+      <div class="exam-badge"><i class="fas fa-landmark"></i> Banking Sector</div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <span>CA Foundation Preparation</span>
+      </h2>
+      <p>Key Economics topics that are crucial for CA Foundation examination:</p>
+      <ul style="margin: 15px 0; padding-left: 25px;">
+        <li>Theory of Demand and Supply</li>
+        <li>Theory of Production and Cost</li>
+        <li>Price Determination in Different Markets</li>
+        <li>Business Cycles</li>
+        <li>Indian Economy - Overview</li>
+        <li>Economic Reforms in India</li>
+      </ul>
+      <p style="margin-top: 10px;">Start preparing these topics during your intermediate studies to gain an advantage in CA Foundation.</p>
+    </div>
+  </div>
+</body>
+</html>
