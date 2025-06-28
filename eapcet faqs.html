@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGEAPCET-2025 Counselling FAQs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #153a6e;
+      --accent-gold: #ffb300;
+      --accent-orange: #ff9800;
+      --bg-light: #f4f7fb;
+      --white: #fff;
+      --gray: #e3e8ee;
+      --success-green: #2e7d32;
+      --text-dark: #1a202c;
+      --text-light: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-blue) 80%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(21,58,110,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .header-btn {
+      background: var(--accent-gold);
+      color: var(--primary-blue);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(255,179,0,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .header-btn:hover {
+      background: var(--accent-orange);
+      color: var(--white);
+    }
+    .container {
+      max-width: 1050px;
+      margin: 40px auto 30px auto;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(21,58,110,0.08);
+    }
+    h1 {
+      color: var(--primary-blue);
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-blue);
+      margin-top: 38px;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border-left: 5px solid var(--accent-gold);
+      padding-left: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .faq-section {
+      margin-top: 30px;
+    }
+    .faq-item {
+      margin-bottom: 25px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .faq-question {
+      background: linear-gradient(90deg, var(--primary-blue) 0%, #1e88e5 100%);
+      color: white;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-question i {
+      transition: transform 0.3s;
+    }
+    .faq-answer {
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease;
+      background: #f9fbfd;
+    }
+    .faq-answer-content {
+      padding: 20px;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0;
+      border: 1px solid var(--gray);
+      border-top: none;
+    }
+    .important-note {
+      background: #fff8e1;
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 0 8px 8px 0;
+      font-weight: 600;
+    }
+    .important-note i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+    .section-card {
+      background: #f9fbfd;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #eaf2ff;
+      border-left: 6px solid var(--accent-gold);
+      border-radius: 8px;
+    }
+    .downloads-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--primary-blue);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      justify-content: flex-start;
+      transition: background 0.3s;
+    }
+    .download-btn i {
+      color: var(--accent-gold);
+      font-size: 18px;
+    }
+    .download-btn:hover {
+      background-color: #00509e;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px 15px;
+      }
+      header {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.7rem;
+        padding: 1rem;
+      }
+      .header-btn {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-block">
+    <span><i class="fas fa-question-circle"></i> TGEAPCET-2025 COUNSELLING FAQs</span>
+    <a href="#" class="header-btn">
+      <i class="fas fa-download"></i> OFFICIAL NOTIFICATION
+    </a>
+  </header>
+
+  <div class="container">
+    <h1>TGEAPCET-2025 Counselling Frequently Asked Questions</h1>
+    <p>Find answers to common questions about the TGEAPCET-2025 counselling process, document verification, option entry, and seat allotment.</p>
+    
+    <div class="important-note">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>All candidates must read these FAQs carefully before proceeding with the counselling process.</span>
+    </div>
+
+    <div class="faq-section">
+      <h2><i class="fas fa-calendar-alt"></i> Counselling Process & Schedule</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What are the important dates for TGEAPCET-2025 counselling?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>The counselling process has three phases:</p>
+            <ul>
+              <li><strong>First Phase:</strong> 28-06-2025 to 22-07-2025</li>
+              <li><strong>Second Phase:</strong> 25-07-2025 to 03-08-2025</li>
+              <li><strong>Final Phase:</strong> 05-08-2025 to 14-08-2025</li>
+              <li><strong>Internal Sliding:</strong> 18-08-2025 to 23-08-2025</li>
+            </ul>
+            <p>Detailed schedule is available on the official website.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is physical reporting mandatory after seat allotment?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p><strong>Yes</strong>, physical reporting at the allotted college after Second Phase allotment is mandatory. You must:</p>
+            <ol>
+              <li>Submit xerox copies of all certificates</li>
+              <li>Submit original Transfer Certificate (TC)</li>
+              <li>Obtain acknowledgement from the college</li>
+            </ol>
+            <p>Candidates who don't report physically will not be permitted to participate in Final Phase counselling.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I change my options after freezing in a phase?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p><strong>No</strong>, once you freeze your options for a particular phase, you cannot modify them in that phase. However:</p>
+            <ul>
+              <li>For First Phase, you can modify options during the specified window (14-07-2025 to 15-07-2025)</li>
+              <li>For Second and Final Phases, you must exercise fresh options</li>
+              <li>Earlier phase options are not carried forward</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <h2><i class="fas fa-file-alt"></i> Documents & Verification</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What documents are required for certificate verification?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>You need to carry the following documents (original + 2 sets of photocopies):</p>
+            <ul>
+              <li>TGEAPCET-2025 Rank Card</li>
+              <li>TGEAPCET-2025 Hall Ticket</li>
+              <li>SSLC or equivalent Marks Memo</li>
+              <li>Intermediate Marks Memos (1st & 2nd year)</li>
+              <li>Study/Bonafide Certificates from 6th to Intermediate</li>
+              <li>Transfer Certificate (Original)</li>
+              <li>Caste Certificate (if applicable)</li>
+              <li>Income Certificate (if applicable)</li>
+              <li>Aadhar Card</li>
+              <li>Passport size photographs (4 copies)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if I miss my certificate verification slot?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>If you miss your scheduled verification slot:</p>
+            <ul>
+              <li>You can attend verification in subsequent phases</li>
+              <li>You must book a new slot when the next phase begins</li>
+              <li>Late verification may limit your college/branch options</li>
+              <li>No special arrangements will be made for missed slots</li>
+            </ul>
+            <p>It's highly recommended to attend verification in the first available phase.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h2><i class="fas fa-university"></i> Seat Allotment & Reporting</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is internal sliding and how does it work?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Internal sliding allows you to change branches within the same college:</p>
+            <ul>
+              <li>Conducted from 18-08-2025 to 23-08-2025</li>
+              <li>Only for candidates who have already joined a college</li>
+              <li>You can exercise options for other branches in your college</li>
+              <li>Fee reimbursement continues for eligible candidates</li>
+              <li>Must download new allotment order if sliding is successful</li>
+              <li>Must report to the new branch within specified dates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I cancel my seat after final phase allotment?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p><strong>No</strong>, dropouts and cancellations are not permitted after Final Phase allotment. Important points:</p>
+            <ul>
+              <li>After 14-08-2025, no cancellations are allowed</li>
+              <li>You must join the allotted college</li>
+              <li>Non-joining will be treated as a dropout</li>
+              <li>Dropouts may face penalties or restrictions in future admissions</li>
+            </ul>
+            <p>Make careful choices during option entry in all phases.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h2><i class="fas fa-money-bill-wave"></i> Fees & Payments</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the fee payment process after seat allotment?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>After seat allotment in any phase:</p>
+            <ol>
+              <li>Login to your counselling account</li>
+              <li>Download the allotment order</li>
+              <li>Pay tuition fee online through the portal</li>
+              <li>Complete self-reporting through website</li>
+              <li>Report physically to college with payment receipt</li>
+            </ol>
+            <p><strong>Payment deadlines:</strong></p>
+            <ul>
+              <li>First Phase: 18-07-2025 to 22-07-2025</li>
+              <li>Second Phase: 30-07-2025 to 01-08-2025</li>
+              <li>Final Phase: 10-08-2025 to 12-08-2025</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is the processing fee refundable?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p><strong>No</strong>, the processing fee paid during registration is non-refundable under any circumstances. This includes:</p>
+            <ul>
+              <li>If you don't get a seat</li>
+              <li>If you don't attend certificate verification</li>
+              <li>If you withdraw from counselling</li>
+              <li>If you're not satisfied with allotted seat</li>
+            </ul>
+            <p>The processing fee is only for participation in counselling and doesn't guarantee seat allotment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-download"></i>
+        <span>Download Resources</span>
+      </h2>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Complete Counselling Schedule</a>
+        <a href="#" class="download-btn"><i class="fas fa-list-check"></i> Documents Checklist</a>
+        <a href="#" class="download-btn"><i class="fas fa-map-marked-alt"></i> Help Line Centers</a>
+        <a href="#" class="download-btn"><i class="fas fa-book"></i> Counselling Procedure Manual</a>
+      </div>
+    </div>
+
+    <div class="important-note">
+      <i class="fas fa-phone-alt"></i>
+      <span>For further queries, contact the TGEAPCET Help Desk at 040-23456789 or email help@tgeapcet2025.ac.in</span>
+    </div>
+  </div>
+
+  <script>
+    // FAQ toggle functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+        
+        // Close other open FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem && item.classList.contains('active')) {
+            item.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

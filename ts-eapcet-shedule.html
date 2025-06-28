@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGEAPCET-2025 Admissions Counselling Schedule</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #153a6e;
+      --accent-gold: #ffb300;
+      --accent-orange: #ff9800;
+      --bg-light: #f4f7fb;
+      --white: #fff;
+      --gray: #e3e8ee;
+      --success-green: #2e7d32;
+      --text-dark: #1a202c;
+      --text-light: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-blue) 80%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(21,58,110,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .header-btn {
+      background: var(--accent-gold);
+      color: var(--primary-blue);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(255,179,0,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .header-btn:hover {
+      background: var(--accent-orange);
+      color: var(--white);
+    }
+    .container {
+      max-width: 1050px;
+      margin: 40px auto 30px auto;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(21,58,110,0.08);
+    }
+    h1 {
+      color: var(--primary-blue);
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-blue);
+      margin-top: 38px;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border-left: 5px solid var(--accent-gold);
+      padding-left: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .highlight {
+      color: var(--accent-gold);
+      font-weight: 700;
+      background: #fff8e1;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .phase-section {
+      margin-top: 30px;
+    }
+    .phase-card {
+      background: #f7fafc;
+      padding: 22px 18px;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary-blue);
+      box-shadow: 0 2px 10px rgba(21,58,110,0.05);
+      margin-bottom: 30px;
+    }
+    .phase-card h3 {
+      color: var(--primary-blue);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    .phase-card h3 i {
+      margin-right: 10px;
+      color: var(--accent-gold);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0 15px 0;
+      box-shadow: 0 2px 10px rgba(21,58,110,0.05);
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid var(--gray);
+      padding: 13px 15px;
+      text-align: left;
+      font-size: 1rem;
+    }
+    th {
+      background: linear-gradient(90deg, var(--primary-blue) 80%, var(--primary-blue) 100%);
+      color: white;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+    tr:nth-child(even) {
+      background-color: #f5f9ff;
+    }
+    tr:hover {
+      background-color: #e3e8ee;
+    }
+    .important-note {
+      background: #fff8e1;
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 0 8px 8px 0;
+      font-weight: 600;
+    }
+    .important-note i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+    .section-card {
+      background: #f9fbfd;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #eaf2ff;
+      border-left: 6px solid var(--accent-gold);
+      border-radius: 8px;
+    }
+    .downloads-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--primary-blue);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      justify-content: flex-start;
+      transition: background 0.3s;
+    }
+    .download-btn i {
+      color: var(--accent-gold);
+      font-size: 18px;
+    }
+    .download-btn:hover {
+      background-color: #00509e;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px 15px;
+      }
+      header {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.7rem;
+        padding: 1rem;
+      }
+      .header-btn {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+      th, td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-block">
+    <span><i class="fas fa-graduation-cap"></i> TGEAPCET-2025 COUNSELLING</span>
+    <a href="TS EAPCET  COUNSILING SHEDULE 2025.pdf" class="header-btn">
+      <i class="fas fa-download"></i> OFFICIAL NOTIFICATION
+    </a>
+  </header>
+
+  <div class="container">
+    <h1>TGEAPCET-2025 Admissions Counselling Schedule</h1>
+    <p>Complete schedule and important instructions for TGEAPCET-2025 counselling process. Stay updated with all important dates and procedures for seat allotment.</p>
+    
+    <div class="important-note">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>All candidates must carefully note the important dates and follow the counselling process step-by-step.</span>
+    </div>
+
+    <div class="phase-section">
+      <div class="phase-card">
+        <h3><i class="fas fa-step-forward"></i> FIRST PHASE</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Online filing of Basic Information, Payment of Processing Fee & Slot Booking</td>
+              <td>28-06-2025 to 07-07-2025</td>
+            </tr>
+            <tr>
+              <td>Certificate Verification for already Slot Booked candidates</td>
+              <td>01-07-2025 to 08-07-2025</td>
+            </tr>
+            <tr>
+              <td>Exercising Options after Certificate Verification</td>
+              <td>06-07-2025 to 10-07-2025</td>
+            </tr>
+            <tr>
+              <td>Freezing of options</td>
+              <td>10-07-2025</td>
+            </tr>
+            <tr>
+              <td>Display of Mock Seat Allocation on or before</td>
+              <td>13-07-2025</td>
+            </tr>
+            <tr>
+              <td>Modification of Options, if required</td>
+              <td>14-07-2025 to 15-07-2025</td>
+            </tr>
+            <tr>
+              <td>Freezing of Options for First Phase Seat Allotment</td>
+              <td>15-07-2025</td>
+            </tr>
+            <tr>
+              <td>Provisional Allotment of Seats for First Phase on or before</td>
+              <td>18-07-2025</td>
+            </tr>
+            <tr>
+              <td>Payment of Tuition Fee & Self Reporting through website</td>
+              <td>18-07-2025 to 22-07-2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="phase-card">
+        <h3><i class="fas fa-fast-forward"></i> SECOND PHASE</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Online filing of Basic Information for not attended candidates in First Phase</td>
+              <td>25-07-2025</td>
+            </tr>
+            <tr>
+              <td>Certificate Verification for already Slot Booked candidates</td>
+              <td>26-07-2025</td>
+            </tr>
+            <tr>
+              <td>Exercising Options after Certificate Verification (Fresh options mandatory)</td>
+              <td>26-07-2025 to 27-07-2025</td>
+            </tr>
+            <tr>
+              <td>Freezing of options</td>
+              <td>27-07-2025</td>
+            </tr>
+            <tr>
+              <td>Provisional Allotment of Seats on or before</td>
+              <td>30-07-2025</td>
+            </tr>
+            <tr>
+              <td>Payment of Tuition Fee & Self Reporting through website</td>
+              <td>30-07-2025 to 01-08-2025</td>
+            </tr>
+            <tr>
+              <td>Physically reporting at the allotted college</td>
+              <td>31-07-2025 to 02-08-2025</td>
+            </tr>
+            <tr>
+              <td>Updating Candidates Joining Details by college</td>
+              <td>03-08-2025</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="important-note">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Physical reporting at allotted college after Second Phase is MANDATORY with Xerox copies of Certificates and Original TC.</span>
+        </div>
+        <div class="important-note">
+          <i class="fas fa-ban"></i>
+          <span>Candidates who got allotment in Second Phase but didn't report will NOT be permitted for Final Phase.</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <h3><i class="fas fa-flag-checkered"></i> FINAL PHASE</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Online filing for not attended candidates in First & Second Phase</td>
+              <td>05-08-2025</td>
+            </tr>
+            <tr>
+              <td>Certificate Verification for Slot Booked candidates</td>
+              <td>06-08-2025</td>
+            </tr>
+            <tr>
+              <td>Exercising Options after Certificate Verification (Fresh options mandatory)</td>
+              <td>06-08-2025 to 07-08-2025</td>
+            </tr>
+            <tr>
+              <td>Freezing of options</td>
+              <td>07-08-2025</td>
+            </tr>
+            <tr>
+              <td>Provisional Allotment of Seats on or before</td>
+              <td>10-08-2025</td>
+            </tr>
+            <tr>
+              <td>Payment of Tuition Fee & Self Reporting through website</td>
+              <td>10-08-2025 to 12-08-2025</td>
+            </tr>
+            <tr>
+              <td>Reporting at College (if change of Branch/College)</td>
+              <td>11-08-2025 to 13-08-2025</td>
+            </tr>
+            <tr>
+              <td>Updating Joining Details by College</td>
+              <td>14-08-2025</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="important-note">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Dropouts/Cancellations are NOT PERMITTED after Final Phase.</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <h3><i class="fas fa-exchange-alt"></i> CENTRALIZED INTERNAL SLIDING</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Exercising options for internal sliding (within same college)</td>
+              <td>18-08-2025 to 19-08-2025</td>
+            </tr>
+            <tr>
+              <td>Freezing of options</td>
+              <td>19-08-2025</td>
+            </tr>
+            <tr>
+              <td>Provisional Allotment of Seats on or before</td>
+              <td>22-08-2025</td>
+            </tr>
+            <tr>
+              <td>Downloading new allotment order, self-reporting in new branch</td>
+              <td>22-08-2025 to 23-08-2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-download"></i>
+        <span>Important Documents</span>
+      </h2>
+      <p>Prepare these documents for certificate verification and college reporting:</p>
+      <div class="downloads-grid">
+        <a href="dockments list.html" class="download-btn"><i class="fas fa-file-pdf"></i> Required Documents Checklist</a>
+        <a href="option entry process.html" class="download-btn"><i class="fas fa-file-alt"></i> Option Entry Procedure</a>
+        <a href="eapcet faqs.html" class="download-btn"><i class="fas fa-question-circle"></i> Counselling FAQ</a>
+        
+      </div>
+    </div>
+
+    <div class="important-note">
+      <i class="fas fa-info-circle"></i>
+      <span>All candidates are advised to regularly check the official website for updates and notifications.</span>
+    </div>
+  </div>
+</body>
+</html>
