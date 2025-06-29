@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HEC - Humanities, Economics, Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1976d2;
+            --dark-blue: #0d47a1;
+            --accent-orange: #ff6d00;
+            --light-orange: #ff9100;
+            --dark-gray: #2d3748;
+            --medium-gray: #4a5568;
+            --light-gray: #f7fafc;
+            --success-green: #2e7d32;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            background-color: white;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: var(--primary-blue);
+            margin-top: 30px;
+            font-size: 24px;
+            border-bottom: 3px solid var(--accent-orange);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        h3 {
+            color: var(--dark-gray);
+        }
+        
+        ul {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--success-green);
+            background-color: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        .buttons {
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .buttons a button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            min-width: 160px;
+        }
+        
+        .next-btn {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .next-btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .home-btn {
+            background-color: var(--success-green);
+            color: white;
+        }
+        
+        .home-btn:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .counseling {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 35px;
+            text-align: center;
+            border-left: 5px solid var(--accent-orange);
+        }
+        
+        .counseling button {
+            background-color: var(--accent-orange);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .counseling button:hover {
+            background-color: var(--light-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, var(--accent-orange), var(--light-orange));
+        }
+
+        .box i {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #e1f5fe;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .video-section p {
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        /* Footer */
+        .engineering-footer {
+            background: linear-gradient(135deg, #1565c0, #1976d2);
+            padding: 50px 20px 30px;
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-orange);
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-orange);
+            transform: translateX(5px);
+        }
+
+        .footer-contact {
+            color: #e2e8f0;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .chat-counselor {
+            background: var(--accent-orange);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .chat-counselor:hover {
+            background: var(--light-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .social-media {
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            color: var(--accent-orange);
+            font-size: 20px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                font-size: 22px;
+                padding: 20px 10px;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .video-section {
+                padding: 20px 15px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .box {
+                padding: 15px 10px;
+            }
+            
+            .box i {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    HEC – Humanities, Economics, Commerce
+</header>
+<div class="container">
+    <h2>📘 Overview</h2>
+    <p><span class="highlight">HEC (Humanities, Economics, Commerce)</span> is an ideal combination for students interested in social sciences, business, and economics. It provides a broad foundation for careers in law, public administration, business management, and economic research.</p>
+    <p>With HEC, you can pursue diverse courses like BA Economics, B.Com, BBA, Law, and prepare for competitive exams like CLAT, UPSC, and various government sector exams.</p>
+
+    <h2>📚 Subjects</h2>
+    <p>In the <strong>HEC stream</strong>, students study <strong>3 major subjects:</strong></p>
+    <p><i class="fas fa-landmark"></i> <strong>Humanities:</strong> Includes subjects like History, Political Science, or Sociology - develops critical thinking and understanding of society.</p>
+    <p><i class="fas fa-chart-line"></i> <strong>Economics:</strong> Studies economic theories, policies, and financial systems - essential for policy-making and business analysis.</p>
+    <p><i class="fas fa-file-invoice-dollar"></i> <strong>Commerce:</strong> Covers accounting, business studies, and financial management - foundational for business careers.</p>
+
+    <div class="grid">
+        <a href="history-inex.html" class="box"><i class="fas fa-landmark"></i>History</a>
+        <a href="Econimics-index.html" class="box"><i class="fas fa-chart-line"></i>Economics</a>
+        <a href="commerce-index.html" class="box"><i class="fas fa-file-invoice-dollar"></i>Commerce</a>
+        <a href="english-index.html" class="box"><i class="fas fa-language"></i>English</a>
+        <a href="255-SECOUND-LANGUAGE.HTML" class="box"><i class="fas fa-university"></i>Second Language</a>
+    </div>
+
+    <h2>🏆 Competitive Exams</h2>
+    <div class="grid">
+        <a href="#" class="box"><i class="fas fa-gavel"></i>CLAT</a>
+        <a href="#" class="box"><i class="fas fa-user-tie"></i>UPSC Civil Services</a>
+        <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>CA Foundation</a>
+        <a href="#" class="box"><i class="fas fa-building"></i>BBA Entrance</a>
+        <a href="#" class="box"><i class="fas fa-balance-scale"></i>Law Entrance</a>
+        <a href="#" class="box"><i class="fas fa-rupee-sign"></i>Bank Exams</a>
+        <a href="#" class="box"><i class="fas fa-chart-pie"></i>Economic Honors</a>
+        <a href="#" class="box"><i class="fas fa-landmark"></i>Public Administration</a>
+        <a href="#" class="box"><i class="fas fa-globe"></i>International Relations</a>
+    </div>
+
+    <h2>🎯 Career Paths</h2>
+    <div class="grid">
+        <a href="#" class="box"><i class="fas fa-gavel"></i>Lawyer</a>
+        <a href="#" class="box"><i class="fas fa-user-tie"></i>Civil Services</a>
+        <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>Chartered Accountant</a>
+        <a href="#" class="box"><i class="fas fa-chart-line"></i>Economist</a>
+        <a href="#" class="box"><i class="fas fa-landmark"></i>Public Administrator</a>
+        <a href="#" class="box"><i class="fas fa-building"></i>Business Management</a>
+        <a href="#" class="box"><i class="fas fa-newspaper"></i>Journalism</a>
+        <a href="#" class="box"><i class="fas fa-globe"></i>International Relations</a>
+        <a href="#" class="box"><i class="fas fa-graduation-cap"></i>Academic Research</a>
+    </div>
+
+    <h2>🏫 Top Colleges</h2>
+    <div class="grid">
+        <a href="#" class="box"><i class="fas fa-university"></i>SRCC, Delhi</a>
+        <a href="#" class="box"><i class="fas fa-landmark"></i>Loyola College, Chennai</a>
+        <a href="#" class="box"><i class="fas fa-building"></i>Christ University</a>
+        <a href="#" class="box"><i class="fas fa-gavel"></i>National Law Universities</a>
+        <a href="#" class="box"><i class="fas fa-user-tie"></i>Delhi University</a>
+        <a href="#" class="box"><i class="fas fa-file-invoice-dollar"></i>ICAI for CA</a>
+        <a href="#" class="box"><i class="fas fa-chart-line"></i>Top Economics Colleges</a>
+        <a href="#" class="box"><i class="fas fa-landmark"></i>JNU for Social Sciences</a>
+    </div>
+
+    <h2>✨ Why Choose HEC?</h2>
+    <ul>
+        <li>✅ Perfect blend of social sciences and business knowledge</li>
+        <li>✅ Strong foundation for law, civil services, and business careers</li>
+        <li>✅ Opens doors to diverse career options in both public and private sectors</li>
+        <li>✅ Develops critical thinking and analytical skills</li>
+        <li>✅ Excellent preparation for economics, commerce, and humanities degrees</li>
+    </ul>
+
+    <div class="counseling">
+        <h3>📌 Need Help with HEC Admissions or Counseling?</h3>
+        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in choosing the right college and career path!</p>
+        <a href="1000paid-cousilling.html">
+            <button>💬 Get Counseling Help</button>
+        </a>
+    </div>
+
+<!-- Video Section -->
+<div class="video-section">
+    <div class="container">
+        <h2>🎥 HEC Career Guidance</h2>
+        <p>Watch this video to understand the career opportunities available after choosing HEC stream:</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/example-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="engineering-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">All Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>HEC Resources</h3>
+            <ul class="footer-links">
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="#">Study Materials</a></li>
+                <li><a href="#">Previous Papers</a></li>
+                <li><a href="#">Model Tests</a></li>
+                <li><a href="#">Career Options</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> info@hecguidance.com</p>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Need Help?</h3>
+            <a href="#" class="chat-counselor">
+                <i class="fas fa-comments"></i> Chat with Counselor
+            </a>
+            <p style="margin-top: 15px; color: #cbd5e0;">We're available 10AM - 6PM, Mon-Sat</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2023 HEC Career Guidance. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Sitemap</a>
+            <a href="#">FAQ</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
