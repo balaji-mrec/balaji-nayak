@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGEAPCET-2025 Required Documents Checklist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #153a6e;
+      --accent-gold: #ffb300;
+      --accent-orange: #ff9800;
+      --bg-light: #f4f7fb;
+      --white: #fff;
+      --gray: #e3e8ee;
+      --success-green: #2e7d32;
+      --text-dark: #1a202c;
+      --text-light: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary-blue) 80%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(21,58,110,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .header-btn {
+      background: var(--accent-gold);
+      color: var(--primary-blue);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(255,179,0,0.13);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .header-btn:hover {
+      background: var(--accent-orange);
+      color: var(--white);
+    }
+    .container {
+      max-width: 1050px;
+      margin: 40px auto 30px auto;
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(21,58,110,0.08);
+    }
+    h1 {
+      color: var(--primary-blue);
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: var(--primary-blue);
+      margin-top: 38px;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border-left: 5px solid var(--accent-gold);
+      padding-left: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .checklist-section {
+      margin-top: 30px;
+    }
+    .category-card {
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-blue);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+    }
+    .category-card h3 {
+      margin-top: 0;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .category-card i {
+      color: var(--accent-gold);
+    }
+    .document-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--gray);
+    }
+    .document-item:last-child {
+      border-bottom: none;
+    }
+    .document-checkbox {
+      margin-top: 3px;
+      min-width: 20px;
+      height: 20px;
+      accent-color: var(--primary-blue);
+    }
+    .document-details strong {
+      color: var(--primary-blue);
+    }
+    .document-details small {
+      color: var(--text-light);
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 3px;
+    }
+    .important-note {
+      background: #fff8e1;
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 0 8px 8px 0;
+      font-weight: 600;
+    }
+    .important-note i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+    .copies-info {
+      background: #eaf2ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .copies-info h4 {
+      margin-top: 0;
+      color: var(--primary-blue);
+    }
+    .section-card {
+      background: #f9fbfd;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background-color: #eaf2ff;
+      border-left: 6px solid var(--accent-gold);
+      border-radius: 8px;
+    }
+    .downloads-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--primary-blue);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      justify-content: flex-start;
+      transition: background 0.3s;
+    }
+    .download-btn i {
+      color: var(--accent-gold);
+      font-size: 18px;
+    }
+    .download-btn:hover {
+      background-color: #00509e;
+    }
+    @media (max-width: 900px) {
+      .container {
+        padding: 20px 15px;
+      }
+      header {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.7rem;
+        padding: 1rem;
+      }
+      .header-btn {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-block">
+    <span><i class="fas fa-clipboard-check"></i> DOCUMENTS CHECKLIST</span>
+    <a href="#" class="header-btn">
+      <i class="fas fa-print"></i> PRINT CHECKLIST
+    </a>
+  </header>
+
+  <div class="container">
+    <h1>TGEAPCET-2025 Required Documents Checklist</h1>
+    <p>Complete list of documents needed for certificate verification and admission process. Prepare 2 sets of photocopies along with originals.</p>
+    
+    <div class="important-note">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>All candidates must carry ORIGINALS + 2 sets of PHOTOCOPIES for verification.</span>
+    </div>
+
+    <div class="copies-info">
+      <h4><i class="fas fa-copy"></i> Photocopies Requirement:</h4>
+      <p>Each set should contain copies of all documents in this order:</p>
+      <ol>
+        <li>TGEAPCET Hall Ticket & Rank Card</li>
+        <li>Academic Certificates (SSLC to Intermediate)</li>
+        <li>Study/Bonafide Certificates</li>
+        <li>Category Certificates (if applicable)</li>
+        <li>Other Supporting Documents</li>
+      </ol>
+    </div>
+
+    <div class="checklist-section">
+      <h2><i class="fas fa-file-alt"></i> Mandatory Documents for All Candidates</h2>
+      
+      <div class="category-card">
+        <h3><i class="fas fa-id-card"></i> TGEAPCET Documents</h3>
+        <div class="document-item">
+          <input type="checkbox" id="doc1" class="document-checkbox">
+          <label for="doc1" class="document-details">
+            <strong>TGEAPCET-2025 Hall Ticket</strong>
+            <small>Printed copy with recent photograph</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc2" class="document-checkbox">
+          <label for="doc2" class="document-details">
+            <strong>TGEAPCET-2025 Rank Card</strong>
+            <small>Printed from official website</small>
+          </label>
+        </div>
+      </div>
+      
+      <div class="category-card">
+        <h3><i class="fas fa-graduation-cap"></i> Academic Certificates</h3>
+        <div class="document-item">
+          <input type="checkbox" id="doc3" class="document-checkbox">
+          <label for="doc3" class="document-details">
+            <strong>SSLC/10th Class Marks Memo</strong>
+            <small>Original + 2 photocopies</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc4" class="document-checkbox">
+          <label for="doc4" class="document-details">
+            <strong>Intermediate 1st Year Marks Memo</strong>
+            <small>Original + 2 photocopies</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc5" class="document-checkbox">
+          <label for="doc5" class="document-details">
+            <strong>Intermediate 2nd Year Marks Memo</strong>
+            <small>Original + 2 photocopies</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc6" class="document-checkbox">
+          <label for="doc6" class="document-details">
+            <strong>Transfer Certificate (TC)</strong>
+            <small>Original from last studied institution</small>
+          </label>
+        </div>
+      </div>
+      
+      <div class="category-card">
+        <h3><i class="fas fa-school"></i> Study/Bonafide Certificates</h3>
+        <div class="document-item">
+          <input type="checkbox" id="doc7" class="document-checkbox">
+          <label for="doc7" class="document-details">
+            <strong>Study Certificates from 6th to Intermediate</strong>
+            <small>Original from respective schools/colleges</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc8" class="document-checkbox">
+          <label for="doc8" class="document-details">
+            <strong>Residence Certificate (if applicable)</strong>
+            <small>For candidates who studied outside Telangana/AP</small>
+          </label>
+        </div>
+      </div>
+      
+      <h2><i class="fas fa-user-tag"></i> Category-Specific Documents</h2>
+      
+      <div class="category-card">
+        <h3><i class="fas fa-users"></i> SC/ST/BC/EBC Candidates</h3>
+        <div class="document-item">
+          <input type="checkbox" id="doc9" class="document-checkbox">
+          <label for="doc9" class="document-details">
+            <strong>Caste Certificate</strong>
+            <small>Issued by competent authority (Original + 2 copies)</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc10" class="document-checkbox">
+          <label for="doc10" class="document-details">
+            <strong>Income Certificate</strong>
+            <small>Issued after 01-01-2025 (if claiming fee reimbursement)</small>
+          </label>
+        </div>
+      </div>
+      
+      <div class="category-card">
+        <h3><i class="fas fa-wheelchair"></i> PH/CAP/NCC/Sports Candidates</h3>
+        <div class="document-item">
+          <input type="checkbox" id="doc11" class="document-checkbox">
+          <label for="doc11" class="document-details">
+            <strong>PH Certificate (Medical Board Certificate)</strong>
+            <small>For Physically Handicapped candidates</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc12" class="document-checkbox">
+          <label for="doc12" class="document-details">
+            <strong>CAP/NCC/Sports Certificates</strong>
+            <small>Original + attested copies if claiming reservation</small>
+          </label>
+        </div>
+      </div>
+      
+      <div class="category-card">
+        <h3><i class="fas fa-passport"></i> Other Important Documents</h3>
+        <div class="document-item">
+          <input type="checkbox" id="doc13" class="document-checkbox">
+          <label for="doc13" class="document-details">
+            <strong>Aadhar Card</strong>
+            <small>Original + 2 photocopies</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc14" class="document-checkbox">
+          <label for="doc14" class="document-details">
+            <strong>Passport Size Photographs</strong>
+            <small>4 recent color photos (same as Hall Ticket)</small>
+          </label>
+        </div>
+        <div class="document-item">
+          <input type="checkbox" id="doc15" class="document-checkbox">
+          <label for="doc15" class="document-details">
+            <strong>Special Category Certificates (if any)</strong>
+            <small>Anganwadi/PHH/Ex-Servicemen etc.</small>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-clipboard-list"></i>
+        <span>Document Submission Process</span>
+      </h2>
+      <ol>
+        <li><strong>Certificate Verification:</strong> Submit all original documents + photocopies at Help Line Center</li>
+        <li><strong>After Allotment:</strong> Carry same documents + allotment order to college</li>
+        <li><strong>College Reporting:</strong> Submit original TC + 1 set of photocopies at allotted college</li>
+        <li><strong>Retain:</strong> Keep one set of photocopies for your records</li>
+      </ol>
+      <div class="important-note">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>Original Transfer Certificate (TC) will be retained by the allotted college. Obtain acknowledgement.</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2 class="section-heading">
+        <i class="fas fa-download"></i>
+        <span>Download Resources</span>
+      </h2>
+      <div class="downloads-grid">
+        <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Complete Documents Checklist PDF</a>
+        <a href="#" class="download-btn"><i class="fas fa-map-marked-alt"></i> Certificate Verification Centers</a>
+        <a href="#" class="download-btn"><i class="fas fa-file-signature"></i> Sample Affidavit Formats</a>
+        <a href="#" class="download-btn"><i class="fas fa-question-circle"></i> Document Verification FAQ</a>
+      </div>
+    </div>
+
+    <div class="important-note">
+      <i class="fas fa-info-circle"></i>
+      <span>All certificates must be in candidate's name (except income certificate which can be in parent's name).</span>
+    </div>
+  </div>
+
+  <script>
+    // Print functionality for the print button
+    document.querySelector('.header-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.print();
+    });
+  </script>
+</body>
+</html>
