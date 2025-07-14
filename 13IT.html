@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IT - Information Technology</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Technology | Balanju</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/kgF2cgdG/consultancy-logo.jpg">
     <style>
+        /* ==== Base Styles ==== */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f7fbe9;
             margin: 0;
             padding: 0;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #0288d1;
+            background-color: #1976d2;
             color: white;
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .container {
@@ -25,17 +32,24 @@
             margin: 30px auto;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
         }
 
         h2 {
-            color: #0288d1;
-            margin-top: 30px;
+            color: #1976d2;
+            margin-top: 35px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
         }
 
         ul {
             font-size: 16px;
             line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
         }
 
         .highlight {
@@ -44,185 +58,499 @@
             color: #d32f2f;
         }
 
+        /* ==== Table Styles ==== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #1976d2;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        /* ==== Testimonial ==== */
+        .testimonial {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-left: 5px solid #1976d2;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 60px;
+            color: #1976d2;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .testimonial p:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #1976d2;
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        /* ==== Quiz ==== */
+        .quiz {
+            background-color: #e1f5fe;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .quiz button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px 10px 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz button:hover {
+            background-color: #0277bd;
+        }
+
+        #quiz-result {
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* ==== Buttons ==== */
         .buttons {
             text-align: center;
             margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .buttons a button {
-            margin: 10px;
-            padding: 10px 25px;
+            padding: 12px 30px;
             font-size: 16px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 180px;
+        }
+
+        .buttons a button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .next-btn {
-            background-color: #039be5;
+            background-color: #1976d2;
             color: white;
         }
 
         .home-btn {
-            background-color: #2196f3;
+            background-color: #64b5f6;
             color: white;
         }
 
+        /* ==== Counseling ==== */
         .counseling {
-            background-color: #fff3cd;
-            padding: 20px;
+            background-color: #e1f5fe;
+            padding: 25px;
             border-radius: 10px;
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
+            border: 1px dashed #0288d1;
         }
 
         .counseling button {
-            background-color: #ff9800;
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .counseling button:hover {
+            background-color: #0277bd;
+        }
+
+        /* ==== Video ==== */
+        .video-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==== Responsive ==== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            header {
+                font-size: 22px;
+                padding: 15px 0;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            background-color: #e1f5fe;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            display: none;
+            padding: 15px 0;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-question button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 8px 10px 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-question button:hover {
+            background-color: #0277bd;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: none;
+        }
+
+        #result-title {
+            color: #1976d2;
+        }
+
+        .quiz-result button {
+            background-color: #0288d1;
             color: white;
             border: none;
             padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 8px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        /* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
+        .syllabus-button {
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+        
+        .syllabus-button button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .syllabus-button button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-  .main-header .left h1 {
-    font-size: 22px;
-  }
+        @media (max-width: 768px) {
+            header {
+                font-size: 20px;
+                padding: 15px 0;
+            }
 
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-
-  .scroll-text {
-    font-size: 13px;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
-
-  .section {
-    padding: 20px 15px;
-  }
-
-  .section h3 {
-    font-size: 20px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
-
+            .container {
+                padding: 20px 15px;
+                margin: 15px;
+                border-radius: 8px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-
-    IT – Information Technology</header>
+    Information Technology (IT)
+</header>
 
 <div class="container">
-    <h2>📘 Overview</h2>
-    <p><span class="highlight">Information Technology (IT)</span> focuses on the practical applications of technology in businesses and organizations, especially in managing and securing data.</p>
-    <p>It emphasizes <b>software systems, networking, databases</b>, and IT infrastructure. IT plays a crucial role in every modern business — from e-commerce platforms 🛒 to enterprise systems 🏢.</p>
+    <h2>💻 Overview</h2>
+    <p><span class="highlight">Information Technology (IT)</span> is the study of computer systems, networks, software development, and information processing to solve business and organizational problems.</p>
+    <p>IT focuses on the practical application of technology to store, retrieve, transmit, and manipulate data in various domains like business, healthcare, education, and government.</p>
 
     <h2>📚 Core Subjects</h2>
     <ul>
-        <li>🖥️ Programming in Java, Python, C++, SQL</li>
-        <li>📊 Database Management Systems (DBMS)</li>
-        <li>🌐 Web Development & Web Services</li>
-        <li>🖧 Computer Networks & Security</li>
+        <li>💻 Programming Fundamentals</li>
+        <li>🌐 Web Technologies</li>
+        <li>📊 Database Management Systems</li>
+        <li>🛡️ Computer Networks and Security</li>
+        <li>🤖 Artificial Intelligence Basics</li>
         <li>☁️ Cloud Computing</li>
-        <li>🛡️ Cybersecurity & Information Assurance</li>
-        <li>📈 Software Engineering</li>
-        <li>🔧 IT Infrastructure Management</li>
-        <li>📱 Mobile & Enterprise App Development</li>
-        <li>🧠 Introduction to AI & Data Analytics</li>
+        <li>📱 Mobile Application Development</li>
+        <li>📈 Data Structures and Algorithms</li>
+        <li>🔄 Software Engineering</li>
+        <li>📡 Internet of Things (IoT)</li>
     </ul>
+
+    <div class="syllabus-button">
+        <a href="it-syllabus-details.html" target="_blank">
+            <button>
+                📖 View Full Syllabus (Semester-wise) ➡️
+            </button>
+        </a>
+    </div>
+
+    <h2>🛠️ Tools & Technologies You'll Learn</h2>
+    <ul>
+        <li><strong>Programming Languages:</strong> Java, Python, C++, JavaScript</li>
+        <li><strong>Web Development:</strong> HTML5, CSS3, React, Node.js</li>
+        <li><strong>Databases:</strong> MySQL, MongoDB, Oracle</li>
+        <li><strong>Frameworks:</strong> Django, Spring Boot, .NET</li>
+        <li><strong>Tools:</strong> Git, Docker, Kubernetes, AWS</li>
+    </ul>
+
+    <div class="syllabus-button">
+        <a href="it-syllabus-details.html" target="_blank">
+            <button>
+                📖 Explore these tools in detail ➡️
+            </button>
+        </a>
+    </div>
+
+    <h2>⚖️ IT vs Other Branches</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>Factor</th>
+            <th>IT</th>
+            <th>Computer Science</th>
+            <th>Electronics</th>
+        </tr>
+        <tr>
+            <td><strong>Programming Focus</strong></td>
+            <td>✅ High (Applied)</td>
+            <td>✅ Very High (Theoretical)</td>
+            <td>⚠️ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Hardware Focus</strong></td>
+            <td>❌ Low</td>
+            <td>⚠️ Medium</td>
+            <td>✅ High</td>
+        </tr>
+        <tr>
+            <td><strong>Industry Applications</strong></td>
+            <td>✅ Very High</td>
+            <td>✅ High</td>
+            <td>⚠️ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Avg. Starting Salary</strong></td>
+            <td>₹5-10 LPA</td>
+            <td>₹6-12 LPA</td>
+            <td>₹4-8 LPA</td>
+        </tr>
+        <tr>
+            <td><strong>Top Companies</strong></td>
+            <td>TCS, Infosys, Wipro</td>
+            <td>Google, Microsoft, Amazon</td>
+            <td>Intel, Texas Instruments</td>
+        </tr>
+    </table>
 
     <h2>💼 Job Opportunities</h2>
     <ul>
-        <li>👨‍💻 IT Support Specialist</li>
-        <li>🖧 Network/System Administrator</li>
+        <li>💻 Software Developer</li>
+        <li>🌐 Web Developer</li>
+        <li>📱 Mobile App Developer</li>
         <li>🛡️ Cybersecurity Analyst</li>
-        <li>📊 Data Analyst</li>
-        <li>☁️ Cloud Solutions Architect</li>
-        <li>🖥️ Full Stack Developer</li>
-        <li>🧰 IT Consultant</li>
-        <li>📱 Application Support Engineer</li>
-        <li>📈 Business Analyst</li>
-        <li>🛠️ DevOps & IT Operations Engineer</li>
+        <li>☁️ Cloud Architect</li>
+        <li>📊 Database Administrator</li>
+        <li>🔄 DevOps Engineer</li>
+        <li>📡 Network Engineer</li>
+        <li>🤖 AI/ML Engineer</li>
+        <li>📈 IT Project Manager</li>
     </ul>
+
+    <div class="syllabus-button">
+        <a href="it-syllabus-details.html" target="_blank">
+            <button>
+                📖 KNOW ABOUT YOUR FUTURE ➡️
+            </button>
+        </a>
+    </div>
 
     <h2>📈 Future Demand</h2>
-    <p>Digital transformation is driving a huge demand for IT professionals in healthcare, banking, government, education, and startups. IT is the backbone of business operations in the modern world.</p>
+    <p>The IT sector in India is expected to grow at 8-10% annually, reaching $350 billion by 2025. Emerging technologies like AI, cloud computing, cybersecurity, and IoT are driving demand for skilled IT professionals across all industries.</p>
 
-    <h2>💡 Facts</h2>
+    <h2>🛑 IT Reality Check</h2>
     <ul>
-        <li>💼 IT roles are among the most stable and in-demand jobs globally.</li>
-        <li>🌍 Every company with a digital presence needs IT professionals.</li>
-        <li>📱 IT is essential in managing enterprise software, networks, and cloud systems.</li>
+        <li>⚠️ <strong>Continuous Learning:</strong> Technologies evolve rapidly requiring constant upskilling</li>
+        <li>⚠️ <strong>Competition:</strong> High number of graduates means you need to stand out</li>
+        <li>⚠️ <strong>Initial Roles:</strong> May start with maintenance before development work</li>
+        <li>💡 <strong>Tip:</strong> Build projects and contribute to open source to enhance your profile</li>
     </ul>
 
-    <h2>🌍 Top Recruiters</h2>
-    <ul>
-        <li>💻 Infosys, Wipro, TCS, HCL</li>
-        <li>☁️ Cognizant, Capgemini, Accenture</li>
-        <li>📊 IBM, Dell, HP, Oracle</li>
-        <li>🧠 Deloitte, EY, PwC</li>
-        <li>🚀 Startups & product-based companies in SaaS, HealthTech, and EdTech</li>
-    </ul>
+    <h2>🎤 Student Experience</h2>
+    <div class="testimonial">
+        <p>I chose IT because I wanted practical, job-ready skills. The curriculum gave me hands-on experience with real-world technologies. After graduating, I got placed as a software developer at a leading MNC. The best part is the flexibility to work in any industry since every sector needs IT professionals.</p>
+        <p>— Ravi, IT Engineer</p>
+    </div>
 
-    <h2>🎓 Higher Studies & Certifications</h2>
-    <ul>
-        <li>M.Tech / MS in Information Systems, Cybersecurity, or Cloud Computing</li>
-        <li>MBA in Information Technology or Project Management</li>
-        <li>Certifications: CCNA, CompTIA, AWS, Azure, Google Cloud, ITIL, PMP</li>
-    </ul>
+    <h2>🤔 Still Confused? Take a Quick Quiz!</h2>
+       
+    <div class="quiz-section">
+        <h2>🤔 Not Sure if IT is for You?</h2>
+        <p><em>Take this short quiz to find out if IT matches your interests!</em></p>
 
-    <h2>✨ Why Choose IT?</h2>
-    <ul>
-        <li>✅ High job availability in all sectors</li>
-        <li>✅ Hands-on practical learning and implementation</li>
-        <li>✅ Vital for system integration and data management</li>
-        <li>✅ Opportunities for career growth in both technical and managerial roles</li>
-        <li>✅ Gateway to roles in Cloud, DevOps, and Cybersecurity</li>
-    </ul>
+        <div id="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question active" id="q1">
+                <p><strong>1. Do you enjoy problem-solving and logical thinking?</strong></p>
+                <button onclick="nextQuestion(1, 3)">Yes! I love solving puzzles and challenges 🧩</button>
+                <button onclick="nextQuestion(1, 1)">Sometimes</button>
+                <button onclick="nextQuestion(1, 0)">Not really</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" id="q2">
+                <p><strong>2. Are you interested in how technology can solve real-world problems?</strong></p>
+                <button onclick="nextQuestion(2, 3)">Absolutely! Technology fascinates me 💡</button>
+                <button onclick="nextQuestion(2, 1)">Somewhat interested</button>
+                <button onclick="nextQuestion(2, 0)">Not particularly</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" id="q3">
+                <p><strong>3. Would you enjoy learning new programming languages and technologies?</strong></p>
+                <button onclick="nextQuestion(3, 2)">Yes, I'm excited to keep learning new things 📚</button>
+                <button onclick="nextQuestion(3, 0)">I prefer sticking to what I know</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question" id="q4">
+                <p><strong>4. Do you like working on team projects?</strong></p>
+                <button onclick="nextQuestion(4, 2)">Yes, teamwork makes projects better 👥</button>
+                <button onclick="nextQuestion(4, 0)">I prefer working alone</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question" id="q5">
+                <p><strong>5. Are you comfortable with the idea of continuous learning throughout your career?</strong></p>
+                <button onclick="nextQuestion(5, 3)">Absolutely! I want to stay updated 🔄</button>
+                <button onclick="nextQuestion(5, 1)">Somewhat comfortable</button>
+                <button onclick="nextQuestion(5, 0)">No, I prefer stable knowledge</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result -->
+    <div class="quiz-result" id="result">
+        <h3 id="result-title">Your Result</h3>
+        <p id="result-text"></p>
+        <button onclick="resetQuiz()">Retake Quiz 🔄</button>
+    </div>
+
+    <div class="video-section">
+        <h2>📺 Watch this video to learn more about IT Engineering</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/UtNYzv8gLbs?rel=0" title="IT Engineering Info" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <div class="counseling">
-        <h3>📌 Need Help with EAMCET Counseling?</h3>
+        <h3>📌 Need Help with EAMCET Counseling? OR Want to choose the right branch?</h3>
         <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
         <a href="1000paid-cousilling.html" target="_blank">
             <button>💬 Get Counseling Help</button>
@@ -230,11 +558,53 @@
     </div>
 
     <div class="buttons">
-        <a href="13CYBER.html"><button class="next-btn">⬅️ Previous Branch (CYBER)</button></a>
-        <a href="13IOT.html"><button class="next-btn">➡️ Next Branch(IOT)</button></a>
+        <a href="13AIML.html"><button class="next-btn">➡️ Next Branch</button></a>
         <a href="index-branches.html"><button class="home-btn">🏠 Back to Home</button></a>
     </div>
 </div>
+
+<script>
+    let totalScore = 0;
+    const maxScore = 13; // Sum of max points per question (3+3+2+2+3)
+
+    function nextQuestion(currentQ, score) {
+        totalScore += score;
+        document.getElementById(`q${currentQ}`).classList.remove("active");
+        
+        if (currentQ < 5) {
+            document.getElementById(`q${currentQ + 1}`).classList.add("active");
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const resultText = document.getElementById("result-text");
+        const resultContainer = document.getElementById("result");
+        
+        // Calculate percentage
+        const percentage = Math.round((totalScore / maxScore) * 100);
+        
+        // Personalized feedback
+        if (percentage >= 75) {
+            resultText.innerHTML = `🎉 <strong>${percentage}% IT Fit!</strong> <br> You're perfect for Information Technology! Your problem-solving skills and interest in technology align perfectly with this field.`;
+        } else if (percentage >= 50) {
+            resultText.innerHTML = `🤔 <strong>${percentage}% Neutral Fit.</strong> <br> You might do well in IT if you're willing to develop your technical and problem-solving skills.`;
+        } else {
+            resultText.innerHTML = `⚠️ <strong>${percentage}% Low Fit.</strong> <br> IT might not be ideal for you. Consider other engineering branches that align better with your interests.`;
+        }
+        
+        document.getElementById("quiz-container").scrollIntoView();
+        resultContainer.style.display = "block";
+    }
+
+    function resetQuiz() {
+        totalScore = 0;
+        document.querySelectorAll(".quiz-question").forEach(q => q.classList.remove("active"));
+        document.getElementById("q1").classList.add("active");
+        document.getElementById("result").style.display = "none";
+    }
+</script>
 
 </body>
 </html>

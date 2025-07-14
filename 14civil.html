@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CIVIL - Civil Engineering</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Engineering | Balanju</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/kgF2cgdG/consultancy-logo.jpg">
     <style>
+        /* ==== Base Styles ==== */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7fbe9;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9f9;
             margin: 0;
             padding: 0;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #795548;
+            background-color: #6d4c41;
             color: white;
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .container {
@@ -25,17 +32,24 @@
             margin: 30px auto;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
         }
 
         h2 {
-            color: #795548;
-            margin-top: 30px;
+            color: #6d4c41;
+            margin-top: 35px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
         }
 
         ul {
             font-size: 16px;
             line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
         }
 
         .highlight {
@@ -44,197 +58,505 @@
             color: #d32f2f;
         }
 
+        /* ==== Table Styles ==== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #6d4c41;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #efebe9;
+        }
+
+        /* ==== Testimonial ==== */
+        .testimonial {
+            background-color: #efebe9;
+            padding: 20px;
+            border-left: 5px solid #6d4c41;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 60px;
+            color: #6d4c41;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .testimonial p:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #6d4c41;
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        /* ==== Quiz ==== */
+        .quiz-section {
+            background-color: #fff8e1;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            display: none;
+            padding: 15px 0;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-question button {
+            background-color: #ff8f00;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 8px 10px 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-question button:hover {
+            background-color: #ff6f00;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: none;
+        }
+
+        #result-title {
+            color: #6d4c41;
+        }
+
+        .quiz-result button {
+            background-color: #6d4c41;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* ==== Buttons ==== */
         .buttons {
             text-align: center;
             margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .buttons a button {
-            margin: 10px;
-            padding: 10px 25px;
+            padding: 12px 30px;
             font-size: 16px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 180px;
+        }
+
+        .buttons a button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .next-btn {
-            background-color: #8d6e63;
+            background-color: #6d4c41;
             color: white;
         }
 
         .home-btn {
-            background-color: #5d4037;
+            background-color: #8d6e63;
             color: white;
         }
 
+        /* ==== Counseling ==== */
         .counseling {
-            background-color: #fff3cd;
-            padding: 20px;
+            background-color: #fff8e1;
+            padding: 25px;
             border-radius: 10px;
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
+            border: 1px dashed #ff8f00;
         }
 
         .counseling button {
-            background-color: #ff9800;
+            background-color: #ff8f00;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 16px;
             border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
         }
 
-        /* 📱 Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px 15px;
-  }
+        .counseling button:hover {
+            background-color: #ff6f00;
+        }
 
-  .main-header .left h1 {
-    font-size: 22px;
-  }
+        /* ==== Video ==== */
+        .video-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
 
-  .main-header .right {
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
 
-  .scroll-text {
-    font-size: 13px;
-  }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-  .hero h2 {
-    font-size: 24px;
-  }
+        /* ==== Syllabus Button ==== */
+        .syllabus-button {
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+        
+        .syllabus-button button {
+            background-color: #6d4c41;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .syllabus-button button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-  .hero p {
-    font-size: 16px;
-  }
+        /* ==== Responsive ==== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
 
-  .hero .btn {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 15px;
-  }
+            header {
+                font-size: 22px;
+                padding: 15px 0;
+            }
 
-  .section {
-    padding: 20px 15px;
-  }
+            h2 {
+                font-size: 20px;
+            }
 
-  .section h3 {
-    font-size: 20px;
-  }
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
 
-  .section p {
-    font-size: 15px;
-  }
+            .comparison-table {
+                font-size: 14px;
+            }
 
-  .btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-}
-
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-
-    CIVIL – Civil Engineering</header>
+    Civil Engineering
+</header>
 
 <div class="container">
     <h2>📘 Overview</h2>
-    <p><span class="highlight">Civil Engineering</span> is the oldest and one of the most respected engineering disciplines. It focuses on designing, building, and maintaining physical infrastructure like buildings, bridges, roads, dams, and water systems.</p>
-    <p>With increasing demand for smart cities and sustainable development, Civil engineers play a vital role in shaping the world we live in.</p>
+    <p><span class="highlight">Civil Engineering</span> is the art and science of designing, constructing, and maintaining the physical and naturally built environment.</p>
+    <p>It shapes the world around us—from towering skyscrapers 🏙️ and bridges 🌉 to water supply systems 🚰 and transportation networks 🛣️. Civil engineers build the foundations of modern civilization.</p>
 
     <h2>📚 Core Subjects</h2>
     <ul>
         <li>🏗️ Structural Engineering</li>
-        <li>🌊 Fluid Mechanics & Hydraulics</li>
-        <li>🛤️ Transportation Engineering</li>
-        <li>🏞️ Environmental Engineering</li>
-        <li>🧱 Construction Materials & Technology</li>
-        <li>📐 Geotechnical Engineering</li>
-        <li>🏠 Building Planning & Drawing</li>
-        <li>🌉 Bridge and Highway Design</li>
-        <li>📊 Estimation and Costing</li>
-        <li>🛰️ Remote Sensing & GIS</li>
+        <li>🌉 Geotechnical Engineering</li>
+        <li>🚰 Environmental Engineering</li>
+        <li>🛣️ Transportation Engineering</li>
+        <li>🏙️ Surveying and Geomatics</li>
+        <li>💧 Water Resources Engineering</li>
+        <li>🧱 Construction Technology</li>
+        <li>📐 Engineering Mechanics</li>
+        <li>🏭 Concrete Technology</li>
+        <li>🌍 Earthquake Engineering</li>
     </ul>
+
+    <div class="syllabus-button">
+        <a href="civil-syllabus-details.html" target="_blank">
+            <button>
+                📖 View Full Syllabus (Semester-wise) ➡️
+            </button>
+        </a>
+    </div>
+
+    <h2>🛠️ Tools & Technologies You'll Learn</h2>
+    <ul>
+        <li><strong>Design:</strong> AutoCAD, Revit, STAAD.Pro</li>
+        <li><strong>Analysis:</strong> ETABS, SAP2000</li>
+        <li><strong>Surveying:</strong> Total Station, GPS</li>
+        <li><strong>Construction:</strong> Primavera, MS Project</li>
+        <li><strong>GIS:</strong> ArcGIS, QGIS</li>
+    </ul>
+
+    <h2>⚖️ Civil vs Other Branches</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>Factor</th>
+            <th>Civil</th>
+            <th>Mechanical</th>
+            <th>EEE</th>
+        </tr>
+        <tr>
+            <td><strong>Field Work</strong></td>
+            <td>✅ High</td>
+            <td>⚠️ Medium</td>
+            <td>❌ Low</td>
+        </tr>
+        <tr>
+            <td><strong>Math Intensity</strong></td>
+            <td>⚠️ Medium</td>
+            <td>✅ High</td>
+            <td>✅ High</td>
+        </tr>
+        <tr>
+            <td><strong>Work Environment</strong></td>
+            <td>Office + Site</td>
+            <td>Factory/Office</td>
+            <td>Lab/Office</td>
+        </tr>
+        <tr>
+            <td><strong>Avg. Starting Salary</strong></td>
+            <td>₹3.5-7 LPA</td>
+            <td>₹4-8 LPA</td>
+            <td>₹4-9 LPA</td>
+        </tr>
+        <tr>
+            <td><strong>Top Companies</strong></td>
+            <td>L&T, Tata Projects</td>
+            <td>TATA, ISRO</td>
+            <td>BHEL, Siemens</td>
+        </tr>
+    </table>
 
     <h2>💼 Job Opportunities</h2>
     <ul>
-        <li>🏗️ Site Engineer / Project Engineer</li>
-        <li>🏛️ Structural Engineer</li>
-        <li>🌿 Environmental Engineer</li>
-        <li>🧱 Construction Manager</li>
-        <li>🛣️ Highway and Transportation Engineer</li>
-        <li>🌍 Urban Planner</li>
-        <li>🏞️ Water Resources Engineer</li>
-        <li>🏢 Quantity Surveyor</li>
-        <li>📐 Design Engineer</li>
-        <li>🏘️ Infrastructure Consultant</li>
+        <li>🏗️ Structural Engineer</li>
+        <li>🏢 Construction Project Manager</li>
+        <li>🌉 Geotechnical Engineer</li>
+        <li>🚰 Environmental Engineer</li>
+        <li>🛣️ Transportation Engineer</li>
+        <li>🏭 Site Engineer</li>
+        <li>🏙️ Urban Planner</li>
+        <li>🌊 Water Resource Engineer</li>
+        <li>📐 Surveyor</li>
+        <li>🏛️ Government PWD Jobs</li>
     </ul>
+
+    <div class="syllabus-button">
+        <a href="civil-syllabus-details.html" target="_blank">
+            <button>
+                📖 KNOW ABOUT YOUR FUTURE ➡️
+            </button>
+        </a>
+    </div>
 
     <h2>📈 Future Demand</h2>
-    <p>As cities grow and infrastructure ages, the demand for civil engineers remains strong. Smart cities, green buildings, and sustainable urban development are driving the next wave of opportunities.</p>
-
-    <h2>💡 Facts</h2>
+    <p>With rapid urbanization and infrastructure development, Civil Engineers are essential for:</p>
     <ul>
-        <li>🏙️ Civil engineers shape 70% of physical infrastructure worldwide.</li>
-        <li>🌿 Sustainability and eco-construction are major trends.</li>
-        <li>💰 Government and PSU jobs offer strong job security.</li>
+        <li>🏗️ Smart city projects</li>
+        <li>🚆 Metro rail expansions</li>
+        <li>🌉 Bridge and highway construction</li>
+        <li>🌍 Sustainable infrastructure</li>
+        <li>🏠 Affordable housing projects</li>
     </ul>
 
-    <h2>🌍 Top Recruiters</h2>
+    <h2>🛑 Civil Engineering Reality Check</h2>
     <ul>
-        <li>🏗️ L&T, Shapoorji Pallonji, GMR, Gammon India</li>
-        <li>🌿 Hindustan Construction Company (HCC), Afcons</li>
-        <li>🏢 Tata Projects, Reliance Infrastructure</li>
-        <li>🏛️ CPWD, NHAI, PWD, State Housing Boards</li>
-        <li>🌍 Civil consultancies and global infra firms</li>
+        <li>⚠️ <strong>Field Work Required:</strong> Site visits and outdoor work are common.</li>
+        <li>⚠️ <strong>Government Jobs:</strong> Many opportunities but competitive exams needed.</li>
+        <li>⚠️ <strong>Initial Salaries:</strong> Lower than IT but grow with experience.</li>
+        <li>💡 <strong>Tip:</strong> Combine with project management skills for best growth.</li>
     </ul>
 
-    <h2>🎓 Higher Studies & Certifications</h2>
-    <ul>
-        <li>M.Tech / MS in Structural, Transportation, or Environmental Engineering</li>
-        <li>MBA in Construction or Project Management</li>
-        <li>Certifications: AutoCAD, STAAD Pro, Primavera, BIM, RICS</li>
-    </ul>
+    <h2>🎤 Student Experience</h2>
+    <div class="testimonial">
+        <p>I chose Civil because I wanted to see tangible results of my work. After working on metro projects, I can literally point to buildings and say "I helped build that!" <strong>Nothing beats the satisfaction of creating infrastructure that lasts generations.</strong></p>
+        <p>— Priya, Civil Engineer</p>
+    </div>
 
-    <h2>✨ Why Choose Civil?</h2>
-    <ul>
-        <li>✅ Timeless and evergreen engineering domain</li>
-        <li>✅ Key to smart city development and infrastructure growth</li>
-        <li>✅ High job demand in both public and private sectors</li>
-        <li>✅ Opportunities in research, design, and construction</li>
-        <li>✅ Make a visible impact on society</li>
-    </ul>
+    <h2>🤔 Still Confused? Take a Quick Quiz!</h2>
+    <div class="quiz-section">
+        <h3>Is Civil Engineering Right for You?</h3>
+        <p><em>Answer these questions to see if Civil matches your interests</em></p>
+
+        <div id="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question active" id="q1">
+                <p><strong>1. Do you enjoy seeing physical structures being built?</strong></p>
+                <button onclick="nextQuestion(1, 2)">Yes! I love construction sites 🏗️</button>
+                <button onclick="nextQuestion(1, 0)">Not particularly interested 🏢</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" id="q2">
+                <p><strong>2. Are you interested in solving real-world problems like traffic or water supply?</strong></p>
+                <button onclick="nextQuestion(2, 2)">Yes, practical solutions excite me 💡</button>
+                <button onclick="nextQuestion(2, 0)">I prefer theoretical problems 📚</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" id="q3">
+                <p><strong>3. Would you like working both in office and outdoor sites?</strong></p>
+                <button onclick="nextQuestion(3, 3)">Perfect mix! I hate being stuck indoors 🌞</button>
+                <button onclick="nextQuestion(3, 1)">Maybe, if the balance is right 🤔</button>
+                <button onclick="nextQuestion(3, 0)">I prefer only office work 💻</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question" id="q4">
+                <p><strong>4. Do you have good spatial visualization skills?</strong></p>
+                <button onclick="nextQuestion(4, 2)">Yes, I'm good at imagining structures 🏛️</button>
+                <button onclick="nextQuestion(4, 0)">Not my strong suit 😅</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question" id="q5">
+                <p><strong>5. Are you interested in creating lasting infrastructure?</strong></p>
+                <button onclick="nextQuestion(5, 2)">Yes! Building for future generations 🌉</button>
+                <button onclick="nextQuestion(5, 0)">I prefer temporary projects ⏳</button>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="quiz-result" id="result">
+            <h3 id="result-title">Your Result</h3>
+            <p id="result-text"></p>
+            <button onclick="resetQuiz()">Retake Quiz 🔄</button>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h2>📺 Watch This Video to Learn More About Civil Engineering</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/F8MJ_dH1F3E?rel=0" title="Civil Engineering Course Info" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <div class="counseling">
-        <h3>📌 Need Help with EAMCET Counseling?</h3>
+        <h3>📌 Need Help with EAMCET Counseling? OR Want to Choose the Right Branch?</h3>
         <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
-        <a href="1000paid-cousilling.html">
+        <a href="1000paid-cousilling.html" target="_blank">
             <button>💬 Get Counseling Help</button>
         </a>
     </div>
 
     <div class="buttons">
-        <a href="14eee.html"><button class="next-btn">⬅️ Previous Branch (EEE)</button></a>
-        <a href="14mech.html"><button class="next-btn">⬅️ Next Branch (Mech)</button></a>
+        <a href="13AIML.html"><button class="next-btn">➡️ Next Branch</button></a>
         <a href="index-branches.html"><button class="home-btn">🏠 Back to Home</button></a>
     </div>
 </div>
+
+<script>
+    let totalScore = 0;
+    const maxScore = 11; // Sum of max points per question (2+2+3+2+2)
+
+    function nextQuestion(currentQ, score) {
+        totalScore += score;
+        document.getElementById(`q${currentQ}`).classList.remove("active");
+        
+        if (currentQ < 5) {
+            document.getElementById(`q${currentQ + 1}`).classList.add("active");
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const resultText = document.getElementById("result-text");
+        const resultContainer = document.getElementById("result");
+        
+        // Calculate percentage
+        const percentage = Math.round((totalScore / maxScore) * 100);
+        
+        // Personalized feedback
+        if (percentage >= 70) {
+            resultText.innerHTML = `🎉 <strong>${percentage}% Civil Engineering Fit!</strong> <br> You're likely to thrive in Civil Engineering! Your interest in construction and problem-solving aligns perfectly.`;
+        } else if (percentage >= 40) {
+            resultText.innerHTML = `🤔 <strong>${percentage}% Neutral Fit.</strong> <br> You could do well in Civil with dedication, but consider exploring other branches too.`;
+        } else {
+            resultText.innerHTML = `⚠️ <strong>${percentage}% Low Fit.</strong> <br> Civil Engineering might not be ideal for you. Look into Mechanical/EEE/CSE for better alignment.`;
+        }
+        
+        document.getElementById("quiz-container").scrollIntoView();
+        resultContainer.style.display = "block";
+    }
+
+    function resetQuiz() {
+        totalScore = 0;
+        document.querySelectorAll(".quiz-question").forEach(q => q.classList.remove("active"));
+        document.getElementById("q1").classList.add("active");
+        document.getElementById("result").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
