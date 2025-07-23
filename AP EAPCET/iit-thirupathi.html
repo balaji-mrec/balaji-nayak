@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Bombay - StudentVerse College Guide</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57c5b6;
+            --accent-color: #159895;
+            --light-color: #f9f9f9;
+            --dark-color: #333;
+            --text-color: #444;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            position: relative;
+            padding-bottom: 80px;
+        }
+        
+        .banner {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            margin-bottom: 12px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-content {
+            padding: 0 20px;
+            margin-bottom: 15px;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 8px;
+            text-align: center;
+        }
+        
+        .location {
+            font-size: 16px;
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .location .material-icons {
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+        
+        .tabs-container {
+            overflow-x: auto;
+            margin: 15px 0;
+            padding: 0 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tabs-container::-webkit-scrollbar {
+            height: 5px;
+        }
+        
+        .tabs-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 8px;
+            padding-bottom: 8px;
+            width: max-content;
+        }
+        
+        .tab {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #e8f3f1;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .tab:hover {
+            background-color: #d4e8e4;
+            transform: translateY(-2px);
+        }
+        
+        .tab.active {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(21, 152, 149, 0.2);
+        }
+        
+        .tab .material-icons {
+            margin-right: 6px;
+            font-size: 18px;
+        }
+        
+        .tab.active .material-icons {
+            color: white;
+        }
+        
+        .section-box {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 15px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .section-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-header .material-icons {
+            margin-right: 8px;
+            font-size: 22px;
+            color: var(--accent-color);
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .info-row .material-icons {
+            color: var(--accent-color);
+            font-size: 20px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .info-label {
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+        
+        .info-value {
+            font-size: 15px;
+            color: var(--text-color);
+        }
+        
+        .list-item {
+            display: flex;
+            margin-bottom: 8px;
+            align-items: flex-start;
+        }
+        
+        .bullet {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        
+        .list-text {
+            font-size: 15px;
+            color: var(--text-color);
+            flex: 1;
+        }
+        
+        .bottom-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 60px;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+        }
+        
+        .bottom-bar-text {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-item .material-icons {
+            color: var(--accent-color);
+            font-size: 22px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            font-size: 15px;
+            color: var(--text-color);
+        }
+        
+        .contact-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .gallery-image {
+            height: 180px;
+            width: 280px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-question .material-icons {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-color);
+            padding-left: 28px;
+        }
+        
+        .subsection {
+            margin-bottom: 20px;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .subsection-title .material-icons {
+            margin-right: 8px;
+            font-size: 18px;
+            color: var(--accent-color);
+        }
+        
+        .subsection-text {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .highlight-card {
+            background-color: #f0f9f8;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        
+        .highlight-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .highlight-content {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 3px solid var(--accent-color);
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 480px) {
+            .name {
+                font-size: 22px;
+            }
+            
+            .section-box {
+                padding: 16px;
+                margin: 12px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-image {
+                width: 240px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://images.collegedunia.com/public/image/iit_bombay_sign_angle_1__dfa638c534baead270684e71cb29be01.jpeg?tr=w-1310,h-480,c-force" 
+             alt="IIT Bombay Campus" class="banner">
+        
+        <div class="header-content">
+            <h1 class="name">Indian Institute of Technology Bombay</h1>
+            <div class="location">
+                <span class="material-icons">location_on</span>
+                <span>Mumbai, Maharashtra</span>
+            </div>
+        </div>
+        
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('About')">
+                    <span class="material-icons">info</span>
+                    <span>About</span>
+                </div>
+                <div class="tab" onclick="showTab('Courses')">
+                    <span class="material-icons">menu_book</span>
+                    <span>Courses</span>
+                </div>
+                <div class="tab" onclick="showTab('Admissions')">
+                    <span class="material-icons">school</span>
+                    <span>Admissions</span>
+                </div>
+                <div class="tab" onclick="showTab('Rankings')">
+                    <span class="material-icons">star</span>
+                    <span>Rankings</span>
+                </div>
+                <div class="tab" onclick="showTab('Placements')">
+                    <span class="material-icons">work</span>
+                    <span>Placements</span>
+                </div>
+                <div class="tab" onclick="showTab('Facilities')">
+                    <span class="material-icons">apartment</span>
+                    <span>Facilities</span>
+                </div>
+                <div class="tab" onclick="showTab('Gallery')">
+                    <span class="material-icons">photo_library</span>
+                    <span>Gallery</span>
+                </div>
+                <div class="tab" onclick="showTab('Contact')">
+                    <span class="material-icons">email</span>
+                    <span>Contact</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="About">
+            <div class="info-row">
+                <span class="material-icons">calendar_today</span>
+                <div class="info-content">
+                    <div class="info-label">Established</div>
+                    <div class="info-value">1958</div>
+                </div>
+            </div>
+            
+            <div class="info-row">
+                <span class="material-icons">account_balance</span>
+                <div class="info-content">
+                    <div class="info-label">Institution Type</div>
+                    <div class="info-value">Public Technical University</div>
+                </div>
+            </div>
+            
+            <div class="info-row">
+                <span class="material-icons">location_city</span>
+                <div class="info-content">
+                    <div class="info-label">Campus Size</div>
+                    <div class="info-value">550 acres</div>
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-title">About IIT Bombay</div>
+                <div class="highlight-content">
+                    IIT Bombay is one of India's premier engineering institutions, known for its academic excellence, 
+                    cutting-edge research, and vibrant campus life. Established as the second IIT in India, it has 
+                    consistently ranked among the top engineering colleges in the country.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">history_edu</span>
+                    <span>History</span>
+                </div>
+                <div class="subsection-text">
+                    Founded in 1958 with assistance from UNESCO and the Soviet Union, IIT Bombay was established 
+                    to meet India's growing need for technical manpower. The institute has since grown into a 
+                    world-class center for education and research in engineering and technology.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">school</span>
+                    <span>Academics</span>
+                </div>
+                <div class="subsection-text">
+                    IIT Bombay offers undergraduate, postgraduate and doctoral programs in various engineering, 
+                    science, design, and management disciplines. The institute follows a semester system with 
+                    a strong emphasis on research and practical learning.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">groups</span>
+                    <span>Student Life</span>
+                </div>
+                <div class="subsection-text">
+                    The campus boasts a vibrant student community with numerous clubs, societies, and annual 
+                    events like Mood Indigo (cultural fest) and Techfest (Asia's largest science and technology 
+                    festival). The institute has a strong tradition of student self-governance.
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">10,000+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">600+</div>
+                    <div class="stat-label">Faculty</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">16</div>
+                    <div class="stat-label">Departments</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">13</div>
+                    <div class="stat-label">Hostels</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Courses" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">school</span>
+                <span>Undergraduate Programs</span>
+            </h2>
+            
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Bachelor of Technology (B.Tech) - 4 years</span>
+            </div>
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Dual Degree (B.Tech + M.Tech) - 5 years</span>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-title">Popular Specializations</div>
+                <div class="highlight-content">
+                    Computer Science & Engineering, Electrical Engineering, Mechanical Engineering, 
+                    Chemical Engineering, Aerospace Engineering, Civil Engineering
+                </div>
+            </div>
+            
+            <h2 class="section-header">
+                <span class="material-icons">history_edu</span>
+                <span>Postgraduate Programs</span>
+            </h2>
+            
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Master of Technology (M.Tech)</span>
+            </div>
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Master of Design (M.Des)</span>
+            </div>
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Master of Science (M.Sc)</span>
+            </div>
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Master of Business Administration (MBA)</span>
+            </div>
+            <div class="list-item">
+                <span class="bullet">•</span>
+                <span class="list-text">Doctor of Philosophy (Ph.D)</span>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">note</span>
+                    <span>Additional Programs</span>
+                </div>
+                <div class="subsection-text">
+                    IIT Bombay also offers interdisciplinary programs, minor specializations, and online 
+                    certification courses through its various departments and centers.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Admissions" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">how_to_reg</span>
+                <span>Admission Process</span>
+            </h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">engineering</span>
+                    <span>Undergraduate (B.Tech)</span>
+                </div>
+                <div class="subsection-text">
+                    Admissions are based on JEE Advanced rank, followed by JoSAA counseling. Candidates must 
+                    qualify JEE Main to appear for JEE Advanced.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">grading</span>
+                    <span>Postgraduate (M.Tech)</span>
+                </div>
+                <div class="subsection-text">
+                    Admissions are based on GATE score followed by written test and/or interview conducted 
+                    by respective departments.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">business_center</span>
+                    <span>MBA Program</span>
+                </div>
+                <div class="subsection-text">
+                    Admissions require a valid CAT score followed by group discussion and personal interview.
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-title">Important Dates (2024-25)</div>
+                <div class="highlight-content">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">JEE Main: January 2025</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">JEE Advanced: June 2025</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">JoSAA Counseling: June-July 2025</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">GATE: February 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">help_outline</span>
+                    <span>International Students</span>
+                </div>
+                <div class="subsection-text">
+                    IIT Bombay admits international students through Direct Admission of Students Abroad (DASA) 
+                    scheme. Requirements include SAT Subject Test scores or equivalent.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Rankings" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">star</span>
+                <span>Rankings & Accreditations</span>
+            </h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">military_tech</span>
+                    <span>National Rankings</span>
+                </div>
+                <div class="subsection-text">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">NIRF 2023: #3 among Engineering Institutions</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">NIRF 2023: #4 among Overall Institutions</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">public</span>
+                    <span>Global Rankings</span>
+                </div>
+                <div class="subsection-text">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">QS World University Rankings 2024: 149</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">THE World University Rankings 2023: 351-400</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">verified</span>
+                    <span>Accreditations</span>
+                </div>
+                <div class="subsection-text">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Institute of National Importance</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Autonomous under Ministry of Education</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">NAAC 'A++' Grade</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-title">Notable Achievements</div>
+                <div class="highlight-content">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">First Indian university to feature in QS Top 150</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Highest number of patents filed among Indian academic institutions</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Pioneer in several technology innovations in India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Placements" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">work</span>
+                <span>Placements & Careers</span>
+            </h2>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">2.1 Cr</div>
+                    <div class="stat-label">Highest Package (International)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">21 LPA</div>
+                    <div class="stat-label">Average Package</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">95%+</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">250+</div>
+                    <div class="stat-label">Recruiters</div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">business</span>
+                    <span>Top Recruiters</span>
+                </div>
+                <div class="subsection-text">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Google, Microsoft, Amazon</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Goldman Sachs, Morgan Stanley</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Tata Group, Reliance</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">ISRO, DRDO, BARC</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">trending_up</span>
+                    <span>Internship Opportunities</span>
+                </div>
+                <div class="subsection-text">
+                    IIT Bombay has a robust internship program with companies offering summer internships 
+                    with stipends ranging from ₹30,000 to ₹1,50,000 per month. Many students secure 
+                    international internships as well.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">rocket_launch</span>
+                    <span>Entrepreneurship</span>
+                </div>
+                <div class="subsection-text">
+                    The institute's Society for Innovation and Entrepreneurship (SINE) has incubated over 
+                    150 startups including Ola, Fractal Analytics, and InMobi. IIT Bombay ranks among 
+                    the top institutions for student startups in India.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Facilities" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">apartment</span>
+                <span>Campus Facilities</span>
+            </h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">library_books</span>
+                    <span>Central Library</span>
+                </div>
+                <div class="subsection-text">
+                    The Central Library houses over 5 lakh books, 50,000 e-journals, and provides access 
+                    to numerous online databases. It's open 24x7 during exam periods.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">computer</span>
+                    <span>Labs & Research Centers</span>
+                </div>
+                <div class="subsection-text">
+                    State-of-the-art laboratories in all departments, supercomputing facility, nanotechnology 
+                    center, and specialized research centers for various engineering disciplines.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">home_work</span>
+                    <span>Hostels</span>
+                </div>
+                <div class="subsection-text">
+                    13 hostels with single/double occupancy rooms, common rooms, mess facilities, and 
+                    24/7 security. Separate hostels for girls with additional security measures.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">sports_soccer</span>
+                    <span>Sports Facilities</span>
+                </div>
+                <div class="subsection-text">
+                    Olympic-size swimming pool, gymnasium, basketball/volleyball/tennis courts, cricket 
+                    ground, football field, badminton courts, and indoor game facilities.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">local_hospital</span>
+                    <span>Medical Facilities</span>
+                </div>
+                <div class="subsection-text">
+                    24x7 medical center with resident doctors, ambulance service, and tie-ups with nearby 
+                    hospitals for specialized care.
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">wifi</span>
+                    <span>Other Amenities</span>
+                </div>
+                <div class="subsection-text">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Wi-Fi enabled campus</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Multiple cafeterias and food courts</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Bank and ATM facilities</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Shopping complex</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Gallery" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">photo_library</span>
+                <span>Campus Gallery</span>
+            </h2>
+            
+            <div class="gallery">
+                <img src="https://www.iitb.ac.in/sites/www.iitb.ac.in/files/styles/slider/public/banner1_0.jpg" 
+                     alt="IIT Bombay Main Building" class="gallery-image">
+                <img src="https://www.iitb.ac.in/sites/www.iitb.ac.in/files/styles/slider/public/banner2_0.jpg" 
+                     alt="IIT Bombay Campus View" class="gallery-image">
+                <img src="https://www.iitb.ac.in/sites/www.iitb.ac.in/files/styles/gallery_image/public/2018-07/convo_1.jpg" 
+                     alt="IIT Bombay Convocation" class="gallery-image">
+                <img src="https://www.iitb.ac.in/sites/www.iitb.ac.in/files/styles/gallery_image/public/2018-07/auditorium.jpg" 
+                     alt="IIT Bombay Auditorium" class="gallery-image">
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">
+                    <span class="material-icons">videocam</span>
+                    <span>Virtual Tour</span>
+                </div>
+                <div class="subsection-text">
+                    Explore IIT Bombay through our 360° virtual campus tour available on the official website.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-box" id="Contact" style="display: none;">
+            <h2 class="section-header">
+                <span class="material-icons">contact_mail</span>
+                <span>Contact Information</span>
+            </h2>
+            
+            <div class="contact-item">
+                <span class="material-icons">email</span>
+                <span class="contact-text">
+                    <a href="mailto:info@iitb.ac.in" class="contact-link">info@iitb.ac.in</a>
+                </span>
+            </div>
+            
+            <div class="contact-item">
+                <span class="material-icons">phone</span>
+                <span class="contact-text">+91 22 2572 2545</span>
+            </div>
+            
+            <div class="contact-item">
+                <span class="material-icons">language</span>
+                <span class="contact-text">
+                    <a href="https://www.iitb.ac.in" target="_blank" class="contact-link">www.iitb.ac.in</a>
+                </span>
+            </div>
+            
+            <div class="contact-item">
+                <span class="material-icons">location_on</span>
+                <span class="contact-text">
+                    Indian Institute of Technology Bombay,<br>
+                    Powai, Mumbai - 400076,<br>
+                    Maharashtra, India
+                </span>
+            </div>
+            
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">
+                    <span class="material-icons">directions</span>
+                    <span>How to Reach</span>
+                </div>
+                <div class="subsection-text">
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Nearest Airport: Chhatrapati Shivaji Maharaj International Airport (20 km)</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Nearest Railway Station: Kanjurmarg (3 km)</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="bullet">•</span>
+                        <span class="list-text">Metro: Nearest station - Saki Naka (4 km)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-bar">
+            <p class="bottom-bar-text">StudentVerse - Your Complete College Guide</p>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section-box');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            document.getElementById(tabName).style.display = 'block';
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.textContent.trim().includes(tabName)) {
+                    tab.classList.add('active');
+                }
+            });
+            
+                       // Scroll to top of the section
+            document.getElementById(tabName).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize the page with About section visible
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('About');
+        });
+    </script>
+</body>
+</html> 
