@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TS EAPCET College Filter</title>
@@ -595,32 +596,32 @@
                 <p>Please wait while we load the ts.csv file</p>
             </div>
 
-            <h2 class="filters-title">🔍 Filter Colleges</h2>
+            <h2 class="filters-title">ðŸ” Filter Colleges</h2>
             
             <div class="filters-grid">
                 <div class="filter-group">
-                    <label for="location">📍 Location</label>
+                    <label for="location">ðŸ“ Location</label>
                     <select id="location">
                         <option value="">All Locations</option>
                     </select>
                 </div>
 
                 <div class="filter-group">
-                    <label for="branch">🎓 Branch</label>
+                    <label for="branch">ðŸŽ“ Branch</label>
                     <select id="branch">
                         <option value="">All Branches</option>
                     </select>
                 </div>
 
                 <div class="filter-group">
-                    <label for="collegeType">🏫 College Type</label>
+                    <label for="collegeType">ðŸ« College Type</label>
                     <select id="collegeType">
                         <option value="">All Types</option>
                     </select>
                 </div>
 
                 <div class="filter-group">
-                    <label>💰 Fee Range (Annual)</label>
+                    <label>ðŸ’° Fee Range (Annual)</label>
                     <div class="fee-range-container">
                         <input type="number" id="minFee" placeholder="Min Fee" min="0">
                         <span class="range-separator">to</span>
@@ -629,12 +630,12 @@
                 </div>
 
                 <div class="filter-group">
-                    <label for="collegeName">🔍 College Name</label>
+                    <label for="collegeName">ðŸ” College Name</label>
                     <input type="text" id="collegeName" placeholder="Search by college name">
                 </div>
 
                 <div class="filter-group">
-                    <label for="sortBy">📊 Sort By</label>
+                    <label for="sortBy">ðŸ“Š Sort By</label>
                     <select id="sortBy">
                         <option value="name">College Name</option>
                         <option value="fee">Fee (Low to High)</option>
@@ -646,10 +647,10 @@
 
             <div class="action-buttons">
                 <button class="btn btn-primary" onclick="filterColleges()" disabled>
-                    <span>🔍</span> Search
+                    <span>ðŸ”</span> Search
                 </button>
                 <button class="btn btn-secondary" onclick="clearFilters()">
-                    <span>🔄</span> Clear
+                    <span>ðŸ”„</span> Clear
                 </button>
             </div>
 
@@ -662,9 +663,9 @@
             </div>
 
             <div class="counseling-section">
-                <h3>📌 Need Expert Guidance?</h3>
+                <h3>ðŸ“Œ Need Expert Guidance?</h3>
                 <p>Get personalized counseling for TS EAPCET college selection and career planning</p>
-                <a href="#" class="counseling-btn">💬 Book Counseling Session</a>
+                <a href="#" class="counseling-btn">ðŸ’¬ Book Counseling Session</a>
             </div>
         </div>
     </div>
@@ -695,12 +696,12 @@
                 
                 document.getElementById('loadingStatus').innerHTML = `
                     <div class="status-message error-msg">
-                        <h3>⚠️ Could not load ts.csv</h3>
+                        <h3>âš ï¸ Could not load ts.csv</h3>
                         <p>Please make sure the ts.csv file is in the same folder as this HTML file.</p>
                         <div style="margin-top: 15px;">
                             <input type="file" id="csvFile" accept=".csv" style="width: 100%; margin-bottom: 1rem;" />
                             <button onclick="loadSampleData()" class="btn btn-secondary" style="width: 100%;">
-                                📊 Load Sample Data
+                                ðŸ“Š Load Sample Data
                             </button>
                         </div>
                     </div>
@@ -757,7 +758,7 @@
                         console.error('Error parsing CSV:', error);
                         document.getElementById('loadingStatus').innerHTML = `
                             <div class="status-message error-msg">
-                                <h3>❌ Error parsing CSV file</h3>
+                                <h3>âŒ Error parsing CSV file</h3>
                                 <p>Please check the file format. Error: ${error.message}</p>
                             </div>
                         `;
@@ -767,7 +768,7 @@
                 console.error('Error reading CSV:', error);
                 document.getElementById('loadingStatus').innerHTML = `
                     <div class="status-message error-msg">
-                        <h3>❌ Error reading CSV file</h3>
+                        <h3>âŒ Error reading CSV file</h3>
                         <p>Error: ${error.message}</p>
                     </div>
                 `;
@@ -1017,7 +1018,7 @@
                 resultsSummary.textContent = 'Try adjusting your filters to see more results';
                 collegeGrid.innerHTML = `
                     <div class="no-results">
-                        <div class="no-results-icon">🔍</div>
+                        <div class="no-results-icon">ðŸ”</div>
                         <h3>No Colleges Found</h3>
                         <p>No colleges match your current filter criteria.</p>
                         <p><strong>Suggestions:</strong></p>
@@ -1050,24 +1051,24 @@
                         </div>
                         <div class="college-details">
                             <div class="detail-row">
-                                <div class="detail-icon location-icon">📍</div>
+                                <div class="detail-icon location-icon">ðŸ“</div>
                                 <div class="detail-content">
                                     <div class="detail-label">Location</div>
                                     <div class="detail-value">${location}</div>
                                 </div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-icon branch-icon">🎓</div>
+                                <div class="detail-icon branch-icon">ðŸŽ“</div>
                                 <div class="detail-content">
                                     <div class="detail-label">Branch</div>
                                     <div class="detail-value">${branch}</div>
                                 </div>
                             </div>
                             <div class="detail-row">
-                                <div class="detail-icon fee-icon">💰</div>
+                                <div class="detail-icon fee-icon">ðŸ’°</div>
                                 <div class="detail-content">
                                     <div class="detail-label">Annual Fee</div>
-                                    <div class="detail-value">${fee > 0 ? '₹' + fee.toLocaleString('en-IN') : 'Not Available'}</div>
+                                    <div class="detail-value">${fee > 0 ? 'â‚¹' + fee.toLocaleString('en-IN') : 'Not Available'}</div>
                                 </div>
                             </div>
                         </div>
@@ -1120,7 +1121,7 @@
             
             document.getElementById('loadingStatus').innerHTML = `
                 <div class="status-message warning-msg">
-                    ⚠️ Using sample data for testing purposes (${collegesData.length} records loaded)
+                    âš ï¸ Using sample data for testing purposes (${collegesData.length} records loaded)
                 </div>
             `;
             
