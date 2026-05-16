@@ -1,0 +1,45 @@
+﻿<!-- templates/register.html -->
+<!DOCTYPE html>
+<html>
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Signup Page</h2>
+    <form method="POST">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+        
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+        
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        
+        <label>Confirm Password:</label><br>
+        <input type="password" name="confirm_password" required><br><br>
+        
+        <input type="submit" value="Register">
+
+        if request.method == 'POST':
+    uname = request.form['username']
+    email = request.form['email']
+    pwd = request.form['password']
+    cpwd = request.form['confirm_password']
+
+    if pwd == cpwd:
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
+                       (uname, email, pwd))
+        conn.commit()
+        conn.close()
+        return "Registration Successful!"
+    else:
+        return "Passwords do not match!"
+
+    </form>
+</body>
+</html>
+

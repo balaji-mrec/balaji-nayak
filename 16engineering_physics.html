@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Physics | Balanju</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/kgF2cgdG/consultancy-logo.jpg">
+    <style>
+        /* ==== Base Styles ==== */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4527a0;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #4527a0;
+            margin-top: 35px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        ul {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        /* ==== Table Styles ==== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #4527a0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #ede7f6;
+        }
+
+        /* ==== Testimonial ==== */
+        .testimonial {
+            background-color: #ede7f6;
+            padding: 20px;
+            border-left: 5px solid #4527a0;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 60px;
+            color: #4527a0;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .testimonial p:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #4527a0;
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        /* ==== Quiz ==== */
+        .quiz-section {
+            background-color: #e8eaf6;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            display: none;
+            padding: 15px 0;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-question button {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 8px 10px 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-question button:hover {
+            background-color: #3949ab;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: none;
+        }
+
+        #result-title {
+            color: #4527a0;
+        }
+
+        .quiz-result button {
+            background-color: #4527a0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* ==== Buttons ==== */
+        .buttons {
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .buttons a button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 180px;
+        }
+
+        .buttons a button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .next-btn {
+            background-color: #4527a0;
+            color: white;
+        }
+
+        .home-btn {
+            background-color: #5c6bc0;
+            color: white;
+        }
+
+        /* ==== Counseling ==== */
+        .counseling {
+            background-color: #e8eaf6;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            border: 1px dashed #5c6bc0;
+        }
+
+        .counseling button {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .counseling button:hover {
+            background-color: #3949ab;
+        }
+
+        /* ==== Video ==== */
+        .video-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==== Syllabus Button ==== */
+        .syllabus-button {
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+        
+        .syllabus-button button {
+            background-color: #4527a0;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .syllabus-button button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* ==== Responsive ==== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            header {
+                font-size: 22px;
+                padding: 15px 0;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Engineering Physics
+</header>
+
+<div class="container">
+    <h2>ðŸ“˜ Overview</h2>
+    <p><span class="highlight">Engineering Physics</span> bridges the gap between theoretical physics and practical engineering, creating innovative solutions to complex technological problems.</p>
+    <p>This interdisciplinary field combines <b>advanced physics principles ðŸ§ª</b> with <b>engineering applications âš™ï¸</b>, preparing graduates for cutting-edge research and development in areas like quantum computing, nanotechnology, and photonics.</p>
+
+    <h2>ðŸ“š Core Subjects</h2>
+    <ul>
+        <li>ðŸ”¬ Quantum Mechanics and Applications</li>
+        <li>âš›ï¸ Solid State Physics</li>
+        <li>ðŸŒŒ Electromagnetic Theory</li>
+        <li>ðŸ“¡ Optics and Photonics</li>
+        <li>ðŸ§² Materials Science</li>
+        <li>âš¡ Electronics for Physicists</li>
+        <li>ðŸ’» Computational Physics</li>
+        <li>â˜¢ï¸ Nuclear and Particle Physics</li>
+        <li>ðŸ§ª Experimental Techniques</li>
+        <li>ðŸŒ¡ï¸ Thermodynamics and Statistical Mechanics</li>
+    </ul>
+
+    <div class="syllabus-button">
+        <a href="eng-physics-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– View Full Syllabus (Semester-wise) âž¡ï¸
+            </button>
+        </a>
+    </div>
+
+    <h2>ðŸ› ï¸ Tools & Technologies You'll Learn</h2>
+    <ul>
+        <li><strong>Simulation:</strong> MATLAB, COMSOL, LabVIEW</li>
+        <li><strong>Programming:</strong> Python, C++, Fortran</li>
+        <li><strong>Data Analysis:</strong> Origin, ROOT</li>
+        <li><strong>Experimental:</strong> Laser systems, SEM, AFM</li>
+        <li><strong>Quantum Computing:</strong> Qiskit, Cirq</li>
+    </ul>
+
+    <h2>âš–ï¸ Engineering Physics vs Other Branches</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>Factor</th>
+            <th>Engg Physics</th>
+            <th>EEE</th>
+            <th>CSE</th>
+        </tr>
+        <tr>
+            <td><strong>Theory Focus</strong></td>
+            <td>âœ… High</td>
+            <td>âš ï¸ Medium</td>
+            <td>âŒ Low</td>
+        </tr>
+        <tr>
+            <td><strong>Math Intensity</strong></td>
+            <td>âœ… Very High</td>
+            <td>âœ… High</td>
+            <td>âš ï¸ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Research Scope</strong></td>
+            <td>Cutting-edge</td>
+            <td>Applied</td>
+            <td>Product-based</td>
+        </tr>
+        <tr>
+            <td><strong>Avg. Starting Salary</strong></td>
+            <td>â‚¹5-10 LPA</td>
+            <td>â‚¹4-9 LPA</td>
+            <td>â‚¹6-12 LPA</td>
+        </tr>
+        <tr>
+            <td><strong>Top Companies</strong></td>
+            <td>ISRO, DRDO</td>
+            <td>BHEL, Siemens</td>
+            <td>Google, Microsoft</td>
+        </tr>
+    </table>
+
+    <h2>ðŸ’¼ Job Opportunities</h2>
+    <ul>
+        <li>ðŸ”¬ Research Scientist</li>
+        <li>âš›ï¸ Quantum Computing Engineer</li>
+        <li>ðŸ“¡ Photonics Engineer</li>
+        <li>ðŸ§² Materials Engineer</li>
+        <li>â˜¢ï¸ Nuclear Engineer</li>
+        <li>ðŸ›°ï¸ Space Technology Specialist</li>
+        <li>ðŸ’¡ Semiconductor Process Engineer</li>
+        <li>ðŸŒŒ Astrophysics Researcher</li>
+        <li>ðŸ§ª Nanotechnology Specialist</li>
+        <li>ðŸ“Š Data Scientist (Physics background)</li>
+    </ul>
+
+    <div class="syllabus-button">
+        <a href="eng-physics-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– KNOW ABOUT YOUR FUTURE âž¡ï¸
+            </button>
+        </a>
+    </div>
+
+    <h2>ðŸ“ˆ Future Demand</h2>
+    <p>Engineering Physics graduates are crucial for emerging technologies:</p>
+    <ul>
+        <li>ðŸ”® Quantum computing revolution</li>
+        <li>ðŸ§¬ Advanced materials development</li>
+        <li>ðŸ›°ï¸ Space exploration technologies</li>
+        <li>ðŸ’¡ Renewable energy innovations</li>
+        <li>ðŸ“¡ Next-gen communication systems</li>
+    </ul>
+
+    <h2>ðŸ›‘ Engineering Physics Reality Check</h2>
+    <ul>
+        <li>âš ï¸ <strong>Highly Theoretical:</strong> Heavy focus on advanced physics and math.</li>
+        <li>âš ï¸ <strong>Research-Oriented:</strong> Many opportunities require higher education.</li>
+        <li>âš ï¸ <strong>Niche Field:</strong> Fewer but more specialized jobs compared to mainstream engineering.</li>
+        <li>ðŸ’¡ <strong>Tip:</strong> Best for students passionate about physics who want engineering applications.</li>
+    </ul>
+
+    <h2>ðŸŽ¤ Student Experience</h2>
+    <div class="testimonial">
+        <p>Engineering Physics challenged me like nothing else! The quantum mechanics courses were tough but opened doors to amazing research opportunities. Now I'm working on quantum algorithms at a tech startup. <strong>If you love solving the universe's puzzles, this is the field for you!</strong></p>
+        <p>â€” Arjun, Engineering Physics Graduate</p>
+    </div>
+
+    <h2>ðŸ¤” Still Confused? Take a Quick Quiz!</h2>
+    <div class="quiz-section">
+        <h3>Is Engineering Physics Right for You?</h3>
+        <p><em>Answer these questions to see if Engg Physics matches your interests</em></p>
+
+        <div id="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question active" id="q1">
+                <p><strong>1. Do you enjoy understanding how the universe works at a fundamental level?</strong></p>
+                <button onclick="nextQuestion(1, 2)">Absolutely! I'm fascinated by physics ðŸŒŒ</button>
+                <button onclick="nextQuestion(1, 0)">Not particularly interested ðŸŒ</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" id="q2">
+                <p><strong>2. Are you comfortable with advanced mathematics and abstract concepts?</strong></p>
+                <button onclick="nextQuestion(2, 2)">Yes, I enjoy complex math âž—</button>
+                <button onclick="nextQuestion(2, 0)">I prefer concrete applications ðŸ“</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" id="q3">
+                <p><strong>3. Would you like to work on cutting-edge technologies like quantum computing?</strong></p>
+                <button onclick="nextQuestion(3, 3)">That's my dream! ðŸ”®</button>
+                <button onclick="nextQuestion(3, 1)">Sounds interesting but challenging ðŸ¤”</button>
+                <button onclick="nextQuestion(3, 0)">Too theoretical for me ðŸ’»</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question" id="q4">
+                <p><strong>4. Do you enjoy laboratory work and experiments?</strong></p>
+                <button onclick="nextQuestion(4, 2)">Love hands-on research! ðŸ§ª</button>
+                <button onclick="nextQuestion(4, 0)">I prefer theoretical work ðŸ“š</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question" id="q5">
+                <p><strong>5. Are you considering higher studies (Masters/PhD)?</strong></p>
+                <button onclick="nextQuestion(5, 2)">Yes, I'm interested in research ðŸŽ“</button>
+                <button onclick="nextQuestion(5, 0)">I want to work after B.Tech ðŸ’¼</button>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="quiz-result" id="result">
+            <h3 id="result-title">Your Result</h3>
+            <p id="result-text"></p>
+            <button onclick="resetQuiz()">Retake Quiz ðŸ”„</button>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h2>ðŸ“º Watch This Video to Learn More About Engineering Physics</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/7T0Lxfg-3Xw?rel=0" title="Engineering Physics Course Info" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="counseling">
+        <h3>ðŸ“Œ Need Help with EAMCET Counseling? OR Want to Choose the Right Branch?</h3>
+        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
+        <a href="1000paid-cousilling.html" target="_blank">
+            <button>ðŸ’¬ Get Counseling Help</button>
+        </a>
+    </div>
+
+    <div class="buttons">
+        <a href="13AIML.html"><button class="next-btn">âž¡ï¸ Next Branch</button></a>
+        <a href="index-branches.html"><button class="home-btn">ðŸ  Back to Home</button></a>
+    </div>
+</div>
+
+<script>
+    let totalScore = 0;
+    const maxScore = 11; // Sum of max points per question (2+2+3+2+2)
+
+    function nextQuestion(currentQ, score) {
+        totalScore += score;
+        document.getElementById(`q${currentQ}`).classList.remove("active");
+        
+        if (currentQ < 5) {
+            document.getElementById(`q${currentQ + 1}`).classList.add("active");
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const resultText = document.getElementById("result-text");
+        const resultContainer = document.getElementById("result");
+        
+        // Calculate percentage
+        const percentage = Math.round((totalScore / maxScore) * 100);
+        
+        // Personalized feedback
+        if (percentage >= 70) {
+            resultText.innerHTML = `ðŸŽ‰ <strong>${percentage}% Engineering Physics Fit!</strong> <br> You're likely to excel in Engineering Physics! Your curiosity about fundamental physics and technology aligns perfectly.`;
+        } else if (percentage >= 40) {
+            resultText.innerHTML = `ðŸ¤” <strong>${percentage}% Neutral Fit.</strong> <br> You could succeed in Engg Physics with dedication, but consider exploring other branches too.`;
+        } else {
+            resultText.innerHTML = `âš ï¸ <strong>${percentage}% Low Fit.</strong> <br> Engineering Physics might be too theoretical for you. Look into EEE/Mechanical/CSE for better alignment.`;
+        }
+        
+        document.getElementById("quiz-container").scrollIntoView();
+        resultContainer.style.display = "block";
+    }
+
+    function resetQuiz() {
+        totalScore = 0;
+        document.querySelectorAll(".quiz-question").forEach(q => q.classList.remove("active"));
+        document.getElementById("q1").classList.add("active");
+        document.getElementById("result").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

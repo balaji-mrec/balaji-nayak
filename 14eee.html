@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEE - Electrical and Electronics Engineering | Balanju</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/kgF2cgdG/consultancy-logo.jpg">
+    <style>
+        /* ==== Base Styles ==== */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fd;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1565c0;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1565c0;
+            margin-top: 35px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        ul {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        /* ==== Table Styles ==== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #1565c0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        /* ==== Testimonial ==== */
+        .testimonial {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-left: 5px solid #1565c0;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 60px;
+            color: #1565c0;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .testimonial p:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #1565c0;
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        /* ==== Quiz ==== */
+        .quiz-section {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .quiz-question {
+            display: none;
+            padding: 15px 0;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-question button {
+            background-color: #ef6c00;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 8px 10px 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-question button:hover {
+            background-color: #e65100;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: none;
+        }
+
+        #result-title {
+            color: #1565c0;
+        }
+
+        .quiz-result button {
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* ==== Buttons ==== */
+        .buttons {
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .buttons a button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 180px;
+        }
+
+        .buttons a button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .next-btn {
+            background-color: #1565c0;
+            color: white;
+        }
+
+        .home-btn {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        /* ==== Counseling ==== */
+        .counseling {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            border: 1px dashed #ef6c00;
+        }
+
+        .counseling button {
+            background-color: #ef6c00;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .counseling button:hover {
+            background-color: #e65100;
+        }
+
+        /* ==== Video ==== */
+        .video-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==== Syllabus Button ==== */
+        .syllabus-button {
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+        
+        .syllabus-button button {
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .syllabus-button button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* ==== Responsive ==== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            header {
+                font-size: 22px;
+                padding: 15px 0;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    EEE â€“ Electrical and Electronics Engineering
+</header>
+
+<div class="container">
+    <h2>ðŸ“˜ Overview</h2>
+    <p><span class="highlight">Electrical and Electronics Engineering (EEE)</span> is a dynamic field that powers modern civilization, combining electrical systems with cutting-edge electronics.</p>
+    <p>It covers everything from <b>power generation and transmission âš¡</b> to <b>microelectronics and control systems ðŸŽ›ï¸</b>. EEE engineers work on renewable energy ðŸŒž, smart grids, robotics ðŸ¤–, and IoT devices.</p>
+
+    <h2>ðŸ“š Core Subjects</h2>
+    <ul>
+        <li>âš¡ Electrical Circuits and Networks</li>
+        <li>ðŸ§² Electromagnetic Fields</li>
+        <li>ðŸ”Œ Power Systems and Generation</li>
+        <li>ðŸ“Ÿ Electronic Devices and Circuits</li>
+        <li>ðŸŽ›ï¸ Control Systems Engineering</li>
+        <li>ðŸ”‹ Power Electronics</li>
+        <li>ðŸ“¡ Signals and Systems</li>
+        <li>ðŸ’¡ Electrical Machines</li>
+        <li>ðŸŒ Microprocessors and Microcontrollers</li>
+        <li>â˜€ï¸ Renewable Energy Systems</li>
+    </ul>
+
+    <div class="syllabus-button">
+        <a href="eee-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– View Full Syllabus (Semester-wise) âž¡ï¸
+            </button>
+        </a>
+    </div>
+
+    <h2>ðŸ› ï¸ Tools & Technologies You'll Learn</h2>
+    <ul>
+        <li><strong>Simulation:</strong> MATLAB, PSpice, ETAP</li>
+        <li><strong>Programming:</strong> C, Python, Assembly</li>
+        <li><strong>PCB Design:</strong> Eagle, KiCad</li>
+        <li><strong>Embedded Systems:</strong> Arduino, Raspberry Pi</li>
+        <li><strong>Industrial:</strong> PLC, SCADA</li>
+    </ul>
+
+    <h2>âš–ï¸ EEE vs Other Branches</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>Factor</th>
+            <th>EEE</th>
+            <th>CSE</th>
+            <th>Mechanical</th>
+        </tr>
+        <tr>
+            <td><strong>Hardware Focus</strong></td>
+            <td>âœ… High</td>
+            <td>âš ï¸ Medium</td>
+            <td>âš ï¸ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Math Intensity</strong></td>
+            <td>âœ… High</td>
+            <td>âš ï¸ Medium</td>
+            <td>âœ… High</td>
+        </tr>
+        <tr>
+            <td><strong>Core Industry</strong></td>
+            <td>Power, Electronics</td>
+            <td>Software, IT</td>
+            <td>Manufacturing</td>
+        </tr>
+        <tr>
+            <td><strong>Avg. Starting Salary</strong></td>
+            <td>â‚¹4-9 LPA</td>
+            <td>â‚¹6-12 LPA</td>
+            <td>â‚¹4-8 LPA</td>
+        </tr>
+        <tr>
+            <td><strong>Top Companies</strong></td>
+            <td>BHEL, Siemens</td>
+            <td>Google, Microsoft</td>
+            <td>TATA, ISRO</td>
+        </tr>
+    </table>
+
+    <h2>ðŸ’¼ Job Opportunities</h2>
+    <ul>
+        <li>âš¡ Power Systems Engineer</li>
+        <li>ðŸ”Œ Electrical Design Engineer</li>
+        <li>ðŸŽ›ï¸ Control Systems Engineer</li>
+        <li>ðŸ“Ÿ Electronics Engineer</li>
+        <li>ðŸ­ Instrumentation Engineer</li>
+        <li>ðŸŒž Renewable Energy Engineer</li>
+        <li>ðŸ—ï¸ Project Engineer (Construction)</li>
+        <li>ðŸ”‹ Battery Systems Engineer</li>
+        <li>ðŸ¢ Maintenance Engineer</li>
+        <li>ðŸ§  Embedded Systems Engineer</li>
+    </ul>
+
+    <div class="syllabus-button">
+        <a href="eee-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– KNOW ABOUT YOUR FUTURE âž¡ï¸
+            </button>
+        </a>
+    </div>
+
+    <h2>ðŸ“ˆ Future Demand</h2>
+    <p>With the global shift to renewable energy and smart technologies, EEE graduates are crucial for:</p>
+    <ul>
+        <li>ðŸŒ Green energy solutions (solar, wind, hydro)</li>
+        <li>ðŸ  Smart homes and cities</li>
+        <li>âš¡ Electric vehicle infrastructure</li>
+        <li>ðŸ­ Industrial automation and IoT</li>
+    </ul>
+
+    <h2>ðŸ›‘ EEE Reality Check</h2>
+    <ul>
+        <li>âš ï¸ <strong>Math-Intensive:</strong> Heavy on physics and complex calculations.</li>
+        <li>âš ï¸ <strong>Core Jobs are Competitive:</strong> Top PSUs require GATE qualification.</li>
+        <li>âš ï¸ <strong>Field Work:</strong> Some roles involve site visits and physical work.</li>
+        <li>ðŸ’¡ <strong>Tip:</strong> Combine EEE with CS skills (IoT, AI) for best opportunities.</li>
+    </ul>
+
+    <h2>ðŸŽ¤ Student Experience</h2>
+    <div class="testimonial">
+        <p>EEE gave me a perfect blend of hardware and software. After learning Python alongside my core subjects, I got placed in an IoT startup working on smart grids. <strong>The diversity of EEE opens multiple career paths!</strong></p>
+        <p>â€” Rajesh, EEE Graduate</p>
+    </div>
+
+    <h2>ðŸ¤” Still Confused? Take a Quick Quiz!</h2>
+    <div class="quiz-section">
+        <h3>Is EEE Right for You?</h3>
+        <p><em>Answer these questions to see if EEE matches your interests</em></p>
+
+        <div id="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question active" id="q1">
+                <p><strong>1. Are you fascinated by how electrical devices work or how power reaches homes?</strong></p>
+                <button onclick="nextQuestion(1, 2)">Yes! I'm always curious ðŸ’¡</button>
+                <button onclick="nextQuestion(1, 0)">No, I just use them ðŸ˜„</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" id="q2">
+                <p><strong>2. Do you enjoy physics, especially topics like electricity and magnetism?</strong></p>
+                <button onclick="nextQuestion(2, 2)">Love it! ðŸ§²</button>
+                <button onclick="nextQuestion(2, 0)">Not really ðŸ˜…</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" id="q3">
+                <p><strong>3. Would you like to work on projects involving solar power or smart grids?</strong></p>
+                <button onclick="nextQuestion(3, 3)">That sounds amazing! ðŸŒž</button>
+                <button onclick="nextQuestion(3, 1)">Maybe... ðŸ¤”</button>
+                <button onclick="nextQuestion(3, 0)">No interest ðŸ™ƒ</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question" id="q4">
+                <p><strong>4. Are you comfortable with mathematics and complex calculations?</strong></p>
+                <button onclick="nextQuestion(4, 2)">Yes, I enjoy math âž—</button>
+                <button onclick="nextQuestion(4, 0)">I struggle with math ðŸ˜“</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question" id="q5">
+                <p><strong>5. Do you like hands-on work with circuits and electronic components?</strong></p>
+                <button onclick="nextQuestion(5, 2)">Yes! I love tinkering ðŸ”§</button>
+                <button onclick="nextQuestion(5, 0)">I prefer theoretical work ðŸ“š</button>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="quiz-result" id="result">
+            <h3 id="result-title">Your Result</h3>
+            <p id="result-text"></p>
+            <button onclick="resetQuiz()">Retake Quiz ðŸ”„</button>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h2>ðŸ“º Watch This Video to Learn More About EEE</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/vjhZwVGU0Xw?rel=0" title="EEE Course Info" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="counseling">
+        <h3>ðŸ“Œ Need Help with EAMCET Counseling? OR Want to Choose the Right Branch?</h3>
+        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
+        <a href="1000paid-cousilling.html" target="_blank">
+            <button>ðŸ’¬ Get Counseling Help</button>
+        </a>
+    </div>
+
+    <div class="buttons">
+        <a href="13AIML.html"><button class="next-btn">âž¡ï¸ Next Branch</button></a>
+        <a href="index-branches.html"><button class="home-btn">ðŸ  Back to Home</button></a>
+    </div>
+</div>
+
+<script>
+    let totalScore = 0;
+    const maxScore = 11; // Sum of max points per question (2+2+3+2+2)
+
+    function nextQuestion(currentQ, score) {
+        totalScore += score;
+        document.getElementById(`q${currentQ}`).classList.remove("active");
+        
+        if (currentQ < 5) {
+            document.getElementById(`q${currentQ + 1}`).classList.add("active");
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const resultText = document.getElementById("result-text");
+        const resultContainer = document.getElementById("result");
+        
+        // Calculate percentage
+        const percentage = Math.round((totalScore / maxScore) * 100);
+        
+        // Personalized feedback
+        if (percentage >= 70) {
+            resultText.innerHTML = `ðŸŽ‰ <strong>${percentage}% EEE Fit!</strong> <br> You're likely to excel in EEE! Your interest in electrical systems and problem-solving aligns perfectly.`;
+        } else if (percentage >= 40) {
+            resultText.innerHTML = `ðŸ¤” <strong>${percentage}% Neutral Fit.</strong> <br> You could do well in EEE with dedication, but consider exploring other branches too.`;
+        } else {
+            resultText.innerHTML = `âš ï¸ <strong>${percentage}% Low Fit.</strong> <br> EEE might be challenging for you. Look into Mechanical/Civil/CSE for better alignment.`;
+        }
+        
+        document.getElementById("quiz-container").scrollIntoView();
+        resultContainer.style.display = "block";
+    }
+
+    function resetQuiz() {
+        totalScore = 0;
+        document.querySelectorAll(".quiz-question").forEach(q => q.classList.remove("active"));
+        document.getElementById("q1").classList.add("active");
+        document.getElementById("result").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

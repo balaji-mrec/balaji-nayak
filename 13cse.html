@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE - Computer Science and Engineering | Balanju</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/kgF2cgdG/consultancy-logo.jpg">
+    <style>
+        /* ==== Base Styles ==== */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7fbe9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-top: 35px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        ul {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        /* ==== Table Styles ==== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #2e7d32;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f1f8e9;
+        }
+
+        /* ==== Testimonial ==== */
+        .testimonial {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-left: 5px solid #2e7d32;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 60px;
+            color: #2e7d32;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .testimonial p:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #2e7d32;
+            font-style: normal;
+            margin-top: 10px;
+        }
+
+        /* ==== Quiz ==== */
+        .quiz {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .quiz button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px 10px 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz button:hover {
+            background-color: #1565c0;
+        }
+
+        #quiz-result {
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* ==== Buttons ==== */
+        .buttons {
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .buttons a button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 180px;
+        }
+
+        .buttons a button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .next-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .home-btn {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        /* ==== Counseling ==== */
+        .counseling {
+            background-color: #fff3cd;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            border: 1px dashed #ff9800;
+        }
+
+        .counseling button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .counseling button:hover {
+            background-color: #fb8c00;
+        }
+
+        /* ==== Video ==== */
+        .video-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==== Responsive ==== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            header {
+                font-size: 22px;
+                padding: 15px 0;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+
+
+         /* Quiz Styles */
+    .quiz-section {
+        background-color: #e3f2fd;
+        padding: 25px;
+        border-radius: 10px;
+        margin: 30px 0;
+    }
+
+    .quiz-question {
+        display: none;
+        padding: 15px 0;
+    }
+
+    .quiz-question.active {
+        display: block;
+    }
+
+    .quiz-question button {
+        background-color: #1976d2;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 8px 10px 8px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .quiz-question button:hover {
+        background-color: #1565c0;
+    }
+
+    .quiz-result {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        display: none;
+    }
+
+    #result-title {
+        color: #2e7d32;
+    }
+
+    .quiz-result button {
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+     .syllabus-button {
+        margin: 20px 0 40px;
+        text-align: center;
+    }
+    
+    .syllabus-button button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    
+    .syllabus-button button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+
+    @media (max-width: 768px) {
+    header {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+
+    .container {
+        padding: 20px 15px;
+        margin: 15px;
+        border-radius: 8px;
+    }
+
+
+    }
+
+
+    
+    </style>
+</head>
+<body>
+
+<header>
+    CSE â€“ Computer Science and Engineering
+</header>
+
+<div class="container">
+    <h2>ðŸ“˜ Overview</h2>
+    <p><span class="highlight">Computer Science and Engineering (CSE)</span> is one of the most in-demand branches focused on computing, software, and information systems.</p>
+    <p>It covers the <b>theory, development, and application</b> of software and hardware. From apps and websites to AI ðŸ¤–, cybersecurity ðŸ”’, and data science ðŸ“Š â€” CSE powers the digital world.</p>
+
+    <h2>ðŸ“š Core Subjects</h2>
+    <ul>
+        <li>ðŸ–¥ï¸ Programming in C, C++, Python, Java</li>
+        <li>ðŸ’¾ Data Structures and Algorithms</li>
+        <li>ðŸ§  Artificial Intelligence & Machine Learning</li>
+        <li>ðŸ›¡ï¸ Cyber Security</li>
+        <li>ðŸ–§ Computer Networks</li>
+        <li>ðŸ§® Operating Systems</li>
+        <li>ðŸ” Database Management Systems (DBMS)</li>
+        <li>ðŸŒ Web Technologies</li>
+        <li>ðŸ“Š Data Science & Big Data</li>
+        <li>ðŸ“ˆ Software Engineering & DevOps</li>
+    </ul>
+
+
+      <div class="syllabus-button">
+    <a href="cse-syllabus-details.html" target="_blank">
+        <button>
+            ðŸ“– View Full Syllabus (Semester-wise) âž¡ï¸
+        </button>
+    </a>
+</div>
+
+
+    <h2>ðŸ› ï¸ Tools & Technologies You'll Learn</h2>
+    <ul>
+        <li><strong>Languages:</strong> Python, Java, C++, JavaScript</li>
+        <li><strong>Web Dev:</strong> HTML/CSS, React, Node.js</li>
+        <li><strong>AI/ML:</strong> TensorFlow, PyTorch</li>
+        <li><strong>Databases:</strong> MySQL, MongoDB</li>
+        <li><strong>DevOps:</strong> Docker, Kubernetes, AWS</li>
+    </ul>
+
+        <div class="syllabus-button">
+    <a href="cse-syllabus-details.html" target="_blank">
+        <button>
+            ðŸ“– Explore this programing languagesâž¡ï¸
+        </button>
+    </a>
+</div>
+
+
+    <h2>âš–ï¸ CSE vs Other Branches</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>Factor</th>
+            <th>CSE</th>
+            <th>Mechanical</th>
+            <th>ECE</th>
+        </tr>
+        <tr>
+            <td><strong>Coding Focus</strong></td>
+            <td>âœ… High</td>
+            <td>âŒ Low</td>
+            <td>âš ï¸ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Math Intensity</strong></td>
+            <td>âš ï¸ Medium</td>
+            <td>âœ… High</td>
+            <td>âœ… High</td>
+        </tr>
+        <tr>
+            <td><strong>Hardware/Software</strong></td>
+            <td>Software</td>
+            <td>Hardware</td>
+            <td>Both</td>
+        </tr>
+        <tr>
+            <td><strong>Avg. Starting Salary</strong></td>
+            <td>â‚¹6-12 LPA</td>
+            <td>â‚¹4-8 LPA</td>
+            <td>â‚¹5-10 LPA</td>
+        </tr>
+        <tr>
+            <td><strong>Top Companies</strong></td>
+            <td>Google, Microsoft</td>
+            <td>TATA, ISRO</td>
+            <td>Intel, Qualcomm</td>
+        </tr>
+    </table>
+
+    <h2>ðŸ’¼ Job Opportunities</h2>
+    <ul>
+        <li>ðŸ‘¨â€ðŸ’» Software Developer / Programmer</li>
+        <li>ðŸ§  AI/ML Engineer</li>
+        <li>ðŸ§® Data Scientist / Data Analyst</li>
+        <li>ðŸ›¡ï¸ Cybersecurity Analyst</li>
+        <li>â˜ï¸ Cloud Engineer</li>
+        <li>ðŸ–¥ï¸ Full Stack Web Developer</li>
+        <li>ðŸ“± Mobile App Developer</li>
+        <li>ðŸ› ï¸ DevOps Engineer</li>
+        <li>ðŸ–§ Network/System Administrator</li>
+        <li>ðŸ§ª QA/Test Engineer</li>
+    </ul>
+
+
+     <div class="syllabus-button">
+    <a href="cse-syllabus-details.html" target="_blank">
+        <fotn color="black"></fotn> <button>
+            ðŸ“– KNOW ABOUR YOUR FUTURE âž¡ï¸</fotn>
+        </button>
+    </a>
+</div>
+
+
+    <h2>ðŸ“ˆ Future Demand</h2>
+    <p>The world runs on code! From AI to blockchain, demand for CSE professionals is skyrocketing. Every industry â€” finance, health, education, gaming â€” needs tech talent.</p>
+
+    <h2>ðŸ›‘ CSE Reality Check</h2>
+    <ul>
+        <li>âš ï¸ <strong>Not Just Coding:</strong> Math (DSA, Discrete Math) is equally important.</li>
+        <li>âš ï¸ <strong>Competition is High:</strong> 1000s graduate yearlyâ€”only skilled candidates get top jobs.</li>
+        <li>âš ï¸ <strong>Continuous Learning:</strong> Tech evolves fast (AI, Cloud). You must upskill constantly.</li>
+        <li>ðŸ’¡ <strong>Tip:</strong> If you hate problem-solving, CSE may frustrate you.</li>
+    </ul>
+
+
+    <h2>ðŸŽ¤ Student Experience</h2>
+    <div class="testimonial">
+        <p>I chose CSE for job opportunities, but I struggled with Data Structures initially. With consistent practice (LeetCode, projects), I landed a â‚¹10 LPA offer. <strong>Passion + effort matters more than the branch!</strong></p>
+        <p>â€” Harsha, CSE Graduate</p>
+    </div>
+
+    <h2>ðŸ¤” Still Confused? Take a Quick Quiz!</h2>
+       
+
+
+<div class="quiz-section">
+    <h2>ðŸ¤” Not Sure if CSE is for You?</h2>
+    <p><em>Take this short quiz to find out if CSE matches your interests!</em></p>
+
+    <div id="quiz-container">
+
+        <!-- Question 1 -->
+        <div class="quiz-question active" id="q1">
+            <p><strong>1. Do you enjoy using mobile apps or games and wonder how they are made?</strong></p>
+            <button onclick="nextQuestion(1, 2)">Yes! Iâ€™m always curious ðŸ’¡</button>
+            <button onclick="nextQuestion(1, 0)">No, I just use them ðŸ˜„</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-question" id="q2">
+            <p><strong>2. Do you like thinking or figuring out how to solve problems step by step?</strong></p>
+            <button onclick="nextQuestion(2, 2)">Yes, I like problem solving ðŸ§ </button>
+            <button onclick="nextQuestion(2, 0)">Not really ðŸ˜…</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-question" id="q3">
+            <p><strong>3. Would you like to create your own website, game, or app someday?</strong></p>
+            <button onclick="nextQuestion(3, 3)">That would be so cool! ðŸš€</button>
+            <button onclick="nextQuestion(3, 1)">Maybe... ðŸ¤”</button>
+            <button onclick="nextQuestion(3, 0)">No interest ðŸ™ƒ</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="quiz-question" id="q4">
+            <p><strong>4. Do you enjoy working on a computer or exploring new tech stuff?</strong></p>
+            <button onclick="nextQuestion(4, 2)">Yes! I love it ðŸ’»</button>
+            <button onclick="nextQuestion(4, 0)">I donâ€™t use computers much ðŸ“´</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="quiz-question" id="q5">
+            <p><strong>5. If you had a chance to build something useful using a computer, would you be excited?</strong></p>
+            <button onclick="nextQuestion(5, 2)">Yes, Iâ€™d love to build something ðŸ”§</button>
+            <button onclick="nextQuestion(5, 0)">Iâ€™m not sure / No ðŸ’¤</button>
+        </div>
+
+    </div>
+</div>
+
+
+        <!-- Result -->
+        <div class="quiz-result" id="result">
+            <h3 id="result-title">Your Result</h3>
+            <p id="result-text"></p>
+            <button onclick="resetQuiz()">Retake Quiz ðŸ”„</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function quizResponse(answer) {
+            const result = document.getElementById("quiz-result");
+            if (answer === "yes") {
+                result.innerHTML = "Great! CSE might suit you well.";
+                result.style.color = "#2e7d32";
+            } else {
+                result.innerHTML = "Explore other branches too!";
+                result.style.color = "#d32f2f";
+            }
+        }
+    </script>
+
+    <div class="video-section">
+        <h2>ðŸ“º WatchðŸ‘‡ this video you have ðŸ’¯crarity about CSE </h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/kLJHlmXdYK0?rel=0" title="CSE Course Info" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="counseling">
+        <h3>ðŸ“Œ Need Help with EAMCET Counseling? OR Want to chose a right  branch?</h3>
+        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
+        <a href="1000paid-cousilling.html" target="_blank">
+            <button>ðŸ’¬ Get Counseling Help</button>
+        </a>
+    </div>
+
+    <div class="buttons">
+        <a href="13AIML.html"><button class="next-btn">âž¡ï¸ Next Branch</button></a>
+        <a href="index-branches.html"><button class="home-btn">ðŸ  Back to Home</button></a>
+    </div>
+</div>
+
+
+<script>
+    let totalScore = 0;
+    const maxScore = 11; // Sum of max points per question (2+2+3+2+2)
+
+    function nextQuestion(currentQ, score) {
+        totalScore += score;
+        document.getElementById(`q${currentQ}`).classList.remove("active");
+        
+        if (currentQ < 5) {
+            document.getElementById(`q${currentQ + 1}`).classList.add("active");
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const resultText = document.getElementById("result-text");
+        const resultContainer = document.getElementById("result");
+        
+        // Calculate percentage
+        const percentage = Math.round((totalScore / maxScore) * 100);
+        
+        // Personalized feedback
+        if (percentage >= 70) {
+            resultText.innerHTML = `ðŸŽ‰ <strong>${percentage}% CSE Fit!</strong> <br> Youâ€™re likely to thrive in CSE! Your logical mindset and interest in tech align perfectly.`;
+        } else if (percentage >= 40) {
+            resultText.innerHTML = `ðŸ¤” <strong>${percentage}% Neutral Fit.</strong> <br> You might do well if youâ€™re willing to learn, but consider exploring other branches too.`;
+        } else {
+            resultText.innerHTML = `âš ï¸ <strong>${percentage}% Low Fit.</strong> <br> CSE may frustrate you. Look into Mechanical/Civil/ECE for better alignment.`;
+        }
+        
+        document.getElementById("quiz-container").scrollIntoView();
+        resultContainer.style.display = "block";
+    }
+
+    function resetQuiz() {
+        totalScore = 0;
+        document.querySelectorAll(".quiz-question").forEach(q => q.classList.remove("active"));
+        document.getElementById("q1").classList.add("active");
+        document.getElementById("result").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

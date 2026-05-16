@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing | Balanju</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/kgF2cgdG/consultancy-logo.jpg">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f7fd;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #5c6bc0;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .container {
+            background-color: white;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #5c6bc0;
+            margin-top: 35px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        ul {
+            font-size: 16px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0288d1;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #5c6bc0;
+            color: white;
+            font-weight: bold;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .comparison-table tr:hover {
+            background-color: #e3eafc;
+        }
+        .testimonial {
+            background-color: #e3eafc;
+            padding: 20px;
+            border-left: 5px solid #5c6bc0;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+            position: relative;
+        }
+        .testimonial:before {
+            content: '"';
+            font-size: 60px;
+            color: #5c6bc0;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .testimonial p {
+            margin: 0;
+            padding-left: 30px;
+        }
+        .testimonial p:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #5c6bc0;
+            font-style: normal;
+            margin-top: 10px;
+        }
+        .quiz-section {
+            background-color: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .quiz-question {
+            display: none;
+            padding: 15px 0;
+        }
+        .quiz-question.active {
+            display: block;
+        }
+        .quiz-question button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 8px 10px 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .quiz-question button:hover {
+            background-color: #01579b;
+        }
+        .quiz-result {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            display: none;
+        }
+        #result-title {
+            color: #5c6bc0;
+        }
+        .quiz-result button {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .syllabus-button {
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+        .syllabus-button button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .syllabus-button button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .counseling {
+            background-color: #fff3cd;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            border: 1px dashed #0288d1;
+        }
+        .counseling button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .counseling button:hover {
+            background-color: #01579b;
+        }
+        .video-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .buttons a button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 180px;
+        }
+        .buttons a button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .next-btn {
+            background-color: #0288d1;
+            color: white;
+        }
+        .home-btn {
+            background-color: #5c6bc0;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            header {
+                font-size: 22px;
+                padding: 15px 0;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .buttons a button {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .comparison-table {
+                font-size: 14px;
+            }
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    Cloud Computing
+</header>
+<div class="container">
+    <h2>ðŸ“˜ Overview</h2>
+    <p><span class="highlight">Cloud Computing</span> is the delivery of computing servicesâ€”servers, storage, databases, networking, software, analytics, and moreâ€”over the internet ("the cloud"). It enables flexible resources, faster innovation, and economies of scale for businesses and individuals.</p>
+    <p>From hosting websites â˜ï¸ to running AI models ðŸ¤–, cloud computing powers the digital world.</p>
+    <h2>ðŸ“š Core Subjects</h2>
+    <ul>
+        <li>â˜ï¸ Cloud Fundamentals & Architecture</li>
+        <li>ðŸ–¥ï¸ Virtualization Technologies</li>
+        <li>ðŸ”’ Cloud Security & Compliance</li>
+        <li>ðŸ—„ï¸ Cloud Storage & Databases</li>
+        <li>ðŸ”— Networking in Cloud</li>
+        <li>âš™ï¸ DevOps & Automation</li>
+        <li>ðŸ› ï¸ Cloud Platforms (AWS, Azure, GCP)</li>
+        <li>ðŸ“¦ Containerization (Docker, Kubernetes)</li>
+        <li>ðŸ“ˆ Cloud Monitoring & Management</li>
+        <li>ðŸ’¡ Serverless Computing</li>
+    </ul>
+    <div class="syllabus-button">
+        <a href="cloud-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– View Full Syllabus (Semester-wise) âž¡ï¸
+            </button>
+        </a>
+    </div>
+    <h2>ðŸ› ï¸ Tools & Technologies You'll Learn</h2>
+    <ul>
+        <li><strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud</li>
+        <li><strong>DevOps:</strong> Jenkins, Git, Terraform</li>
+        <li><strong>Containers:</strong> Docker, Kubernetes</li>
+        <li><strong>Automation:</strong> Ansible, Chef, Puppet</li>
+        <li><strong>Monitoring:</strong> Prometheus, Grafana, CloudWatch</li>
+    </ul>
+    <div class="syllabus-button">
+        <a href="cloud-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– Explore these tools in detail âž¡ï¸
+            </button>
+        </a>
+    </div>
+    <h2>âš–ï¸ Cloud Computing vs Other Branches</h2>
+    <table class="comparison-table">
+        <tr>
+            <th>Factor</th>
+            <th>Cloud Computing</th>
+            <th>CSE</th>
+            <th>Data Science</th>
+        </tr>
+        <tr>
+            <td><strong>Cloud Focus</strong></td>
+            <td>âœ… High</td>
+            <td>âš ï¸ Medium</td>
+            <td>âš ï¸ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Programming</strong></td>
+            <td>âœ… Python, Bash</td>
+            <td>âœ… C, C++, Java</td>
+            <td>âœ… Python, R</td>
+        </tr>
+        <tr>
+            <td><strong>DevOps/Automation</strong></td>
+            <td>âœ… High</td>
+            <td>âš ï¸ Medium</td>
+            <td>âš ï¸ Medium</td>
+        </tr>
+        <tr>
+            <td><strong>Avg. Starting Salary</strong></td>
+            <td>â‚¹6-14 LPA</td>
+            <td>â‚¹6-12 LPA</td>
+            <td>â‚¹7-16 LPA</td>
+        </tr>
+        <tr>
+            <td><strong>Top Companies</strong></td>
+            <td>Amazon, Microsoft, Google</td>
+            <td>Infosys, TCS</td>
+            <td>Mu Sigma, Fractal</td>
+        </tr>
+    </table>
+    <h2>ðŸ’¼ Job Opportunities</h2>
+    <ul>
+        <li>â˜ï¸ Cloud Solutions Architect</li>
+        <li>ðŸ› ï¸ DevOps Engineer</li>
+        <li>ðŸ”’ Cloud Security Engineer</li>
+        <li>ðŸ–¥ï¸ Cloud Administrator</li>
+        <li>ðŸ“¦ Cloud Developer</li>
+        <li>ðŸ“ˆ Cloud Consultant</li>
+        <li>ðŸ”— Network Engineer (Cloud)</li>
+        <li>âš™ï¸ Automation Engineer</li>
+        <li>ðŸ—„ï¸ Cloud Database Engineer</li>
+        <li>ðŸ“Š Cloud Support Specialist</li>
+    </ul>
+    <div class="syllabus-button">
+        <a href="cloud-syllabus-details.html" target="_blank">
+            <button>
+                ðŸ“– KNOW ABOUT YOUR FUTURE âž¡ï¸
+            </button>
+        </a>
+    </div>
+    <h2>ðŸ“ˆ Future Demand</h2>
+    <p>Cloud Computing is the backbone of digital transformation. With businesses moving to the cloud, demand for skilled professionals is skyrocketing across all industries.</p>
+    <h2>ðŸ›‘ Cloud Computing Reality Check</h2>
+    <ul>
+        <li>âš ï¸ <strong>Continuous Learning:</strong> Cloud tech evolves rapidlyâ€”upskilling is essential.</li>
+        <li>âš ï¸ <strong>Problem Solving:</strong> Requires analytical and creative thinking.</li>
+        <li>âš ï¸ <strong>Certifications:</strong> Industry certifications (AWS, Azure, GCP) are highly valued.</li>
+        <li>ðŸ’¡ <strong>Tip:</strong> If you love tech, automation, and scalability, Cloud Computing is for you!</li>
+    </ul>
+    <h2>ðŸŽ¤ Student Experience</h2>
+    <div class="testimonial">
+        <p>I was amazed by how cloud platforms can scale apps instantly. Learning Cloud Computing gave me hands-on skills with AWS and DevOps. The field is dynamic and full of opportunities!</p>
+        <p>â€” Sneha, Cloud Computing Graduate</p>
+    </div>
+    <h2>ðŸ¤” Still Confused? Take a Quick Quiz!</h2>
+    <div class="quiz-section">
+        <h2>ðŸ¤” Not Sure if Cloud Computing is for You?</h2>
+        <p><em>Take this short quiz to find out if Cloud Computing matches your interests!</em></p>
+        <div id="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question active" id="q1">
+                <p><strong>1. Do you enjoy working with new technologies and automation?</strong></p>
+                <button onclick="nextQuestion(1, 2)">Yes! I love tech ðŸ› ï¸</button>
+                <button onclick="nextQuestion(1, 0)">Not really ðŸ˜…</button>
+            </div>
+            <!-- Question 2 -->
+            <div class="quiz-question" id="q2">
+                <p><strong>2. Are you interested in how apps and websites run on the cloud?</strong></p>
+                <button onclick="nextQuestion(2, 3)">Absolutely! â˜ï¸</button>
+                <button onclick="nextQuestion(2, 1)">Somewhat</button>
+                <button onclick="nextQuestion(2, 0)">Not interested</button>
+            </div>
+            <!-- Question 3 -->
+            <div class="quiz-question" id="q3">
+                <p><strong>3. Are you comfortable with programming and scripting?</strong></p>
+                <button onclick="nextQuestion(3, 2)">Yes, I enjoy them ðŸ’»</button>
+                <button onclick="nextQuestion(3, 0)">Not my strongest area</button>
+            </div>
+            <!-- Question 4 -->
+            <div class="quiz-question" id="q4">
+                <p><strong>4. Would you like to work on scalable, global tech solutions?</strong></p>
+                <button onclick="nextQuestion(4, 3)">Definitely! ðŸŒ</button>
+                <button onclick="nextQuestion(4, 1)">Maybe, I'm not sure</button>
+                <button onclick="nextQuestion(4, 0)">Not really interested</button>
+            </div>
+            <!-- Question 5 -->
+            <div class="quiz-question" id="q5">
+                <p><strong>5. Do you enjoy teamwork and solving real-world problems?</strong></p>
+                <button onclick="nextQuestion(5, 2)">Yes, I love teamwork! ðŸ¤</button>
+                <button onclick="nextQuestion(5, 0)">I prefer working alone</button>
+            </div>
+        </div>
+    </div>
+    <!-- Result -->
+    <div class="quiz-result" id="result">
+        <h3 id="result-title">Your Result</h3>
+        <p id="result-text"></p>
+        <button onclick="resetQuiz()">Retake Quiz ðŸ”„</button>
+    </div>
+    <div class="video-section">
+        <h2>ðŸ“º Watch this video to learn more about Cloud Computing</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/2LaAJq1lB1Q?rel=0" title="Cloud Computing Course Info" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="counseling">
+        <h3>ðŸ“Œ Need Help with EAMCET Counseling? OR Want to choose the right branch?</h3>
+        <p>Book our <strong>1-on-1 paid counseling</strong> for expert guidance in selecting the right branch!</p>
+        <a href="1000paid-cousilling.html" target="_blank">
+            <button>ðŸ’¬ Get Counseling Help</button>
+        </a>
+    </div>
+    <div class="buttons">
+        <a href="23AIML.html"><button class="next-btn">âž¡ï¸ Next Branch</button></a>
+        <a href="index-branches.html"><button class="home-btn">ðŸ  Back to Home</button></a>
+    </div>
+</div>
+<script>
+    let totalScore = 0;
+    const maxScore = 12; // 2+3+2+3+2
+    function nextQuestion(currentQ, score) {
+        totalScore += score;
+        document.getElementById(`q${currentQ}`).classList.remove("active");
+        if (currentQ < 5) {
+            document.getElementById(`q${currentQ + 1}`).classList.add("active");
+        } else {
+            showResult();
+        }
+    }
+    function showResult() {
+        const resultText = document.getElementById("result-text");
+        const resultContainer = document.getElementById("result");
+        const percentage = Math.round((totalScore / maxScore) * 100);
+        if (percentage >= 75) {
+            resultText.innerHTML = `ðŸŽ‰ <strong>${percentage}% Cloud Computing Fit!</strong> <br> You're perfect for Cloud Computing! Your interests and skills align well with this field.`;
+        } else if (percentage >= 50) {
+            resultText.innerHTML = `ðŸ¤” <strong>${percentage}% Neutral Fit.</strong> <br> You might do well in Cloud Computing if you're willing to develop your skills in tech and automation.`;
+        } else {
+            resultText.innerHTML = `âš ï¸ <strong>${percentage}% Low Fit.</strong> <br> Cloud Computing might be challenging for you. Consider CSE or Data Science if your interests align better there.`;
+        }
+        document.getElementById("quiz-container").scrollIntoView();
+        resultContainer.style.display = "block";
+    }
+    function resetQuiz() {
+        totalScore = 0;
+        document.querySelectorAll(".quiz-question").forEach(q => q.classList.remove("active"));
+        document.getElementById("q1").classList.add("active");
+        document.getElementById("result").style.display = "none";
+    }
+</script>
+</body>
+</html> 

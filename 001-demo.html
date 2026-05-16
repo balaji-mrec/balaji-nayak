@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balanju Consultancy | Explore Engineering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f7fafd;
+      --text: #0d223a;
+      --main: #1565c0;
+      --accent: gold;
+      --card-bg: #fff;
+      --card-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+    }
+    body.dark-mode {
+      --bg: #101c2c;
+      --text: #eaf6fb;
+      --main: #1565c0;
+      --accent: #ff9800;
+      --card-bg: #182848;
+      --card-shadow: 0 2px 8px rgba(21, 101, 192, 0.18);
+      background: #101c2c;
+      color: var(--text);
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease-in-out;
+    }
+    header {
+      background: var(--main);
+      color: white;
+      padding: 25px 40px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(21, 101, 192, 0.13);
+    }
+    header .logo {
+      font-size: 40px;
+      margin-right: 15px;
+    }
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .subheader {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      padding: 0 20px;
+      color: var(--main);
+      font-weight: 600;
+    }
+    section {
+      padding: 40px 20px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 28px;
+      color: var(--main);
+      margin-bottom: 15px;
+    }
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+    .box {
+      background: var(--main);
+      color: rgb(239, 227, 227);
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 15px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      position: relative;
+    }
+    .box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(21, 101, 192, 0.18);
+      background: #174ea6;
+    }
+    .box i {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .box h4 {
+      margin: 5px 0 0 0;
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+
+
+
+    
+    /* ðŸ“± Enhanced Responsive Design */
+    @media (max-width: 768px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 15px;
+      }
+
+      .main-header .left h1 {
+        font-size: 22px;
+      }
+
+      .main-header .right {
+        width: 100%;
+        margin-left: 0;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+
+      .scroll-text {
+        font-size: 13px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 20px 15px;
+      }
+
+      .section h3 {
+        font-size: 20px;
+      }
+
+      .section p {
+        font-size: 15px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 10px 15px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    }
+
+    .floating-update-bar.header-version {
+      position: static;
+      margin-top: 10px;
+      transform: none;
+      background: linear-gradient(to right, gold);
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      gap: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      animation: slideIn 0.6s ease-in-out;
+    }
+
+    .floating-update-bar.header-version .update-btn {
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      background: #27ae60;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background 0.3s ease;
+    }
+
+
+
+    .floating-update-bar.header-version {
+      position: static;
+      margin-top: 10px;
+      background: var(--accent);
+      color: #000000;
+      padding: 12px 14px;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      gap: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      animation: slideIn 0.6s ease-in-out;
+    }
+    .floating-update-bar.header-version .update-btn {
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      background: #fff;
+      color: var(--main);
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background 0.3s, color 0.3s;
+      border: none;
+      font-weight: 600;
+    }
+    .floating-update-bar.header-version .update-btn:hover {
+      background: var(--main);
+      color: #fff;
+    }
+    #updateText, #updateLink {
+      transition: opacity 0.4s ease-in-out;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .highlight-section {
+      background: #f5faff;
+      color: var(--text);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin: 30px auto;
+      max-width: 800px;
+      border: 1px solid #e3eaf2;
+    }
+    .highlight-section h2 {
+      color: var(--main);
+      margin-bottom: 15px;
+    }
+    .highlight-section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .highlight-btn {
+      background: var(--main);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .highlight-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(21, 101, 192, 0.13);
+    }
+    .engineering-footer {
+      background: var(--main);
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      border-top: 1px solid #c81a1a;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .footer-section h3 {
+      color: var(--accent);
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background: #fff;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+    .footer-contact {
+      color: #e3eaf2;
+    }
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .footer-contact i {
+      margin-right: 10px;
+      color: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid #fff;
+      color: #bdc3c7;
+      font-size: 14px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    .footer-bottom-links a {
+      color: #e3eaf2;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-bottom-links a:hover {
+      color: var(--accent);
+    }
+    .chat-counselor {
+      background: #fff;
+      color: var(--main);
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    .chat-counselor:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .top-categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .social-media {
+      margin-top: 20px;
+    }
+    .social-media a {
+      color: var(--accent);
+      font-size: 20px;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+    .social-media a:hover {
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-top">
+      <div class="header-text">
+        <h1><font face="roboto">ðŸš€ EXPLORE<br> ENGINEERING</font></h1>
+      </div>
+    </div>
+    <div class="floating-update-bar header-version" id="updateBar">
+      <span id="updateText">ðŸ“¢ TS EAMCET 2024 Cutoffs Updated!</span>
+      <a href="01-cut-off.html" class="update-btn" id="updateLink">View</a>
+    </div>
+  </header>
+  <script>
+    const updates = [
+      { text: "ðŸ“¢ TS EAMCET 2024 Cutoffs Updated!", link: "01-cut-off.html" },
+      { text: "ðŸ—“ï¸ Counseling starts from June 15", link: "01-ts-eamcet-updated.html" },
+      { text: "ðŸŽ¯ College Predictor Tool Launched", link: "999-TS-COLLEGE-PREDUCTOR.HTML" },
+      { text: "ðŸ“š Branch-wise Cutoffs Uploaded", link: "index-branches.html" },
+      { text: "ðŸ† View Top Colleges for CSE, AI & DS", link: "100-ts-20.html" }
+    ];
+    let index = 0;
+    const updateText = document.getElementById("updateText");
+    const updateLink = document.getElementById("updateLink");
+    function updateAnnouncement() {
+      updateText.style.opacity = 0;
+      updateLink.style.opacity = 0;
+      setTimeout(() => {
+        updateText.textContent = updates[index].text;
+        updateLink.href = updates[index].link;
+        updateText.style.opacity = 1;
+        updateLink.style.opacity = 1;
+        index = (index + 1) % updates.length;
+      }, 300);
+    }
+    updateAnnouncement();
+    setInterval(updateAnnouncement, 3000);
+  </script>
+  <div class="subheader"><b>Your trusted guide for B.Tech branches, colleges, exams, and expert counseling.</b></div>
+  <section>
+    <h2>Overview</h2>
+    <p>Engineering drives innovation and transformation. Balanju's Team helps you choose the right branch, college, and exam path to succeed in this dynamic field. Find expert-curated content, placement stats, and personalized counseling right here.</p>
+  </section>
+  <div class="container">
+    <h2>Explore B.Tech</h2>
+    <div class="grid">
+      <a href="index-branches.html" class="box"><i class="fas fa-cogs"></i>Branches</a>
+      <a href="index-engineering-college.html" class="box"><i class="fas fa-university"></i>Colleges</a>
+      <a href="index-trending-branc.html" class="box"><i class="fas fa-bolt"></i>Trending Branches</a>
+      <a href="1005-top-college-ind.html" class="box"><i class="fas fa-trophy"></i>Top Colleges</a>
+      <a href="150-Faqs.html" class="box"><i class="fas fa-question-circle"></i>FAQs</a>
+    </div>
+  </div>
+  <div class="container">
+    <h2>ðŸ›ï¸ Top National Exams</h2>
+    <div class="grid">
+      <a href="10JEE-ADVANCE-EXAM.html" class="box"><i class="fas fa-book-open"></i>JEE Advanced</a>
+      <a href="10jee_mains.html" class="box"><i class="fas fa-book"></i>JEE Main</a>
+      <a href="10BITSAT.html" class="box"><i class="fas fa-chart-bar"></i>BITSAT</a>
+      <a href="10VITEEE-EXAM.html" class="box"><i class="fas fa-flask"></i>VITEEE</a>
+      <a href="10SMJEEE.html" class="box"><i class="fas fa-compass"></i>SRMJEEE</a>
+      <a href="10MET-MANIPAL-EXAM.HTML" class="box"><i class="fas fa-shield-alt"></i>MET (Manipal)</a>
+      <a href="10amity-EXAM.html" class="box"><i class="fas fa-university"></i>Amity JEE / UPES</a>
+    </div>
+  </div>
+  <div class="container">
+    <h2>ðŸ—ºï¸ State-Level Exams</h2>
+    <div class="grid">
+      <a href="11TS-EAPCET-EXAM.html" class="box"><i class="fas fa-city"></i>TS EAMCET [Telangana]</a>
+      <a href="11ap_eamcet-EXAM.html" class="box"><i class="fas fa-city"></i>AP EAPCET [Andhra Pradesh]</a>
+      <a href="11MHTCET-MAHARASTHA-EXAM.HTML" class="box"><i class="fas fa-mountain"></i>MHT CET [Maharashtra]</a>
+      <a href="11KCET-KARNATAKA-EXAM.html" class="box"><i class="fas fa-mountain"></i>KCET [Karnataka]</a>
+      <a href="11KEAM-KERALA-EXAM.html" class="box"><i class="fas fa-water"></i>KEAM [Kerala]</a>
+      <a href="11WBJEE-BENGAL-EXAM.HTML" class="box"><i class="fas fa-landmark"></i>WBJEE [West Bengal]</a>
+      <a href="11GUJCET-GUJARATH-EXAM.html" class="box"><i class="fas fa-bridge"></i>GUJCET [Gujarat]</a>
+      <a href="11REAP-RAJASTHAN-EXAM.html" class="box"><i class="fas fa-road"></i>REAP [Rajasthan]</a>
+      <a href="11UPCET-UTTHAR.html" class="box"><i class="fas fa-road"></i>UPCET [Uttar Pradesh]</a>
+      <a href="11BCECE-BIHAR-EXAM.html" class="box"><i class="fas fa-mosque"></i>BCECE [Bihar]</a>
+      <a href="11cgpet-Chhattisgarh-EXAM.html" class="box"><i class="fas fa-landmark"></i>CG PET [Chhattisgarh]</a>
+      <a href="11OJEE-EXAM.html" class="box"><i class="fas fa-landmark"></i>OJEE [Odisha]</a>
+      <a href="11jcece-JARKHAND.EXAM.html" class="box"><i class="fas fa-ship"></i>JCECE [Jharkhand]</a>
+    </div>
+  </div>
+  <div class="container">
+    <h2>ðŸ›ï¸ Other Popular Institute Exams</h2>
+    <div class="grid">
+      <a href="12UGC-IITH-EXAM.html" class="box"><i class="fas fa-book-reader"></i>IIITH UGEE / SAT</a>
+      <a href="12SNSAT-EXAM.html" class="box"><i class="fas fa-university"></i>SNUSAT [Shiv Nadar University]</a>
+      <a href="12ashoka-EXAM.html" class="box"><i class="fas fa-brain"></i>Ashoka Aptitude Test</a>
+      <a href="12ISBF-EXAM.html" class="box"><i class="fas fa-chart-pie"></i>ISBF Entrance Test</a>
+    </div>
+  </div>
+  <div class="highlight-section">
+    <h2>ðŸ“ Need Help with EAMCET Counseling?</h2>
+    <p>We provide expert guidance to help you choose the right branch, college, and career path. Book a 1-on-1 paid counseling session now!</p>
+    <a href="1000paid-cousilling.html" class="highlight-btn" target="_blank">ðŸ’¬ Get Counseling Help</a>
+  </div>
+  <footer class="engineering-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Questions</h3>
+        <ul class="footer-links">
+          <li><a href="#">What are the top engineering branches?</a></li>
+          <li><a href="#">Which exams are required for admission?</a></li>
+          <li><a href="#">How to apply for EAMCET/JEE?</a></li>
+          <li><a href="#">Which colleges have top placements?</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <div class="top-categories">
+          <ul class="footer-links">
+            <li><a href="#">Top Government Colleges</a></li>
+            <li><a href="#">Top Private Colleges</a></li>
+            <li><a href="#">Autonomous Institutes</a></li>
+          </ul>
+          <ul class="footer-links">
+            <li><a href="#">Deemed Universities</a></li>
+            <li><a href="#">Emerging Colleges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Placement Reports</a></li>
+          <li><a href="#">Fee Comparison</a></li>
+          <li><a href="#">Cutoff Analysis</a></li>
+          <li><a href="#">Scholarship Options</a></li>
+          <li><a href="#">Branch Selector Tool</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-phone"></i> +91 7207800211</p>
+          <p><i class="fas fa-envelope"></i> balanjuinfo@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Hyderabad, India</p>
+        </div>
+        <div class="social-media">
+          <a href="https://chat.whatsapp.com/K5D4AfvukoY2vL07cfPYh0"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@balanjuconsultancy1?si=3s4r6SGrs-r2JKrx"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/balanju_consultancy?igsh=MXB6NmNuaGJ2azA3bg=="><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/balaji-nayak-027050360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2025 Engineering College Index. All Rights Reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/917207800211?text=Hi%20Balanju%20Team%2C%20I%20need%20counseling%20for%20engineering%20admission."
+     style="position:fixed; bottom:20px; right:20px; background:#1976d2; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:998; font-family:'Segoe UI', sans-serif;"
+     target="_blank" aria-label="Chat with Balanju on WhatsApp">
+     ðŸ’¬ Chat with Us
+  </a>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    }
+    window.onload = function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
+</body>
+</html> 

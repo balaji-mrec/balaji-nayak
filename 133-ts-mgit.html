@@ -1,0 +1,601 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  <meta name="google-adsense-account" content="ca-pub-7028247458903242">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7028247458903242" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MGIT Hyderabad | College Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #006064;
+      --primary-light: #00897b;
+      --secondary: #ffab00;
+      --accent: #b2dfdb;
+      --danger: #d32f2f;
+      --bg: #f5f7fa;
+      --card-bg: #fff;
+      --text: #263238;
+      --text-light: #607d8b;
+      --border: #cfd8dc;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1.5rem 2rem 1.5rem;
+    }
+    .header .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 0.5rem;
+    }
+    .header .tagline {
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .header .subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      background: #fff;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      margin: 1.5rem auto 0 auto;
+      max-width: 900px;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      gap: 0.5rem;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .quick-link {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: var(--transition);
+    }
+    .quick-link:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-4px);
+    }
+    .quick-link-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    .section-title {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .stat-card {
+      background: var(--accent);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+    th, td {
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    th {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .accordion {
+      margin: 1.5rem 0;
+    }
+    .accordion-item {
+      margin-bottom: 0.75rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .accordion-header {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+    .accordion-content {
+      padding: 1.5rem;
+      background: var(--card-bg);
+      font-size: 1rem;
+      line-height: 1.7;
+      display: none;
+    }
+    .accordion-item.open .accordion-content {
+      display: block;
+    }
+    .alert {
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .alert-success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-left: 4px solid #4caf50;
+    }
+    .alert-warning {
+      background: #fff8e1;
+      color: #ff8f00;
+      border-left: 4px solid #ffc107;
+    }
+    .alert-danger {
+      background: #ffebee;
+      color: var(--danger);
+      border-left: 4px solid var(--danger);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-card {
+      background: var(--accent);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+    .contact-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .header { padding: 1.5rem 0.5rem; }
+      .container { padding: 0 0.5rem; }
+      .card { padding: 1rem; }
+      .section-title { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">ðŸŽ“ <span>MGIT Hyderabad</span></div>
+   
+    <h1 style="font-size:2rem;font-weight:700;margin-bottom:0.5rem;">Mahatma Gandhi Institute of Technology</h1>
+    <div class="subtitle">Autonomous | Affiliated to JNTU Hyderabad | AICTE Approved</div>
+  </div>
+   
+
+
+
+
+  <div class="container">
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <a href="#courses" class="quick-link"><span class="quick-link-icon">ðŸ“š</span>Courses Offered</a>
+      <a href="#admissions" class="quick-link"><span class="quick-link-icon">ðŸŽ“</span>Admission Process</a>
+      <a href="#cutoff" class="quick-link"><span class="quick-link-icon">ðŸ“Š</span>Cutoff Ranks</a>
+      <a href="#predictor" class="quick-link"><span class="quick-link-icon">ðŸ”®</span>Admission Predictor</a>
+    </div>
+
+
+  <!-- Tabs -->
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="about">About</button>
+    <button class="tab-btn" data-tab="courses">Courses</button>
+    <button class="tab-btn" data-tab="admissions">Admissions</button>
+    <button class="tab-btn" data-tab="cutoff">Cutoffs</button>
+    <button class="tab-btn" data-tab="predictor">fees</button>
+    <button class="tab-btn" data-tab="contact">placements</button>
+    <button class="tab-btn" data-tab="contact">campus life</button>
+    <button class="tab-btn" data-tab="contact">FAQs</button>
+    <button class="tab-btn" data-tab="contact">Contact</button>
+  </div>
+
+ 
+
+    <!-- About -->
+   
+    <div class="card tab-content" id="about">
+  <div class="section-title">About MGIT</div>
+  <p>Mahatma Gandhi Institute of Technology (MGIT), established in <strong>1997</strong>, is a premier engineering institution in <strong>Hyderabad, Telangana</strong>, committed to fostering innovation, research, and academic excellence. Affiliated to <strong>JNTU Hyderabad</strong> and approved by <strong>AICTE</strong>, MGIT is renowned for its rigorous curriculum, world-class infrastructure, and strong industry connections that ensure exceptional career opportunities for students.</p>
+  
+  <h4>Key Highlights</h4>
+  <ul>
+    <li><strong>Legacy of Excellence</strong>: Over 25+ years of shaping future engineers and leaders.</li>
+    <li><strong>Campus</strong>: A sprawling 30+ acre eco-friendly campus with modern labs, libraries, and sports facilities.</li>
+    <li><strong>Placements</strong>: Consistently achieves 80%+ placement rates with top recruiters like Microsoft, Amazon, and TCS.</li>
+    <li><strong>Accreditations</strong>: AICTE-approved and NAAC-accredited.</li>
+  </ul>
+
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-value">ðŸŽ‰ 1997</div><div class="stat-label">Established</div></div>
+    <div class="stat-card"><div class="stat-value">ðŸŒ³ 30+</div><div class="stat-label">Acres Campus</div></div>
+    <div class="stat-card"><div class="stat-value">ðŸ’¼ 80%</div><div class="stat-label">Placement Rate</div></div>
+    <div class="stat-card"><div class="stat-value">âœ… AICTE</div><div class="stat-label">Approved</div></div>
+  </div>
+
+  <h4>Academic Strengths</h4>
+  <p>Offers <strong>B.Tech, M.Tech, and Ph.D.</strong> programs in disciplines like CSE, ECE, and Mechanical Engineering. The institute emphasizes <strong>industry-aligned learning</strong> through partnerships with tech giants for workshops and internships, alongside cutting-edge research in AI and Robotics.</p>
+
+  <h4>Student Life</h4>
+  <p>Vibrant campus life with technical clubs (IEEE, CSI), an <strong>Entrepreneurship Cell</strong>, and national events like <strong>TechSrijan</strong>. The institute also promotes social responsibility through NGO collaborations.</p>
+</div>
+
+    <!-- Courses -->
+    <div class="card tab-content" id="courses" style="display:none;">
+  <div class="section-title">Courses Offered</div>
+  <p>MGIT offers comprehensive undergraduate and postgraduate programs in engineering and technology, accredited by <strong>NBA</strong> and designed with industry collaboration:</p>
+  
+  <h4>Undergraduate Programs (B.Tech)</h4>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Duration</th>
+          <th>Intake</th>
+          <th>Eligibility</th>
+          <th>Key Features</th>
+          <th>Career Prospects</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>B.Tech in Computer Science</strong></td>
+          <td>4 Years</td>
+          <td>180</td>
+          <td>10+2 with PCM (75%)</td>
+          <td>
+            <ul>
+              <li>Specializations: AI, Cybersecurity</li>
+              <li>NBA-Accredited</li>
+              <li>Microsoft-certified labs</li>
+            </ul>
+          </td>
+          <td>Software Engineer, Data Scientist</td>
+        </tr>
+        <tr>
+          <td><strong>B.Tech in ECE</strong></td>
+          <td>4 Years</td>
+          <td>120</td>
+          <td>10+2 with PCM (70%)</td>
+          <td>
+            <ul>
+              <li>VLSI & 5G Focus</li>
+              <li>ISRO-collaborative projects</li>
+            </ul>
+          </td>
+          <td>Embedded Systems Engineer</td>
+        </tr>
+        <tr>
+          <td><strong>B.Tech in Mechanical</strong></td>
+          <td>4 Years</td>
+          <td>60</td>
+          <td>10+2 with PCM (65%)</td>
+          <td>
+            <ul>
+              <li>Automotive Robotics Lab</li>
+              <li>Siemens-certified training</li>
+            </ul>
+          </td>
+          <td>Automotive Engineer</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Postgraduate Programs (M.Tech)</h4>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Duration</th>
+          <th>Intake</th>
+          <th>Eligibility</th>
+          <th>Highlights</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>M.Tech in CSE</strong></td>
+          <td>2 Years</td>
+          <td>30</td>
+          <td>B.Tech + GATE</td>
+          <td>Cloud Computing Specialization</td>
+        </tr>
+        <tr>
+          <td><strong>M.Tech in VLSI</strong></td>
+          <td>2 Years</td>
+          <td>24</td>
+          <td>B.Tech in ECE/EEE</td>
+          <td>Intel-funded lab</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Doctoral Programs (Ph.D.)</h4>
+  <ul>
+    <li><strong>Research Areas</strong>: AI, Renewable Energy, Smart Materials</li>
+    <li><strong>Duration</strong>: 3â€“5 Years (Flexible mode)</li>
+    <li><strong>Funding</strong>: AICTE scholarships available</li>
+  </ul>
+</div>
+
+    <!-- Admissions -->
+    <div class="card tab-content" id="admissions" style="display:none;">
+      <div class="section-title">Admission Process</div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">B.Tech Admissions through TS EAPCET <span>â–¼</span></div>
+          <div class="accordion-content">
+            <ul>
+              <li>Appear for TS EAPCET exam (May 2024)</li>
+              <li>Check results and obtain rank card</li>
+              <li>Participate in web counseling</li>
+              <li>Select MGIT as preferred college</li>
+              <li>Complete document verification</li>
+              <li>Pay tuition fee to confirm seat</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">Management Quota Admissions <span>â–¼</span></div>
+          <div class="accordion-content">
+            <ul>
+              <li>Minimum eligibility: 45% in 10+2 with PCM</li>
+              <li>Application through college portal</li>
+              <li>Personal interview may be required</li>
+              <li>Higher fee structure applies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cutoffs -->
+    <div class="card tab-content" id="cutoff" style="display:none;">
+      <div class="section-title">TS EAPCET Cutoff Ranks 2024</div>
+      <p>Indicative closing ranks for MGIT Hyderabad:</p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Branch</th>
+              <th>Opening Rank</th>
+              <th>Closing Rank</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Computer Science (CSE)</td><td>1,200</td><td>4,500</td></tr>
+            <tr><td>Electronics (ECE)</td><td>3,000</td><td>8,500</td></tr>
+            <tr><td>Electrical (EEE)</td><td>5,000</td><td>13,000</td></tr>
+            <tr><td>Mechanical</td><td>8,000</td><td>22,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-warning">
+        <strong>Note:</strong> Cutoffs vary each year based on exam difficulty and number of applicants.
+      </div>
+    </div>
+
+    <!-- Predictor -->
+    <div class="card tab-content" id="predictor" style="display:none;">
+      <div class="section-title">MGIT Admission Predictor</div>
+      <p>Check your chances of getting into MGIT based on your expected TS EAPCET rank:</p>
+      <div style="max-width:400px;">
+        <div style="margin-bottom:1rem;">
+          <label for="rank-input">Your Expected TS EAPCET Rank</label>
+          <input type="number" id="rank-input" style="width:100%;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem;">
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label for="branch-select">Preferred Branch</label>
+          <select id="branch-select" style="width:100%;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:var(--radius);font-size:1rem;">
+            <option value="">Select Branch</option>
+            <option value="CSE">Computer Science (CSE)</option>
+            <option value="ECE">Electronics (ECE)</option>
+            <option value="EEE">Electrical (EEE)</option>
+            <option value="MECH">Mechanical</option>
+            <option value="CIVIL">Civil</option>
+          </select>
+        </div>
+        <button id="predict-btn" style="background:var(--primary);color:#fff;border:none;border-radius:50px;padding:0.75rem 1.5rem;font-weight:600;font-size:1rem;cursor:pointer;width:100%;">ðŸ”® Calculate My Chance</button>
+        <div id="prediction-result" style="margin-top:1.5rem;"></div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="card tab-content" id="contact" style="display:none;">
+      <div class="section-title">Contact MGIT</div>
+      <div class="contact-grid">
+        <a href="https://maps.app.goo.gl/example" class="contact-card" target="_blank"><div class="contact-icon">ðŸ“</div><div>Address</div><div>Kokapet, Gandipet, Hyderabad - 500075</div></a>
+        <a href="tel:04024193057" class="contact-card"><div class="contact-icon">ðŸ“ž</div><div>Phone</div><div>040-24193057</div></a>
+        <a href="mailto:info@mgit.ac.in" class="contact-card"><div class="contact-icon">âœ‰ï¸</div><div>Email</div><div>info@mgit.ac.in</div></a>
+        <a href="https://www.mgit.ac.in/" class="contact-card" target="_blank"><div class="contact-icon">ðŸŒ</div><div>Website</div><div>www.mgit.ac.in</div></a>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="https://maps.app.goo.gl/example" class="quick-link" style="background:var(--secondary);color:var(--primary);display:inline-block;margin-right:8px;" target="_blank">ðŸ—ºï¸ View on Map</a>
+        <a href="mailto:info@mgit.ac.in" class="quick-link" style="background:var(--primary);color:#fff;display:inline-block;">âœ‰ï¸ Email Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Â© <span id="current-year"></span> Mahatma Gandhi Institute of Technology, Hyderabad</p>
+    <p style="margin-top:0.5rem;opacity:0.8;">All rights reserved | AICTE Approved | Affiliated to JNTU Hyderabad</p>
+  </div>
+
+  <script>
+    // Tabs logic
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        tabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        tabContents.forEach(tc => tc.style.display = 'none');
+        document.getElementById(this.dataset.tab).style.display = '';
+        window.scrollTo({ top: document.getElementById('tabs').offsetTop - 10, behavior: 'smooth' });
+      });
+    });
+
+    // Accordion logic
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('open');
+        this.querySelector('span').textContent = item.classList.contains('open') ? 'â–²' : 'â–¼';
+      });
+    });
+
+    // Admission Predictor logic
+    document.getElementById('predict-btn').addEventListener('click', function() {
+      const rank = document.getElementById('rank-input').value;
+      const branch = document.getElementById('branch-select').value;
+      const resultDiv = document.getElementById('prediction-result');
+      if (!rank || !branch) {
+        resultDiv.innerHTML = `<div class="alert alert-danger">Please enter your rank and select a branch.</div>`;
+        return;
+      }
+      const rankNum = parseInt(rank);
+      let chance = '', message = '', alertClass = '';
+      if (branch === 'CSE') {
+        if (rankNum <= 2000) { chance = '90-100%'; message = 'Excellent chance for CSE with possible scholarship'; alertClass = 'alert-success'; }
+        else if (rankNum <= 4500) { chance = '70-90%'; message = 'Good chance for CSE through regular counseling'; alertClass = 'alert-success'; }
+        else if (rankNum <= 8000) { chance = '30-50%'; message = 'Consider management quota or other branches'; alertClass = 'alert-warning'; }
+        else { chance = '<10%'; message = 'Very low chance for CSE, explore other options'; alertClass = 'alert-danger'; }
+      } else if (branch === 'ECE') {
+        if (rankNum <= 5000) { chance = '80-100%'; message = 'Excellent chance for ECE'; alertClass = 'alert-success'; }
+        else if (rankNum <= 8500) { chance = '50-80%'; message = 'Good chance for ECE'; alertClass = 'alert-success'; }
+        else { chance = '<30%'; message = 'Consider management quota'; alertClass = 'alert-warning'; }
+      } else if (branch === 'EEE') {
+        if (rankNum <= 8000) { chance = '60-90%'; message = 'Good chance for EEE'; alertClass = 'alert-success'; }
+        else if (rankNum <= 13000) { chance = '30-60%'; message = 'Possible through later rounds'; alertClass = 'alert-warning'; }
+        else { chance = '<20%'; message = 'Low chance, consider other branches'; alertClass = 'alert-danger'; }
+      } else if (branch === 'MECH') {
+        if (rankNum <= 12000) { chance = '70-100%'; message = 'Good chance for Mechanical'; alertClass = 'alert-success'; }
+        else if (rankNum <= 22000) { chance = '30-70%'; message = 'Possible through later rounds'; alertClass = 'alert-warning'; }
+        else { chance = '<20%'; message = 'Low chance, consider other options'; alertClass = 'alert-danger'; }
+      } else if (branch === 'CIVIL') {
+        chance = 'Contact college'; message = 'Cutoff data not available, contact college for details.'; alertClass = 'alert-warning';
+      }
+      resultDiv.innerHTML = `<div class=\"alert ${alertClass}\"><strong>Chance of Admission:</strong> ${chance}<br>${message}</div>`;
+    });
+
+    // Set current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
